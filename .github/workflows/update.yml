@@ -22,13 +22,14 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: true   # GITHUB_TOKEN der Actions-Runner (hat repo-Scope)
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
       - name: Collect data
-        id: collect
         env:
           ARTIFICIAL_ANALYSIS_API_KEY: ${{ secrets.ARTIFICIAL_ANALYSIS_API_KEY }}
         run: python collector.py
@@ -45,7 +46,6 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "data update $(date -u +%Y-%m-%dT%H:%MZ)"
-            # Rebase vor Push, um Race mit parallelen Läufen zu vermeiden
             git pull --rebase origin main || true
             git push
           fi
