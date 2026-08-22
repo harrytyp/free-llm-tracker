@@ -124,20 +124,22 @@ def main() -> int:
     counts = latest["counts"]
     updated = latest["updated_at"]
 
-    # Attach clean benchmark data to models
-    bench_map = bench_raw.get("benchmarks", {})
+    # Attach benchmark data to models (new structure: results keyed by model id)
+    bench_raw_data = bench_raw.get("results", {})
     measured_count = 0
     for m in models:
         mid = m["id"].lower().rstrip(":free")
-        # find benchmark entry for this model
-        entry = None
-        for key, val in bench_map.items():
-            cid, _, prov = key.partition("@@")
-            if cid.lower() == mid:
-                entry = val
-                break
+        # new structure: direct id match (with or without :free)
+        entry = bench_raw_data.get(m["id"]) or bench_raw_data.get(mid)
         if entry:
-            m["speed"] = entry
+            # map to speed shape expected by UI
+            m["speed"] = {
+                "tps": entry.get("tps_median"),
+                "ttft_s": entry.get("ttft_median_s"),
+                "samples": entry.get("samples"),
+                "cost_verified": entry.get("cost_verified", False),
+                "source": entry.get("source", "own"),
+            }
             measured_count += 1
         else:
             m["speed"] = None

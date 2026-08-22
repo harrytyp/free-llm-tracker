@@ -39,16 +39,21 @@ hinzufügt, erscheinen beim nächsten Lauf automatisch — ohne manuelle Pflege.
 
 ```
 collector.py     # sammelt + joint die Quellen -> data/latest.json (+ history.jsonl)
-build_site.py    # rendert index.html aus data/latest.json
+benchmark.py     # EIGENE Messung: t/s + TTFT via OpenRouter (cost:0 verifiziert, median n>=3)
+build_site.py    # rendert index.html aus data/latest.json + benchmarks.json
 build_providers.py # aggregiert Provider-Statistiken -> data/providers.json
-.github/workflows/update.yml  # Cron: collect -> build -> commit -> Pages deploy
+.github/workflows/update.yml  # Cron: collect -> benchmark -> build -> commit -> Pages deploy
 ```
 
-## AA-Key setzen (optional, aber empfohlen)
+## Secrets (Repo Settings → Secrets and variables → Actions)
 
-GitHub Repo → Settings → Secrets and variables → Actions → New repository secret:
-`ARTIFICIAL_ANALYSIS_API_KEY`. Free Account auf [artificialanalysis.ai](https://artificialanalysis.ai/account)
-anlegen, Key generieren. Ohne Key läuft alles weiter, nur ohne Intelligence-Spalte.
+| Secret | Pflicht? | Zweck |
+|---|---|---|
+| `OPENROUTER_API_KEY` | ✅ ja | Eigene t/s-Messungen (kostet 0 für Free-Modelle, `cost:0` wird verifiziert) |
+| `ARTIFICIAL_ANALYSIS_API_KEY` | optional | Intelligence Index (Pro-Tier nötig für `/api/v2/data/llms/models`) |
+
+> Das Secret muss im **GitHub-UI** gesetzt werden (Settings → Secrets → New repository
+> secret) — ein feingranularer PAT kann Secrets nicht per API setzen (403).
 
 ## Lokal testen
 

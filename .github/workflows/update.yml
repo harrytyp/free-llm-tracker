@@ -34,7 +34,9 @@ jobs:
           ARTIFICIAL_ANALYSIS_API_KEY: ${{ secrets.ARTIFICIAL_ANALYSIS_API_KEY }}
         run: python collector.py
 
-      - name: Clean benchmarks (llm-benchmarks n>=3)
+      - name: Measure free models (own benchmark, cost:0 verified)
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: python benchmark.py
 
       - name: Build site
