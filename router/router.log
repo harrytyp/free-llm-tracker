@@ -1,0 +1,49 @@
+[router] data loaded: 517 models, 32 benchmarks
+[router] live uptime: 17 models
+[router] listening on http://127.0.0.1:8080
+[router] endpoint: POST /v1/chat/completions
+[router] health:   GET /health
+[router] models:   GET /models  (filterable data API)
+[http] 127.0.0.1 "GET /health HTTP/1.1" 200 -
+[http] 127.0.0.1 "GET /health HTTP/1.1" 200 -
+[router] ✓ nvidia/nemotron-3.5-lightning:free via openrouter (rank 1, 10540ms)
+[http] 127.0.0.1 "POST /v1/chat/completions HTTP/1.1" 200 -
+[router] data loaded: 517 models, 32 benchmarks
+[router] live uptime: 17 models
+[router] listening on http://127.0.0.1:8080
+[router] endpoint: POST /v1/chat/completions
+[router] health:   GET /health
+[router] models:   GET /models  (filterable data API)
+[http] 127.0.0.1 "GET /health HTTP/1.1" 200 -
+[http] 127.0.0.1 "GET /v1/models HTTP/1.1" 200 -
+[http] 127.0.0.1 "POST /v1/chat/completions HTTP/1.1" 500 -
+[router] ✓ nvidia/nemotron-3.5-lightning:free via openrouter (rank 1, 19479ms)
+[http] 127.0.0.1 "POST /v1/chat/completions HTTP/1.1" 200 -
+[router] data loaded: 517 models, 32 benchmarks
+[router] live uptime: 17 models
+[router] listening on http://127.0.0.1:8080
+[router] endpoint: POST /v1/chat/completions
+[router] health:   GET /health
+[router] models:   GET /models  (filterable data API)
+[http] 127.0.0.1 "GET /health HTTP/1.1" 200 -
+[router] ✓ mistral-small-latest via mistral (rank 1, 295ms)
+[http] 127.0.0.1 "POST /v1/chat/completions HTTP/1.1" 200 -
+[http] 127.0.0.1 "POST /v1/chat/completions HTTP/1.1" 500 -
+[router] data loaded: 517 models, 32 benchmarks
+[router] live uptime: 17 models
+Traceback (most recent call last):
+  File "/opt/data/projects/free-llm-tracker/router/router.py", line 681, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/opt/data/projects/free-llm-tracker/router/router.py", line 668, in main
+    server = ThreadingHTTPServer((HOST, PORT), Handler)
+  File "/usr/lib/python3.13/socketserver.py", line 457, in __init__
+    self.server_bind()
+    ~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 478, in server_bind
+    self.socket.bind(self.server_address)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 98] Address already in use

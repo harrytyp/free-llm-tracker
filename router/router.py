@@ -395,11 +395,22 @@ def pick_model(criteria: dict) -> dict:
 def route_request(body: dict, stream: bool) -> dict | None:
     """Pick model, stream to provider with AUTO-FALLBACK on failure.
 
+    model="auto" (or "mini-router/auto") → router picks per criteria (default).
+    model=<concrete id> (e.g. "openai/gpt-oss-120b") → route exactly there.
     Tries up to MAX_FALLBACKS candidates in order; on 429/5xx/connection
     error moves to the next best model.
     """
     criteria = body.get("router", {}) or {}
-    if not criteria.get("mode") and not criteria.get("model"):
+    model_field = str(body.get("model", "")).lower()
+
+    # Manual override: concrete model id (not auto) → exact routing
+    is_auto = model_field in ("auto", "mini-router/auto", "", "minirouter/auto")
+    if not is_auto:
+        # strip provider prefix if given (mini-router/auto → auto)
+        if "/" in model_field and model_field.split("/", 1)[0] in ("mini-router", "minirouter"):
+            model_field = model_field.split("/", 1)[1]
+        criteria["model"] = model_field  # exact match
+    elif not criteria.get("mode") and not criteria.get("model"):
         criteria["mode"] = "balanced"
 
     MAX_FALLBACKS = int(os.environ.get("MINI_ROUTER_MAX_FALLBACKS", "3"))
@@ -485,9 +496,37 @@ def candidate_models(criteria: dict) -> list[tuple]:
 
     if criteria.get("model"):
         mid = criteria["model"].lower()
-        for m in models:
-            if m["id"].lower() == mid:
-                return [(m, model_metrics(m))]
+        # exact matches — prefer one with available provider key
+        exact = [m for m in models if m["id"].lower() == mid]
+        if exact:
+            for m in exact:
+                pname = m.get("provider", "")
+                pcfg = PROVIDERS.get(pname)
+                if pcfg and os.environ.get(pcfg.get("key_env", ""), "").strip():
+                    return [(m, model_metrics(m))]
+            return [(exact[0], model_metrics(exact[0]))]
+        # flexible: provider/model split → match provider + model separately
+        if "/" in mid:
+            prov_part, model_part = mid.split("/", 1)
+            # collect all flexible matches, prefer one with available key
+            matches = []
+            for m in models:
+                if m["id"].lower() == model_part and m.get("provider", "").lower() == prov_part:
+                    matches.append(m)
+            for m in models:
+                if m["id"].lower() == model_part and m not in matches:
+                    matches.append(m)
+            for m in models:
+                if (m["id"].lower() == mid or m["id"].lower().endswith("/" + model_part)) and m not in matches:
+                    matches.append(m)
+            if matches:
+                # prefer provider with configured key
+                for m in matches:
+                    pname = m.get("provider", "")
+                    pcfg = PROVIDERS.get(pname)
+                    if pcfg and os.environ.get(pcfg.get("key_env", ""), "").strip():
+                        return [(m, model_metrics(m))]
+                return [(matches[0], model_metrics(matches[0]))]
         raise RuntimeError(f"model not found: {criteria['model']}")
 
     min_tps = float(criteria.get("min_tps", 0))
@@ -590,7 +629,6 @@ class Handler(BaseHTTPRequestHandler):
             self._send_json(200, {"usage": USAGE})
         elif self.path == "/models":
             # list available models with metrics (the data API)
-            # values are BENCHMARKS (historical), live status shown separately
             out = []
             for m in DATA["models"][:500]:
                 met = model_metrics(m)
@@ -598,13 +636,14 @@ class Handler(BaseHTTPRequestHandler):
                     "id": m["id"], "provider": m.get("provider", ""),
                     "free_type": m.get("free_type", ""), "free_status": m.get("free_status", ""),
                     "intel": met["intel"], "tps": met["tps"], "ttft": met["ttft"],
-                    # live availability
                     "live_uptime": LIVE["uptime"].get(m["id"]),
                     "cooldown": int(COOLDOWN.get(m["id"], 0) - time.time()) if in_cooldown(m["id"]) else 0,
-                    "note": "tps/intel sind 30-Tage-Benchmarks, kein Live-Wert"
-                             if met["tps"] else None,
                 })
             self._send_json(200, {"models": out})
+        elif self.path in ("/v1/models", "/api/v1/models"):
+            # OpenAI-format model list (Hermes provider detection)
+            ids = ["auto"] + [m["id"] for m in DATA["models"][:300]]
+            self._send_json(200, {"object": "list", "data": [{"id": i, "object": "model"} for i in ids]})
         else:
             self._send_json(404, {"error": "not found"})
 
