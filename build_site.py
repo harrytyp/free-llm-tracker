@@ -1,18 +1,13 @@
 #!/usr/bin/env python3
-"""Render a modern, USABLE static site from data/latest.json + data/benchmarks.json.
+"""Render the Free LLM Tracker using the Sentry design system (data-dense dashboard).
 
-Design decisions (Kolja: "Seite ist unbenutzbar, absoluter Müll"):
-  - CARDS grouped by provider (not one giant table) — scannable
-  - Measured models FIRST, then unmeasured
-  - Big clear speed numbers, free-status badges, provider detail
-  - Search + provider filter + free-type filter
-  - Mobile-first, dark, professional
+Per Kolja: cards are wrong for large lists; needs a real filterable TABLE
+with mobile support. Sentry = dark data-dense dashboard aesthetic.
 """
 from __future__ import annotations
 
 import html
 import json
-from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -28,116 +23,87 @@ def provider_link(provider: str, model_id: str) -> str:
     base = model_id[:-5] if model_id.endswith(":free") else model_id
     links = {
         "openrouter": f"https://openrouter.ai/{base}",
-        "deepseek": "https://platform.deepseek.com",
-        "google": "https://ai.google.dev",
-        "anthropic": "https://www.anthropic.com/api",
-        "openai": "https://platform.openai.com",
-        "groq": "https://console.groq.com",
-        "cerebras": "https://cloud.cerebras.ai",
-        "sambanova": "https://cloud.sambanova.ai",
-        "fireworks": "https://fireworks.ai",
-        "together": "https://www.together.ai",
-        "nvidia": "https://build.nvidia.com",
-        "deepinfra": "https://deepinfra.com",
-        "siliconflow": "https://siliconflow.cn",
-        "hyperbolic": "https://hyperbolic.xyz",
-        "novita": "https://novita.ai",
-        "chutes": "https://chutes.ai",
-        "github-models": "https://github.com/marketplace/models",
-        "vertex": "https://cloud.google.com/vertex-ai",
-        "bedrock": "https://aws.amazon.com/bedrock",
-        "ollama": "https://ollama.com",
-        "puter": "https://puter.com",
-        "pollinations": "https://pollinations.ai",
-        "huggingchat": "https://huggingface.co/chat",
-        "mistral": "https://mistral.ai",
-        "cohere": "https://cohere.com",
+        "deepseek": "https://platform.deepseek.com", "google": "https://ai.google.dev",
+        "anthropic": "https://www.anthropic.com/api", "openai": "https://platform.openai.com",
+        "groq": "https://console.groq.com", "cerebras": "https://cloud.cerebras.ai",
+        "sambanova": "https://cloud.sambanova.ai", "fireworks": "https://fireworks.ai",
+        "together": "https://www.together.ai", "nvidia": "https://build.nvidia.com",
+        "deepinfra": "https://deepinfra.com", "siliconflow": "https://siliconflow.cn",
+        "hyperbolic": "https://hyperbolic.xyz", "novita": "https://novita.ai",
+        "chutes": "https://chutes.ai", "github-models": "https://github.com/marketplace/models",
+        "vertex": "https://cloud.google.com/vertex-ai", "bedrock": "https://aws.amazon.com/bedrock",
+        "ollama": "https://ollama.com", "puter": "https://puter.com",
+        "pollinations": "https://pollinations.ai", "huggingchat": "https://huggingface.co/chat",
+        "mistral": "https://mistral.ai", "cohere": "https://cohere.com",
     }
-    if provider in links:
-        return links[provider]
-    return f"https://openrouter.ai/{base}"
+    return links.get(provider, f"https://openrouter.ai/{base}")
 
 
 def provider_link_plain(provider: str) -> str:
     links = {
-        "openrouter": "https://openrouter.ai",
-        "deepseek": "https://platform.deepseek.com",
-        "google": "https://ai.google.dev",
-        "anthropic": "https://www.anthropic.com/api",
-        "openai": "https://platform.openai.com",
-        "groq": "https://console.groq.com",
-        "cerebras": "https://cloud.cerebras.ai",
-        "sambanova": "https://cloud.sambanova.ai",
-        "fireworks": "https://fireworks.ai",
-        "together": "https://www.together.ai",
-        "nvidia": "https://build.nvidia.com",
-        "deepinfra": "https://deepinfra.com",
-        "siliconflow": "https://siliconflow.cn",
-        "hyperbolic": "https://hyperbolic.xyz",
-        "novita": "https://novita.ai",
-        "chutes": "https://chutes.ai",
+        "openrouter": "https://openrouter.ai", "deepseek": "https://platform.deepseek.com",
+        "google": "https://ai.google.dev", "anthropic": "https://www.anthropic.com/api",
+        "openai": "https://platform.openai.com", "groq": "https://console.groq.com",
+        "cerebras": "https://cloud.cerebras.ai", "sambanova": "https://cloud.sambanova.ai",
+        "fireworks": "https://fireworks.ai", "together": "https://www.together.ai",
+        "nvidia": "https://build.nvidia.com", "deepinfra": "https://deepinfra.com",
+        "siliconflow": "https://siliconflow.cn", "hyperbolic": "https://hyperbolic.xyz",
+        "novita": "https://novita.ai", "chutes": "https://chutes.ai",
         "github-models": "https://github.com/marketplace/models",
-        "vertex": "https://cloud.google.com/vertex-ai",
-        "bedrock": "https://aws.amazon.com/bedrock",
-        "ollama": "https://ollama.com",
-        "puter": "https://puter.com",
-        "pollinations": "https://pollinations.ai",
-        "huggingchat": "https://huggingface.co/chat",
-        "mistral": "https://mistral.ai",
-        "cohere": "https://cohere.com",
+        "vertex": "https://cloud.google.com/vertex-ai", "bedrock": "https://aws.amazon.com/bedrock",
+        "ollama": "https://ollama.com", "puter": "https://puter.com",
+        "pollinations": "https://pollinations.ai", "huggingchat": "https://huggingface.co/chat",
+        "mistral": "https://mistral.ai", "cohere": "https://cohere.com",
     }
     return links.get(provider, f"https://www.google.com/search?q={provider}+AI+API")
 
 
 _FREE_TAGS = {
-    "recurring-monthly": ("monatlich", "#3fb950"),
-    "recurring-daily": ("täglich", "#58a6ff"),
+    "recurring-monthly": ("monatlich", "#c2ef4e"),
+    "recurring-daily": ("täglich", "#6a5fc1"),
     "keyless": ("keylos", "#d29922"),
-    "recurring-uncapped": ("uncapped", "#8b949e"),
-    "one-time-initial": ("einmalig", "#a371f7"),
-    "recurring-credit": ("credit", "#f0883e"),
+    "recurring-uncapped": ("uncapped", "#e5e7eb"),
+    "one-time-initial": ("einmalig", "#fa7faa"),
+    "recurring-credit": ("credit", "#ffb287"),
 }
 
 _STATUS = {
-    "verified-free": ("✓ free verifiziert", "#3fb950"),
-    "deprecated-not-on-openrouter": ("⚠️ deprecated", "#f85149"),
+    "verified-free": ("✓ verifiziert", "#c2ef4e"),
     "unverified": ("❓ unverifiziert", "#d29922"),
 }
 
 
-def model_card(m: dict) -> str:
+def row_html(m: dict) -> str:
     sp = m.get("speed") or {}
     tps = sp.get("tps")
     ttft = sp.get("ttft_s")
     prov = m.get("provider", "")
     mid = m["id"]
-    name = m.get("name", mid)
 
-    # Speed display
     if tps is not None:
-        speed_html = f'<div class="speed"><b>{tps:g}</b><span>t/s</span></div>'
-        if ttft is not None:
-            speed_html += f'<div class="ttft">TTFT {ttft:g}s</div>'
+        tps_cell = f'<td class="num tps"><b>{tps:g}</b></td>'
     else:
-        speed_html = '<div class="speed none">–</div><div class="ttft">keine Messung</div>'
+        tps_cell = '<td class="num dim">–</td>'
+    ttft_cell = f'<td class="num">{ttft:g}s</td>' if ttft is not None else '<td class="num dim">–</td>'
 
-    # Provider list for AA models
-    prov_detail = ""
+    ftype = _FREE_TAGS.get(m.get("free_type", ""), (m.get("free_type", "?"), "#e5e7eb"))
+    status = _STATUS.get(m.get("free_status", "unverified"), ("❓", "#d29922"))
+
+    # provider chips for AA data
+    prov_chips = ""
     if sp.get("providers"):
-        top = sp["providers"][:3]
-        prov_detail = '<div class="providers">' + "".join(
-            f'<span class="prov-chip">{esc(p["provider"])} <b>{p["tps"]:g}</b> t/s</span>'
-            for p in top if p.get("tps")
-        ) + "</div>"
-
-    ftype = _FREE_TAGS.get(m.get("free_type", ""), (m.get("free_type", "?"), "#8b949e"))
-    status = _STATUS.get(m.get("free_status", "unverified"), ("❓", "#8b949e"))
+        tops = sp["providers"][:2]
+        prov_chips = '<span class="chips">' + "".join(
+            f'<span class="chip">{esc(p["provider"])} <b>{p["tps"]:g}</b></span>'
+            for p in tops if p.get("tps")) + '</span>'
 
     ctx = m.get("context_length")
-    ctx_html = ""
+    ctx_cell = ""
     if ctx:
         n = float(ctx)
-        ctx_html = f'<span class="ctx">{n/1e6:.0f}M</span>' if n >= 1e6 else f'<span class="ctx">{n/1e3:.0f}k</span>'
+        ctx_cell = f'<td class="num">{n/1e6:.1f}M</td>' if n >= 1e6 else f'<td class="num">{n/1e3:.0f}k</td>'
+    else:
+        ctx_cell = '<td class="num dim">–</td>'
 
     budget = ""
     if m.get("monthly_tokens") or m.get("credit_tokens"):
@@ -146,27 +112,18 @@ def model_card(m: dict) -> str:
             parts.append(f'{m["monthly_tokens"]:,}'.replace(",", "."))
         if m.get("credit_tokens"):
             parts.append(f'+{m["credit_tokens"]:,}'.replace(",", "."))
-        budget = f'<span class="budget">{"/".join(parts)}</span>'
+        budget = " / ".join(parts)
 
-    return f"""<div class="card" data-id="{esc(mid.lower())}" data-provider="{esc(prov.lower())}" data-ftype="{esc(m.get('free_type',''))}" data-name="{esc(name.lower())}">
-  <div class="card-top">
-    <div class="card-title">
-      <a href="{esc(provider_link(prov, mid))}" target="_blank" rel="noopener">{esc(mid)}</a>
-      <span class="ftype" style="color:{ftype[1]}">{esc(ftype[0])}</span>
-      <span class="status" style="color:{status[1]}">{esc(status[0])}</span>
-      {ctx_html}
-      {budget}
-    </div>
-    <div class="card-provider">
-      <a href="{esc(provider_link_plain(prov))}" target="_blank" rel="noopener">{esc(prov)}</a>
-    </div>
-  </div>
-  <div class="card-body">
-    {speed_html}
-    {prov_detail}
-    <div class="card-name">{esc(name)}</div>
-  </div>
-</div>"""
+    return f"""<tr class="mrow" data-id="{esc(mid.lower())}" data-provider="{esc(prov.lower())}" data-ftype="{esc(m.get('free_type',''))}" data-status="{esc(m.get('free_status','unverified'))}" data-tps="{tps if tps is not None else ''}">
+  <td class="model"><a href="{esc(provider_link(prov, mid))}" target="_blank" rel="noopener">{esc(mid)}</a>{prov_chips}</td>
+  <td><a class="prov-link" href="{esc(provider_link_plain(prov))}" target="_blank" rel="noopener">{esc(prov)}</a></td>
+  <td><span class="tag" style="color:{ftype[1]}">{esc(ftype[0])}</span></td>
+  <td><span class="tag" style="color:{status[1]}">{esc(status[0])}</span></td>
+  {tps_cell}
+  {ttft_cell}
+  {ctx_cell}
+  <td class="num dim">{budget}</td>
+</tr>"""
 
 
 def main() -> int:
@@ -177,7 +134,6 @@ def main() -> int:
     updated = latest["updated_at"]
 
     bench_raw_data = bench_raw.get("results", {})
-    # llm-benchmarks provider summary (30-day measurements)
     llmbench = (bench_raw_data.get("__llmbench") or {}).get("providers", {}) if bench_raw_data.get("__llmbench") else {}
     for m in models:
         mid = m["id"].lower().rstrip(":free")
@@ -196,46 +152,26 @@ def main() -> int:
                 m["speed"] = None
         else:
             m["speed"] = None
-        # llm-benchmarks fallback: match by model basename
         if not (m["speed"] or {}).get("tps"):
             base = mid.split("/")[-1].replace(".", "-").replace("_", "-")
-            # try direct and normalized match
             for key, val in llmbench.items():
                 if base in key or key in base:
-                    m["speed"] = {"tps": val.get("tps"), "ttft_s": (val.get("ttft_ms") or 0) / 1000 if val.get("ttft_ms") else None,
+                    m["speed"] = {"tps": val.get("tps"),
+                                  "ttft_s": (val.get("ttft_ms") or 0) / 1000 if val.get("ttft_ms") else None,
                                   "source": f"llmbench-{val.get('provider')}"}
                     break
 
-    # Group by provider, sort providers by measured count desc
-    by_prov = defaultdict(list)
-    for m in models:
-        by_prov[m.get("provider", "?")].append(m)
-    for p in by_prov:
-        by_prov[p].sort(key=lambda x: (0 if (x.get("speed") or {}).get("tps") else 1,
-                                       -(x["speed"]["tps"] if (x.get("speed") or {}).get("tps") else 0),
-                                       x["id"]))
-    providers_sorted = sorted(by_prov.items(),
-                              key=lambda kv: sum(1 for m in kv[1] if (m.get("speed") or {}).get("tps")),
-                              reverse=True)
+    # Sort: measured first, then tps desc
+    models.sort(key=lambda x: (0 if (x.get("speed") or {}).get("tps") else 1,
+                               -(x["speed"]["tps"] if (x.get("speed") or {}).get("tps") else 0),
+                               x["id"]))
 
-    # HTML sections per provider
-    sections = []
-    for prov, ms in providers_sorted:
-        measured = sum(1 for m in ms if (m.get("speed") or {}).get("tps"))
-        cards = "".join(model_card(m) for m in ms)
-        sections.append(f"""<section class="provider-group" data-provider="{esc(prov.lower())}">
-  <h2 class="provider-head">
-    <a href="{esc(provider_link_plain(prov))}" target="_blank" rel="noopener">{esc(prov)}</a>
-    <span class="count">{len(ms)} Modelle</span>
-    <span class="count measured">📊 {measured} gemessen</span>
-  </h2>
-  <div class="card-grid">{cards}</div>
-</section>""")
-    sections_html = "\n".join(sections)
+    rows = "\n".join(row_html(m) for m in models)
+    providers = sorted({m.get("provider", "") for m in models})
+    provider_opts = "".join(f'<option value="{esc(p.lower())}">{esc(p)}</option>' for p in providers)
 
     total_measured = sum(1 for m in models if (m.get("speed") or {}).get("tps"))
     verified = sum(1 for m in models if m.get("free_status") == "verified-free")
-
     generated = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     page = f"""<!DOCTYPE html>
@@ -244,63 +180,59 @@ def main() -> int:
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Free LLM Tracker — {counts['free_models']} Free-Modelle</title>
-<meta name="description" content="Alle Free LLM-API-Modelle mit gemessenen t/s, Free-Status und Provider-Statistiken. Automatisch aktualisiert.">
+<meta name="description" content="Alle Free LLM-API-Modelle: gemessene t/s, TTFT, Kontext, Provider. Filterbar, sortierbar, mobil. Automatisch aktualisiert.">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {{
-  --bg:#0a0e14; --bg2:#111720; --bg3:#1a2230; --border:#243044;
-  --fg:#e6edf3; --dim:#8b98a8; --accent:#58a6ff; --ok:#3fb950; --warn:#d29922; --danger:#f85149;
+  --bg:#1f1633; --bg2:#150f23; --bg3:#2a2145; --border:#362d59;
+  --fg:#ffffff; --fg2:#e5e7eb; --dim:#9a8fb8; --accent:#6a5fc1;
+  --lime:#c2ef4e; --pink:#fa7faa; --coral:#ffb287; --warn:#d29922;
 }}
 * {{ box-sizing:border-box; margin:0; padding:0; }}
-body {{ background:var(--bg); color:var(--fg); font:15px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif; }}
-.wrap {{ max-width:1400px; margin:0 auto; padding:20px; }}
-header {{ display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; margin-bottom:20px; }}
-h1 {{ font-size:26px; font-weight:700; }}
-h1 span {{ color:var(--accent); }}
+body {{ background:var(--bg); color:var(--fg); font-family:'Rubik',system-ui,sans-serif; font-size:15px; line-height:1.5; }}
+.wrap {{ max-width:1400px; margin:0 auto; padding:24px 20px 60px; }}
+header {{ display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; margin-bottom:20px; }}
+h1 {{ font-size:26px; font-weight:600; }}
+h1 span {{ color:var(--lime); }}
 .sub {{ color:var(--dim); font-size:13px; margin-top:2px; }}
-.stats {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:10px; margin-bottom:16px; }}
-.stat {{ background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:12px 14px; }}
-.stat b {{ display:block; font-size:22px; color:#fff; }}
-.stat span {{ color:var(--dim); font-size:12px; }}
-.controls {{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px; position:sticky; top:0; background:var(--bg); padding:8px 0; z-index:10; }}
-.search {{ flex:1; min-width:200px; background:var(--bg2); border:1px solid var(--border); border-radius:10px; padding:10px 14px; color:var(--fg); font-size:14px; }}
-.search:focus {{ outline:none; border-color:var(--accent); }}
-select, .btn {{ background:var(--bg2); border:1px solid var(--border); border-radius:10px; padding:10px 14px; color:var(--fg); font-size:13px; cursor:pointer; }}
-select:focus {{ outline:none; border-color:var(--accent); }}
-.btn:hover {{ border-color:var(--accent); }}
-.provider-group {{ margin-bottom:28px; }}
-.provider-head {{ display:flex; align-items:center; gap:12px; margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid var(--border); }}
-.provider-head a {{ color:var(--fg); text-decoration:none; font-size:18px; font-weight:600; }}
-.provider-head a:hover {{ color:var(--accent); }}
-.count {{ color:var(--dim); font-size:12px; background:var(--bg2); border-radius:10px; padding:2px 8px; }}
-.count.measured {{ color:var(--accent); }}
-.card-grid {{ display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:10px; }}
-.card {{ background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:14px; transition:border-color .15s; }}
-.card:hover {{ border-color:var(--accent); }}
-.card-top {{ display:flex; justify-content:space-between; align-items:flex-start; gap:8px; }}
-.card-title a {{ color:var(--fg); text-decoration:none; font-weight:600; font-size:14px; word-break:break-all; }}
-.card-title a:hover {{ color:var(--accent); }}
-.ftype, .status, .ctx, .budget {{ display:inline-block; font-size:10px; border-radius:8px; padding:1px 6px; margin-left:4px; background:var(--bg3); }}
-.ctx {{ color:var(--dim); }}
-.budget {{ color:var(--dim); }}
-.card-provider a {{ color:var(--dim); text-decoration:none; font-size:12px; white-space:nowrap; }}
-.card-provider a:hover {{ color:var(--accent); }}
-.card-body {{ margin-top:10px; display:flex; flex-direction:column; gap:6px; }}
-.speed {{ font-size:22px; }}
-.speed b {{ font-size:28px; color:var(--ok); }}
-.speed span {{ color:var(--dim); font-size:13px; margin-left:4px; }}
-.speed.none {{ color:var(--dim); font-size:22px; }}
-.ttft {{ color:var(--dim); font-size:12px; }}
-.providers {{ display:flex; flex-wrap:wrap; gap:4px; margin-top:4px; }}
-.prov-chip {{ background:var(--bg3); border-radius:8px; padding:2px 8px; font-size:11px; color:var(--dim); }}
-.prov-chip b {{ color:var(--fg); }}
-.card-name {{ color:var(--dim); font-size:12px; }}
-.empty {{ text-align:center; color:var(--dim); padding:60px; font-size:16px; }}
-footer {{ margin-top:30px; color:var(--dim); font-size:12px; text-align:center; }}
+.stats {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:10px; margin-bottom:18px; }}
+.stat {{ background:var(--bg3); border:1px solid var(--border); border-radius:10px; padding:12px 14px; }}
+.stat b {{ display:block; font-size:22px; font-weight:600; }}
+.stat span {{ color:var(--dim); font-size:12px; text-transform:uppercase; letter-spacing:0.2px; }}
+.controls {{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; position:sticky; top:0; background:var(--bg); padding:10px 0; z-index:10; border-bottom:1px solid var(--border); }}
+.search {{ flex:1; min-width:200px; background:var(--bg3); border:1px solid var(--border); border-radius:8px; padding:10px 14px; color:var(--fg); font-family:inherit; font-size:14px; }}
+.search:focus, select:focus {{ outline:none; border-color:var(--accent); }}
+select {{ background:var(--bg3); border:1px solid var(--border); border-radius:8px; padding:10px 12px; color:var(--fg); font-family:inherit; font-size:13px; cursor:pointer; }}
+.btn {{ background:var(--accent); border:none; border-radius:8px; padding:10px 16px; color:#fff; font-family:inherit; font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.2px; cursor:pointer; }}
+.btn:hover {{ background:#7b6fd4; }}
+.table-wrap {{ overflow-x:auto; border-radius:10px; border:1px solid var(--border); background:var(--bg2); }}
+table {{ width:100%; border-collapse:collapse; min-width:820px; }}
+th {{ background:var(--bg3); color:var(--dim); font-size:12px; text-transform:uppercase; letter-spacing:0.3px; font-weight:600; padding:12px 14px; text-align:left; cursor:pointer; user-select:none; white-space:nowrap; }}
+th:hover {{ color:var(--lime); }}
+th .arr {{ font-size:9px; opacity:0; }}
+th.sorted .arr {{ opacity:1; color:var(--lime); }}
+td {{ padding:10px 14px; border-top:1px solid var(--border); font-size:13.5px; vertical-align:middle; }}
+tbody tr:hover {{ background:var(--bg3); }}
+td.model a {{ color:var(--fg); text-decoration:none; font-weight:500; }}
+td.model a:hover {{ color:var(--lime); }}
+.prov-link {{ color:var(--dim); text-decoration:none; }}
+.prov-link:hover {{ color:var(--accent); }}
+.num {{ text-align:right; font-family:'JetBrains Mono',monospace; font-variant-numeric:tabular-nums; }}
+.tps b {{ color:var(--lime); font-size:16px; }}
+.dim {{ color:var(--dim); }}
+.tag {{ display:inline-block; font-size:11px; font-weight:500; border-radius:8px; padding:2px 8px; background:var(--bg3); white-space:nowrap; }}
+.chips {{ display:block; margin-top:4px; }}
+.chip {{ display:inline-block; font-size:10px; color:var(--dim); background:var(--bg3); border-radius:6px; padding:1px 6px; margin-right:3px; white-space:nowrap; }}
+.chip b {{ color:var(--fg); }}
+.empty {{ text-align:center; color:var(--dim); padding:50px; }}
+footer {{ margin-top:24px; color:var(--dim); font-size:12px; text-align:center; }}
 footer a {{ color:var(--accent); }}
 @media (max-width:700px) {{
-  .card-grid {{ grid-template-columns:1fr; }}
   .wrap {{ padding:12px; }}
   h1 {{ font-size:20px; }}
+  .stats {{ grid-template-columns:repeat(2,1fr); }}
+  td, th {{ padding:8px 10px; font-size:12px; }}
+  .controls {{ position:static; }}
 }}
 </style>
 </head>
@@ -309,21 +241,21 @@ footer a {{ color:var(--accent); }}
 <header>
   <div>
     <h1>Free LLM <span>Tracker</span></h1>
-    <p class="sub">Alle kostenlosen LLM-API-Modelle · gemessene t/s · Free-Status · automatisch aktualisiert</p>
+    <p class="sub">Alle kostenlosen LLM-API-Modelle · gemessene t/s · Free-Status · sortierbar &amp; filterbar</p>
   </div>
   <a class="btn" href="https://github.com/harrytyp/free-llm-tracker" target="_blank" rel="noopener">GitHub ↗</a>
 </header>
 
 <div class="stats">
   <div class="stat"><b>{counts['free_models']}</b><span>Free-Modelle</span></div>
-  <div class="stat"><b>{total_measured}</b><span>mit gemessenen t/s</span></div>
-  <div class="stat"><b>{verified}</b><span>free verifiziert</span></div>
+  <div class="stat"><b>{total_measured}</b><span>mit t/s</span></div>
+  <div class="stat"><b>{verified}</b><span>verifiziert free</span></div>
   <div class="stat"><b>{updated[11:16]} UTC</b><span>Stand {updated[:10]}</span></div>
 </div>
 
 <div class="controls">
-  <input class="search" id="search" placeholder="Suchen: Modell, Provider…">
-  <select id="provider-filter"><option value="">Alle Provider</option></select>
+  <input class="search" id="search" placeholder="Suchen: Modell, Provider, Kontext…">
+  <select id="provider-filter"><option value="">Alle Provider ({len(providers)})</option>{provider_opts}</select>
   <select id="status-filter">
     <option value="">Alle Status</option>
     <option value="verified-free">✓ Verifiziert</option>
@@ -331,65 +263,126 @@ footer a {{ color:var(--accent); }}
   </select>
   <select id="measured-filter">
     <option value="">Alle Modelle</option>
-    <option value="measured">Nur gemessene</option>
-    <option value="unmeasured">Nur ohne Messung</option>
+    <option value="measured">Nur mit t/s</option>
+    <option value="unmeasured">Nur ohne t/s</option>
   </select>
+  <button class="btn" id="csv">CSV</button>
 </div>
 
-<div id="content">
-{sections_html}
+<div class="table-wrap">
+<table id="tbl">
+<thead>
+<tr>
+  <th data-k="id">Modell <span class="arr">▲▼</span></th>
+  <th data-k="provider">Provider <span class="arr">▲▼</span></th>
+  <th data-k="ftype">Free-Typ <span class="arr">▲▼</span></th>
+  <th data-k="status">Status <span class="arr">▲▼</span></th>
+  <th data-k="tps" class="num">t/s <span class="arr">▲▼</span></th>
+  <th data-k="ttft" class="num">TTFT <span class="arr">▲▼</span></th>
+  <th data-k="ctx" class="num">Kontext <span class="arr">▲▼</span></th>
+  <th class="num">Budget</th>
+</tr>
+</thead>
+<tbody id="tbody">
+{rows}
+</tbody>
+</table>
 </div>
-
 <div class="empty" id="empty" style="display:none">Keine Modelle gefunden.</div>
 
 <footer>
-  <p>Quellen: OmniRoute free-catalog · OpenRouter · Artificial Analysis Provider-Benchmarks · llm-benchmarks.com</p>
-  <p><a href="https://github.com/harrytyp/free-llm-tracker">Quellcode</a> · Entwickelt von harrytyp</p>
+  <p>Quellen: OmniRoute free-catalog · OpenRouter · Artificial Analysis · llm-benchmarks.com · <a href="https://github.com/harrytyp/free-llm-tracker">Quellcode</a></p>
 </footer>
 </div>
 
 <script>
-function filterModels() {{
+const ROWS = document.getElementById('tbody');
+let sortK = null, sortDir = 1;
+
+function getVal(tr, k) {{
+  switch(k) {{
+    case 'tps': {{
+      const b = tr.querySelector('.tps b');
+      return b ? parseFloat(b.textContent) : -1;
+    }}
+    case 'ttft': {{
+      const cells = tr.querySelectorAll('td');
+      const t = cells[5] ? cells[5].textContent.replace('s','') : '';
+      return t && t !== '–' ? parseFloat(t) : 9999;
+    }}
+    case 'ctx': {{
+      const c = tr.querySelectorAll('td')[6];
+      const t = c ? c.textContent : '';
+      if (!t || t === '–') return 0;
+      if (t.endsWith('M')) return parseFloat(t) * 1e6;
+      return parseFloat(t) * 1e3;
+    }}
+    default: return tr.dataset[k] || '';
+  }}
+}}
+
+function apply() {{
   const q = document.getElementById('search').value.toLowerCase().trim();
-  const prov = document.getElementById('provider-filter').value.toLowerCase();
+  const prov = document.getElementById('provider-filter').value;
   const status = document.getElementById('status-filter').value;
   const measured = document.getElementById('measured-filter').value;
-
-  // Populate provider dropdown on load
-  if (document.getElementById('provider-filter').options.length === 1) {{
-    const provs = new Set();
-    document.querySelectorAll('.provider-group').forEach(s => provs.add(s.dataset.provider));
-    [...provs].sort().forEach(p => {{
-      const opt = document.createElement('option');
-      opt.value = p; opt.textContent = p;
-      document.getElementById('provider-filter').appendChild(opt);
-    }});
-  }}
-
   let visible = 0;
-  document.querySelectorAll('.provider-group').forEach(section => {{
-    const sProv = section.dataset.provider;
-    if (prov && sProv !== prov) {{ section.style.display = 'none'; return; }}
-    let sectionVisible = false;
-    section.querySelectorAll('.card').forEach(card => {{
-      const text = (card.dataset.id + ' ' + card.dataset.name + ' ' + card.dataset.provider).toLowerCase();
-      const matchesQ = !q || text.includes(q);
-      const matchesStatus = !status || card.dataset.status === status;
-      const hasTps = card.querySelector('.speed b') !== null;
-      const matchesMeasured = !measured || (measured === 'measured' && hasTps) || (measured === 'unmeasured' && !hasTps);
-      const show = matchesQ && matchesStatus && matchesMeasured;
-      card.style.display = show ? '' : 'none';
-      if (show) {{ sectionVisible = true; visible++; }}
-    }});
-    section.style.display = sectionVisible ? '' : 'none';
+
+  [...ROWS.querySelectorAll('.mrow')].forEach(tr => {{
+    const id = (tr.dataset.id + ' ' + tr.dataset.provider).toLowerCase();
+    const okQ = !q || id.includes(q);
+    const okP = !prov || tr.dataset.provider === prov;
+    const okS = !status || tr.dataset.status === status;
+    const hasTps = tr.dataset.tps !== '';
+    const okM = !measured || (measured === 'measured' && hasTps) || (measured === 'unmeasured' && !hasTps);
+    tr.style.display = okQ && okP && okS && okM ? '' : 'none';
+    if (okQ && okP && okS && okM) visible++;
   }});
   document.getElementById('empty').style.display = visible ? 'none' : 'block';
+  // update visible count
+  const rows = [...ROWS.querySelectorAll('.mrow')].filter(t => t.style.display !== 'none');
+  if (sortK) {{
+    rows.sort((a,b) => {{
+      const va = getVal(a, sortK), vb = getVal(b, sortK);
+      if (typeof va === 'string' || typeof vb === 'string') return va.localeCompare(vb) * sortDir;
+      return (va - vb) * sortDir;
+    }});
+    rows.forEach(t => ROWS.appendChild(t));
+  }}
 }}
-document.getElementById('search').addEventListener('input', filterModels);
-document.getElementById('provider-filter').addEventListener('change', filterModels);
-document.getElementById('status-filter').addEventListener('change', filterModels);
-document.getElementById('measured-filter').addEventListener('change', filterModels);
-filterModels();
+
+document.querySelectorAll('th').forEach(th => {{
+  th.addEventListener('click', () => {{
+    const k = th.dataset.k;
+    if (!k) return;
+    if (sortK === k) sortDir *= -1;
+    else {{ sortK = k; sortDir = (k === 'tps' || k === 'ttft' || k === 'ctx') ? -1 : 1; }}
+    document.querySelectorAll('th').forEach(t => t.classList.toggle('sorted', t === th));
+    apply();
+  }});
+}});
+document.getElementById('search').addEventListener('input', apply);
+document.getElementById('provider-filter').addEventListener('change', apply);
+document.getElementById('status-filter').addEventListener('change', apply);
+document.getElementById('measured-filter').addEventListener('change', apply);
+document.getElementById('csv').addEventListener('click', () => {{
+  const lines = [['id','provider','free_type','free_status','tps','ttft_s','context_length'].join(',')];
+  [...ROWS.querySelectorAll('.mrow')].forEach(tr => {{
+    const cells = tr.querySelectorAll('td');
+    const id = cells[0].textContent.trim().split('\\n')[0];
+    const prov = cells[1].textContent.trim();
+    const ft = cells[2].textContent.trim();
+    const st = cells[3].textContent.trim();
+    const tps = cells[4].textContent.trim();
+    const ttft = cells[5].textContent.trim();
+    const ctx = cells[6].textContent.trim();
+    lines.push([id, prov, ft, st, tps, ttft, ctx].join(','));
+  }});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([lines.join('\\n')], {{type:'text/csv'}}));
+  a.download = 'free-llm-models.csv'; a.click();
+}});
+apply();
 </script>
 </body>
 </html>
