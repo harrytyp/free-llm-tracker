@@ -400,14 +400,9 @@ def main() -> int:
     if hist_path.exists():
         lines = [l for l in hist_path.read_text().splitlines() if l.strip()]
     lines.append(line)
+    # prune: keep only last 90 days + last 2000 runs
     cutoff = (now - timedelta(days=HISTORY_MAX_DAYS)).strftime("%Y-%m-%d")
-    kept = []
-    for l in lines:
-        ts = l[:40]
-        if f'"ts":"{cutoff}' <= ts[:12 + len(cutoff)] or True:  # cheap guard; real prune below
-            kept.append(l)
-    # real prune by date prefix
-    kept = [l for l in lines if l[6:16] >= cutoff][:HISTORY_KEEP_RUNS]
+    kept = [l for l in lines if l[6:16] >= cutoff][-HISTORY_KEEP_RUNS:]
     hist_path.write_text("\n".join(kept) + "\n")
 
     (DATA / "latest.json").write_text(json.dumps(snapshot, indent=1))

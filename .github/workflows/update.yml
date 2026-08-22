@@ -37,6 +37,9 @@ jobs:
       - name: Build site
         run: python build_site.py
 
+      - name: Build provider stats
+        run: python build_providers.py
+
       - name: Commit updated data (if changed)
         run: |
           git config user.name "free-llm-tracker bot"
