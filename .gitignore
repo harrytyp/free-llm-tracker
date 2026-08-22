@@ -1,6 +1,3 @@
 # Build-Artefakte
-index.html
-data/latest.json
-data/history.jsonl
 __pycache__/
 .venv/
