@@ -46,7 +46,7 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "data update $(date -u +%Y-%m-%dT%H:%MZ)"
-            git push
+            git push origin HEAD:main
           fi
 
       - name: Setup Pages
@@ -55,7 +55,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: index.html
 
       - name: Deploy to GitHub Pages
         id: deployment

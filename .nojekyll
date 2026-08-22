@@ -1,0 +1,2 @@
+# Disable Jekyll so GitHub Pages serves our static index.html verbatim.
+# Without this file, Pages runs Jekyll and renders a default theme instead.
