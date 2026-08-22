@@ -5,7 +5,9 @@
 - **Keys nur aus Env**: Niemals Keys im Code/Repo. Env-Vars: OPENROUTER_API_KEY, GROQ_API_KEY, ...
 - **Data Source**: free-llm-tracker GitHub Pages (latest.json + benchmarks.json), 1h Cache, /refresh zum Neuladen.
 - **Routing**: Kriterien im Request-Body unter `router` (mode, min_tps, min_intel, provider, model).
-- **Auto-Fallback**: Bei 429/5xx/Fehler nächsten Kandidaten probieren (MAX_FALLBACKS, default 3).
+- **Auto-Fallback**: Bei 429/5xx/Fehler nächsten Kandidaten probieren (MAX_FALLBACKS, default 8).
+- **Ranking**: Intelligenz (Qualität) + Nutzungsdaten (ok/fail/Latenz aus echten Requests) + Provider-Key-Bonus.
+- **Single-User**: deterministisch bestes Modell, kein Load-Spreading.
 - **Verifikationsregel**: Nach Änderung immer lokalen Start + echten Chat-Completion testen (wie "Hello"-Test).
 
 ## Stand (2026-08-22)

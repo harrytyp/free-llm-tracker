@@ -137,6 +137,7 @@ COOLDOWN_SECONDS = int(os.environ.get("MINI_ROUTER_COOLDOWN", "600"))  # 10 min
 # Live uptime snapshot from OpenRouter endpoints API (model_id -> uptime)
 LIVE: dict[str, dict] = {"uptime": {}, "fetched_at": 0}
 LIVE_TTL = int(os.environ.get("MINI_ROUTER_LIVE_TTL", "600"))  # 10 min live cache
+MAX_FALLBACKS_DEFAULT = 8  # OpenRouter free tier is often rate-limited; try more
 
 # USAGE STATS (learned from real requests, NOT benchmarks):
 # model_id -> {"ok": n, "fail": n, "latency_ms": [..], "last_ok": epoch}
@@ -362,6 +363,14 @@ def pick_model(criteria: dict) -> dict:
             return 2
         return 1
 
+    # Providers with a configured key are more reliable (own quota, not shared
+    # OpenRouter free pool). Give their models a small availability bonus.
+    def provider_bonus(m) -> float:
+        pname = m.get("provider", "")
+        pcfg = PROVIDERS.get(pname)
+        if pcfg and os.environ.get(pcfg.get("key_env", ""), "").strip():
+            return -0.5  # prefer key-backed providers (own rate limits)
+        return 0.0
     def median_latency(mid: str):
         u = USAGE.get(mid)
         if not u or not u.get("latency_ms"):
@@ -385,7 +394,7 @@ def pick_model(criteria: dict) -> dict:
             return speed_n + 0.1 * intel_n
         return 0.6 * intel_n + 0.4 * speed_n
 
-    scored.sort(key=lambda x: (avail_group(x[0]["id"]), -quality_score(x[0], x[1])))
+    scored.sort(key=lambda x: (avail_group(x[0]["id"]) + provider_bonus(x[0]), -quality_score(x[0], x[1])))
 
     return scored
 
@@ -413,7 +422,7 @@ def route_request(body: dict, stream: bool) -> dict | None:
     elif not criteria.get("mode") and not criteria.get("model"):
         criteria["mode"] = "balanced"
 
-    MAX_FALLBACKS = int(os.environ.get("MINI_ROUTER_MAX_FALLBACKS", "3"))
+    MAX_FALLBACKS = int(os.environ.get("MINI_ROUTER_MAX_FALLBACKS", str(MAX_FALLBACKS_DEFAULT)))
     last_err = None
 
     # Build candidate list once (best first)
