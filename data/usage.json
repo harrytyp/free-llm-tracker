@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-08-22T21:05:40Z",
+ "updated_at": "2026-08-22T21:06:13Z",
  "usage": {
   "nvidia/nemotron-3.5-lightning:free": {
    "ok": 2,
@@ -99,6 +99,12 @@
    "fail": 1,
    "latency_ms": [],
    "last_ok": 0
+  },
+  "google/gemma-4-31b-it:free": {
+   "ok": 0,
+   "fail": 1,
+   "latency_ms": [],
+   "last_ok": 0
   }
  },
  "cooldowns": {
@@ -117,6 +123,7 @@
   "z-ai/glm-5.1": 1787433157.801001,
   "openai/gpt-oss-20b": 1787433161.646024,
   "meta-llama/llama-4-scout-17b-16e-instruct": 1787433167.2040696,
-  "google/gemma-4-31b-it": 1787433340.734581
+  "google/gemma-4-31b-it": 1787433340.734581,
+  "google/gemma-4-31b-it:free": 1787433373.4038806
  }
 }
