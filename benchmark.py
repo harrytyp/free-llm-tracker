@@ -319,6 +319,71 @@ def collect_aa_measurements(model_ids: list[str]) -> dict:
     return out
 
 
+def scrape_llmbench_provider(provider: str) -> list[dict]:
+    """Scrape llm-benchmarks.com /providers/{name} page (30-day measured t/s).
+
+    Each provider page lists its models with Avg Toks/Sec, Min, Max, Avg TTF(ms),
+    aggregated over the last 30 days from hundreds/thousands of real prompts.
+    Returns [{model, tps, tps_min, tps_max, ttft_ms}] or [].
+    """
+    url = f"https://llm-benchmarks.com/providers/{provider}"
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    try:
+        with urllib.request.urlopen(req, timeout=25) as r:
+            html = r.read().decode()
+    except Exception:
+        return []
+
+    # Table rows: <a href="/models/{provider}/{slug}">ModelName</a> ... <td>VALUE</td>...
+    # After the model link, the cells are: Avg Toks/Sec, Min, Max, Avg TTF(ms)
+    rows = []
+    # Find each model row: link to model page, then extract numeric cells after it
+    for m in re.finditer(r'href="/models/[^"]+">([^<]+)</a>(.*?)</tr>', html, re.DOTALL):
+        model = m.group(1).strip()
+        cells_html = m.group(2)
+        # Extract all numeric cell values in order
+        nums = re.findall(r'<td[^>]*>([\d.]+)</td>', cells_html)
+        if len(nums) >= 4:
+            tps, tps_min, tps_max, ttft = nums[:4]
+            rows.append({
+                "model": model,
+                "tps": round(float(tps), 2),
+                "tps_min": round(float(tps_min), 2),
+                "tps_max": round(float(tps_max), 2),
+                "ttft_ms": round(float(ttft), 1) if float(ttft) > 0 else None,
+            })
+    return rows
+
+
+LLMBENCH_PROVIDERS = [
+    "anthropic", "bedrock", "cerebras", "deepinfra", "fireworks",
+    "google", "groq", "openai", "openrouter", "together",
+]
+
+
+def collect_llmbench_measurements() -> dict:
+    """Scrape all llm-benchmarks provider pages. Returns {model_key: {provider, tps, ...}}."""
+    out = {}
+    for prov in LLMBENCH_PROVIDERS:
+        rows = scrape_llmbench_provider(prov)
+        if rows:
+            print(f"  llm-benchmarks {prov}: {len(rows)} models tracked")
+            for r in rows:
+                # key: model name lowercased, spaces->dashes
+                key = r["model"].lower().replace(" ", "-")
+                out[key] = {
+                    "provider": prov,
+                    "tps": r["tps"],
+                    "tps_min": r["tps_min"],
+                    "tps_max": r["tps_max"],
+                    "ttft_ms": r["ttft_ms"],
+                    "source": "llm-benchmarks-provider",
+                    "measured_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                }
+        time.sleep(0.5)
+    return out
+
+
 def main() -> int:
     all_results: dict = {}
     all_errors: list[str] = []
@@ -359,7 +424,16 @@ def main() -> int:
     latest = json.loads((DATA / "latest.json").read_text())
     free_models = latest["models"]
 
-    # Choose models to enrich: unique basenames, prioritize popular/open ones
+    # 3a. llm-benchmarks.com provider pages (30-day measured t/s per provider)
+    print("\n  llm-benchmarks provider pages (30-day measurements)...")
+    llmbench = collect_llmbench_measurements()
+    all_results["__llmbench"] = {
+        "type": "provider-summary",
+        "providers": llmbench,
+    }
+    print(f"  → {len(llmbench)} model measurements across providers")
+
+    # 3b. AA provider benchmarks for unique model basenames
     seen_bases = set()
     aa_targets = []
     for m in free_models:

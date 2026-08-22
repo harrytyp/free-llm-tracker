@@ -242,13 +242,16 @@ def main() -> int:
         }
         omnit_ids.add(rec["model_id"].lower())
     # Add OpenRouter free models not already present (by id)
+    or_live_ids = set()
     for m in or_free:
         mid = m["id"].lower()
+        or_live_ids.add(mid)
         if mid in omnit_ids:
             # merge OR metadata into existing record
             for mk, mv in by_key.items():
                 if mv["id"].lower() == mid:
                     mv.update({
+                        "free_status": "verified-free",  # OR pricing==0 confirmed live
                         "context_length": m.get("context_length"),
                         "description": (m.get("description") or "")[:280],
                         "supported_parameters": m.get("supported_parameters", []),
@@ -271,7 +274,18 @@ def main() -> int:
             "supported_parameters": m.get("supported_parameters", []),
             "modality": (m.get("architecture") or {}).get("modality", ""),
             "source_catalog": "openrouter",
+            "free_status": "verified-free",
         }
+
+    # Flag OmniRoute models with :free suffix that OpenRouter no longer lists
+    # as deprecated (was free, now gone) — honest free-status verification.
+    for rec in omnit_free:
+        mid = rec["model_id"].lower()
+        if mid.endswith(":free") and mid not in or_live_ids:
+            for mk, mv in by_key.items():
+                if mv["id"].lower() == mid:
+                    mv["free_status"] = "deprecated-not-on-openrouter"
+                    break
 
     free_models = list(by_key.values())
     if not free_models:
