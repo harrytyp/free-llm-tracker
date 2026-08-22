@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-22T01:12:26Z",
+  "updated_at": "2026-08-22T07:03:20Z",
   "total_providers": 81,
   "providers": [
     {
@@ -16,7 +16,7 @@
         20.0,
         4.97,
         4.46,
-        2.97
+        2.87
       ],
       "top_models": [
         {
@@ -48,7 +48,7 @@
       "free_types": {
         "keyless": 33
       },
-      "avg_tps": 27.29
+      "avg_tps": 27.28
     },
     {
       "provider": "bazaarlink",
@@ -100,7 +100,7 @@
         34.9,
         12.9,
         11.1,
-        2.97
+        2.87
       ],
       "top_models": [
         {
@@ -120,7 +120,7 @@
         },
         {
           "id": "Qwen/Qwen3.5-397B-A17B",
-          "tps": 2.97,
+          "tps": 2.87,
           "name": "Qwen3.5 397B A17B"
         },
         {
@@ -132,7 +132,7 @@
       "free_types": {
         "recurring-monthly": 24
       },
-      "avg_tps": 15.47
+      "avg_tps": 15.44
     },
     {
       "provider": "pollinations",
@@ -268,7 +268,7 @@
         34.9,
         12.9,
         11.1,
-        2.97
+        2.87
       ],
       "top_models": [
         {
@@ -288,7 +288,7 @@
         },
         {
           "id": "Qwen/Qwen3.5-397B-A17B",
-          "tps": 2.97,
+          "tps": 2.87,
           "name": "Qwen/Qwen3.5-397B-A17B"
         },
         {
@@ -300,25 +300,23 @@
       "free_types": {
         "one-time-initial": 22
       },
-      "avg_tps": 15.47
+      "avg_tps": 15.44
     },
     {
       "provider": "github-models",
       "count": 21,
-      "measured": 1,
-      "tps_values": [
-        3.01
-      ],
+      "measured": 0,
+      "tps_values": [],
       "top_models": [
-        {
-          "id": "deepseek/deepseek-r1-0528",
-          "tps": 3.01,
-          "name": "DeepSeek-R1-0528 (Free)"
-        },
         {
           "id": "cohere/cohere-command-a",
           "tps": null,
           "name": "Cohere Command A (Free)"
+        },
+        {
+          "id": "deepseek/deepseek-r1-0528",
+          "tps": null,
+          "name": "DeepSeek-R1-0528 (Free)"
         },
         {
           "id": "deepseek/deepseek-v3-0324",
@@ -339,7 +337,7 @@
       "free_types": {
         "recurring-daily": 21
       },
-      "avg_tps": 3.01
+      "avg_tps": null
     },
     {
       "provider": "openrouter",
@@ -428,21 +426,16 @@
       "measured": 5,
       "tps_values": [
         49.0,
-        19.2,
         12.9,
         11.1,
-        2.97
+        2.87,
+        1.99
       ],
       "top_models": [
         {
           "id": "z-ai/glm-5.2",
           "tps": 49.0,
           "name": "GLM 5.2"
-        },
-        {
-          "id": "z-ai/glm-5.1",
-          "tps": 19.2,
-          "name": "GLM 5.1"
         },
         {
           "id": "openai/gpt-oss-20b",
@@ -456,14 +449,19 @@
         },
         {
           "id": "qwen/qwen3.5-397b-a17b",
-          "tps": 2.97,
+          "tps": 2.87,
           "name": "Qwen3.5-397B-A17B"
+        },
+        {
+          "id": "z-ai/glm-5.1",
+          "tps": 1.99,
+          "name": "GLM 5.1"
         }
       ],
       "free_types": {
         "one-time-initial": 14
       },
-      "avg_tps": 19.03
+      "avg_tps": 15.57
     },
     {
       "provider": "kilo-gateway",
