@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-22T12:47:50Z",
-  "total_providers": 81,
+  "updated_at": "2026-08-22T15:17:04Z",
+  "total_providers": 79,
   "providers": [
     {
       "provider": "puter",
@@ -41,15 +41,10 @@
     },
     {
       "provider": "bazaarlink",
-      "count": 32,
+      "count": 31,
       "measured": 0,
       "tps_values": [],
       "top_models": [
-        {
-          "id": "auto:free",
-          "tps": null,
-          "name": "Auto Free (Zero Cost)"
-        },
         {
           "id": "claude-haiku-4.5",
           "tps": null,
@@ -69,10 +64,15 @@
           "id": "deepseek-v3.2",
           "tps": null,
           "name": "DeepSeek V3.2"
+        },
+        {
+          "id": "gemini-3-flash-preview",
+          "tps": null,
+          "name": "Gemini 3 Flash"
         }
       ],
       "free_types": {
-        "recurring-daily": 32
+        "recurring-daily": 31
       },
       "avg_tps": null
     },
@@ -448,43 +448,6 @@
       "avg_tps": null
     },
     {
-      "provider": "kilo-gateway",
-      "count": 13,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "cohere/north-mini-code:free",
-          "tps": null,
-          "name": "Cohere North Mini Code (free)"
-        },
-        {
-          "id": "kilo-auto/free",
-          "tps": null,
-          "name": "Kilo Auto Free (auto-router)"
-        },
-        {
-          "id": "kwaipilot/kat-coder-pro-v2.5:free",
-          "tps": null,
-          "name": "Kwaipilot KAT-Coder-Pro V2.5 (free)"
-        },
-        {
-          "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-          "tps": null,
-          "name": "NVIDIA Nemotron 3 Nano Omni (free)"
-        },
-        {
-          "id": "nvidia/nemotron-3-super-120b-a12b:free",
-          "tps": null,
-          "name": "NVIDIA Nemotron 3 Super (free)"
-        }
-      ],
-      "free_types": {
-        "recurring-uncapped": 13
-      },
-      "avg_tps": null
-    },
-    {
       "provider": "fireworks",
       "count": 10,
       "measured": 0,
@@ -633,6 +596,43 @@
       "avg_tps": null
     },
     {
+      "provider": "kilo-gateway",
+      "count": 9,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "cohere/north-mini-code:free",
+          "tps": null,
+          "name": "Cohere North Mini Code (free)"
+        },
+        {
+          "id": "kilo-auto/free",
+          "tps": null,
+          "name": "Kilo Auto Free (auto-router)"
+        },
+        {
+          "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+          "tps": null,
+          "name": "NVIDIA Nemotron 3 Nano Omni (free)"
+        },
+        {
+          "id": "nvidia/nemotron-3-super-120b-a12b:free",
+          "tps": null,
+          "name": "NVIDIA Nemotron 3 Super (free)"
+        },
+        {
+          "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+          "tps": null,
+          "name": "NVIDIA Nemotron 3 Ultra (free)"
+        }
+      ],
+      "free_types": {
+        "recurring-uncapped": 9
+      },
+      "avg_tps": null
+    },
+    {
       "provider": "qoder",
       "count": 9,
       "measured": 0,
@@ -740,43 +740,6 @@
       ],
       "free_types": {
         "recurring-monthly": 8
-      },
-      "avg_tps": null
-    },
-    {
-      "provider": "routeway",
-      "count": 8,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "laguna-m.1:free",
-          "tps": null,
-          "name": "Laguna M.1 (free)"
-        },
-        {
-          "id": "laguna-xs.2:free",
-          "tps": null,
-          "name": "Laguna XS.2 (free)"
-        },
-        {
-          "id": "llama-3.2-3b-instruct:free",
-          "tps": null,
-          "name": "Llama 3.2 3B Instruct (free)"
-        },
-        {
-          "id": "llama-3.3-70b-instruct:free",
-          "tps": null,
-          "name": "Llama 3.3 70B Instruct (free)"
-        },
-        {
-          "id": "nemotron-3-nano-30b-a3b:free",
-          "tps": null,
-          "name": "Nemotron 3 Nano 30B (free)"
-        }
-      ],
-      "free_types": {
-        "recurring-uncapped": 8
       },
       "avg_tps": null
     },
@@ -2045,23 +2008,6 @@
       ],
       "free_types": {
         "recurring-monthly": 2
-      },
-      "avg_tps": null
-    },
-    {
-      "provider": "arcee-ai",
-      "count": 1,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "arcee-ai/trinity-large-preview:free",
-          "tps": null,
-          "name": "Arcee Trinity Large Preview (free)"
-        }
-      ],
-      "free_types": {
-        "recurring-daily": 1
       },
       "avg_tps": null
     },
