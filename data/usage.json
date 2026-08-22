@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-08-22T21:18:56Z",
+ "updated_at": "2026-08-22T21:20:59Z",
  "usage": {
   "nvidia/nemotron-3.5-lightning:free": {
-   "ok": 13,
+   "ok": 14,
    "fail": 1,
    "latency_ms": [
     3847,
@@ -17,9 +17,10 @@
     8143,
     5045,
     7068,
-    1080
+    1080,
+    975
    ],
-   "last_ok": 1787433536.8347142
+   "last_ok": 1787433659.1193776
   },
   "z-ai/glm-5.2": {
    "ok": 0,
@@ -192,9 +193,5 @@
    "last_ok": 0
   }
  },
- "cooldowns": {
-  "qwen/qwen3-32b": 1787433578.7221787,
-  "mistral-small-latest": 1787433584.8254828,
-  "mistral-large-latest": 1787433588.564447
- }
+ "cooldowns": {}
 }
