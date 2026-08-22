@@ -227,6 +227,49 @@ def main() -> int:
     # Live-verified free IDs from OpenRouter (pricing==0 confirmed just now)
     or_live_free_ids = {m["id"].lower() for m in or_free}
 
+    # ─── Multi-Provider Free-Erkennung (Kolja: nicht nur OpenRouter!) ───
+    # Jeder Provider mit Key hat Free-Tiers (Groq, Mistral, NVIDIA, Google...).
+    # Wir fragen deren /models ab, markieren alle als "free-tier" (der Key ist
+    # der Zugangsbeweis), und fügen sie als neue Kandidaten hinzu. Der Router
+    # nutzt sie, sobald der Key gesetzt ist.
+    # Provider-Config: (base_url für /models, key_env, OpenAI-kompatibel?)
+    KEY_PROVIDERS = {
+        "openrouter": ("https://openrouter.ai/api/v1/models", "OPENROUTER_API_KEY", True),
+        "groq": ("https://api.groq.com/openai/v1/models", "GROQ_API_KEY", True),
+        "mistral": ("https://api.mistral.ai/v1/models", "MISTRAL_API_KEY", True),
+        "nvidia": ("https://integrate.api.nvidia.com/v1/models", "NVIDIA_API_KEY", True),
+        "google": ("https://generativelanguage.googleapis.com/v1beta/openai/models", "GOOGLE_API_KEY", True),
+        "cerebras": ("https://api.cerebras.ai/v1/models", "CEREBRAS_API_KEY", True),
+        "deepinfra": ("https://api.deepinfra.com/v1/openai/models", "DEEPINFRA_API_KEY", True),
+        "together": ("https://api.together.xyz/v1/models", "TOGETHER_API_KEY", True),
+        "fireworks": ("https://api.fireworks.ai/inference/v1/models", "FIREWORKS_API_KEY", True),
+        "sambanova": ("https://api.sambanova.ai/v1/models", "SAMBANOVA_API_KEY", True),
+        "novita": ("https://api.novita.ai/v3/openai/models", "NOVITA_API_KEY", True),
+        "siliconflow": ("https://api.siliconflow.cn/v1/models", "SILICONFLOW_API_KEY", True),
+        "hyperbolic": ("https://api.hyperbolic.xyz/v1/models", "HYPERBOLIC_API_KEY", True),
+        "cohere": ("https://api.cohere.ai/v1/models", "COHERE_API_KEY", True),
+        "manifest": ("https://app.manifest.build/v1/models", "MANIFEST_API_KEY", True),
+    }
+    # OpenAI-URLs ohne "openai"-Pfad → chat/completions direkt anhängen
+    # (Router nutzt diese Liste, um Free-Modelle der Key-Provider zu routen)
+
+    import os as _os
+    key_provider_models: dict[str, list[str]] = {}
+    for pname, (murl, key_env, _compat) in KEY_PROVIDERS.items():
+        key = _os.environ.get(key_env, "").strip()
+        if not key:
+            continue  # kein Key → Provider nicht prüfbar
+        try:
+            req = urllib.request.Request(murl, headers={
+                "Authorization": f"Bearer {key}", "User-Agent": "free-llm-tracker/1.0"})
+            with urllib.request.urlopen(req, timeout=15) as r:
+                d = json.loads(r.read().decode())
+            ids = [m.get("id") for m in d.get("data", []) if m.get("id")]
+            key_provider_models[pname] = ids
+            print(f"  key-provider {pname}: {len(ids)} Modelle (Free-Tier-Zugang via Key)")
+        except Exception as e:
+            errors.append(f"key-provider {pname}: {e}")
+
     # Provider with OpenAI-compatible API endpoints the router can actually call.
     # Web-frontend providers (puter, t3-web, huggingchat...) are NOT here —
     # they're chat UIs without a usable API endpoint.
@@ -310,6 +353,41 @@ def main() -> int:
                 if mv["id"].lower() == mid:
                     mv["free_status"] = "deprecated-not-on-openrouter"
                     break
+
+    # ─── Key-Provider-Merge (nicht nur OpenRouter!) ───
+    # Alle Modelle der Key-Provider als free-tier hinzufügen (Key = Zugangsbeweis).
+    # Nur Provider mit gesetztem Key; Modelle, die schon existieren, werden nicht
+    # überschrieben (OmniRoute/OR-Metadaten behalten Vorrang).
+    added_kp = 0
+    for pname, ids in key_provider_models.items():
+        if pname == "openrouter":
+            continue  # OR schon über or_free verarbeitet (pricing==0 verified)
+        for mid in ids:
+            mid_l = mid.lower()
+            exists = any(mv["id"].lower() == mid_l for mv in by_key.values())
+            if exists:
+                # existierender Eintrag: free_status free-tier vergeben, wenn unklar
+                for mv in by_key.values():
+                    if mv["id"].lower() == mid_l and mv.get("free_status") in (None, "unverified"):
+                        mv["free_status"] = "free-tier"
+                        mv["source_catalog"] = mv.get("source_catalog", "key-provider")
+                    break
+                continue
+            by_key[(pname, mid)] = {
+                "id": mid,
+                "provider": pname,
+                "name": mid,
+                "free_type": "free-tier",
+                "monthly_tokens": None,
+                "credit_tokens": None,
+                "pool_key": pname,
+                "tos_verdict": None,
+                "source_catalog": "key-provider",
+                "free_status": "free-tier",
+            }
+            added_kp += 1
+    if added_kp:
+        print(f"  key-provider: {added_kp} neue Free-Modelle hinzugefügt")
 
     free_models = list(by_key.values())
     # EXCLUDE deprecated models entirely (not free anymore, don't show them)

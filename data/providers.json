@@ -1,7 +1,120 @@
 {
-  "updated_at": "2026-08-22T19:05:40Z",
-  "total_providers": 79,
+  "updated_at": "2026-08-22T21:50:03Z",
+  "total_providers": 80,
   "providers": [
+    {
+      "provider": "nvidia",
+      "count": 105,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "01-ai/yi-large",
+          "tps": null,
+          "name": "01-ai/yi-large"
+        },
+        {
+          "id": "adept/fuyu-8b",
+          "tps": null,
+          "name": "adept/fuyu-8b"
+        },
+        {
+          "id": "ai21labs/jamba-1.5-large-instruct",
+          "tps": null,
+          "name": "ai21labs/jamba-1.5-large-instruct"
+        },
+        {
+          "id": "aisingapore/sea-lion-7b-instruct",
+          "tps": null,
+          "name": "aisingapore/sea-lion-7b-instruct"
+        },
+        {
+          "id": "baai/bge-m3",
+          "tps": null,
+          "name": "baai/bge-m3"
+        }
+      ],
+      "free_types": {
+        "free-tier": 91,
+        "one-time-initial": 14
+      },
+      "avg_tps": null
+    },
+    {
+      "provider": "mistral",
+      "count": 52,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "codestral-embed",
+          "tps": null,
+          "name": "codestral-embed"
+        },
+        {
+          "id": "codestral-embed-2505",
+          "tps": null,
+          "name": "codestral-embed-2505"
+        },
+        {
+          "id": "codestral-latest",
+          "tps": null,
+          "name": "Codestral"
+        },
+        {
+          "id": "devstral-latest",
+          "tps": null,
+          "name": "Devstral 2"
+        },
+        {
+          "id": "devstral-medium-latest",
+          "tps": null,
+          "name": "devstral-medium-latest"
+        }
+      ],
+      "free_types": {
+        "free-tier": 47,
+        "recurring-monthly": 5
+      },
+      "avg_tps": null
+    },
+    {
+      "provider": "google",
+      "count": 51,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "models/antigravity-preview-05-2026",
+          "tps": null,
+          "name": "models/antigravity-preview-05-2026"
+        },
+        {
+          "id": "models/aqa",
+          "tps": null,
+          "name": "models/aqa"
+        },
+        {
+          "id": "models/deep-research-max-preview-04-2026",
+          "tps": null,
+          "name": "models/deep-research-max-preview-04-2026"
+        },
+        {
+          "id": "models/deep-research-preview-04-2026",
+          "tps": null,
+          "name": "models/deep-research-preview-04-2026"
+        },
+        {
+          "id": "models/deep-research-pro-preview-12-2025",
+          "tps": null,
+          "name": "models/deep-research-pro-preview-12-2025"
+        }
+      ],
+      "free_types": {
+        "free-tier": 51
+      },
+      "avg_tps": null
+    },
     {
       "provider": "puter",
       "count": 33,
@@ -374,39 +487,40 @@
       "avg_tps": null
     },
     {
-      "provider": "nvidia",
-      "count": 14,
+      "provider": "groq",
+      "count": 15,
       "measured": 0,
       "tps_values": [],
       "top_models": [
         {
-          "id": "deepseek-ai/deepseek-v4-pro",
+          "id": "allam-2-7b",
           "tps": null,
-          "name": "DeepSeek V4 Pro"
+          "name": "allam-2-7b"
         },
         {
-          "id": "google/gemma-4-31b-it",
+          "id": "canopylabs/orpheus-arabic-saudi",
           "tps": null,
-          "name": "Gemma 4 31B"
+          "name": "canopylabs/orpheus-arabic-saudi"
         },
         {
-          "id": "minimaxai/minimax-m2.7",
+          "id": "canopylabs/orpheus-v1-english",
           "tps": null,
-          "name": "MiniMax M2.7"
+          "name": "canopylabs/orpheus-v1-english"
         },
         {
-          "id": "mistralai/devstral-2-123b-instruct-2512",
+          "id": "groq/compound",
           "tps": null,
-          "name": "Devstral 2 123B"
+          "name": "groq/compound"
         },
         {
-          "id": "mistralai/mistral-large-3-675b-instruct-2512",
+          "id": "groq/compound-mini",
           "tps": null,
-          "name": "Mistral Large 3 675B"
+          "name": "groq/compound-mini"
         }
       ],
       "free_types": {
-        "one-time-initial": 14
+        "free-tier": 10,
+        "recurring-daily": 5
       },
       "avg_tps": null
     },
@@ -1225,80 +1339,6 @@
       "avg_tps": null
     },
     {
-      "provider": "groq",
-      "count": 5,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "llama-3.3-70b-versatile",
-          "tps": null,
-          "name": "Llama 3.3 70B"
-        },
-        {
-          "id": "meta-llama/llama-4-scout-17b-16e-instruct",
-          "tps": null,
-          "name": "Llama 4 Scout"
-        },
-        {
-          "id": "openai/gpt-oss-120b",
-          "tps": null,
-          "name": "GPT-OSS 120B"
-        },
-        {
-          "id": "openai/gpt-oss-20b",
-          "tps": null,
-          "name": "GPT-OSS 20B"
-        },
-        {
-          "id": "qwen/qwen3-32b",
-          "tps": null,
-          "name": "Qwen3 32B"
-        }
-      ],
-      "free_types": {
-        "recurring-daily": 5
-      },
-      "avg_tps": null
-    },
-    {
-      "provider": "mistral",
-      "count": 5,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "codestral-latest",
-          "tps": null,
-          "name": "Codestral"
-        },
-        {
-          "id": "devstral-latest",
-          "tps": null,
-          "name": "Devstral 2"
-        },
-        {
-          "id": "mistral-large-latest",
-          "tps": null,
-          "name": "Mistral Large 3"
-        },
-        {
-          "id": "mistral-medium-3-5",
-          "tps": null,
-          "name": "Mistral Medium 3.5"
-        },
-        {
-          "id": "mistral-small-latest",
-          "tps": null,
-          "name": "Mistral Small 4"
-        }
-      ],
-      "free_types": {
-        "recurring-monthly": 5
-      },
-      "avg_tps": null
-    },
-    {
       "provider": "ovhcloud",
       "count": 5,
       "measured": 0,
@@ -1625,6 +1665,34 @@
       "avg_tps": null
     },
     {
+      "provider": "cerebras",
+      "count": 3,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "gemma-4-31b",
+          "tps": null,
+          "name": "gemma-4-31b"
+        },
+        {
+          "id": "gpt-oss-120b",
+          "tps": null,
+          "name": "GPT OSS 120B"
+        },
+        {
+          "id": "zai-glm-4.7",
+          "tps": null,
+          "name": "GLM 4.7"
+        }
+      ],
+      "free_types": {
+        "free-tier": 1,
+        "recurring-daily": 2
+      },
+      "avg_tps": null
+    },
+    {
       "provider": "hackclub",
       "count": 3,
       "measured": 0,
@@ -1854,28 +1922,6 @@
       ],
       "free_types": {
         "one-time-initial": 2
-      },
-      "avg_tps": null
-    },
-    {
-      "provider": "cerebras",
-      "count": 2,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "gpt-oss-120b",
-          "tps": null,
-          "name": "GPT OSS 120B"
-        },
-        {
-          "id": "zai-glm-4.7",
-          "tps": null,
-          "name": "GLM 4.7"
-        }
-      ],
-      "free_types": {
-        "recurring-daily": 2
       },
       "avg_tps": null
     },
