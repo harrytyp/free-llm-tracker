@@ -590,18 +590,86 @@ def route_request(body: dict, stream: bool) -> dict | None:
         )
         try:
             t0 = time.monotonic()
-            resp = urllib.request.urlopen(req, timeout=120)
-            data = json.loads(resp.read().decode())
+            # Streaming mit TTFT-Timeout: wenn der Provider nicht innerhalb
+            # TTFT_TIMEOUT s das erste Token liefert → Fallback (kein Hängen).
+            ttft_timeout = float(os.environ.get("MINI_ROUTER_TTFT_TIMEOUT", "25"))
+            out_body["stream"] = True
+            req = urllib.request.Request(
+                url,
+                data=json.dumps(out_body).encode(),
+                headers={
+                    "Content-Type": "application/json",
+                    "Authorization": f"Bearer {key}",
+                    "User-Agent": "llm-mini-router/1.0",
+                },
+                method="POST",
+            )
+            resp = urllib.request.urlopen(req, timeout=ttft_timeout + 30)
+            first_chunk_t = None
+            ttft_ms = 0.0
+            full_text = ""
+            usage_info = None
+            finish_reason = None
+            got_first = False
+            stream_idle_timeout = float(os.environ.get("MINI_ROUTER_STREAM_IDLE_TIMEOUT", "15"))
+            last_data_t = time.monotonic()
+            for raw in resp:
+                now = time.monotonic()
+                if now - last_data_t > stream_idle_timeout:
+                    raise TimeoutError(f"stream idle > {stream_idle_timeout}s")
+                if not got_first:
+                    first_chunk_t = now
+                    ttft_ms = (first_chunk_t - t0) * 1000
+                    got_first = True
+                    if ttft_ms > ttft_timeout * 1000:
+                        raise TimeoutError(f"TTFT {ttft_ms:.0f}ms > {ttft_timeout}s")
+                line = raw.decode(errors="replace").strip()
+                if not line:
+                    continue
+                if line.startswith("data: "):
+                    last_data_t = now
+                    payload = line[6:].strip()
+                    if payload == "[DONE]":
+                        break
+                    try:
+                        chunk = json.loads(payload)
+                        delta = (chunk.get("choices") or [{}])[0].get("delta", {})
+                        piece = delta.get("content") or ""
+                        full_text += piece
+                        if chunk.get("usage"):
+                            usage_info = chunk["usage"]
+                        fr = (chunk.get("choices") or [{}])[0].get("finish_reason")
+                        if fr:
+                            finish_reason = fr
+                    except json.JSONDecodeError:
+                        continue
             latency_ms = (time.monotonic() - t0) * 1000
+            # leerer Content (z.B. reasoning-only) zählt als Fehler → Fallback
+            if not full_text.strip():
+                raise TimeoutError(f"empty content from {model_id} (reasoning-only?)")
             # record success in usage stats
             u = USAGE.setdefault(model_id, {"ok": 0, "fail": 0, "latency_ms": [], "last_ok": 0})
             u["ok"] += 1
             u["latency_ms"] = (u["latency_ms"] + [round(latency_ms)])[-50:]
             u["last_ok"] = time.time()
-            # annotate which model actually served
+            # OpenAI-format response zusammensetzen
+            data = {
+                "id": f"chatcmpl-{int(time.time())}",
+                "object": "chat.completion",
+                "created": int(time.time()),
+                "model": model_id,
+                "choices": [{
+                    "index": 0,
+                    "message": {"role": "assistant", "content": full_text},
+                    "finish_reason": finish_reason or "stop",
+                }],
+                "usage": usage_info or {
+                    "prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0,
+                },
+            }
             data["_router"] = {"model": model_id, "provider": provider_name, "tried": tried,
-                               "latency_ms": round(latency_ms)}
-            print(f"[router] ✓ {model_id} via {provider_name} (rank {rank+1}, {latency_ms:.0f}ms)")
+                               "latency_ms": round(latency_ms), "ttft_ms": round(ttft_ms)}
+            print(f"[router] ✓ {model_id} via {provider_name} (rank {rank+1}, {latency_ms:.0f}ms, TTFT {ttft_ms:.0f}ms)")
             save_usage()
             push_usage()
             return data
@@ -611,6 +679,14 @@ def route_request(body: dict, stream: bool) -> dict | None:
             u["fail"] += 1
             mark_failed(model_id)
             print(f"[router] ✗ {model_id}: HTTP {e.code}, falling back")
+            save_usage()
+            push_usage()
+        except TimeoutError as e:
+            last_err = e
+            u = USAGE.setdefault(model_id, {"ok": 0, "fail": 0, "latency_ms": [], "last_ok": 0})
+            u["fail"] += 1
+            mark_failed(model_id)
+            print(f"[router] ✗ {model_id}: {e}, falling back")
             save_usage()
             push_usage()
         except Exception as e:
