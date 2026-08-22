@@ -1,15 +1,25 @@
 {
- "updated_at": "2026-08-22T21:12:24Z",
+ "updated_at": "2026-08-22T21:18:56Z",
  "usage": {
   "nvidia/nemotron-3.5-lightning:free": {
-   "ok": 3,
+   "ok": 13,
    "fail": 1,
    "latency_ms": [
     3847,
     83627,
-    1193
+    1193,
+    8889,
+    10748,
+    9037,
+    9131,
+    9297,
+    4996,
+    8143,
+    5045,
+    7068,
+    1080
    ],
-   "last_ok": 1787433144.4741223
+   "last_ok": 1787433536.8347142
   },
   "z-ai/glm-5.2": {
    "ok": 0,
@@ -183,20 +193,6 @@
   }
  },
  "cooldowns": {
-  "openai/gpt-oss-120b": 1787433157.3961864,
-  "mistralai/mistral-small-4-119b-2603": 1787433157.5300677,
-  "qwen/qwen3.5-397b-a17b": 1787433157.6644297,
-  "z-ai/glm-5.1": 1787433157.801001,
-  "openai/gpt-oss-20b": 1787433161.646024,
-  "meta-llama/llama-4-scout-17b-16e-instruct": 1787433167.2040696,
-  "google/gemma-4-31b-it": 1787433340.734581,
-  "google/gemma-4-31b-it:free": 1787433373.4038806,
-  "minimaxai/minimax-m2.7": 1787433374.5011487,
-  "liquid/lfm-2.5-2.6b:free": 1787433375.0478516,
-  "mistralai/devstral-2-123b-instruct-2512": 1787433375.7738109,
-  "mistralai/mistral-large-3-675b-instruct-2512": 1787433375.8802676,
-  "stepfun-ai/step-3.5-flash": 1787433375.9911168,
-  "google/gemma-4-26b-a4b-it:free": 1787433376.6308496,
   "qwen/qwen3-32b": 1787433578.7221787,
   "mistral-small-latest": 1787433584.8254828,
   "mistral-large-latest": 1787433588.564447
