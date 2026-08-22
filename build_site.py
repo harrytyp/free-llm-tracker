@@ -446,6 +446,41 @@ document.getElementById('csv').addEventListener('click', () => {{
   a.download = 'free-llm-models.csv'; a.click();
 }});
 apply();
+
+// ─── Live-Status von usage.json (vom Router via GitHub-API gepusht) ───
+// Lädt data/usage.json von GitHub Pages und markiert Zeilen live:
+// - Rate-Limited/Cooldown: rotes Badge "⛔ rate-limited (Xs)"
+// - Erfolgreich genutzt: grünes Badge "✓ ok (Latenz ms)"
+// - Fehler: oranges Badge "⚠ fails"
+fetch('data/usage.json', {{cache: 'no-store'}})
+  .then(r => r.ok ? r.json() : Promise.reject('no usage.json'))
+  .then(usageData => {{
+    const now = Math.floor(Date.now() / 1000);
+    const usage = usageData.usage || {{}};
+    const cooldowns = usageData.cooldowns || {{}};
+    [...ROWS.querySelectorAll('.mrow')].forEach(tr => {{
+      const id = tr.dataset.id;
+      const u = usage[id] || usage[id.replace(/:free$/,'')];
+      const cd = cooldowns[id] || cooldowns[id.replace(/:free$/,'')];
+      if (!u && !cd) return;
+      // Status-Badge in der Status-Zelle (Index 3)
+      const statusCell = tr.querySelectorAll('td')[3];
+      if (cd && cd > now) {{
+        const secs = Math.ceil(cd - now);
+        statusCell.innerHTML += ` <span class="tag" style="color:#f85149" title="Live: rate-limited">⛔ RL {{secs}}s</span>`;
+        tr.style.opacity = '0.75';
+      }} else if (u && u.ok > 0) {{
+        const lat = u.latency_ms && u.latency_ms.length ? u.latency_ms[u.latency_ms.length-1] : '';
+        statusCell.innerHTML += ` <span class="tag" style="color:#3fb950" title="Live: erfolgreich genutzt">✓ {{u.ok}}/{{u.fail||0}}{{lat ? ' ('+lat+'ms)' : ''}}</span>`;
+      }} else if (u && u.fail > 0) {{
+        statusCell.innerHTML += ` <span class="tag" style="color:#d29922" title="Live: Fehler">⚠ {{u.fail}} fails</span>`;
+      }}
+    }});
+    // Update-Info im Footer
+    const upd = document.getElementById('updated-at');
+    if (upd && usageData.updated_at) upd.textContent += ' · Live: ' + usageData.updated_at.replace('T',' ').replace('Z',' UTC');
+  }})
+  .catch(() => {{ /* kein usage.json (noch) — Seite funktioniert trotzdem */ }});
 </script>
 </body>
 </html>

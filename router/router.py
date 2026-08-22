@@ -22,6 +22,7 @@ import threading
 import time
 import urllib.request
 import urllib.error
+import base64
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
@@ -144,6 +145,127 @@ MAX_FALLBACKS_DEFAULT = 8  # OpenRouter free tier is often rate-limited; try mor
 USAGE: dict[str, dict] = {}
 # models with >= this many successes are "proven" and ranked above untested
 PROVEN_OK = int(os.environ.get("MINI_ROUTER_PROVEN_OK", "3"))
+
+# --- Persistence (usage → GitHub Pages data/usage.json) --------------------
+USAGE_FILE = os.environ.get(
+    "MINI_ROUTER_USAGE_FILE",
+    "/opt/data/projects/free-llm-tracker/data/usage.json",
+)
+USAGE_SAVE_INTERVAL = int(os.environ.get("MINI_ROUTER_SAVE_INTERVAL", "60"))
+# Auto-push via GitHub API: Teil des Routers (kein Cron). Nur bei Änderung.
+PUSH_INTERVAL = int(os.environ.get("MINI_ROUTER_PUSH_INTERVAL", "300"))
+_last_save = 0.0
+_last_push = 0.0
+_last_pushed_sha = None  # SHA des letzten gepushten Inhalts (Änderungserkennung)
+
+
+def load_usage() -> None:
+    """Load persisted usage stats (survives router restarts)."""
+    global USAGE
+    try:
+        if os.path.exists(USAGE_FILE):
+            with open(USAGE_FILE) as f:
+                data = json.load(f)
+            USAGE = data.get("usage", {})
+            # cooldowns from last run still valid
+            for mid, until in (data.get("cooldowns") or {}).items():
+                if until > time.time():
+                    COOLDOWN[mid] = until
+            print(f"[router] loaded usage: {len(USAGE)} models, "
+                  f"{len([c for c in COOLDOWN if COOLDOWN[c] > time.time()])} on cooldown")
+    except Exception as e:
+        print(f"[router] usage load failed: {e}", file=sys.stderr)
+
+
+def save_usage(force: bool = False) -> None:
+    """Persist usage + cooldowns (throttled to every SAVE_INTERVAL sec)."""
+    global _last_save
+    now = time.time()
+    if not force and now - _last_save < USAGE_SAVE_INTERVAL:
+        return
+    _last_save = now
+    try:
+        os.makedirs(os.path.dirname(USAGE_FILE), exist_ok=True)
+        payload = {
+            "updated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(now)),
+            "usage": USAGE,
+            "cooldowns": {mid: until for mid, until in COOLDOWN.items() if until > now},
+        }
+        tmp = USAGE_FILE + ".tmp"
+        with open(tmp, "w") as f:
+            json.dump(payload, f, indent=1)
+        os.replace(tmp, USAGE_FILE)
+    except Exception as e:
+        print(f"[router] usage save failed: {e}", file=sys.stderr)
+
+
+def push_usage() -> None:
+    """Push usage.json to GitHub via the Contents API (part of the router).
+
+    Called after save_usage; throttled to PUSH_INTERVAL and only when the
+    content changed (SHA compare). Token from env (GITHUB_TOKEN/HERMES_GIT_TOKEN),
+    never in code. Failures are logged, never crash the router.
+    """
+    global _last_push, _last_pushed_sha
+    now = time.time()
+    if now - _last_push < PUSH_INTERVAL:
+        return
+    _last_push = now
+    if not os.path.exists(USAGE_FILE):
+        return
+    token = (os.environ.get("HERMES_GIT_TOKEN") or os.environ.get("GITHUB_TOKEN") or "").strip()
+    if not token:
+        print("[router] push skipped: no GITHUB_TOKEN/HERMES_GIT_TOKEN in env")
+        return
+    repo = os.environ.get("MINI_ROUTER_GITHUB_REPO", "harrytyp/free-llm-tracker")
+    path = "data/usage.json"
+    api = f"https://api.github.com/repos/{repo}/contents/{path}"
+
+    try:
+        content = open(USAGE_FILE, "rb").read()
+        import hashlib
+        sha = hashlib.sha1(content).hexdigest()
+        if sha == _last_pushed_sha:
+            return  # nichts geändert
+        b64 = base64.b64encode(content).decode()
+
+        # aktuellen SHA holen (für Update statt Create)
+        req = urllib.request.Request(api, headers={"Authorization": f"Bearer {token}",
+                                                    "User-Agent": "llm-mini-router/1.0",
+                                                    "Accept": "application/vnd.github+json"})
+        try:
+            with urllib.request.urlopen(req, timeout=15) as r:
+                existing = json.loads(r.read().decode())
+                file_sha = existing.get("sha")
+        except urllib.error.HTTPError as e:
+            if e.code != 404:
+                print(f"[router] push: GET failed {e.code}, retry later")
+                return
+            file_sha = None  # Datei existiert noch nicht
+
+        payload = {
+            "message": f"usage update {time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(now))}",
+            "content": b64,
+        }
+        if file_sha:
+            payload["sha"] = file_sha
+        req = urllib.request.Request(
+            api,
+            data=json.dumps(payload).encode(),
+            headers={"Authorization": f"Bearer {token}",
+                     "Content-Type": "application/json",
+                     "User-Agent": "llm-mini-router/1.0",
+                     "Accept": "application/vnd.github+json"},
+            method="PUT",
+        )
+        with urllib.request.urlopen(req, timeout=20) as r:
+            resp = json.loads(r.read().decode())
+            _last_pushed_sha = sha
+            print(f"[router] ⇧ usage.json pushed to GitHub ({resp.get('commit', {}).get('sha', '?')[:8]})")
+    except urllib.error.HTTPError as e:
+        print(f"[router] push failed: HTTP {e.code}: {e.read().decode()[:200]}")
+    except Exception as e:
+        print(f"[router] push failed: {e}")
 
 
 def fetch_json(url: str, timeout: int = 30) -> dict:
@@ -480,6 +602,8 @@ def route_request(body: dict, stream: bool) -> dict | None:
             data["_router"] = {"model": model_id, "provider": provider_name, "tried": tried,
                                "latency_ms": round(latency_ms)}
             print(f"[router] ✓ {model_id} via {provider_name} (rank {rank+1}, {latency_ms:.0f}ms)")
+            save_usage()
+            push_usage()
             return data
         except urllib.error.HTTPError as e:
             last_err = e
@@ -487,6 +611,8 @@ def route_request(body: dict, stream: bool) -> dict | None:
             u["fail"] += 1
             mark_failed(model_id)
             print(f"[router] ✗ {model_id}: HTTP {e.code}, falling back")
+            save_usage()
+            push_usage()
         except Exception as e:
             last_err = e
             u = USAGE.setdefault(model_id, {"ok": 0, "fail": 0, "latency_ms": [], "last_ok": 0})
@@ -673,6 +799,7 @@ class Handler(BaseHTTPRequestHandler):
 
 def main() -> int:
     load_data()
+    load_usage()  # persistierte Nutzungsdaten + Cooldowns wiederherstellen
     fetch_live_uptime()  # live availability snapshot (10-min cache)
     server = ThreadingHTTPServer((HOST, PORT), Handler)
     print(f"[router] listening on http://{HOST}:{PORT}")

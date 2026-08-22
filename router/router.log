@@ -47,3 +47,21 @@ Traceback (most recent call last):
     self.socket.bind(self.server_address)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
 OSError: [Errno 98] Address already in use
+[router] data loaded: 517 models, 32 benchmarks
+[router] live uptime: 17 models
+Traceback (most recent call last):
+  File "/opt/data/projects/free-llm-tracker/router/router.py", line 817, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/opt/data/projects/free-llm-tracker/router/router.py", line 804, in main
+    server = ThreadingHTTPServer((HOST, PORT), Handler)
+  File "/usr/lib/python3.13/socketserver.py", line 457, in __init__
+    self.server_bind()
+    ~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/socketserver.py", line 478, in server_bind
+    self.socket.bind(self.server_address)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 98] Address already in use
