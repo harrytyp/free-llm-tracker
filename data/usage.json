@@ -1,14 +1,15 @@
 {
- "updated_at": "2026-08-22T21:06:13Z",
+ "updated_at": "2026-08-22T21:12:24Z",
  "usage": {
   "nvidia/nemotron-3.5-lightning:free": {
-   "ok": 2,
+   "ok": 3,
    "fail": 1,
    "latency_ms": [
     3847,
-    83627
+    83627,
+    1193
    ],
-   "last_ok": 1787432503.6194434
+   "last_ok": 1787433144.4741223
   },
   "z-ai/glm-5.2": {
    "ok": 0,
@@ -105,18 +106,83 @@
    "fail": 1,
    "latency_ms": [],
    "last_ok": 0
+  },
+  "minimaxai/minimax-m2.7": {
+   "ok": 0,
+   "fail": 1,
+   "latency_ms": [],
+   "last_ok": 0
+  },
+  "liquid/lfm-2.5-2.6b:free": {
+   "ok": 0,
+   "fail": 1,
+   "latency_ms": [],
+   "last_ok": 0
+  },
+  "nvidia/nemotron-3-nano-30b-a3b:free": {
+   "ok": 13,
+   "fail": 0,
+   "latency_ms": [
+    612,
+    510,
+    574,
+    4926,
+    5798,
+    3262,
+    2942,
+    3433,
+    4102,
+    1629,
+    2277,
+    1868,
+    1136
+   ],
+   "last_ok": 1787433014.0340264
+  },
+  "mistralai/devstral-2-123b-instruct-2512": {
+   "ok": 0,
+   "fail": 1,
+   "latency_ms": [],
+   "last_ok": 0
+  },
+  "mistralai/mistral-large-3-675b-instruct-2512": {
+   "ok": 0,
+   "fail": 1,
+   "latency_ms": [],
+   "last_ok": 0
+  },
+  "stepfun-ai/step-3.5-flash": {
+   "ok": 0,
+   "fail": 1,
+   "latency_ms": [],
+   "last_ok": 0
+  },
+  "google/gemma-4-26b-a4b-it:free": {
+   "ok": 0,
+   "fail": 1,
+   "latency_ms": [],
+   "last_ok": 0
+  },
+  "qwen/qwen3-32b": {
+   "ok": 0,
+   "fail": 2,
+   "latency_ms": [],
+   "last_ok": 0
+  },
+  "mistral-small-latest": {
+   "ok": 0,
+   "fail": 1,
+   "latency_ms": [],
+   "last_ok": 0
+  },
+  "mistral-large-latest": {
+   "ok": 0,
+   "fail": 1,
+   "latency_ms": [],
+   "last_ok": 0
   }
  },
  "cooldowns": {
-  "nvidia/nemotron-3.5-lightning:free": 1787433024.4426093,
-  "z-ai/glm-5.2": 1787433024.5808737,
-  "z-ai/glm-5.2:free": 1787433026.2009287,
-  "deepseek-ai/deepseek-v4-pro": 1787433026.335094,
-  "mistral-medium-3-5": 1787433034.056089,
-  "qwen/qwen3.5-122b-a10b": 1787433034.1932397,
-  "thinkingmachines/inkling:free": 1787433034.279751,
-  "thinkingmachines/inkling-small:free": 1787433034.3633902,
-  "gpt-oss-120b": 1787433037.0786057,
   "openai/gpt-oss-120b": 1787433157.3961864,
   "mistralai/mistral-small-4-119b-2603": 1787433157.5300677,
   "qwen/qwen3.5-397b-a17b": 1787433157.6644297,
@@ -124,6 +190,15 @@
   "openai/gpt-oss-20b": 1787433161.646024,
   "meta-llama/llama-4-scout-17b-16e-instruct": 1787433167.2040696,
   "google/gemma-4-31b-it": 1787433340.734581,
-  "google/gemma-4-31b-it:free": 1787433373.4038806
+  "google/gemma-4-31b-it:free": 1787433373.4038806,
+  "minimaxai/minimax-m2.7": 1787433374.5011487,
+  "liquid/lfm-2.5-2.6b:free": 1787433375.0478516,
+  "mistralai/devstral-2-123b-instruct-2512": 1787433375.7738109,
+  "mistralai/mistral-large-3-675b-instruct-2512": 1787433375.8802676,
+  "stepfun-ai/step-3.5-flash": 1787433375.9911168,
+  "google/gemma-4-26b-a4b-it:free": 1787433376.6308496,
+  "qwen/qwen3-32b": 1787433578.7221787,
+  "mistral-small-latest": 1787433584.8254828,
+  "mistral-large-latest": 1787433588.564447
  }
 }
