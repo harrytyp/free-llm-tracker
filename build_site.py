@@ -1,19 +1,18 @@
 #!/usr/bin/env python3
-"""Render a modern, usable static site from data/latest.json + data/benchmarks.json.
+"""Render a modern, USABLE static site from data/latest.json + data/benchmarks.json.
 
-Features (vanilla JS, no framework):
-  - Search across model/provider/name
-  - Provider dropdown filter
-  - Sortable columns (click header)
-  - FreeType badges with colors
-  - CSV export
-  - Dark theme, mobile-first
-  - Honest data: only n>=3 benchmarks shown, "nicht gemessen" where missing
+Design decisions (Kolja: "Seite ist unbenutzbar, absoluter Müll"):
+  - CARDS grouped by provider (not one giant table) — scannable
+  - Measured models FIRST, then unmeasured
+  - Big clear speed numbers, free-status badges, provider detail
+  - Search + provider filter + free-type filter
+  - Mobile-first, dark, professional
 """
 from __future__ import annotations
 
 import html
 import json
+from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -26,7 +25,6 @@ def esc(s):
 
 
 def provider_link(provider: str, model_id: str) -> str:
-    """Real provider links where known, else model page."""
     base = model_id[:-5] if model_id.endswith(":free") else model_id
     links = {
         "openrouter": f"https://openrouter.ai/{base}",
@@ -49,85 +47,126 @@ def provider_link(provider: str, model_id: str) -> str:
         "vertex": "https://cloud.google.com/vertex-ai",
         "bedrock": "https://aws.amazon.com/bedrock",
         "ollama": "https://ollama.com",
+        "puter": "https://puter.com",
+        "pollinations": "https://pollinations.ai",
+        "huggingchat": "https://huggingface.co/chat",
+        "mistral": "https://mistral.ai",
+        "cohere": "https://cohere.com",
     }
     if provider in links:
         return links[provider]
     return f"https://openrouter.ai/{base}"
 
 
+def provider_link_plain(provider: str) -> str:
+    links = {
+        "openrouter": "https://openrouter.ai",
+        "deepseek": "https://platform.deepseek.com",
+        "google": "https://ai.google.dev",
+        "anthropic": "https://www.anthropic.com/api",
+        "openai": "https://platform.openai.com",
+        "groq": "https://console.groq.com",
+        "cerebras": "https://cloud.cerebras.ai",
+        "sambanova": "https://cloud.sambanova.ai",
+        "fireworks": "https://fireworks.ai",
+        "together": "https://www.together.ai",
+        "nvidia": "https://build.nvidia.com",
+        "deepinfra": "https://deepinfra.com",
+        "siliconflow": "https://siliconflow.cn",
+        "hyperbolic": "https://hyperbolic.xyz",
+        "novita": "https://novita.ai",
+        "chutes": "https://chutes.ai",
+        "github-models": "https://github.com/marketplace/models",
+        "vertex": "https://cloud.google.com/vertex-ai",
+        "bedrock": "https://aws.amazon.com/bedrock",
+        "ollama": "https://ollama.com",
+        "puter": "https://puter.com",
+        "pollinations": "https://pollinations.ai",
+        "huggingchat": "https://huggingface.co/chat",
+        "mistral": "https://mistral.ai",
+        "cohere": "https://cohere.com",
+    }
+    return links.get(provider, f"https://www.google.com/search?q={provider}+AI+API")
+
+
 _FREE_TAGS = {
-    "recurring-monthly": ("↻ monatlich", "#3fb950"),
-    "recurring-daily": ("↻ täglich", "#58a6ff"),
-    "keyless": ("🔓 keylos", "#d29922"),
-    "recurring-uncapped": ("∞ uncapped", "#8b949e"),
-    "one-time-initial": ("🎁 einmalig", "#a371f7"),
-    "recurring-credit": ("💳 credit", "#f0883e"),
-    "discontinued": ("💀 eingestellt", "#f85149"),
+    "recurring-monthly": ("monatlich", "#3fb950"),
+    "recurring-daily": ("täglich", "#58a6ff"),
+    "keyless": ("keylos", "#d29922"),
+    "recurring-uncapped": ("uncapped", "#8b949e"),
+    "one-time-initial": ("einmalig", "#a371f7"),
+    "recurring-credit": ("credit", "#f0883e"),
 }
 
-
-def free_badge(ftype: str) -> str:
-    label, color = _FREE_TAGS.get(ftype, (ftype or "?", "#8b949e"))
-    return f"<span class='badge' style='color:{color};border-color:{color}33;background:{color}11'>{esc(label)}</span>"
-
-
-_FREE_STATUS = {
-    "verified-free": ("✓ verified", "#3fb950"),
+_STATUS = {
+    "verified-free": ("✓ free verifiziert", "#3fb950"),
     "deprecated-not-on-openrouter": ("⚠️ deprecated", "#f85149"),
-    "unverified": ("❓ unverified", "#d29922"),
+    "unverified": ("❓ unverifiziert", "#d29922"),
 }
 
 
-def free_status_badge(status: str) -> str:
-    label, color = _FREE_STATUS.get(status, (status or "❓", "#8b949e"))
-    return f"<span class='badge' style='color:{color};border-color:{color}44;background:{color}11'>{esc(label)}</span>"
-
-
-def model_row(m: dict) -> str:
+def model_card(m: dict) -> str:
     sp = m.get("speed") or {}
     tps = sp.get("tps")
     ttft = sp.get("ttft_s")
-    samples = sp.get("samples")
-    provider = m.get("provider", "")
+    prov = m.get("provider", "")
     mid = m["id"]
     name = m.get("name", mid)
 
+    # Speed display
     if tps is not None:
-        speed_cell = f"<b>{tps:g}</b><span class='dim'> t/s</span>"
-        samples_cell = str(samples)
+        speed_html = f'<div class="speed"><b>{tps:g}</b><span>t/s</span></div>'
+        if ttft is not None:
+            speed_html += f'<div class="ttft">TTFT {ttft:g}s</div>'
     else:
-        speed_cell = "<span class='dim'>–</span>"
-        samples_cell = "<span class='dim'>–</span>"
+        speed_html = '<div class="speed none">–</div><div class="ttft">keine Messung</div>'
 
-    ttft_cell = f"{ttft:g}s" if ttft is not None else "<span class='dim'>–</span>"
+    # Provider list for AA models
+    prov_detail = ""
+    if sp.get("providers"):
+        top = sp["providers"][:3]
+        prov_detail = '<div class="providers">' + "".join(
+            f'<span class="prov-chip">{esc(p["provider"])} <b>{p["tps"]:g}</b> t/s</span>'
+            for p in top if p.get("tps")
+        ) + "</div>"
+
+    ftype = _FREE_TAGS.get(m.get("free_type", ""), (m.get("free_type", "?"), "#8b949e"))
+    status = _STATUS.get(m.get("free_status", "unverified"), ("❓", "#8b949e"))
 
     ctx = m.get("context_length")
-    ctx_cell = ""
+    ctx_html = ""
     if ctx:
         n = float(ctx)
-        ctx_cell = f"<span class='badge'>ctx {'{:g}'.format(n/1e6 if n>=1e6 else n/1e3)}</span>"
+        ctx_html = f'<span class="ctx">{n/1e6:.0f}M</span>' if n >= 1e6 else f'<span class="ctx">{n/1e3:.0f}k</span>'
 
-    budget_parts = []
-    if m.get("monthly_tokens"):
-        budget_parts.append(f"{m['monthly_tokens']:,}".replace(",", "."))
-    if m.get("credit_tokens"):
-        budget_parts.append(f"+{m['credit_tokens']:,}".replace(",", "."))
-    budget_cell = " / ".join(budget_parts) if budget_parts else "<span class='dim'>k.A.</span>"
+    budget = ""
+    if m.get("monthly_tokens") or m.get("credit_tokens"):
+        parts = []
+        if m.get("monthly_tokens"):
+            parts.append(f'{m["monthly_tokens"]:,}'.replace(",", "."))
+        if m.get("credit_tokens"):
+            parts.append(f'+{m["credit_tokens"]:,}'.replace(",", "."))
+        budget = f'<span class="budget">{"/".join(parts)}</span>'
 
-    return (
-        "<tr>"
-        f'<td class="name"><a href="{esc(provider_link(provider, mid))}" target="_blank" rel="noopener">{esc(mid)}</a>'
-        f"<br><small class='dim'>{esc(name)}</small>"
-        f"<br>{free_status_badge(m.get('free_status', 'unverified'))}</td>"
-        f"<td class='prov'><a href=\"{esc(provider_link(provider, mid))}\" target=\"_blank\" rel=\"noopener\">{esc(provider)}</a></td>"
-        f"<td>{free_badge(m.get('free_type', 'recurring-monthly'))}</td>"
-        f"<td class='num'>{speed_cell}</td>"
-        f"<td class='num'>{ttft_cell}</td>"
-        f"<td class='num'>{samples_cell}</td>"
-        f"<td>{ctx_cell}</td>"
-        f"<td class='num'>{budget_cell}</td>"
-        "</tr>"
-    )
+    return f"""<div class="card" data-id="{esc(mid.lower())}" data-provider="{esc(prov.lower())}" data-ftype="{esc(m.get('free_type',''))}" data-name="{esc(name.lower())}">
+  <div class="card-top">
+    <div class="card-title">
+      <a href="{esc(provider_link(prov, mid))}" target="_blank" rel="noopener">{esc(mid)}</a>
+      <span class="ftype" style="color:{ftype[1]}">{esc(ftype[0])}</span>
+      <span class="status" style="color:{status[1]}">{esc(status[0])}</span>
+      {ctx_html}
+      {budget}
+    </div>
+    <div class="card-provider">
+      <a href="{esc(provider_link_plain(prov))}" target="_blank" rel="noopener">{esc(prov)}</a>
+    </div>
+  </div>
+  <div class="card-body">
+    {speed_html}
+    {prov_detail}
+    <div class="card-name">{esc(name)}</div>
+  </div>
+</div>"""
 
 
 def main() -> int:
@@ -137,135 +176,131 @@ def main() -> int:
     counts = latest["counts"]
     updated = latest["updated_at"]
 
-    # Attach benchmark data to models (results keyed by model id)
     bench_raw_data = bench_raw.get("results", {})
-    measured_count = 0
-    aa_models = 0
+    # llm-benchmarks provider summary (30-day measurements)
+    llmbench = (bench_raw_data.get("__llmbench") or {}).get("providers", {}) if bench_raw_data.get("__llmbench") else {}
     for m in models:
         mid = m["id"].lower().rstrip(":free")
         entry = bench_raw_data.get(m["id"]) or bench_raw_data.get(mid)
         if entry:
-            # AA provider benchmarks (multiple providers per model)
             if entry.get("providers"):
-                aa_providers = sorted(entry["providers"], key=lambda p: p.get("tps") or 0, reverse=True)
-                best = aa_providers[0]
-                m["speed"] = {
-                    "tps": best.get("tps"),
-                    "ttft_s": best.get("ttft_s"),
-                    "providers": aa_providers,
-                    "source": "artificialanalysis",
-                }
-                aa_models += 1
-                measured_count += 1
-            # OpenRouter endpoints API values
+                provs = sorted(entry["providers"], key=lambda p: p.get("tps") or 0, reverse=True)
+                m["speed"] = {"tps": provs[0].get("tps"), "ttft_s": provs[0].get("ttft_s"), "providers": provs, "source": "aa"}
             elif entry.get("tps") is not None:
                 m["speed"] = {
                     "tps": entry.get("tps"),
-                    "tps_p90": entry.get("tps_p90"),
                     "ttft_s": (entry.get("ttft_ms_p50") or 0) / 1000 if entry.get("ttft_ms_p50") else None,
-                    "ttft_ms": entry.get("ttft_ms_p50"),
-                    "uptime": entry.get("uptime_30m"),
-                    "cost_verified": entry.get("cost_verified_zero", False),
                     "source": "openrouter",
                 }
-                measured_count += 1
             else:
                 m["speed"] = None
         else:
             m["speed"] = None
+        # llm-benchmarks fallback: match by model basename
+        if not (m["speed"] or {}).get("tps"):
+            base = mid.split("/")[-1].replace(".", "-").replace("_", "-")
+            # try direct and normalized match
+            for key, val in llmbench.items():
+                if base in key or key in base:
+                    m["speed"] = {"tps": val.get("tps"), "ttft_s": (val.get("ttft_ms") or 0) / 1000 if val.get("ttft_ms") else None,
+                                  "source": f"llmbench-{val.get('provider')}"}
+                    break
 
-    rows = "\n".join(model_row(m) for m in models)
-    providers = sorted({m.get("provider", "") for m in models})
+    # Group by provider, sort providers by measured count desc
+    by_prov = defaultdict(list)
+    for m in models:
+        by_prov[m.get("provider", "?")].append(m)
+    for p in by_prov:
+        by_prov[p].sort(key=lambda x: (0 if (x.get("speed") or {}).get("tps") else 1,
+                                       -(x["speed"]["tps"] if (x.get("speed") or {}).get("tps") else 0),
+                                       x["id"]))
+    providers_sorted = sorted(by_prov.items(),
+                              key=lambda kv: sum(1 for m in kv[1] if (m.get("speed") or {}).get("tps")),
+                              reverse=True)
 
-    # Provider options for filter dropdown
-    provider_opts = "".join(
-        f'<option value="{esc(p)}">{esc(p)}</option>' for p in providers
-    )
+    # HTML sections per provider
+    sections = []
+    for prov, ms in providers_sorted:
+        measured = sum(1 for m in ms if (m.get("speed") or {}).get("tps"))
+        cards = "".join(model_card(m) for m in ms)
+        sections.append(f"""<section class="provider-group" data-provider="{esc(prov.lower())}">
+  <h2 class="provider-head">
+    <a href="{esc(provider_link_plain(prov))}" target="_blank" rel="noopener">{esc(prov)}</a>
+    <span class="count">{len(ms)} Modelle</span>
+    <span class="count measured">📊 {measured} gemessen</span>
+  </h2>
+  <div class="card-grid">{cards}</div>
+</section>""")
+    sections_html = "\n".join(sections)
+
+    total_measured = sum(1 for m in models if (m.get("speed") or {}).get("tps"))
+    verified = sum(1 for m in models if m.get("free_status") == "verified-free")
 
     generated = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-    err_note = ""
-    if latest.get("source_errors"):
-        err_note = (
-            '<p class="warn">Hinweis: ' + esc(", ".join(latest["source_errors"])) + "</p>"
-        )
-
-    data_js = json.dumps([
-        {
-            "id": m["id"], "name": m.get("name", m["id"]), "provider": m.get("provider", ""),
-            "free_type": m.get("free_type", "recurring-monthly"),
-            "free_status": m.get("free_status", "unverified"),
-            "context_length": m.get("context_length"),
-            "monthly_tokens": m.get("monthly_tokens"), "credit_tokens": m.get("credit_tokens"),
-            "speed": m.get("speed"),
-            "link": provider_link(m.get("provider", ""), m["id"]),
-        } for m in models
-    ], ensure_ascii=False)
-
-    # Provider detail for AA models: "Model: Provider t/s (more...)" in tooltip
-    aa_count = sum(1 for m in models if (m.get("speed") or {}).get("providers"))
 
     page = f"""<!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Free LLM Tracker — {counts['free_models']} Free-Modelle mit t/s</title>
-<meta name="description" content="Automatischer Tracker aller {counts['free_models']} Free LLM-API-Modelle mit gemessener Geschwindigkeit (t/s), TTFT und Provider-Statistiken. Aktualisiert alle 6h.">
-<meta property="og:title" content="Free LLM Tracker — {counts['free_models']} Free-Modelle">
-<meta property="og:description" content="{counts['free_models']} Free-Modelle · {counts.get('with_measured_speed', measured_count)} mit gemessenen t/s · aktualisiert alle 6h">
-<meta name="theme-color" content="#0d1117">
-<link rel="canonical" href="https://harrytyp.github.io/free-llm-tracker/">
+<title>Free LLM Tracker — {counts['free_models']} Free-Modelle</title>
+<meta name="description" content="Alle Free LLM-API-Modelle mit gemessenen t/s, Free-Status und Provider-Statistiken. Automatisch aktualisiert.">
 <style>
 :root {{
-  --bg:#0d1117; --bg2:#161b22; --bg3:#1c2128; --border:#30363d;
-  --fg:#c9d1d9; --dim:#8b949e; --accent:#58a6ff; --ok:#3fb950; --warn:#d29922;
+  --bg:#0a0e14; --bg2:#111720; --bg3:#1a2230; --border:#243044;
+  --fg:#e6edf3; --dim:#8b98a8; --accent:#58a6ff; --ok:#3fb950; --warn:#d29922; --danger:#f85149;
 }}
 * {{ box-sizing:border-box; margin:0; padding:0; }}
-body {{
-  background:var(--bg); color:var(--fg);
-  font:15px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif;
-  min-height:100vh;
-}}
-.wrap {{ max-width:1400px; margin:0 auto; padding:24px 20px 64px; }}
+body {{ background:var(--bg); color:var(--fg); font:15px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif; }}
+.wrap {{ max-width:1400px; margin:0 auto; padding:20px; }}
 header {{ display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; margin-bottom:20px; }}
-h1 {{ font-size:24px; color:#fff; }}
+h1 {{ font-size:26px; font-weight:700; }}
 h1 span {{ color:var(--accent); }}
-.sub {{ color:var(--dim); font-size:14px; margin-top:2px; }}
-.controls {{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px; }}
-.search {{ flex:1; min-width:220px; background:var(--bg2); border:1px solid var(--border);
-  border-radius:8px; padding:10px 14px; color:var(--fg); font-size:14px; }}
+.sub {{ color:var(--dim); font-size:13px; margin-top:2px; }}
+.stats {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:10px; margin-bottom:16px; }}
+.stat {{ background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:12px 14px; }}
+.stat b {{ display:block; font-size:22px; color:#fff; }}
+.stat span {{ color:var(--dim); font-size:12px; }}
+.controls {{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px; position:sticky; top:0; background:var(--bg); padding:8px 0; z-index:10; }}
+.search {{ flex:1; min-width:200px; background:var(--bg2); border:1px solid var(--border); border-radius:10px; padding:10px 14px; color:var(--fg); font-size:14px; }}
 .search:focus {{ outline:none; border-color:var(--accent); }}
-select, .btn {{ background:var(--bg2); border:1px solid var(--border); border-radius:8px;
-  padding:10px 14px; color:var(--fg); font-size:14px; cursor:pointer; }}
+select, .btn {{ background:var(--bg2); border:1px solid var(--border); border-radius:10px; padding:10px 14px; color:var(--fg); font-size:13px; cursor:pointer; }}
 select:focus {{ outline:none; border-color:var(--accent); }}
 .btn:hover {{ border-color:var(--accent); }}
-.stats {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; margin-bottom:16px; }}
-.stat {{ background:var(--bg2); border:1px solid var(--border); border-radius:10px; padding:12px 16px; }}
-.stat b {{ display:block; font-size:20px; color:#fff; }}
-.stat span {{ color:var(--dim); font-size:12px; }}
-table {{ width:100%; border-collapse:collapse; background:var(--bg2); border-radius:10px; overflow:hidden; }}
-th, td {{ padding:10px 12px; text-align:left; border-bottom:1px solid var(--border); font-size:13px; vertical-align:top; }}
-th {{ background:var(--bg3); color:var(--dim); font-weight:600; position:sticky; top:0; cursor:pointer; user-select:none; white-space:nowrap; }}
-th:hover {{ color:var(--accent); }}
-th .arrow {{ opacity:0; font-size:10px; }}
-th.sorted .arrow {{ opacity:1; }}
-tbody tr:hover {{ background:var(--bg3); }}
-td.name a {{ color:var(--accent); text-decoration:none; word-break:break-all; font-weight:500; }}
-td.name a:hover {{ text-decoration:underline; }}
-td.prov a {{ color:var(--dim); text-decoration:none; }}
-td.prov a:hover {{ color:var(--accent); }}
-.badge {{ display:inline-block; border-radius:10px; padding:2px 8px; font-size:11px; font-weight:500; white-space:nowrap; }}
-.dim {{ color:var(--dim); }}
-.num {{ text-align:right; font-variant-numeric:tabular-nums; }}
-.warn {{ color:var(--warn); font-size:13px; margin-bottom:12px; }}
-footer {{ margin-top:28px; color:var(--dim); font-size:12px; }}
+.provider-group {{ margin-bottom:28px; }}
+.provider-head {{ display:flex; align-items:center; gap:12px; margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid var(--border); }}
+.provider-head a {{ color:var(--fg); text-decoration:none; font-size:18px; font-weight:600; }}
+.provider-head a:hover {{ color:var(--accent); }}
+.count {{ color:var(--dim); font-size:12px; background:var(--bg2); border-radius:10px; padding:2px 8px; }}
+.count.measured {{ color:var(--accent); }}
+.card-grid {{ display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:10px; }}
+.card {{ background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:14px; transition:border-color .15s; }}
+.card:hover {{ border-color:var(--accent); }}
+.card-top {{ display:flex; justify-content:space-between; align-items:flex-start; gap:8px; }}
+.card-title a {{ color:var(--fg); text-decoration:none; font-weight:600; font-size:14px; word-break:break-all; }}
+.card-title a:hover {{ color:var(--accent); }}
+.ftype, .status, .ctx, .budget {{ display:inline-block; font-size:10px; border-radius:8px; padding:1px 6px; margin-left:4px; background:var(--bg3); }}
+.ctx {{ color:var(--dim); }}
+.budget {{ color:var(--dim); }}
+.card-provider a {{ color:var(--dim); text-decoration:none; font-size:12px; white-space:nowrap; }}
+.card-provider a:hover {{ color:var(--accent); }}
+.card-body {{ margin-top:10px; display:flex; flex-direction:column; gap:6px; }}
+.speed {{ font-size:22px; }}
+.speed b {{ font-size:28px; color:var(--ok); }}
+.speed span {{ color:var(--dim); font-size:13px; margin-left:4px; }}
+.speed.none {{ color:var(--dim); font-size:22px; }}
+.ttft {{ color:var(--dim); font-size:12px; }}
+.providers {{ display:flex; flex-wrap:wrap; gap:4px; margin-top:4px; }}
+.prov-chip {{ background:var(--bg3); border-radius:8px; padding:2px 8px; font-size:11px; color:var(--dim); }}
+.prov-chip b {{ color:var(--fg); }}
+.card-name {{ color:var(--dim); font-size:12px; }}
+.empty {{ text-align:center; color:var(--dim); padding:60px; font-size:16px; }}
+footer {{ margin-top:30px; color:var(--dim); font-size:12px; text-align:center; }}
 footer a {{ color:var(--accent); }}
-.empty {{ text-align:center; color:var(--dim); padding:40px; }}
-@media (max-width:800px) {{
-  .wrap {{ padding:16px 10px 48px; }}
-  th, td {{ padding:8px 6px; font-size:12px; }}
+@media (max-width:700px) {{
+  .card-grid {{ grid-template-columns:1fr; }}
+  .wrap {{ padding:12px; }}
   h1 {{ font-size:20px; }}
-  .stats {{ grid-template-columns:repeat(2,1fr); }}
 }}
 </style>
 </head>
@@ -274,158 +309,87 @@ footer a {{ color:var(--accent); }}
 <header>
   <div>
     <h1>Free LLM <span>Tracker</span></h1>
-    <p class="sub">Alle kostenlosen LLM-API-Modelle mit gemessener Geschwindigkeit. Automatisch alle 6h aktualisiert.</p>
+    <p class="sub">Alle kostenlosen LLM-API-Modelle · gemessene t/s · Free-Status · automatisch aktualisiert</p>
   </div>
   <a class="btn" href="https://github.com/harrytyp/free-llm-tracker" target="_blank" rel="noopener">GitHub ↗</a>
 </header>
 
 <div class="stats">
   <div class="stat"><b>{counts['free_models']}</b><span>Free-Modelle</span></div>
-  <div class="stat"><b>{measured_count}</b><span>mit gemessenen t/s</span></div>
-  <div class="stat"><b>{counts.get('from_omniroute', 0)}</b><span>OmniRoute Einträge</span></div>
-  <div class="stat"><b>{updated[11:16]} UTC</b><span>Datenstand {updated[:10]}</span></div>
+  <div class="stat"><b>{total_measured}</b><span>mit gemessenen t/s</span></div>
+  <div class="stat"><b>{verified}</b><span>free verifiziert</span></div>
+  <div class="stat"><b>{updated[11:16]} UTC</b><span>Stand {updated[:10]}</span></div>
 </div>
-{err_note}
 
 <div class="controls">
-  <input class="search" id="search" type="search" placeholder="Suchen: Modell, Provider, Name…">
-  <select id="provider-filter">
-    <option value="">Alle Provider ({len(providers)})</option>
-    {provider_opts}
+  <input class="search" id="search" placeholder="Suchen: Modell, Provider…">
+  <select id="provider-filter"><option value="">Alle Provider</option></select>
+  <select id="status-filter">
+    <option value="">Alle Status</option>
+    <option value="verified-free">✓ Verifiziert</option>
+    <option value="unverified">❓ Unverifiziert</option>
   </select>
-  <select id="free-filter">
-    <option value="">Alle Free-Typen</option>
-    <option value="recurring-monthly">↻ monatlich</option>
-    <option value="recurring-daily">↻ täglich</option>
-    <option value="keyless">🔓 keylos</option>
-    <option value="recurring-uncapped">∞ uncapped</option>
-    <option value="one-time-initial">🎁 einmalig</option>
-    <option value="recurring-credit">💳 credit</option>
+  <select id="measured-filter">
+    <option value="">Alle Modelle</option>
+    <option value="measured">Nur gemessene</option>
+    <option value="unmeasured">Nur ohne Messung</option>
   </select>
-  <button class="btn" id="csv">CSV Export</button>
 </div>
 
-<table id="models">
-<thead>
-<tr>
-  <th data-key="id">Modell <span class="arrow">↑↓</span></th>
-  <th data-key="provider">Provider <span class="arrow">↑↓</span></th>
-  <th data-key="free_type">Free-Typ <span class="arrow">↑↓</span></th>
-  <th data-key="tps" class="num">t/s <span class="arrow">↑↓</span></th>
-  <th data-key="ttft" class="num">TTFT <span class="arrow">↑↓</span></th>
-  <th data-key="samples" class="num">Samples <span class="arrow">↑↓</span></th>
-  <th data-key="ctx">Kontext</th>
-  <th data-key="budget" class="num">Budget</th>
-</tr>
-</thead>
-<tbody id="tbody">
-{rows}
-</tbody>
-</table>
+<div id="content">
+{sections_html}
+</div>
+
 <div class="empty" id="empty" style="display:none">Keine Modelle gefunden.</div>
 
 <footer>
-  <p>Quellen: OmniRoute free-catalog · OpenRouter /api/v1/models · llm-benchmarks.com (nur n≥3) · Artificial Analysis (optional)</p>
-  <p>Entwickelt von <a href="https://github.com/harrytyp">harrytyp</a> — <a href="https://github.com/harrytyp/free-llm-tracker">Quellcode</a></p>
+  <p>Quellen: OmniRoute free-catalog · OpenRouter · Artificial Analysis Provider-Benchmarks · llm-benchmarks.com</p>
+  <p><a href="https://github.com/harrytyp/free-llm-tracker">Quellcode</a> · Entwickelt von harrytyp</p>
 </footer>
 </div>
 
 <script>
-const DATA = {data_js};
-let sortKey = 'tps', sortDir = -1;
+function filterModels() {{
+  const q = document.getElementById('search').value.toLowerCase().trim();
+  const prov = document.getElementById('provider-filter').value.toLowerCase();
+  const status = document.getElementById('status-filter').value;
+  const measured = document.getElementById('measured-filter').value;
 
-function fmtBudget(m) {{
-  const parts = [];
-  if (m.monthly_tokens) parts.push(m.monthly_tokens.toLocaleString('de-DE'));
-  if (m.credit_tokens) parts.push('+' + m.credit_tokens.toLocaleString('de-DE'));
-  return parts.join(' / ') || 'k.A.';
-}}
-
-function rowHtml(m) {{
-  const sp = m.speed || {{}};
-  const tps = sp.tps != null ? `<b>${{sp.tps}}</b> <span class="dim">t/s</span>` : '<span class="dim">–</span>';
-  const ttft = sp.ttft_s != null ? `${{sp.ttft_s}}s` : '<span class="dim">–</span>';
-  const samples = sp.samples != null ? sp.samples : '<span class="dim">–</span>';
-  const ctx = m.context_length ? `<span class="badge">ctx ${{m.context_length >= 1e6 ? (m.context_length/1e6).toFixed(0)+'M' : (m.context_length/1e3).toFixed(0)+'k'}}</span>` : '';
-  // AA provider list: show best provider + expandable list
-  let provDetail = '';
-  if (sp.providers && sp.providers.length > 0) {{
-    const top = sp.providers.slice(0, 3).map(p => `${{p.provider}}: <b>${{p.tps}}</b> t/s`).join('<br>');
-    provDetail = `<small class="dim" title="${{sp.providers.map(p => p.provider + ' ' + p.tps + ' t/s').join(' · ')}}">📊 ${{sp.providers.length}} Provider</small>`;
-  }} else if (sp.source === 'openrouter') {{
-    provDetail = `<small class="dim">via OpenRouter</small>`;
+  // Populate provider dropdown on load
+  if (document.getElementById('provider-filter').options.length === 1) {{
+    const provs = new Set();
+    document.querySelectorAll('.provider-group').forEach(s => provs.add(s.dataset.provider));
+    [...provs].sort().forEach(p => {{
+      const opt = document.createElement('option');
+      opt.value = p; opt.textContent = p;
+      document.getElementById('provider-filter').appendChild(opt);
+    }});
   }}
-  return `<tr>
-    <td class="name"><a href="${{m.link}}" target="_blank" rel="noopener">${{m.id}}</a><br><small class="dim">${{m.name || ''}}</small></td>
-    <td class="prov"><a href="${{m.link}}" target="_blank" rel="noopener">${{m.provider}}</a></td>
-    <td>${{m.free_type}}</td>
-    <td class="num">${{tps}}<br>${{provDetail}}</td>
-    <td class="num">${{ttft}}</td>
-    <td class="num">${{samples}}</td>
-    <td>${{ctx}}</td>
-    <td class="num">${{fmtBudget(m)}}</td>
-  </tr>`;
-}}
 
-function getVal(m, key) {{
-  switch(key) {{
-    case 'tps': return (m.speed && m.speed.tps) || -1;
-    case 'ttft': return (m.speed && m.speed.ttft_s) || 9999;
-    case 'samples': return (m.speed && m.speed.samples) || 0;
-    case 'ctx': return m.context_length || 0;
-    case 'budget': return (m.monthly_tokens || 0) + (m.credit_tokens || 0);
-    default: return (m[key] || '').toString().toLowerCase();
-  }}
+  let visible = 0;
+  document.querySelectorAll('.provider-group').forEach(section => {{
+    const sProv = section.dataset.provider;
+    if (prov && sProv !== prov) {{ section.style.display = 'none'; return; }}
+    let sectionVisible = false;
+    section.querySelectorAll('.card').forEach(card => {{
+      const text = (card.dataset.id + ' ' + card.dataset.name + ' ' + card.dataset.provider).toLowerCase();
+      const matchesQ = !q || text.includes(q);
+      const matchesStatus = !status || card.dataset.status === status;
+      const hasTps = card.querySelector('.speed b') !== null;
+      const matchesMeasured = !measured || (measured === 'measured' && hasTps) || (measured === 'unmeasured' && !hasTps);
+      const show = matchesQ && matchesStatus && matchesMeasured;
+      card.style.display = show ? '' : 'none';
+      if (show) {{ sectionVisible = true; visible++; }}
+    }});
+    section.style.display = sectionVisible ? '' : 'none';
+  }});
+  document.getElementById('empty').style.display = visible ? 'none' : 'block';
 }}
-
-function render() {{
-  const q = document.getElementById('search').value.toLowerCase();
-  const prov = document.getElementById('provider-filter').value;
-  const ft = document.getElementById('free-filter').value;
-  const rows = DATA.filter(m => {{
-    if (prov && m.provider !== prov) return false;
-    if (ft && m.free_type !== ft) return false;
-    if (q && !(m.id + ' ' + m.provider + ' ' + (m.name||'')).toLowerCase().includes(q)) return false;
-    return true;
-  }});
-  rows.sort((a,b) => {{
-    const va = getVal(a, sortKey), vb = getVal(b, sortKey);
-    if (va < vb) return -1 * sortDir;
-    if (va > vb) return 1 * sortDir;
-    return 0;
-  }});
-  document.getElementById('tbody').innerHTML = rows.map(rowHtml).join('');
-  document.getElementById('empty').style.display = rows.length ? 'none' : 'block';
-  document.querySelectorAll('th').forEach(th => {{
-    th.classList.toggle('sorted', th.dataset.key === sortKey);
-  }});
-}}
-
-document.querySelectorAll('th').forEach(th => {{
-  th.addEventListener('click', () => {{
-    const k = th.dataset.key;
-    if (sortKey === k) sortDir *= -1;
-    else {{ sortKey = k; sortDir = k === 'tps' || k === 'ttft' || k === 'samples' ? -1 : 1; }}
-    render();
-  }});
-}});
-document.getElementById('search').addEventListener('input', render);
-document.getElementById('provider-filter').addEventListener('change', render);
-document.getElementById('free-filter').addEventListener('change', render);
-document.getElementById('csv').addEventListener('click', () => {{
-  const header = ['id','provider','free_type','tps','ttft_s','samples','context_length','monthly_tokens','credit_tokens'];
-  const lines = [header.join(',')];
-  DATA.forEach(m => {{
-    const sp = m.speed || {{}};
-    lines.push([m.id, m.provider, m.free_type, sp.tps||'', sp.ttft_s||'', sp.samples||'', m.context_length||'', m.monthly_tokens||'', m.credit_tokens||''].join(','));
-  }});
-  const blob = new Blob([lines.join('\\n')], {{type:'text/csv'}});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'free-llm-models.csv';
-  a.click();
-}});
-render();
+document.getElementById('search').addEventListener('input', filterModels);
+document.getElementById('provider-filter').addEventListener('change', filterModels);
+document.getElementById('status-filter').addEventListener('change', filterModels);
+document.getElementById('measured-filter').addEventListener('change', filterModels);
+filterModels();
 </script>
 </body>
 </html>
@@ -433,7 +397,7 @@ render();
 
     out = ROOT / "index.html"
     out.write_text(page)
-    print(f"OK wrote {out} ({len(page)} bytes, {len(models)} rows, {measured_count} measured)")
+    print(f"OK wrote {out} ({len(page)} bytes, {len(models)} models, {total_measured} measured)")
 
 
 if __name__ == "__main__":

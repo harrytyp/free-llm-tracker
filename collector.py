@@ -288,8 +288,12 @@ def main() -> int:
                     break
 
     free_models = list(by_key.values())
+    # EXCLUDE deprecated models entirely (not free anymore, don't show them)
+    before = len(free_models)
+    free_models = [m for m in free_models if m.get("free_status") != "deprecated-not-on-openrouter"]
+    print(f"  excluded {before - len(free_models)} deprecated models")
     if not free_models:
-        print("FATAL both free catalogs empty — refusing to write bad data", file=sys.stderr)
+        print("FATAL both free catalogs empty after deprecation filter — refusing to write bad data", file=sys.stderr)
         return 1
 
     # 2. Benchmarks (optional source)

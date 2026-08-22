@@ -1,7 +1,217 @@
 {
- "updated_at": "2026-08-22T14:04:08Z",
+ "updated_at": "2026-08-22T14:44:04Z",
  "method": "openrouter endpoints API + AA provider benchmarks (public) + own streaming",
  "results": {
+  "stealth/ox-alpha": {
+   "tps": 15,
+   "tps_p90": 36,
+   "ttft_ms_p50": 10656.5,
+   "ttft_ms_p90": 53109.5,
+   "provider": "Stealth",
+   "uptime_30m": 99.988,
+   "source": "openrouter-endpoints-api",
+   "measured_at": "2026-08-22T14:42:00Z"
+  },
+  "dots-studio/dots-3-note-preview:free": {
+   "tps": 62,
+   "tps_p90": 115,
+   "ttft_ms_p50": 1042,
+   "ttft_ms_p90": 3286.2,
+   "provider": "AtlasCloud",
+   "uptime_30m": 99.987,
+   "source": "openrouter-endpoints-api",
+   "measured_at": "2026-08-22T14:42:00Z"
+  },
+  "liquid/lfm-2.5-2.6b:free": {
+   "tps": 134,
+   "tps_p90": 265,
+   "ttft_ms_p50": 1629,
+   "ttft_ms_p90": 8953.6,
+   "provider": "Liquid",
+   "uptime_30m": 98.973,
+   "source": "openrouter-endpoints-api",
+   "measured_at": "2026-08-22T14:42:00Z"
+  },
+  "nvidia/nemotron-3.5-lightning:free": {
+   "tps": 36,
+   "tps_p90": 83,
+   "ttft_ms_p50": 1275,
+   "ttft_ms_p90": 6958.8,
+   "provider": "Nvidia",
+   "uptime_30m": 99.44,
+   "source": "openrouter-endpoints-api",
+   "measured_at": "2026-08-22T14:42:01Z"
+  },
+  "thinkingmachines/inkling-small:free": {
+   "tps": 98,
+   "tps_p90": 217,
+   "ttft_ms_p50": 921.5,
+   "ttft_ms_p90": 2300.9,
+   "provider": "Thinking Machines",
+   "uptime_30m": 100,
+   "source": "openrouter-endpoints-api",
+   "measured_at": "2026-08-22T14:42:01Z"
+  },
+  "poolside/laguna-s-2.1:free": {
+   "tps": 38,
+   "tps_p90": 60,
+   "ttft_ms_p50": 1495.5,
+   "ttft_ms_p90": 3103.3,
+   "provider": "Poolside",
+   "uptime_30m": 99.991,
+   "source": "openrouter-endpoints-api",
+   "measured_at": "2026-08-22T14:42:02Z"
+  },
+  "thinkingmachines/inkling:free": {
+   "tps": 67,
+   "tps_p90": 137,
+   "ttft_ms_p50": 1086,
+   "ttft_ms_p90": 2549.5,
+   "provider": "Thinking Machines",
+   "uptime_30m": 100,
+   "source": "openrouter-endpoints-api",
+   "measured_at": "2026-08-22T14:42:02Z"
+  },
+  "poolside/laguna-xs-2.1:free": {
+   "tps": 5,
+   "tps_p90": 8,
+   "ttft_ms_p50": 5652,
+   "ttft_ms_p90": 14112.8,
+   "provider": "Poolside",
+   "uptime_30m": 97.774,
+   "source": "openrouter-endpoints-api",
+   "measured_at": "2026-08-22T14:42:02Z"
+  },
+  "cohere/north-mini-code:free": {
+   "tps": 25,
+   "tps_p90": 39,
+   "ttft_ms_p50": 1204,
+   "ttft_ms_p90": 3566.9,
+   "provider": "Cohere",
+   "uptime_30m": 98.029,
+   "source": "openrouter-endpoints-api",
+   "measured_at": "2026-08-22T14:42:02Z"
+  },
+  "z-ai/glm-5.2:free": {
+   "tps": 144,
+   "tps_p90": 387.4,
+   "ttft_ms_p50": 2991,
+   "ttft_ms_p90": 12346.8,
+   "provider": "Decart",
+   "uptime_30m": 99.832,
+   "source": "openrouter-endpoints-api",
+   "measured_at": "2026-08-22T14:42:03Z"
+  },
+  "nvidia/nemotron-3.5-content-safety:free": {
+   "tps": 68,
+   "tps_p90": 84,
+   "ttft_ms_p50": 296,
+   "ttft_ms_p90": 1844.4,
+   "provider": "Nvidia",
+   "uptime_30m": 97.887,
+   "source": "openrouter-endpoints-api",
+   "measured_at": "2026-08-22T14:42:03Z"
+  },
+  "nvidia/nemotron-3-ultra-550b-a55b:free": {
+   "tps": 23,
+   "tps_p90": 59,
+   "ttft_ms_p50": 2592,
+   "ttft_ms_p90": 13077,
+   "provider": "Nvidia",
+   "uptime_30m": 99.76,
+   "source": "openrouter-endpoints-api",
+   "measured_at": "2026-08-22T14:42:03Z"
+  },
+  "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": {
+   "tps": 53,
+   "tps_p90": 103,
+   "ttft_ms_p50": 434,
+   "ttft_ms_p90": 2444.2,
+   "provider": "Nvidia",
+   "uptime_30m": 96.676,
+   "source": "openrouter-endpoints-api",
+   "measured_at": "2026-08-22T14:42:04Z"
+  },
+  "google/gemma-4-26b-a4b-it:free": {
+   "tps": 35.5,
+   "tps_p90": 46,
+   "ttft_ms_p50": 965.5,
+   "ttft_ms_p90": 2364.0,
+   "provider": "Google AI Studio",
+   "uptime_30m": 100,
+   "source": "openrouter-endpoints-api",
+   "measured_at": "2026-08-22T14:42:04Z"
+  },
+  "google/gemma-4-31b-it:free": {
+   "tps": 30,
+   "tps_p90": 35,
+   "ttft_ms_p50": 1219,
+   "ttft_ms_p90": 3236.2,
+   "provider": "Google AI Studio",
+   "uptime_30m": 100,
+   "source": "openrouter-endpoints-api",
+   "measured_at": "2026-08-22T14:42:04Z"
+  },
+  "google/lyria-3-pro-preview": {
+   "tps": 1,
+   "tps_p90": 16,
+   "ttft_ms_p50": 6728,
+   "ttft_ms_p90": 10685,
+   "provider": "Google AI Studio",
+   "uptime_30m": null,
+   "source": "openrouter-endpoints-api",
+   "measured_at": "2026-08-22T14:42:05Z"
+  },
+  "google/lyria-3-clip-preview": {
+   "tps": 1,
+   "tps_p90": 8.7,
+   "ttft_ms_p50": 2751,
+   "ttft_ms_p90": 3157.7,
+   "provider": "Google AI Studio",
+   "uptime_30m": null,
+   "source": "openrouter-endpoints-api",
+   "measured_at": "2026-08-22T14:42:05Z"
+  },
+  "nvidia/nemotron-3-super-120b-a12b:free": {
+   "tps": 41,
+   "tps_p90": 90,
+   "ttft_ms_p50": 1882,
+   "ttft_ms_p90": 8617.6,
+   "provider": "Nvidia",
+   "uptime_30m": 99.697,
+   "source": "openrouter-endpoints-api",
+   "measured_at": "2026-08-22T14:42:05Z"
+  },
+  "nvidia/nemotron-3-nano-30b-a3b:free": {
+   "tps": 118,
+   "tps_p90": 196,
+   "ttft_ms_p50": 435,
+   "ttft_ms_p90": 3548.5,
+   "provider": "Nvidia",
+   "uptime_30m": 99.947,
+   "source": "openrouter-endpoints-api",
+   "measured_at": "2026-08-22T14:42:06Z"
+  },
+  "nvidia/nemotron-nano-12b-v2-vl:free": {
+   "tps": 16,
+   "tps_p90": 36,
+   "ttft_ms_p50": 2004,
+   "ttft_ms_p90": 14553.8,
+   "provider": "Nvidia",
+   "uptime_30m": 81.254,
+   "source": "openrouter-endpoints-api",
+   "measured_at": "2026-08-22T14:42:06Z"
+  },
+  "nvidia/nemotron-nano-9b-v2:free": {
+   "tps": 37,
+   "tps_p90": 51,
+   "ttft_ms_p50": 854.5,
+   "ttft_ms_p90": 7696.9,
+   "provider": "Nvidia",
+   "uptime_30m": 99.549,
+   "source": "openrouter-endpoints-api",
+   "measured_at": "2026-08-22T14:42:06Z"
+  },
   "__llmbench": {
    "type": "provider-summary",
    "providers": {
@@ -12,7 +222,7 @@
      "tps_max": 77.3,
      "ttft_ms": 1380.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "claude-sonnet-5": {
      "provider": "openrouter",
@@ -21,7 +231,7 @@
      "tps_max": 56.8,
      "ttft_ms": 2580.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "claude-opus-4.8": {
      "provider": "openrouter",
@@ -30,7 +240,7 @@
      "tps_max": 45.5,
      "ttft_ms": 1650.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "claude-opus-5": {
      "provider": "deepinfra",
@@ -39,7 +249,7 @@
      "tps_max": 34.2,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "claude-opus-4.5": {
      "provider": "openrouter",
@@ -48,7 +258,7 @@
      "tps_max": 35.4,
      "ttft_ms": 1830.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "claude-opus-4.7": {
      "provider": "openrouter",
@@ -57,7 +267,7 @@
      "tps_max": 39.4,
      "ttft_ms": 1550.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "claude-sonnet-4.6": {
      "provider": "openrouter",
@@ -66,7 +276,7 @@
      "tps_max": 36.8,
      "ttft_ms": 1530.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "claude-fable-5": {
      "provider": "openrouter",
@@ -75,7 +285,7 @@
      "tps_max": 10.7,
      "ttft_ms": 6030.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "claude-opus-4.6": {
      "provider": "openrouter",
@@ -84,7 +294,7 @@
      "tps_max": 31.5,
      "ttft_ms": 2070.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "claude-opus-4.1": {
      "provider": "openrouter",
@@ -93,7 +303,7 @@
      "tps_max": 12.8,
      "ttft_ms": 3660.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "nova-micro-1.0": {
      "provider": "openrouter",
@@ -102,7 +312,7 @@
      "tps_max": 167.0,
      "ttft_ms": 2680.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "llama-4-maverick": {
      "provider": "openrouter",
@@ -111,7 +321,7 @@
      "tps_max": 68.1,
      "ttft_ms": 990.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "llama-4-scout": {
      "provider": "openrouter",
@@ -120,7 +330,7 @@
      "tps_max": 77.7,
      "ttft_ms": 980.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "llama-3.1-8b-instruct": {
      "provider": "openrouter",
@@ -129,7 +339,7 @@
      "tps_max": 138.0,
      "ttft_ms": 1010.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "nova-lite-1.0": {
      "provider": "openrouter",
@@ -138,7 +348,7 @@
      "tps_max": 178.0,
      "ttft_ms": 1100.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "nova-pro-1.0": {
      "provider": "openrouter",
@@ -147,7 +357,7 @@
      "tps_max": 87.3,
      "ttft_ms": 1370.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "llama-3.3-70b-instruct": {
      "provider": "together",
@@ -156,7 +366,7 @@
      "tps_max": 124.0,
      "ttft_ms": 1180.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     },
     "mistral-7b": {
      "provider": "deepinfra",
@@ -165,7 +375,7 @@
      "tps_max": 60.2,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "llama-3-8b": {
      "provider": "deepinfra",
@@ -174,7 +384,7 @@
      "tps_max": 94.9,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "mixtral-8x7b": {
      "provider": "deepinfra",
@@ -183,7 +393,7 @@
      "tps_max": 70.8,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "llama-3.1-70b-instruct": {
      "provider": "openrouter",
@@ -192,7 +402,7 @@
      "tps_max": 49.8,
      "ttft_ms": 1090.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "mistral-small": {
      "provider": "bedrock",
@@ -201,7 +411,7 @@
      "tps_max": 60.6,
      "ttft_ms": 210.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:26Z"
+     "measured_at": "2026-08-22T14:43:32Z"
     },
     "mistral-large": {
      "provider": "openrouter",
@@ -210,7 +420,7 @@
      "tps_max": 37.1,
      "ttft_ms": 1290.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "llama-3-70b": {
      "provider": "deepinfra",
@@ -219,7 +429,7 @@
      "tps_max": 47.9,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "claude-sonnet-4.5": {
      "provider": "openrouter",
@@ -228,7 +438,7 @@
      "tps_max": 38.3,
      "ttft_ms": 1730.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gemma-4-31b": {
      "provider": "together",
@@ -237,7 +447,7 @@
      "tps_max": 109.0,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     },
     "nemotron-3.5-lightning": {
      "provider": "openrouter",
@@ -246,7 +456,7 @@
      "tps_max": 130.0,
      "ttft_ms": 2450.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3.5-35b-a3b": {
      "provider": "openrouter",
@@ -255,7 +465,7 @@
      "tps_max": 50.2,
      "ttft_ms": 9920.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-oss-120b-turbo": {
      "provider": "deepinfra",
@@ -264,7 +474,7 @@
      "tps_max": 180.0,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "mimo-v2.5-pro": {
      "provider": "openrouter",
@@ -273,7 +483,7 @@
      "tps_max": 25.3,
      "ttft_ms": 3710.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-oss-20b": {
      "provider": "together",
@@ -282,7 +492,7 @@
      "tps_max": 167.0,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     },
     "nemotron-3-nano-30b-a3b": {
      "provider": "openrouter",
@@ -291,7 +501,7 @@
      "tps_max": 92.1,
      "ttft_ms": 940.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "nvidia-nemotron-nano-9b-v2": {
      "provider": "deepinfra",
@@ -300,7 +510,7 @@
      "tps_max": 152.0,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "qwen3.5-122b-a10b": {
      "provider": "openrouter",
@@ -309,7 +519,7 @@
      "tps_max": 59.4,
      "ttft_ms": 11300.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-30b-a3b": {
      "provider": "openrouter",
@@ -318,7 +528,7 @@
      "tps_max": 20.2,
      "ttft_ms": 4970.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3.5-27b": {
      "provider": "openrouter",
@@ -327,7 +537,7 @@
      "tps_max": 5.44,
      "ttft_ms": 20700.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "inkling": {
      "provider": "together",
@@ -336,7 +546,7 @@
      "tps_max": 47.5,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     },
     "minimax-m2.7-turbo": {
      "provider": "deepinfra",
@@ -345,7 +555,7 @@
      "tps_max": 91.2,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "inkling-small": {
      "provider": "openrouter",
@@ -354,7 +564,7 @@
      "tps_max": 24.6,
      "ttft_ms": 4750.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "glm-4.7-flash": {
      "provider": "openrouter",
@@ -363,7 +573,7 @@
      "tps_max": 5.92,
      "ttft_ms": 19700.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "llama-3.2-90b": {
      "provider": "deepinfra",
@@ -372,7 +582,7 @@
      "tps_max": 113.0,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "qwen3-next-80b-a3b-instruct": {
      "provider": "openrouter",
@@ -381,7 +591,7 @@
      "tps_max": 66.5,
      "ttft_ms": 1150.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3.6-27b": {
      "provider": "openrouter",
@@ -390,7 +600,7 @@
      "tps_max": 1.74,
      "ttft_ms": 39900.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3.5-397b-a17b": {
      "provider": "openrouter",
@@ -399,7 +609,7 @@
      "tps_max": 12.4,
      "ttft_ms": 21300.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gemma-4-e4b-it": {
      "provider": "deepinfra",
@@ -408,7 +618,7 @@
      "tps_max": 83.2,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "qwen2.5-coder-32b-instruct": {
      "provider": "openrouter",
@@ -417,7 +627,7 @@
      "tps_max": 27.1,
      "ttft_ms": 800.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "phi-4": {
      "provider": "openrouter",
@@ -426,7 +636,7 @@
      "tps_max": 46.5,
      "ttft_ms": 790.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-32b": {
      "provider": "openrouter",
@@ -435,7 +645,7 @@
      "tps_max": 29.5,
      "ttft_ms": 14100.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "nemotron-3-nano-omni-30b-a3b-reasoning": {
      "provider": "deepinfra",
@@ -444,7 +654,7 @@
      "tps_max": 79.9,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "llama-3.3-nemotron-super-49b-v1.5": {
      "provider": "deepinfra",
@@ -453,7 +663,7 @@
      "tps_max": 73.8,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "kimi-k2.7-code": {
      "provider": "together",
@@ -462,7 +672,7 @@
      "tps_max": 255.0,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     },
     "gemma-4-31b-it-turbo": {
      "provider": "deepinfra",
@@ -471,7 +681,7 @@
      "tps_max": 62.4,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "mistral-small-3": {
      "provider": "openrouter",
@@ -480,7 +690,7 @@
      "tps_max": 55.6,
      "ttft_ms": 920.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "nvidia-nemotron-3-ultra-550b-a55b": {
      "provider": "deepinfra",
@@ -489,7 +699,7 @@
      "tps_max": 71.4,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "nvidia-nemotron-nano-12b-v2-vl": {
      "provider": "deepinfra",
@@ -498,7 +708,7 @@
      "tps_max": 78.9,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "gemini-2.5-flash": {
      "provider": "openrouter",
@@ -507,7 +717,7 @@
      "tps_max": 104.0,
      "ttft_ms": 1250.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "nvidia-nemotron-3-ultra-550b-a55b-bf16": {
      "provider": "deepinfra",
@@ -516,7 +726,7 @@
      "tps_max": 83.4,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "llama-3.1-nemotron-70b-instruct": {
      "provider": "deepinfra",
@@ -525,7 +735,7 @@
      "tps_max": 69.3,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "nemotron-3-super": {
      "provider": "openrouter",
@@ -534,7 +744,7 @@
      "tps_max": 24.4,
      "ttft_ms": 15600.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "deepseek-v3.1-terminus": {
      "provider": "openrouter",
@@ -543,7 +753,7 @@
      "tps_max": 92.5,
      "ttft_ms": 1430.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gemini-3.1-flash-lite": {
      "provider": "openrouter",
@@ -552,7 +762,7 @@
      "tps_max": 138.0,
      "ttft_ms": 1540.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "ornith-1.0-35b": {
      "provider": "deepinfra",
@@ -561,7 +771,7 @@
      "tps_max": 89.4,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "qwen3.6-35b-a3b": {
      "provider": "openrouter",
@@ -570,7 +780,7 @@
      "tps_max": 10.1,
      "ttft_ms": 13900.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "minimax-m2.1": {
      "provider": "openrouter",
@@ -579,7 +789,7 @@
      "tps_max": 12.7,
      "ttft_ms": 12400.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "claude-opus-4": {
      "provider": "openrouter",
@@ -588,7 +798,7 @@
      "tps_max": 26.2,
      "ttft_ms": 2170.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "glm-4.6": {
      "provider": "openrouter",
@@ -597,7 +807,7 @@
      "tps_max": 3.76,
      "ttft_ms": 51900.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gemma-3-12b": {
      "provider": "openrouter",
@@ -606,7 +816,7 @@
      "tps_max": 57.4,
      "ttft_ms": 2400.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "glm-5.2": {
      "provider": "together",
@@ -615,7 +825,7 @@
      "tps_max": 193.0,
      "ttft_ms": 1670.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     },
     "l3.3-70b-euryale-v2.3": {
      "provider": "deepinfra",
@@ -624,7 +834,7 @@
      "tps_max": 44.8,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "hy3": {
      "provider": "openrouter",
@@ -633,7 +843,7 @@
      "tps_max": 3.31,
      "ttft_ms": 27100.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-coder-480b-a35b-instruct": {
      "provider": "deepinfra",
@@ -642,7 +852,7 @@
      "tps_max": 75.3,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "gemini-3.5-flash": {
      "provider": "openrouter",
@@ -651,7 +861,7 @@
      "tps_max": 8.89,
      "ttft_ms": 7590.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "mistral-nemo": {
      "provider": "openrouter",
@@ -660,7 +870,7 @@
      "tps_max": 54.4,
      "ttft_ms": 1150.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen-3.5-2b": {
      "provider": "deepinfra",
@@ -669,7 +879,7 @@
      "tps_max": 89.0,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "glm-4.7": {
      "provider": "openrouter",
@@ -678,7 +888,7 @@
      "tps_max": 5.52,
      "ttft_ms": 39500.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen-3.5-4b": {
      "provider": "deepinfra",
@@ -687,7 +897,7 @@
      "tps_max": 86.9,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "qwen3-coder-480b-a35b-instruct-turbo": {
      "provider": "deepinfra",
@@ -696,7 +906,7 @@
      "tps_max": 63.4,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "gemma-3-4b": {
      "provider": "openrouter",
@@ -705,7 +915,7 @@
      "tps_max": 47.8,
      "ttft_ms": 850.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "deepseek-v4-flash-0731": {
      "provider": "together",
@@ -714,7 +924,7 @@
      "tps_max": 153.0,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     },
     "qwen3-14b": {
      "provider": "openrouter",
@@ -723,7 +933,7 @@
      "tps_max": 14.2,
      "ttft_ms": 6490.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-vl-30b-a3b-instruct": {
      "provider": "openrouter",
@@ -732,7 +942,7 @@
      "tps_max": 121.0,
      "ttft_ms": 1620.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "deepseek-v4-flash-latest": {
      "provider": "fireworks",
@@ -741,7 +951,7 @@
      "tps_max": 61.1,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:28Z"
+     "measured_at": "2026-08-22T14:43:35Z"
     },
     "llama-2-70b": {
      "provider": "deepinfra",
@@ -750,7 +960,7 @@
      "tps_max": 44.1,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "minimax-m2": {
      "provider": "openrouter",
@@ -759,7 +969,7 @@
      "tps_max": 16.8,
      "ttft_ms": 7930.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen-3.5-0.8b": {
      "provider": "deepinfra",
@@ -768,7 +978,7 @@
      "tps_max": 96.0,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "muse-glimmer-30b": {
      "provider": "together",
@@ -777,7 +987,7 @@
      "tps_max": 45.6,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     },
     "mistral-small-3.2-24b": {
      "provider": "openrouter",
@@ -786,7 +996,7 @@
      "tps_max": 51.5,
      "ttft_ms": 1180.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "devstral-small": {
      "provider": "deepinfra",
@@ -795,7 +1005,7 @@
      "tps_max": 65.2,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "qwen2.5-vl-32b-instruct": {
      "provider": "deepinfra",
@@ -804,7 +1014,7 @@
      "tps_max": 41.0,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "gemini-3.1-pro": {
      "provider": "deepinfra",
@@ -813,7 +1023,7 @@
      "tps_max": 73.2,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "mimo-v2.5": {
      "provider": "openrouter",
@@ -822,7 +1032,7 @@
      "tps_max": 31.4,
      "ttft_ms": 5960.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "minimax-m2.5": {
      "provider": "openrouter",
@@ -831,7 +1041,7 @@
      "tps_max": 28.4,
      "ttft_ms": 11900.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "r1-distill-llama-70b": {
      "provider": "openrouter",
@@ -840,7 +1050,7 @@
      "tps_max": 4.8,
      "ttft_ms": 22900.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-max": {
      "provider": "openrouter",
@@ -849,7 +1059,7 @@
      "tps_max": 30.1,
      "ttft_ms": 1450.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "glm-5.1": {
      "provider": "openrouter",
@@ -858,7 +1068,7 @@
      "tps_max": 32.3,
      "ttft_ms": 6950.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "cogito-v2.1-671b": {
      "provider": "openrouter",
@@ -867,7 +1077,7 @@
      "tps_max": 88.8,
      "ttft_ms": 990.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "llama-3.2-11b": {
      "provider": "deepinfra",
@@ -876,7 +1086,7 @@
      "tps_max": 81.2,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "kimi-k3": {
      "provider": "together",
@@ -885,7 +1095,7 @@
      "tps_max": 72.7,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     },
     "glm-5": {
      "provider": "openrouter",
@@ -894,7 +1104,7 @@
      "tps_max": 24.6,
      "ttft_ms": 21300.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-vl-30b-a3b-instruct-(qwen-qwen3-vl-30b-a3b-instruct)": {
      "provider": "deepinfra",
@@ -903,7 +1113,7 @@
      "tps_max": 36.4,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "deepseek-r1-0528": {
      "provider": "deepinfra",
@@ -912,7 +1122,7 @@
      "tps_max": 45.9,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "gemma-4-26b-a4b": {
      "provider": "openrouter",
@@ -921,7 +1131,7 @@
      "tps_max": 51.4,
      "ttft_ms": 1190.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "kimi-k2.5": {
      "provider": "openrouter",
@@ -930,7 +1140,7 @@
      "tps_max": 12.8,
      "ttft_ms": 16300.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "paddleocr-vl-0.9b": {
      "provider": "deepinfra",
@@ -939,7 +1149,7 @@
      "tps_max": 48.4,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "olmo-3.1-32b-instruct": {
      "provider": "deepinfra",
@@ -948,7 +1158,7 @@
      "tps_max": 69.4,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "deepseek-r1-0528-turbo": {
      "provider": "deepinfra",
@@ -957,7 +1167,7 @@
      "tps_max": 46.6,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "olmocr-2-7b-1025": {
      "provider": "deepinfra",
@@ -966,7 +1176,7 @@
      "tps_max": 53.1,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "glm-4.6v": {
      "provider": "openrouter",
@@ -975,7 +1185,7 @@
      "tps_max": 2.66,
      "ttft_ms": 43400.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "llama-3.2-1b-instruct": {
      "provider": "openrouter",
@@ -984,7 +1194,7 @@
      "tps_max": 135.0,
      "ttft_ms": 1050.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-max-thinking": {
      "provider": "openrouter",
@@ -993,7 +1203,7 @@
      "tps_max": 33.8,
      "ttft_ms": 1500.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gemma-3-27b": {
      "provider": "openrouter",
@@ -1002,7 +1212,7 @@
      "tps_max": 48.7,
      "ttft_ms": 1670.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-235b-a22b": {
      "provider": "openrouter",
@@ -1011,7 +1221,7 @@
      "tps_max": 21.7,
      "ttft_ms": 11100.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "llama-3.2-3b-instruct": {
      "provider": "openrouter",
@@ -1020,7 +1230,7 @@
      "tps_max": 93.8,
      "ttft_ms": 1110.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "llama-3.1-405b": {
      "provider": "deepinfra",
@@ -1029,7 +1239,7 @@
      "tps_max": 27.1,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "kimi-k2-0905": {
      "provider": "openrouter",
@@ -1038,7 +1248,7 @@
      "tps_max": 27.5,
      "ttft_ms": 1030.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "claude-3-7-sonnet-latest": {
      "provider": "deepinfra",
@@ -1047,7 +1257,7 @@
      "tps_max": 32.1,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "claude-sonnet-4": {
      "provider": "openrouter",
@@ -1056,7 +1266,7 @@
      "tps_max": 63.0,
      "ttft_ms": 1440.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "kimi-k2.5-turbo": {
      "provider": "deepinfra",
@@ -1065,7 +1275,7 @@
      "tps_max": 64.7,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "deepseek-v4-pro-0423": {
      "provider": "together",
@@ -1074,7 +1284,7 @@
      "tps_max": 98.3,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     },
     "kimi-k2-thinking": {
      "provider": "openrouter",
@@ -1083,7 +1293,7 @@
      "tps_max": 4.9,
      "ttft_ms": 13000.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-oss-120b": {
      "provider": "together",
@@ -1092,7 +1302,7 @@
      "tps_max": 147.0,
      "ttft_ms": 2920.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     },
     "gemma-4-31b-it": {
      "provider": "deepinfra",
@@ -1101,7 +1311,7 @@
      "tps_max": 80.5,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "minimax-m3": {
      "provider": "together",
@@ -1110,7 +1320,7 @@
      "tps_max": 130.0,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     },
     "deepseek-v3": {
      "provider": "openrouter",
@@ -1119,7 +1329,7 @@
      "tps_max": 38.9,
      "ttft_ms": 1780.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "wizardlm-2-8x22b": {
      "provider": "openrouter",
@@ -1128,7 +1338,7 @@
      "tps_max": 19.3,
      "ttft_ms": 2800.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen2.5-72b-instruct": {
      "provider": "openrouter",
@@ -1137,7 +1347,7 @@
      "tps_max": 36.0,
      "ttft_ms": 1020.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "minimax-m2.7": {
      "provider": "openrouter",
@@ -1146,7 +1356,7 @@
      "tps_max": 42.5,
      "ttft_ms": 13500.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "deepseek-v3.2": {
      "provider": "openrouter",
@@ -1155,7 +1365,7 @@
      "tps_max": 45.1,
      "ttft_ms": 3780.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-vl-235b-a22b-instruct": {
      "provider": "openrouter",
@@ -1164,7 +1374,7 @@
      "tps_max": 40.6,
      "ttft_ms": 1470.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "llama-3.3-70b-instruct-turbo": {
      "provider": "deepinfra",
@@ -1173,7 +1383,7 @@
      "tps_max": 32.5,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "kimi-k2.6": {
      "provider": "together",
@@ -1182,7 +1392,7 @@
      "tps_max": 207.0,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     },
     "deepseek-v3.1": {
      "provider": "openrouter",
@@ -1191,7 +1401,7 @@
      "tps_max": 49.5,
      "ttft_ms": 1880.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-vl-235b-a22b-instruct-(qwen-qwen3-vl-235b-a22b-instruct)": {
      "provider": "deepinfra",
@@ -1200,7 +1410,7 @@
      "tps_max": 25.3,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "qwen3-235b-a22b-thinking-2507": {
      "provider": "openrouter",
@@ -1209,7 +1419,7 @@
      "tps_max": 9.25,
      "ttft_ms": 12100.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3.8-max": {
      "provider": "openrouter",
@@ -1218,7 +1428,7 @@
      "tps_max": 12.2,
      "ttft_ms": 6480.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "seed-2.0-pro": {
      "provider": "deepinfra",
@@ -1227,7 +1437,7 @@
      "tps_max": 15.4,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "llama-guard-4-12b": {
      "provider": "together",
@@ -1236,7 +1446,7 @@
      "tps_max": 5.78,
      "ttft_ms": 650.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     },
     "qwen3.7-max": {
      "provider": "deepinfra",
@@ -1245,7 +1455,7 @@
      "tps_max": 2.63,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "seed-2.0-code": {
      "provider": "deepinfra",
@@ -1254,7 +1464,7 @@
      "tps_max": 6.35,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:27Z"
+     "measured_at": "2026-08-22T14:43:34Z"
     },
     "qwen3-reranker-8b": {
      "provider": "fireworks",
@@ -1263,7 +1473,7 @@
      "tps_max": 123.0,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:28Z"
+     "measured_at": "2026-08-22T14:43:35Z"
     },
     "nemotron-3-ultra": {
      "provider": "together",
@@ -1272,7 +1482,7 @@
      "tps_max": 143.0,
      "ttft_ms": 1370.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     },
     "kimi-k2p7-code-fast": {
      "provider": "fireworks",
@@ -1281,7 +1491,7 @@
      "tps_max": 85.4,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:28Z"
+     "measured_at": "2026-08-22T14:43:35Z"
     },
     "qwen3.7-plus": {
      "provider": "openrouter",
@@ -1290,7 +1500,7 @@
      "tps_max": 2.43,
      "ttft_ms": 26700.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "glm-5p2-fast": {
      "provider": "fireworks",
@@ -1299,7 +1509,7 @@
      "tps_max": 159.0,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:28Z"
+     "measured_at": "2026-08-22T14:43:35Z"
     },
     "kimi-k2p6-turbo": {
      "provider": "fireworks",
@@ -1308,7 +1518,7 @@
      "tps_max": 94.7,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:28Z"
+     "measured_at": "2026-08-22T14:43:35Z"
     },
     "kimi-k2p7-code": {
      "provider": "fireworks",
@@ -1317,7 +1527,7 @@
      "tps_max": 142.0,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:28Z"
+     "measured_at": "2026-08-22T14:43:35Z"
     },
     "kimi-k2p6": {
      "provider": "fireworks",
@@ -1326,7 +1536,7 @@
      "tps_max": 60.3,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:28Z"
+     "measured_at": "2026-08-22T14:43:35Z"
     },
     "qwen3.8-2.4t-a95b": {
      "provider": "together",
@@ -1335,7 +1545,7 @@
      "tps_max": 136.0,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     },
     "glm-5p2": {
      "provider": "fireworks",
@@ -1344,7 +1554,7 @@
      "tps_max": 91.9,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:28Z"
+     "measured_at": "2026-08-22T14:43:35Z"
     },
     "kimi-k3-fast": {
      "provider": "fireworks",
@@ -1353,7 +1563,7 @@
      "tps_max": 59.6,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:28Z"
+     "measured_at": "2026-08-22T14:43:35Z"
     },
     "deepseek-v4-pro-0813": {
      "provider": "together",
@@ -1362,7 +1572,7 @@
      "tps_max": 16.3,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     },
     "gpt-oss-safeguard-20b": {
      "provider": "openrouter",
@@ -1371,7 +1581,7 @@
      "tps_max": 86.0,
      "ttft_ms": 970.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-5-nano": {
      "provider": "openai",
@@ -1380,7 +1590,7 @@
      "tps_max": 159.0,
      "ttft_ms": 2070.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:35Z"
+     "measured_at": "2026-08-22T14:43:37Z"
     },
     "o3-mini": {
      "provider": "openai",
@@ -1389,7 +1599,7 @@
      "tps_max": 189.0,
      "ttft_ms": 1720.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:35Z"
+     "measured_at": "2026-08-22T14:43:37Z"
     },
     "o1": {
      "provider": "openai",
@@ -1398,7 +1608,7 @@
      "tps_max": 142.0,
      "ttft_ms": 2270.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:35Z"
+     "measured_at": "2026-08-22T14:43:37Z"
     },
     "gpt-5-mini": {
      "provider": "openai",
@@ -1407,7 +1617,7 @@
      "tps_max": 122.0,
      "ttft_ms": 2440.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:35Z"
+     "measured_at": "2026-08-22T14:43:37Z"
     },
     "gpt-5.4-nano": {
      "provider": "openrouter",
@@ -1416,7 +1626,7 @@
      "tps_max": 58.4,
      "ttft_ms": 850.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-4.1-nano": {
      "provider": "openrouter",
@@ -1425,7 +1635,7 @@
      "tps_max": 54.4,
      "ttft_ms": 1090.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "o4-mini": {
      "provider": "openai",
@@ -1434,7 +1644,7 @@
      "tps_max": 170.0,
      "ttft_ms": 1780.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:35Z"
+     "measured_at": "2026-08-22T14:43:37Z"
     },
     "gpt-4.1": {
      "provider": "openrouter",
@@ -1443,7 +1653,7 @@
      "tps_max": 46.3,
      "ttft_ms": 1260.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "o3": {
      "provider": "openai",
@@ -1452,7 +1662,7 @@
      "tps_max": 126.0,
      "ttft_ms": 2160.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:35Z"
+     "measured_at": "2026-08-22T14:43:37Z"
     },
     "gpt-3.5-turbo-instruct-0914": {
      "provider": "openai",
@@ -1461,7 +1671,7 @@
      "tps_max": 110.0,
      "ttft_ms": 1310.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:35Z"
+     "measured_at": "2026-08-22T14:43:37Z"
     },
     "gpt-5.4-mini": {
      "provider": "openrouter",
@@ -1470,7 +1680,7 @@
      "tps_max": 52.7,
      "ttft_ms": 880.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-3.5-turbo": {
      "provider": "openrouter",
@@ -1479,7 +1689,7 @@
      "tps_max": 68.5,
      "ttft_ms": 1270.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-4o-mini": {
      "provider": "openrouter",
@@ -1488,7 +1698,7 @@
      "tps_max": 35.9,
      "ttft_ms": 1870.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-5.2-chat-latest": {
      "provider": "openai",
@@ -1497,7 +1707,7 @@
      "tps_max": 53.0,
      "ttft_ms": 2320.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:35Z"
+     "measured_at": "2026-08-22T14:43:37Z"
     },
     "gpt-3.5-turbo-1106": {
      "provider": "openai",
@@ -1506,7 +1716,7 @@
      "tps_max": 76.9,
      "ttft_ms": 1430.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:35Z"
+     "measured_at": "2026-08-22T14:43:37Z"
     },
     "gpt-4o": {
      "provider": "openrouter",
@@ -1515,7 +1725,7 @@
      "tps_max": 50.2,
      "ttft_ms": 1490.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-5.3-chat-latest": {
      "provider": "openai",
@@ -1524,7 +1734,7 @@
      "tps_max": 50.4,
      "ttft_ms": 2390.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:35Z"
+     "measured_at": "2026-08-22T14:43:37Z"
     },
     "gpt-4.1-mini": {
      "provider": "openrouter",
@@ -1533,7 +1743,7 @@
      "tps_max": 44.7,
      "ttft_ms": 1250.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-5": {
      "provider": "openai",
@@ -1542,7 +1752,7 @@
      "tps_max": 96.0,
      "ttft_ms": 4480.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:35Z"
+     "measured_at": "2026-08-22T14:43:37Z"
     },
     "gpt-5.1": {
      "provider": "openrouter",
@@ -1551,7 +1761,7 @@
      "tps_max": 41.2,
      "ttft_ms": 1200.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-5.6-luna": {
      "provider": "openai",
@@ -1560,7 +1770,7 @@
      "tps_max": 89.0,
      "ttft_ms": 2130.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:35Z"
+     "measured_at": "2026-08-22T14:43:37Z"
     },
     "gpt-5.4": {
      "provider": "openrouter",
@@ -1569,7 +1779,7 @@
      "tps_max": 36.3,
      "ttft_ms": 1010.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-5.6-terra": {
      "provider": "openrouter",
@@ -1578,7 +1788,7 @@
      "tps_max": 26.0,
      "ttft_ms": 3020.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-4": {
      "provider": "openrouter",
@@ -1587,7 +1797,7 @@
      "tps_max": 21.1,
      "ttft_ms": 1460.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-5.5": {
      "provider": "openrouter",
@@ -1596,7 +1806,7 @@
      "tps_max": 22.1,
      "ttft_ms": 3260.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-5.2": {
      "provider": "openai",
@@ -1605,7 +1815,7 @@
      "tps_max": 45.0,
      "ttft_ms": 2000.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:35Z"
+     "measured_at": "2026-08-22T14:43:37Z"
     },
     "gpt-4-0613": {
      "provider": "openai",
@@ -1614,7 +1824,7 @@
      "tps_max": 46.5,
      "ttft_ms": 1410.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:35Z"
+     "measured_at": "2026-08-22T14:43:37Z"
     },
     "gpt-4-turbo": {
      "provider": "openrouter",
@@ -1623,7 +1833,7 @@
      "tps_max": 25.2,
      "ttft_ms": 1660.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-5.3-codex": {
      "provider": "openai",
@@ -1632,7 +1842,7 @@
      "tps_max": 61.1,
      "ttft_ms": 2240.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:35Z"
+     "measured_at": "2026-08-22T14:43:37Z"
     },
     "gpt-5.6-sol": {
      "provider": "openai",
@@ -1641,7 +1851,7 @@
      "tps_max": 34.6,
      "ttft_ms": 2690.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:35Z"
+     "measured_at": "2026-08-22T14:43:37Z"
     },
     "o3-pro": {
      "provider": "openai",
@@ -1650,7 +1860,7 @@
      "tps_max": 35.9,
      "ttft_ms": 27000.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:35Z"
+     "measured_at": "2026-08-22T14:43:37Z"
     },
     "gpt-5.2-pro": {
      "provider": "openrouter",
@@ -1659,7 +1869,7 @@
      "tps_max": 35.7,
      "ttft_ms": 59000.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-5.5-pro": {
      "provider": "openai",
@@ -1668,7 +1878,7 @@
      "tps_max": 30.4,
      "ttft_ms": 27900.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:35Z"
+     "measured_at": "2026-08-22T14:43:37Z"
     },
     "gpt-5-pro": {
      "provider": "openai",
@@ -1677,7 +1887,7 @@
      "tps_max": 14.4,
      "ttft_ms": 39000.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:35Z"
+     "measured_at": "2026-08-22T14:43:37Z"
     },
     "gpt-5.4-pro": {
      "provider": "openai",
@@ -1686,7 +1896,7 @@
      "tps_max": 9.84,
      "ttft_ms": 80900.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:35Z"
+     "measured_at": "2026-08-22T14:43:37Z"
     },
     "gemini-2.5-flash-lite": {
      "provider": "openrouter",
@@ -1695,7 +1905,7 @@
      "tps_max": 160.0,
      "ttft_ms": 950.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "nano-banana-2-lite-(gemini-3.1-flash-lite-image)": {
      "provider": "openrouter",
@@ -1704,7 +1914,7 @@
      "tps_max": 102.0,
      "ttft_ms": 2120.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "mercury-2": {
      "provider": "openrouter",
@@ -1713,7 +1923,7 @@
      "tps_max": 115.0,
      "ttft_ms": 1300.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gemini-3.5-flash-lite": {
      "provider": "openrouter",
@@ -1722,7 +1932,7 @@
      "tps_max": 110.0,
      "ttft_ms": 1000.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "relace-search": {
      "provider": "openrouter",
@@ -1731,7 +1941,7 @@
      "tps_max": 82.7,
      "ttft_ms": 960.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gemini-3.1-flash-lite-preview": {
      "provider": "openrouter",
@@ -1740,7 +1950,7 @@
      "tps_max": 111.0,
      "ttft_ms": 1070.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "granite-4.1-8b": {
      "provider": "openrouter",
@@ -1749,7 +1959,7 @@
      "tps_max": 110.0,
      "ttft_ms": 860.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "voxtral-small-24b-2507": {
      "provider": "openrouter",
@@ -1758,7 +1968,7 @@
      "tps_max": 102.0,
      "ttft_ms": 980.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-5.6-terra-pro": {
      "provider": "openrouter",
@@ -1767,7 +1977,7 @@
      "tps_max": 58.5,
      "ttft_ms": 33300.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-vl-8b-instruct": {
      "provider": "openrouter",
@@ -1776,7 +1986,7 @@
      "tps_max": 141.0,
      "ttft_ms": 1010.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "ministral-3-3b-2512": {
      "provider": "openrouter",
@@ -1785,7 +1995,7 @@
      "tps_max": 89.0,
      "ttft_ms": 1390.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "codestral-2508": {
      "provider": "openrouter",
@@ -1794,7 +2004,7 @@
      "tps_max": 65.9,
      "ttft_ms": 1000.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen2.5-7b-instruct": {
      "provider": "together",
@@ -1803,7 +2013,7 @@
      "tps_max": 129.0,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     },
     "gpt-4o-(2024-11-20)": {
      "provider": "openrouter",
@@ -1812,7 +2022,7 @@
      "tps_max": 72.1,
      "ttft_ms": 1300.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-coder-next": {
      "provider": "openrouter",
@@ -1821,7 +2031,7 @@
      "tps_max": 79.1,
      "ttft_ms": 970.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "ministral-3-8b-2512": {
      "provider": "openrouter",
@@ -1830,7 +2040,7 @@
      "tps_max": 87.0,
      "ttft_ms": 1000.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "command-r7b-(12-2024)": {
      "provider": "openrouter",
@@ -1839,7 +2049,7 @@
      "tps_max": 73.5,
      "ttft_ms": 820.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "nano-banana-2-(gemini-3.1-flash-image-preview)": {
      "provider": "openrouter",
@@ -1848,7 +2058,7 @@
      "tps_max": 108.0,
      "ttft_ms": 1640.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "nano-banana-2-(gemini-3.1-flash-image)": {
      "provider": "openrouter",
@@ -1857,7 +2067,7 @@
      "tps_max": 119.0,
      "ttft_ms": 2670.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "openai-gpt-mini-latest": {
      "provider": "openrouter",
@@ -1866,7 +2076,7 @@
      "tps_max": 51.5,
      "ttft_ms": 830.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "unslopnemo-12b": {
      "provider": "openrouter",
@@ -1875,7 +2085,7 @@
      "tps_max": 84.1,
      "ttft_ms": 970.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "mistral-medium-3.5": {
      "provider": "openrouter",
@@ -1884,7 +2094,7 @@
      "tps_max": 73.7,
      "ttft_ms": 1080.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "llama-3-8b-lunaris": {
      "provider": "openrouter",
@@ -1893,7 +2103,7 @@
      "tps_max": 63.9,
      "ttft_ms": 760.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "nano-banana-(gemini-2.5-flash-image)": {
      "provider": "openrouter",
@@ -1902,7 +2112,7 @@
      "tps_max": 191.0,
      "ttft_ms": 1800.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3.5-flash": {
      "provider": "openrouter",
@@ -1911,7 +2121,7 @@
      "tps_max": 85.5,
      "ttft_ms": 1330.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "nova-2-lite": {
      "provider": "openrouter",
@@ -1920,7 +2130,7 @@
      "tps_max": 125.0,
      "ttft_ms": 1220.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-3.5-turbo-16k": {
      "provider": "openrouter",
@@ -1929,7 +2139,7 @@
      "tps_max": 60.9,
      "ttft_ms": 1310.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "ministral-3-14b-2512": {
      "provider": "openrouter",
@@ -1938,7 +2148,7 @@
      "tps_max": 89.1,
      "ttft_ms": 910.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "mixtral-8x22b-instruct": {
      "provider": "openrouter",
@@ -1947,7 +2157,7 @@
      "tps_max": 76.0,
      "ttft_ms": 1140.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "mistral-small-4": {
      "provider": "openrouter",
@@ -1956,7 +2166,7 @@
      "tps_max": 70.1,
      "ttft_ms": 1140.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gemini-3-flash-preview": {
      "provider": "openrouter",
@@ -1965,7 +2175,7 @@
      "tps_max": 83.5,
      "ttft_ms": 1320.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "palmyra-x5": {
      "provider": "openrouter",
@@ -1974,7 +2184,7 @@
      "tps_max": 51.1,
      "ttft_ms": 900.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "ling-2.6-flash": {
      "provider": "openrouter",
@@ -1983,7 +2193,7 @@
      "tps_max": 57.5,
      "ttft_ms": 910.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "claude-opus-4.8-(fast)": {
      "provider": "openrouter",
@@ -1992,7 +2202,7 @@
      "tps_max": 137.0,
      "ttft_ms": 1460.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-3.5-turbo-(older-v0613)": {
      "provider": "openrouter",
@@ -2001,7 +2211,7 @@
      "tps_max": 50.4,
      "ttft_ms": 1380.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "hermes-4-70b": {
      "provider": "openrouter",
@@ -2010,7 +2220,7 @@
      "tps_max": 61.0,
      "ttft_ms": 1210.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-4o-mini-(2024-07-18)": {
      "provider": "openrouter",
@@ -2019,7 +2229,7 @@
      "tps_max": 51.8,
      "ttft_ms": 1140.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "saba": {
      "provider": "openrouter",
@@ -2028,7 +2238,7 @@
      "tps_max": 82.3,
      "ttft_ms": 1290.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-3.5-turbo-instruct": {
      "provider": "openrouter",
@@ -2037,7 +2247,7 @@
      "tps_max": 59.1,
      "ttft_ms": 1330.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-coder-480b-a35b": {
      "provider": "openrouter",
@@ -2046,7 +2256,7 @@
      "tps_max": 75.7,
      "ttft_ms": 1310.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "lyria-3-clip-preview": {
      "provider": "openrouter",
@@ -2055,7 +2265,7 @@
      "tps_max": 62.8,
      "ttft_ms": 3800.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "laguna-s-2.1": {
      "provider": "openrouter",
@@ -2064,7 +2274,7 @@
      "tps_max": 64.8,
      "ttft_ms": 3480.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "kat-coder-pro-v2": {
      "provider": "openrouter",
@@ -2073,7 +2283,7 @@
      "tps_max": 51.8,
      "ttft_ms": 1190.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "trinity-large-thinking": {
      "provider": "openrouter",
@@ -2082,7 +2292,7 @@
      "tps_max": 49.5,
      "ttft_ms": 1480.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "mistral-medium-3.1": {
      "provider": "openrouter",
@@ -2091,7 +2301,7 @@
      "tps_max": 51.8,
      "ttft_ms": 1940.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "ui-tars-7b": {
      "provider": "openrouter",
@@ -2100,7 +2310,7 @@
      "tps_max": 82.1,
      "ttft_ms": 1020.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-coder-flash": {
      "provider": "openrouter",
@@ -2109,7 +2319,7 @@
      "tps_max": 108.0,
      "ttft_ms": 1380.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "claude-3-haiku": {
      "provider": "openrouter",
@@ -2118,7 +2328,7 @@
      "tps_max": 82.9,
      "ttft_ms": 1110.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-4o-(2024-08-06)": {
      "provider": "openrouter",
@@ -2127,7 +2337,7 @@
      "tps_max": 51.2,
      "ttft_ms": 1570.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-vl-32b-instruct": {
      "provider": "openrouter",
@@ -2136,7 +2346,7 @@
      "tps_max": 65.0,
      "ttft_ms": 1220.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-coder-30b-a3b-instruct": {
      "provider": "openrouter",
@@ -2145,7 +2355,7 @@
      "tps_max": 110.0,
      "ttft_ms": 1670.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "uncensored": {
      "provider": "openrouter",
@@ -2154,7 +2364,7 @@
      "tps_max": 87.7,
      "ttft_ms": 1340.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gemma-3n-4b": {
      "provider": "together",
@@ -2163,7 +2373,7 @@
      "tps_max": 67.5,
      "ttft_ms": 860.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     },
     "rocinante-12b": {
      "provider": "openrouter",
@@ -2172,7 +2382,7 @@
      "tps_max": 65.4,
      "ttft_ms": 690.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-30b-a3b-instruct-2507": {
      "provider": "openrouter",
@@ -2181,7 +2391,7 @@
      "tps_max": 64.4,
      "ttft_ms": 1520.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "grok-4.20": {
      "provider": "openrouter",
@@ -2190,7 +2400,7 @@
      "tps_max": 52.3,
      "ttft_ms": 940.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "sonar-pro-search": {
      "provider": "openrouter",
@@ -2199,7 +2409,7 @@
      "tps_max": 52.0,
      "ttft_ms": 1290.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "minimax-m2-her": {
      "provider": "openrouter",
@@ -2208,7 +2418,7 @@
      "tps_max": 50.3,
      "ttft_ms": 1440.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "kat-coder-air-v2.5": {
      "provider": "openrouter",
@@ -2217,7 +2427,7 @@
      "tps_max": 46.5,
      "ttft_ms": 1610.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "anthropic-claude-haiku-latest": {
      "provider": "openrouter",
@@ -2226,7 +2436,7 @@
      "tps_max": 45.8,
      "ttft_ms": 1360.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "llama-3.1-euryale-70b-v2.2": {
      "provider": "openrouter",
@@ -2235,7 +2445,7 @@
      "tps_max": 58.0,
      "ttft_ms": 790.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-chat-latest": {
      "provider": "openrouter",
@@ -2244,7 +2454,7 @@
      "tps_max": 41.2,
      "ttft_ms": 1130.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "remm-slerp-13b": {
      "provider": "openrouter",
@@ -2253,7 +2463,7 @@
      "tps_max": 59.8,
      "ttft_ms": 1050.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "solar-pro-3": {
      "provider": "openrouter",
@@ -2262,7 +2472,7 @@
      "tps_max": 50.2,
      "ttft_ms": 1470.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "command-a": {
      "provider": "openrouter",
@@ -2271,7 +2481,7 @@
      "tps_max": 57.4,
      "ttft_ms": 1070.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen-plus-0728": {
      "provider": "openrouter",
@@ -2280,7 +2490,7 @@
      "tps_max": 58.5,
      "ttft_ms": 1080.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "reka-edge": {
      "provider": "openrouter",
@@ -2289,7 +2499,7 @@
      "tps_max": 39.5,
      "ttft_ms": 2410.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "hunyuan-a13b-instruct": {
      "provider": "openrouter",
@@ -2298,7 +2508,7 @@
      "tps_max": 42.9,
      "ttft_ms": 1590.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "cydonia-24b-v4.1": {
      "provider": "openrouter",
@@ -2307,7 +2517,7 @@
      "tps_max": 46.2,
      "ttft_ms": 1100.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gemma-2-27b": {
      "provider": "openrouter",
@@ -2316,7 +2526,7 @@
      "tps_max": 43.1,
      "ttft_ms": 1320.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "skyfall-36b-v2": {
      "provider": "openrouter",
@@ -2325,7 +2535,7 @@
      "tps_max": 59.3,
      "ttft_ms": 880.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen-plus": {
      "provider": "openrouter",
@@ -2334,7 +2544,7 @@
      "tps_max": 54.0,
      "ttft_ms": 1090.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "mistral-medium-3": {
      "provider": "openrouter",
@@ -2343,7 +2553,7 @@
      "tps_max": 47.8,
      "ttft_ms": 1130.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "perceptron-mk1": {
      "provider": "openrouter",
@@ -2352,7 +2562,7 @@
      "tps_max": 34.5,
      "ttft_ms": 890.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "mistral-large-3-2512": {
      "provider": "openrouter",
@@ -2361,7 +2571,7 @@
      "tps_max": 39.7,
      "ttft_ms": 1140.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "aion-rp-1.0-(8b)": {
      "provider": "openrouter",
@@ -2370,7 +2580,7 @@
      "tps_max": 37.2,
      "ttft_ms": 880.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "ling-3.0-flash": {
      "provider": "openrouter",
@@ -2379,7 +2589,7 @@
      "tps_max": 46.9,
      "ttft_ms": 2570.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "mistral-small-3.1-24b": {
      "provider": "openrouter",
@@ -2388,7 +2598,7 @@
      "tps_max": 47.4,
      "ttft_ms": 1070.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-5.4-image-2": {
      "provider": "openrouter",
@@ -2397,7 +2607,7 @@
      "tps_max": 32.6,
      "ttft_ms": 1210.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "ling-2.6-1t": {
      "provider": "openrouter",
@@ -2406,7 +2616,7 @@
      "tps_max": 42.0,
      "ttft_ms": 1540.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "mythomax-13b": {
      "provider": "openrouter",
@@ -2415,7 +2625,7 @@
      "tps_max": 59.6,
      "ttft_ms": 1290.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "mistral-large-2407": {
      "provider": "openrouter",
@@ -2424,7 +2634,7 @@
      "tps_max": 39.3,
      "ttft_ms": 1500.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-5.1-codex": {
      "provider": "openrouter",
@@ -2433,7 +2643,7 @@
      "tps_max": 45.7,
      "ttft_ms": 2500.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "morph-v3-large": {
      "provider": "openrouter",
@@ -2442,7 +2652,7 @@
      "tps_max": 56.8,
      "ttft_ms": 960.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "hermes-4-405b": {
      "provider": "openrouter",
@@ -2451,7 +2661,7 @@
      "tps_max": 33.4,
      "ttft_ms": 750.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "solar-pro-4": {
      "provider": "openrouter",
@@ -2460,7 +2670,7 @@
      "tps_max": 40.0,
      "ttft_ms": 2100.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen2.5-vl-72b-instruct": {
      "provider": "openrouter",
@@ -2469,7 +2679,7 @@
      "tps_max": 40.7,
      "ttft_ms": 1020.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "kimi-k2-0711": {
      "provider": "openrouter",
@@ -2478,7 +2688,7 @@
      "tps_max": 31.7,
      "ttft_ms": 1080.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "granite-4.0-micro": {
      "provider": "openrouter",
@@ -2487,7 +2697,7 @@
      "tps_max": 33.3,
      "ttft_ms": 900.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "sonar-pro": {
      "provider": "openrouter",
@@ -2496,7 +2706,7 @@
      "tps_max": 40.4,
      "ttft_ms": 2050.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "ring-2.6-1t": {
      "provider": "openrouter",
@@ -2505,7 +2715,7 @@
      "tps_max": 29.2,
      "ttft_ms": 2060.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "hermes-3-70b-instruct": {
      "provider": "openrouter",
@@ -2514,7 +2724,7 @@
      "tps_max": 31.3,
      "ttft_ms": 1060.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "auto-router-(beta)": {
      "provider": "openrouter",
@@ -2523,7 +2733,7 @@
      "tps_max": 43.2,
      "ttft_ms": 3310.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-coder-plus": {
      "provider": "openrouter",
@@ -2532,7 +2742,7 @@
      "tps_max": 30.7,
      "ttft_ms": 1520.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "sonar": {
      "provider": "openrouter",
@@ -2541,7 +2751,7 @@
      "tps_max": 37.6,
      "ttft_ms": 2230.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "nova-premier-1.0": {
      "provider": "openrouter",
@@ -2550,7 +2760,7 @@
      "tps_max": 56.8,
      "ttft_ms": 1130.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "minimax-01": {
      "provider": "openrouter",
@@ -2559,7 +2769,7 @@
      "tps_max": 31.0,
      "ttft_ms": 1140.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-235b-a22b-instruct-2507": {
      "provider": "openrouter",
@@ -2568,7 +2778,7 @@
      "tps_max": 51.5,
      "ttft_ms": 1190.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "command-r-(08-2024)": {
      "provider": "openrouter",
@@ -2577,7 +2787,7 @@
      "tps_max": 48.6,
      "ttft_ms": 770.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "nex-n2-mini": {
      "provider": "openrouter",
@@ -2586,7 +2796,7 @@
      "tps_max": 26.1,
      "ttft_ms": 2960.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-5.2-codex": {
      "provider": "openrouter",
@@ -2595,7 +2805,7 @@
      "tps_max": 26.7,
      "ttft_ms": 3390.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "anthropic-claude-sonnet-latest": {
      "provider": "openrouter",
@@ -2604,7 +2814,7 @@
      "tps_max": 24.3,
      "ttft_ms": 2250.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "deepseek-v3-0324": {
      "provider": "openrouter",
@@ -2613,7 +2823,7 @@
      "tps_max": 36.4,
      "ttft_ms": 1620.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "laguna-xs-2.1": {
      "provider": "openrouter",
@@ -2622,7 +2832,7 @@
      "tps_max": 27.9,
      "ttft_ms": 3470.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "sakana-namazu": {
      "provider": "openrouter",
@@ -2631,7 +2841,7 @@
      "tps_max": 23.8,
      "ttft_ms": 3320.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "deepseek-v3.2-exp": {
      "provider": "openrouter",
@@ -2640,7 +2850,7 @@
      "tps_max": 25.8,
      "ttft_ms": 1700.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "nex-n2-pro": {
      "provider": "openrouter",
@@ -2649,7 +2859,7 @@
      "tps_max": 24.9,
      "ttft_ms": 3330.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "hermes-3-405b-instruct": {
      "provider": "openrouter",
@@ -2658,7 +2868,7 @@
      "tps_max": 24.4,
      "ttft_ms": 1860.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "pareto-code-router": {
      "provider": "openrouter",
@@ -2667,7 +2877,7 @@
      "tps_max": 23.8,
      "ttft_ms": 4020.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "morph-v3-fast": {
      "provider": "openrouter",
@@ -2676,7 +2886,7 @@
      "tps_max": 62.0,
      "ttft_ms": 970.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-vl-8b-thinking": {
      "provider": "openrouter",
@@ -2685,7 +2895,7 @@
      "tps_max": 113.0,
      "ttft_ms": 4390.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "ernie-4.5-vl-424b-a47b": {
      "provider": "openrouter",
@@ -2694,7 +2904,7 @@
      "tps_max": 24.0,
      "ttft_ms": 1930.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "magnum-v4-72b": {
      "provider": "openrouter",
@@ -2703,7 +2913,7 @@
      "tps_max": 18.2,
      "ttft_ms": 720.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-vl-30b-a3b-thinking": {
      "provider": "openrouter",
@@ -2712,7 +2922,7 @@
      "tps_max": 104.0,
      "ttft_ms": 4840.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "minimax-m1": {
      "provider": "openrouter",
@@ -2721,7 +2931,7 @@
      "tps_max": 19.0,
      "ttft_ms": 5920.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-30b-a3b-thinking-2507": {
      "provider": "openrouter",
@@ -2730,7 +2940,7 @@
      "tps_max": 71.5,
      "ttft_ms": 4940.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-4o-(2024-05-13)": {
      "provider": "openrouter",
@@ -2739,7 +2949,7 @@
      "tps_max": 36.3,
      "ttft_ms": 5380.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "step-3.5-flash": {
      "provider": "openrouter",
@@ -2748,7 +2958,7 @@
      "tps_max": 14.7,
      "ttft_ms": 4280.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "llama-3.3-euryale-70b": {
      "provider": "openrouter",
@@ -2757,7 +2967,7 @@
      "tps_max": 22.1,
      "ttft_ms": 3920.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "deepseek-v4-flash-0423": {
      "provider": "openrouter",
@@ -2766,7 +2976,7 @@
      "tps_max": 40.4,
      "ttft_ms": 4380.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "glm-4.5-air": {
      "provider": "openrouter",
@@ -2775,7 +2985,7 @@
      "tps_max": 31.0,
      "ttft_ms": 5520.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "free-models-router": {
      "provider": "openrouter",
@@ -2784,7 +2994,7 @@
      "tps_max": 47.8,
      "ttft_ms": 16200.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "grok-4.3": {
      "provider": "openrouter",
@@ -2793,7 +3003,7 @@
      "tps_max": 15.5,
      "ttft_ms": 5530.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "body-builder-(beta)": {
      "provider": "openrouter",
@@ -2802,7 +3012,7 @@
      "tps_max": 41.4,
      "ttft_ms": 12900.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "command-r+-(08-2024)": {
      "provider": "openrouter",
@@ -2811,7 +3021,7 @@
      "tps_max": 19.9,
      "ttft_ms": 930.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "aion-3.0": {
      "provider": "openrouter",
@@ -2820,7 +3030,7 @@
      "tps_max": 30.2,
      "ttft_ms": 8130.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-8b": {
      "provider": "openrouter",
@@ -2829,7 +3039,7 @@
      "tps_max": 11.3,
      "ttft_ms": 5780.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "nano-banana-pro-(gemini-3-pro-image)": {
      "provider": "openrouter",
@@ -2838,7 +3048,7 @@
      "tps_max": 18.4,
      "ttft_ms": 19000.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "kat-coder-pro-v2.5": {
      "provider": "openrouter",
@@ -2847,7 +3057,7 @@
      "tps_max": 13.4,
      "ttft_ms": 7600.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "seed-1.6-flash": {
      "provider": "openrouter",
@@ -2856,7 +3066,7 @@
      "tps_max": 10.8,
      "ttft_ms": 6810.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "glm-5-turbo": {
      "provider": "openrouter",
@@ -2865,7 +3075,7 @@
      "tps_max": 14.4,
      "ttft_ms": 12500.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-next-80b-a3b-thinking": {
      "provider": "openrouter",
@@ -2874,7 +3084,7 @@
      "tps_max": 10.8,
      "ttft_ms": 8420.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gemini-3.6-flash": {
      "provider": "openrouter",
@@ -2883,7 +3093,7 @@
      "tps_max": 12.7,
      "ttft_ms": 8430.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "sonar-reasoning-pro": {
      "provider": "openrouter",
@@ -2892,7 +3102,7 @@
      "tps_max": 15.0,
      "ttft_ms": 7530.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gemini-3.7-flash": {
      "provider": "openrouter",
@@ -2901,7 +3111,7 @@
      "tps_max": 16.3,
      "ttft_ms": 9680.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gpt-5.6-luna-pro": {
      "provider": "openrouter",
@@ -2910,7 +3120,7 @@
      "tps_max": 7.32,
      "ttft_ms": 3930.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "grok-4.5": {
      "provider": "openrouter",
@@ -2919,7 +3129,7 @@
      "tps_max": 13.9,
      "ttft_ms": 7480.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "fugu-ultra": {
      "provider": "openrouter",
@@ -2928,7 +3138,7 @@
      "tps_max": 8.22,
      "ttft_ms": 13400.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "google-gemini-flash-latest": {
      "provider": "openrouter",
@@ -2937,7 +3147,7 @@
      "tps_max": 11.6,
      "ttft_ms": 10200.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "aion-2.0": {
      "provider": "openrouter",
@@ -2946,7 +3156,7 @@
      "tps_max": 35.3,
      "ttft_ms": 11700.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3-vl-235b-a22b-thinking": {
      "provider": "openrouter",
@@ -2955,7 +3165,7 @@
      "tps_max": 44.9,
      "ttft_ms": 13700.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "ox-alpha": {
      "provider": "openrouter",
@@ -2964,7 +3174,7 @@
      "tps_max": 6.37,
      "ttft_ms": 10600.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "aion-3.0-mini": {
      "provider": "openrouter",
@@ -2973,7 +3183,7 @@
      "tps_max": 27.6,
      "ttft_ms": 14700.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3.8-27b": {
      "provider": "openrouter",
@@ -2982,7 +3192,7 @@
      "tps_max": 14.9,
      "ttft_ms": 25700.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "nano-banana-pro-(gemini-3-pro-image-preview)": {
      "provider": "openrouter",
@@ -2991,7 +3201,7 @@
      "tps_max": 6.42,
      "ttft_ms": 16300.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3.5-plus-2026-02-15": {
      "provider": "openrouter",
@@ -3000,7 +3210,7 @@
      "tps_max": 23.0,
      "ttft_ms": 15300.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "glm-4.5v": {
      "provider": "openrouter",
@@ -3009,7 +3219,7 @@
      "tps_max": 6.44,
      "ttft_ms": 13900.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3.7-flash": {
      "provider": "openrouter",
@@ -3018,7 +3228,7 @@
      "tps_max": 5.16,
      "ttft_ms": 13700.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3.6-flash": {
      "provider": "openrouter",
@@ -3027,7 +3237,7 @@
      "tps_max": 4.81,
      "ttft_ms": 14500.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "longcat-2.0": {
      "provider": "openrouter",
@@ -3036,7 +3246,7 @@
      "tps_max": 7.33,
      "ttft_ms": 19300.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "grok-build-0.1": {
      "provider": "openrouter",
@@ -3045,7 +3255,7 @@
      "tps_max": 7.59,
      "ttft_ms": 16300.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "grok-4.20-multi-agent": {
      "provider": "openrouter",
@@ -3054,7 +3264,7 @@
      "tps_max": 32.5,
      "ttft_ms": 21700.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "r1-0528": {
      "provider": "openrouter",
@@ -3063,7 +3273,7 @@
      "tps_max": 13.4,
      "ttft_ms": 18300.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gemini-3.1-pro-preview-custom-tools": {
      "provider": "openrouter",
@@ -3072,7 +3282,7 @@
      "tps_max": 6.99,
      "ttft_ms": 10100.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gemini-3.1-pro-preview": {
      "provider": "openrouter",
@@ -3081,7 +3291,7 @@
      "tps_max": 6.85,
      "ttft_ms": 10000.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3.5-9b": {
      "provider": "together",
@@ -3090,7 +3300,7 @@
      "tps_max": 118.0,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     },
     "gemini-2.5-pro-preview-05-06": {
      "provider": "openrouter",
@@ -3099,7 +3309,7 @@
      "tps_max": 6.77,
      "ttft_ms": 9870.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "grok-4.6": {
      "provider": "openrouter",
@@ -3108,7 +3318,7 @@
      "tps_max": 9.39,
      "ttft_ms": 23200.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gemini-2.5-pro": {
      "provider": "openrouter",
@@ -3117,7 +3327,7 @@
      "tps_max": 6.13,
      "ttft_ms": 10700.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "gemini-2.5-pro-preview-06-05": {
      "provider": "openrouter",
@@ -3126,7 +3336,7 @@
      "tps_max": 5.5,
      "ttft_ms": 10800.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "glm-5v-turbo": {
      "provider": "openrouter",
@@ -3135,7 +3345,7 @@
      "tps_max": 4.77,
      "ttft_ms": 23300.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "r1": {
      "provider": "openrouter",
@@ -3144,7 +3354,7 @@
      "tps_max": 4.64,
      "ttft_ms": 23900.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "grok-latest": {
      "provider": "openrouter",
@@ -3153,7 +3363,7 @@
      "tps_max": 6.17,
      "ttft_ms": 25000.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3.6-plus": {
      "provider": "openrouter",
@@ -3162,7 +3372,7 @@
      "tps_max": 2.81,
      "ttft_ms": 25300.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "glm-4.5": {
      "provider": "openrouter",
@@ -3171,7 +3381,7 @@
      "tps_max": 3.53,
      "ttft_ms": 32600.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3.5-plus-2026-04-20": {
      "provider": "openrouter",
@@ -3180,7 +3390,7 @@
      "tps_max": 2.0,
      "ttft_ms": 31900.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "qwen3.6-max-preview": {
      "provider": "openrouter",
@@ -3189,7 +3399,7 @@
      "tps_max": 2.63,
      "ttft_ms": 34600.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "seed-1.6": {
      "provider": "openrouter",
@@ -3198,7 +3408,7 @@
      "tps_max": 2.3,
      "ttft_ms": 33300.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "sonar-deep-research": {
      "provider": "openrouter",
@@ -3207,7 +3417,7 @@
      "tps_max": 1.63,
      "ttft_ms": 50200.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:36Z"
+     "measured_at": "2026-08-22T14:43:38Z"
     },
     "lfm2.5-8b-a1b": {
      "provider": "together",
@@ -3216,7 +3426,7 @@
      "tps_max": 296.0,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     },
     "qwen-2-1.5b-instruct": {
      "provider": "together",
@@ -3225,7 +3435,7 @@
      "tps_max": 253.0,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     },
     "qwen2.5-7b-instruct-turbo": {
      "provider": "together",
@@ -3234,7 +3444,7 @@
      "tps_max": 85.0,
      "ttft_ms": null,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-08-22T14:03:37Z"
+     "measured_at": "2026-08-22T14:43:39Z"
     }
    }
   },
@@ -3262,7 +3472,7 @@
     }
    ],
    "source": "artificialanalysis-provider-benchmarks",
-   "measured_at": "2026-08-22T14:03:39Z"
+   "measured_at": "2026-08-22T14:43:41Z"
   },
   "deepseek-v3.2": {
    "providers": [
@@ -3293,7 +3503,7 @@
     }
    ],
    "source": "artificialanalysis-provider-benchmarks",
-   "measured_at": "2026-08-22T14:03:39Z"
+   "measured_at": "2026-08-22T14:43:41Z"
   },
   "glm-5.1": {
    "providers": [
@@ -3324,7 +3534,7 @@
     }
    ],
    "source": "artificialanalysis-provider-benchmarks",
-   "measured_at": "2026-08-22T14:03:40Z"
+   "measured_at": "2026-08-22T14:43:42Z"
   },
   "claude-sonnet-4-6": {
    "providers": [
@@ -3350,7 +3560,7 @@
     }
    ],
    "source": "artificialanalysis-provider-benchmarks",
-   "measured_at": "2026-08-22T14:03:43Z"
+   "measured_at": "2026-08-22T14:43:44Z"
   },
   "gemini-2.5-flash": {
    "providers": [
@@ -3366,7 +3576,7 @@
     }
    ],
    "source": "artificialanalysis-provider-benchmarks",
-   "measured_at": "2026-08-22T14:03:44Z"
+   "measured_at": "2026-08-22T14:43:45Z"
   },
   "gpt-oss-120b-medium": {
    "providers": [
@@ -3392,7 +3602,7 @@
     }
    ],
    "source": "artificialanalysis-provider-benchmarks",
-   "measured_at": "2026-08-22T14:03:53Z"
+   "measured_at": "2026-08-22T14:43:52Z"
   },
   "google/gemma-4-31b": {
    "providers": [
@@ -3418,7 +3628,7 @@
     }
    ],
    "source": "artificialanalysis-provider-benchmarks",
-   "measured_at": "2026-08-22T14:03:57Z"
+   "measured_at": "2026-08-22T14:43:55Z"
   },
   "deepseek-r1": {
    "providers": [
@@ -3439,7 +3649,7 @@
     }
    ],
    "source": "artificialanalysis-provider-benchmarks",
-   "measured_at": "2026-08-22T14:03:58Z"
+   "measured_at": "2026-08-22T14:43:56Z"
   },
   "llama-4-maverick": {
    "providers": [
@@ -3470,11 +3680,10 @@
     }
    ],
    "source": "artificialanalysis-provider-benchmarks",
-   "measured_at": "2026-08-22T14:03:59Z"
+   "measured_at": "2026-08-22T14:43:57Z"
   }
  },
  "errors": [
-  "openrouter: no key",
   "MiniMaxAI/MiniMax-M2.5: insufficient samples",
   "NousResearch/Hermes-3-Llama-3.1-405B: insufficient samples",
   "Qwen/Qwen3.5-122B-A10B: insufficient samples",
