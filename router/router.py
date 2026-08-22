@@ -494,11 +494,16 @@ def candidate_models(criteria: dict) -> list[tuple]:
         pname = m.get("provider", "")
         if not provider_available(pname):
             continue
-        # FREE-ONLY guard: skip paid models unless explicitly allowed
+        # FREE-ONLY guard: skip paid models unless explicitly allowed.
+        # Free proof = OmniRoute catalog free_type (the trusted source):
+        # recurring-*, keyless, one-time with monthly_tokens == 0.
         is_free = (
             m.get("free_status") == "verified-free"
             or str(m.get("id", "")).endswith(":free")
             or m.get("free_type") == "keyless"
+            or m.get("free_type") in ("recurring-monthly", "recurring-daily",
+                                      "recurring-uncapped", "recurring-credit",
+                                      "one-time-initial")
         )
         if not allow_paid and not is_free:
             continue
