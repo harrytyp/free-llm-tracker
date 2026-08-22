@@ -34,12 +34,13 @@ jobs:
           ARTIFICIAL_ANALYSIS_API_KEY: ${{ secrets.ARTIFICIAL_ANALYSIS_API_KEY }}
         run: python collector.py
 
-      - name: Measure free models (needs OPENROUTER_API_KEY secret)
+      - name: Measure free models (needs OPENROUTER_API_KEY + ARTIFICIAL_ANALYSIS_API_KEY secrets)
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          ARTIFICIAL_ANALYSIS_API_KEY: ${{ secrets.ARTIFICIAL_ANALYSIS_API_KEY }}
         run: |
-          if [ -z "$OPENROUTER_API_KEY" ]; then
-            echo "No OPENROUTER_API_KEY secret — skipping benchmark (collect + deploy still run)"
+          if [ -z "$OPENROUTER_API_KEY" ] && [ -z "$ARTIFICIAL_ANALYSIS_API_KEY" ]; then
+            echo "No secrets — skipping benchmark (collect + deploy still run)"
             exit 0
           fi
           python benchmark.py
