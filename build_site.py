@@ -71,6 +71,18 @@ def free_badge(ftype: str) -> str:
     return f"<span class='badge' style='color:{color};border-color:{color}33;background:{color}11'>{esc(label)}</span>"
 
 
+_FREE_STATUS = {
+    "verified-free": ("✓ verified", "#3fb950"),
+    "deprecated-not-on-openrouter": ("⚠️ deprecated", "#f85149"),
+    "unverified": ("❓ unverified", "#d29922"),
+}
+
+
+def free_status_badge(status: str) -> str:
+    label, color = _FREE_STATUS.get(status, (status or "❓", "#8b949e"))
+    return f"<span class='badge' style='color:{color};border-color:{color}44;background:{color}11'>{esc(label)}</span>"
+
+
 def model_row(m: dict) -> str:
     sp = m.get("speed") or {}
     tps = sp.get("tps")
@@ -105,7 +117,8 @@ def model_row(m: dict) -> str:
     return (
         "<tr>"
         f'<td class="name"><a href="{esc(provider_link(provider, mid))}" target="_blank" rel="noopener">{esc(mid)}</a>'
-        f"<br><small class='dim'>{esc(name)}</small></td>"
+        f"<br><small class='dim'>{esc(name)}</small>"
+        f"<br>{free_status_badge(m.get('free_status', 'unverified'))}</td>"
         f"<td class='prov'><a href=\"{esc(provider_link(provider, mid))}\" target=\"_blank\" rel=\"noopener\">{esc(provider)}</a></td>"
         f"<td>{free_badge(m.get('free_type', 'recurring-monthly'))}</td>"
         f"<td class='num'>{speed_cell}</td>"
@@ -180,6 +193,7 @@ def main() -> int:
         {
             "id": m["id"], "name": m.get("name", m["id"]), "provider": m.get("provider", ""),
             "free_type": m.get("free_type", "recurring-monthly"),
+            "free_status": m.get("free_status", "unverified"),
             "context_length": m.get("context_length"),
             "monthly_tokens": m.get("monthly_tokens"), "credit_tokens": m.get("credit_tokens"),
             "speed": m.get("speed"),
