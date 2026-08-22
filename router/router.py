@@ -138,6 +138,12 @@ COOLDOWN_SECONDS = int(os.environ.get("MINI_ROUTER_COOLDOWN", "600"))  # 10 min
 LIVE: dict[str, dict] = {"uptime": {}, "fetched_at": 0}
 LIVE_TTL = int(os.environ.get("MINI_ROUTER_LIVE_TTL", "600"))  # 10 min live cache
 
+# USAGE STATS (learned from real requests, NOT benchmarks):
+# model_id -> {"ok": n, "fail": n, "latency_ms": [..], "last_ok": epoch}
+USAGE: dict[str, dict] = {}
+# models with >= this many successes are "proven" and ranked above untested
+PROVEN_OK = int(os.environ.get("MINI_ROUTER_PROVEN_OK", "3"))
+
 
 def fetch_json(url: str, timeout: int = 30) -> dict:
     req = urllib.request.Request(url, headers={"User-Agent": "llm-mini-router/1.0"})
@@ -336,16 +342,26 @@ def pick_model(criteria: dict) -> dict:
     if not scored:
         raise RuntimeError(f"no model matches criteria: {criteria}")
 
-    if mode == "smartest":
-        scored.sort(key=lambda x: (x[1]["intel"] or 0, x[1]["tps"] or 0), reverse=True)
-    elif mode == "fastest":
-        scored.sort(key=lambda x: (x[1]["tps"] or 0, x[1]["intel"] or 0), reverse=True)
-    else:  # balanced: normalize both 0-100
-        max_intel = max((s[1]["intel"] or 0) for s in scored) or 1
-        max_tps = max((s[1]["tps"] or 0) for s in scored) or 1
-        scored.sort(key=lambda x: 0.5 * ((x[1]["intel"] or 0) / max_intel)
-                    + 0.5 * ((x[1]["tps"] or 0) / max_tps)
-                    + 0.05 * (x[1].get("uptime", 1.0) - 1.0), reverse=True)
+    # RANK BY USAGE DATA (Kolja: no artificial benchmarks, only real usage).
+    # Priority:
+    #   1. Proven models (>= PROVEN_OK successes) — proven working, sorted by
+    #      median latency (faster first)
+    #   2. Untested models (no usage yet) — neutral, after proven
+    #   3. Models with failures but not on cooldown — last
+    def usage_rank(mid: str) -> tuple:
+        u = USAGE.get(mid)
+        if not u:
+            return (1, 0, 0)  # untested
+        ok = u.get("ok", 0)
+        if ok >= PROVEN_OK:
+            lat = sorted(u.get("latency_ms", []))
+            med = lat[len(lat)//2] if lat else 1e9
+            return (0, med, -ok)  # proven: lower latency = better
+        if u.get("fail", 0) > 0:
+            return (2, u.get("fail", 0), -ok)  # failed before: last
+        return (1, 0, -ok)  # some success but not proven yet
+
+    scored.sort(key=lambda x: usage_rank(x[0]["id"]))
 
     return scored
 
@@ -407,18 +423,30 @@ def route_request(body: dict, stream: bool) -> dict | None:
             method="POST",
         )
         try:
+            t0 = time.monotonic()
             resp = urllib.request.urlopen(req, timeout=120)
             data = json.loads(resp.read().decode())
+            latency_ms = (time.monotonic() - t0) * 1000
+            # record success in usage stats
+            u = USAGE.setdefault(model_id, {"ok": 0, "fail": 0, "latency_ms": [], "last_ok": 0})
+            u["ok"] += 1
+            u["latency_ms"] = (u["latency_ms"] + [round(latency_ms)])[-50:]
+            u["last_ok"] = time.time()
             # annotate which model actually served
-            data["_router"] = {"model": model_id, "provider": provider_name, "tried": tried}
-            print(f"[router] → {model_id} via {provider_name} (rank {rank+1})")
+            data["_router"] = {"model": model_id, "provider": provider_name, "tried": tried,
+                               "latency_ms": round(latency_ms)}
+            print(f"[router] ✓ {model_id} via {provider_name} (rank {rank+1}, {latency_ms:.0f}ms)")
             return data
         except urllib.error.HTTPError as e:
             last_err = e
+            u = USAGE.setdefault(model_id, {"ok": 0, "fail": 0, "latency_ms": [], "last_ok": 0})
+            u["fail"] += 1
             mark_failed(model_id)
             print(f"[router] ✗ {model_id}: HTTP {e.code}, falling back")
         except Exception as e:
             last_err = e
+            u = USAGE.setdefault(model_id, {"ok": 0, "fail": 0, "latency_ms": [], "last_ok": 0})
+            u["fail"] += 1
             mark_failed(model_id)
             print(f"[router] ✗ {model_id}: {e}, falling back")
 
@@ -533,6 +561,9 @@ class Handler(BaseHTTPRequestHandler):
         elif self.path == "/refresh":
             load_data(force=True)
             self._send_json(200, {"status": "refreshed", "models": len(DATA["models"])})
+        elif self.path == "/usage":
+            # usage-learned stats (real request outcomes, not benchmarks)
+            self._send_json(200, {"usage": USAGE})
         elif self.path == "/models":
             # list available models with metrics (the data API)
             # values are BENCHMARKS (historical), live status shown separately
