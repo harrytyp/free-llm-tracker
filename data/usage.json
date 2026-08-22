@@ -1,14 +1,23 @@
 {
- "updated_at": "2026-08-22T20:51:00Z",
+ "updated_at": "2026-08-22T21:00:24Z",
  "usage": {
   "nvidia/nemotron-3.5-lightning:free": {
    "ok": 1,
-   "fail": 0,
+   "fail": 1,
    "latency_ms": [
     3847
    ],
    "last_ok": 1787431860.3866196
+  },
+  "z-ai/glm-5.2": {
+   "ok": 0,
+   "fail": 1,
+   "latency_ms": [],
+   "last_ok": 0
   }
  },
- "cooldowns": {}
+ "cooldowns": {
+  "nvidia/nemotron-3.5-lightning:free": 1787433024.4426093,
+  "z-ai/glm-5.2": 1787433024.5808737
+ }
 }
