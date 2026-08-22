@@ -47,7 +47,7 @@ jobs:
         run: |
           git config user.name "free-llm-tracker bot"
           git config user.email "harrytyp@users.noreply.github.com"
-          git add data/ index.html benchmarks.json
+          git add data/ index.html benchmarks.json providers.json
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
