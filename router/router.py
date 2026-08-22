@@ -44,6 +44,12 @@ BENCH_URL = os.environ.get(
 # Providers we can route to. Each needs an OpenAI-compatible base_url.
 # Key env: OPENROUTER_API_KEY etc. Add more by extending this dict.
 # Free model lists come from the free-llm-tracker data (OmniRoute catalog).
+#
+# NOTE (2026-08): The 17 "keyless" providers in OmniRoute (puter, blackbox,
+# agy, duckduckgo-web, qwen-web, felo-web, pollinations...) are WEB FRONTENDS
+# without OpenAI-compatible APIs — they cannot be routed by this gateway.
+# Real API routing requires a key-based provider below. Keys are free tiers,
+# no credit card (Groq, Cerebras, Mistral, Google AI Studio, GitHub Models...).
 PROVIDERS = {
     "openrouter": {
         "base_url": "https://openrouter.ai/api/v1",

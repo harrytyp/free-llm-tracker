@@ -89,6 +89,31 @@ Pulls `latest.json` + `benchmarks.json` from the
 | `DEEPINFRA_API_KEY` | — | DeepInfra key |
 | `NVIDIA_API_KEY` | — | NVIDIA key |
 
+## 🔑 Keys besorgen (Kolja) — Free-Tiers, keine Kreditkarte
+
+Der Router routet zu jedem Provider, dessen Key gesetzt ist. Je mehr Keys, desto
+mehr Modelle + bessere Auto-Verteilung (verschiedene Rate-Limits = mehr Last).
+
+| Provider | Free-Modelle (Beispiele) | Limit | Key holen bei |
+|---|---|---|---|
+| **Groq** | llama-3.3-70b, qwen3-32b, gpt-oss-120b | 14.400 req/day, 6.000 TPM | console.groq.com |
+| **Cerebras** | gpt-oss-120b, glm-4.7 | ~30.000 TPM | cloud.cerebras.ai |
+| **Google AI Studio** | gemini-flash (bestes free closed) | free quota | aistudio.google.com |
+| **GitHub Models** | GPT, Llama, Mix | rate limits | github.com/settings/tokens |
+| **Mistral** | magistral, devstral | ~50.000 TPM | console.mistral.ai |
+| **DeepInfra** | viele Open-Modelle | free tier | deepinfra.com |
+| **NVIDIA** | nemotron, llama | free tier | build.nvidia.com |
+| **Cloudflare** | viele | 10.000 Neurons/Tag | dash.cloudflare.com |
+| **Together** | llama, qwen | free tier | together.ai |
+| **OpenRouter** | 22 Free-Modelle | 20 req/min | openrouter.ai |
+
+**Key setzen:** `export GROQ_API_KEY="..."` vor dem Router-Start (oder in `.env`).
+
+> **Warum keine keyless Provider?** Die 17 "keyless" Provider in der OmniRoute-Liste
+> (puter, blackbox, agy, duckduckgo-web, qwen-web, pollinations...) sind Web-Frontends
+> ohne OpenAI-kompatible API — sie sind Chat-Webseiten, keine Dienste. Der Router
+> kann nur echte API-Endpoints anbinden.
+
 ## Connect Hermes
 
 Add to `config.yaml`:
