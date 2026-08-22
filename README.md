@@ -26,6 +26,30 @@ hinzufügt, erscheinen beim nächsten Lauf automatisch — ohne manuelle Pflege.
 - **Reproduzierbar:** Jeder Lauf ist determiniert — gleiche Quellen, gleiche Logik,
   gleiche Ausgabe. Geschichte in `data/history.jsonl` nachvollziehbar.
 
+## 🚀 llm-mini-router (im selben Repo, `router/`)
+
+**Super lightweight auto-routing Gateway** — ein OpenAI-kompatibler Endpoint für alle Free-Modelle.
+Wählt das beste Modell nach Kriterien (Intelligence, t/s), routet hin, Auto-Fallback bei Rate-Limit,
+Load-Aware-Verteilung über die Top-Kandidaten. Python stdlib-only.
+
+```bash
+cd router
+export OPENROUTER_API_KEY="sk-or-..."
+python3 router.py
+# → POST http://127.0.0.1:8080/v1/chat/completions
+```
+
+Request mit Routing-Kriterien:
+```json
+{
+  "model": "auto",
+  "messages": [{"role": "user", "content": "..."}],
+  "router": {"mode": "smartest", "min_tps": 50, "min_intel": 40}
+}
+```
+
+Details: [router/README.md](router/README.md)
+
 ## Datenquellen (alle öffentlich, ohne Key)
 
 | Quelle | Was | Key |

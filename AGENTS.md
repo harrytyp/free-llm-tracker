@@ -1,27 +1,31 @@
-# free-llm-tracker — Projektregeln (Revision 2, 2026-08-22)
+# free-llm-tracker — Projektregeln (Revision 3, 2026-08-22)
 
-## Kritik von Kolja (Anlass dieser Revision)
-- Tabelle unbrauchbar, Seite hässlich, Werte teils falsch, API-Integrationen nicht sinnvoll.
-- t/s-Werte von llm-benchmarks.com sind nur bedingt vertrauenswürdig (60% mit n=1).
+## Architektur
+- **Daten** (collector + benchmark → data/, GitHub Pages): `collector.py`, `benchmark.py`, `build_site.py`
+- **Router** (`router/`): llm-mini-router — OpenAI-kompatibler Endpoint, Routing nach Kriterien, Auto-Fallback, Load-Aware-Verteilung
+- Beides in EINEM Repo harrytyp/free-llm-tracker.
 
-## Kernentscheidungen
-1. **Eigene t/s-Messung statt fremde Benchmarks als Wahrheit:**
-   - `benchmark.py` misst TTFT + t/s direkt an den Free-Endpoints (kostet nichts, Modelle gratis).
-   - Mehrere Samples pro (Modell, Provider), Median statt Mean, Ausreißer verwerfen.
-   - llm-benchmarks.com bleibt nur als **Fallback-Referenz**, nie als Primärquelle.
-2. **Provider-Alias-Map ist GELÖSCHT** — t/s wird immer exakt pro (Modell, Provider) gemessen/gespeichert.
-3. **Seite ist ein kompletter Neubau:**
-   - Suchfeld, Provider-Filter, sortierbare Spalten, FreeType-Badges, CSV-Export, Dark Theme, mobile-first.
-   - Kein Jekyll, keine externen Abhängigkeiten, kein Framework. Nur build_site.py.
-4. **AA-API korrekt:** Endpoint `/api/v2/data/llms/models` ist **Pro-only**. Free-Tier reicht nicht.
-   - Wenn kein Key: Intelligence-Spalte ehrlich als "nicht verfügbar" markieren, nicht "–".
-5. **history.jsonl MUSS funktionieren** (war leer) — Trend-Chart auf der Seite braucht echte Daten.
+## Messquellen (alle extern, kein Selbst-Messen)
+1. **AA Free-API** (`/api/v2/data/llms/models`, Key nötig): Intelligence Index + t/s + TTFT für 610 Modelle. **Genau 1 Call pro Durchgang** (Kolja: sparsam!).
+2. **AA Provider-Seiten** (öffentlich): t/s pro Provider pro Modell (Cerebras, Groq, ...).
+3. **llm-benchmarks.com Provider-Seiten** (öffentlich): 30-Tage-Messungen pro Provider (deepinfra 128 Modelle, openrouter 282, ...).
+4. **OpenRouter Endpoints-API** (Key nötig): Live-Uptime + P50 t/s (30-min-Fenster).
 
 ## Datenqualitätsregeln
-- Ein Benchmark-Wert gilt nur mit **n >= 3 Samples**. n=1, n=2 → nicht anzeigen.
-- Median über Samples, nicht Mean (robust gegen Ausreißer).
-- Provider-Namen IMMER original (openrouter, groq, cerebras, ...), nie aliasen.
+- t/s/intel = **historische Benchmarks** (30-Tage), NIE als Live-Wert ausgeben.
+- Live-Status = OpenRouter `uptime_last_30m` + Cooldown nach 429 (Router).
+- Deprecated Modelle werden komplett entfernt (nicht nur markiert).
+- AA-Slug-Mapping: dots→dashes, Suffix-Stripping, Prefix-Match.
 
-## Workflow (unverändert)
-- `.github/workflows/update.yml`: collect -> benchmark -> build -> commit -> Pages deploy, alle 6h.
-- AA-Key als Secret `ARTIFICIAL_ANALYSIS_API_KEY` (optional, Pro-Tier für vollen Zugriff).
+## Router-Regeln (router/)
+- Stdlib only, keine Dependencies.
+- Keys nur aus Env (OPENROUTER_API_KEY, GROQ_API_KEY, ...).
+- Kriterien im Request-Body unter `router` (mode, min_tps, min_intel, provider, model).
+- Auto-Fallback: 429/5xx → nächster Kandidat, Cooldown 10 min.
+- Load-Aware: weighted-random aus Top-5 (nicht immer Rank 1 — 100 User würden sonst dasselbe Modell ratelimitieren).
+- Verifikation: Nach Änderung lokalen Start + echten Chat-Completion testen.
+
+## Workflow
+- `.github/workflows/update.yml`: collect → benchmark (mit AA+OR Secrets) → build → commit → Pages deploy, alle 6h.
+- Ohne Secrets: benchmark wird übersprungen, deploy läuft trotzdem.
+- Secrets im GitHub-UI setzen: `OPENROUTER_API_KEY`, `ARTIFICIAL_ANALYSIS_API_KEY`.
