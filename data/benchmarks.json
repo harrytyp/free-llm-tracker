@@ -1,216 +1,450 @@
 {
- "updated_at": "2026-08-22T13:30:12Z",
- "method": "openrouter endpoints API + own streaming for public providers",
+ "updated_at": "2026-08-22T13:40:06Z",
+ "method": "openrouter endpoints API + AA provider benchmarks (public) + own streaming",
  "results": {
   "stealth/ox-alpha": {
-   "tps": 18,
-   "tps_p90": 38,
-   "ttft_ms_p50": 8351,
-   "ttft_ms_p90": 35816.0,
+   "tps": 19,
+   "tps_p90": 39,
+   "ttft_ms_p50": 8289,
+   "ttft_ms_p90": 36246.8,
    "provider": "Stealth",
-   "uptime_30m": 99.993,
+   "uptime_30m": 99.994,
    "source": "openrouter-endpoints-api",
-   "measured_at": "2026-08-22T13:28:59Z"
+   "measured_at": "2026-08-22T13:37:58Z"
   },
   "dots-studio/dots-3-note-preview:free": {
-   "tps": 60.5,
-   "tps_p90": 127,
-   "ttft_ms_p50": 1010,
-   "ttft_ms_p90": 3118,
+   "tps": 42,
+   "tps_p90": 100,
+   "ttft_ms_p50": 1130,
+   "ttft_ms_p90": 4379.0,
    "provider": "AtlasCloud",
-   "uptime_30m": 99.989,
+   "uptime_30m": 99.975,
    "source": "openrouter-endpoints-api",
-   "measured_at": "2026-08-22T13:28:59Z"
+   "measured_at": "2026-08-22T13:37:58Z"
   },
   "liquid/lfm-2.5-2.6b:free": {
-   "tps": 141,
-   "tps_p90": 273,
-   "ttft_ms_p50": 1459.5,
-   "ttft_ms_p90": 7074.9,
+   "tps": 144,
+   "tps_p90": 273.1,
+   "ttft_ms_p50": 1412.5,
+   "ttft_ms_p90": 6871.4,
    "provider": "Liquid",
-   "uptime_30m": 99.665,
+   "uptime_30m": 99.508,
    "source": "openrouter-endpoints-api",
-   "measured_at": "2026-08-22T13:29:00Z"
+   "measured_at": "2026-08-22T13:37:59Z"
   },
   "nvidia/nemotron-3.5-lightning:free": {
    "tps": 34,
-   "tps_p90": 83,
-   "ttft_ms_p50": 1633.5,
-   "ttft_ms_p90": 14260.4,
+   "tps_p90": 76,
+   "ttft_ms_p50": 1474.5,
+   "ttft_ms_p90": 13218.7,
    "provider": "Nvidia",
-   "uptime_30m": 99.331,
+   "uptime_30m": 99.418,
    "source": "openrouter-endpoints-api",
-   "measured_at": "2026-08-22T13:29:00Z"
+   "measured_at": "2026-08-22T13:37:59Z"
   },
   "thinkingmachines/inkling-small:free": {
-   "tps": 104,
-   "tps_p90": 235,
-   "ttft_ms_p50": 916,
-   "ttft_ms_p90": 2191.1,
+   "tps": 103,
+   "tps_p90": 238,
+   "ttft_ms_p50": 928,
+   "ttft_ms_p90": 2207.0,
    "provider": "Thinking Machines",
    "uptime_30m": 100,
    "source": "openrouter-endpoints-api",
-   "measured_at": "2026-08-22T13:29:00Z"
+   "measured_at": "2026-08-22T13:38:00Z"
   },
   "poolside/laguna-s-2.1:free": {
    "tps": 38,
    "tps_p90": 60,
-   "ttft_ms_p50": 1454,
-   "ttft_ms_p90": 3296.9,
+   "ttft_ms_p50": 1491,
+   "ttft_ms_p90": 3214.9,
    "provider": "Poolside",
-   "uptime_30m": 99.955,
+   "uptime_30m": 99.956,
    "source": "openrouter-endpoints-api",
-   "measured_at": "2026-08-22T13:29:01Z"
+   "measured_at": "2026-08-22T13:38:00Z"
   },
   "thinkingmachines/inkling:free": {
-   "tps": 62,
-   "tps_p90": 137,
-   "ttft_ms_p50": 1223,
-   "ttft_ms_p90": 2557.0,
+   "tps": 64,
+   "tps_p90": 140,
+   "ttft_ms_p50": 1205,
+   "ttft_ms_p90": 2541.2,
    "provider": "Thinking Machines",
    "uptime_30m": 100,
    "source": "openrouter-endpoints-api",
-   "measured_at": "2026-08-22T13:29:01Z"
+   "measured_at": "2026-08-22T13:38:00Z"
   },
   "poolside/laguna-xs-2.1:free": {
    "tps": 7,
-   "tps_p90": 15,
-   "ttft_ms_p50": 2026.5,
-   "ttft_ms_p90": 7854.7,
+   "tps_p90": 14,
+   "ttft_ms_p50": 2093,
+   "ttft_ms_p90": 8377.0,
    "provider": "Poolside",
-   "uptime_30m": 99.896,
+   "uptime_30m": 99.876,
    "source": "openrouter-endpoints-api",
-   "measured_at": "2026-08-22T13:29:01Z"
+   "measured_at": "2026-08-22T13:38:00Z"
   },
   "cohere/north-mini-code:free": {
    "tps": 25,
    "tps_p90": 38,
-   "ttft_ms_p50": 1024,
-   "ttft_ms_p90": 3552,
+   "ttft_ms_p50": 1070.5,
+   "ttft_ms_p90": 3567.9,
    "provider": "Cohere",
-   "uptime_30m": 98.066,
+   "uptime_30m": 97.874,
    "source": "openrouter-endpoints-api",
-   "measured_at": "2026-08-22T13:29:02Z"
+   "measured_at": "2026-08-22T13:38:01Z"
   },
   "z-ai/glm-5.2:free": {
-   "tps": 116,
+   "tps": 118.5,
    "tps_p90": 359.3,
-   "ttft_ms_p50": 3933,
-   "ttft_ms_p90": 14503.2,
+   "ttft_ms_p50": 3889,
+   "ttft_ms_p90": 14543.9,
    "provider": "Decart",
    "uptime_30m": 100,
    "source": "openrouter-endpoints-api",
-   "measured_at": "2026-08-22T13:29:02Z"
+   "measured_at": "2026-08-22T13:38:01Z"
   },
   "nvidia/nemotron-3.5-content-safety:free": {
-   "tps": 67,
+   "tps": 68,
    "tps_p90": 83,
-   "ttft_ms_p50": 284.5,
-   "ttft_ms_p90": 1764.7,
+   "ttft_ms_p50": 263,
+   "ttft_ms_p90": 1680,
    "provider": "Nvidia",
-   "uptime_30m": 99.35,
+   "uptime_30m": 99.467,
    "source": "openrouter-endpoints-api",
-   "measured_at": "2026-08-22T13:29:02Z"
+   "measured_at": "2026-08-22T13:38:03Z"
   },
   "nvidia/nemotron-3-ultra-550b-a55b:free": {
    "tps": 24,
-   "tps_p90": 64,
-   "ttft_ms_p50": 2645,
-   "ttft_ms_p90": 13474.7,
+   "tps_p90": 63,
+   "ttft_ms_p50": 2587.5,
+   "ttft_ms_p90": 12724.3,
    "provider": "Nvidia",
-   "uptime_30m": 99.797,
+   "uptime_30m": 99.788,
    "source": "openrouter-endpoints-api",
-   "measured_at": "2026-08-22T13:29:03Z"
+   "measured_at": "2026-08-22T13:38:03Z"
   },
   "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": {
-   "tps": 71,
-   "tps_p90": 146,
-   "ttft_ms_p50": 404,
-   "ttft_ms_p90": 2297,
+   "tps": 58,
+   "tps_p90": 139,
+   "ttft_ms_p50": 412,
+   "ttft_ms_p90": 2263,
    "provider": "Nvidia",
-   "uptime_30m": 98.896,
+   "uptime_30m": 98.164,
    "source": "openrouter-endpoints-api",
-   "measured_at": "2026-08-22T13:29:03Z"
+   "measured_at": "2026-08-22T13:38:03Z"
   },
   "google/gemma-4-26b-a4b-it:free": {
-   "tps": 39.5,
+   "tps": 39,
    "tps_p90": 46,
-   "ttft_ms_p50": 989.5,
-   "ttft_ms_p90": 1870.0,
+   "ttft_ms_p50": 1000,
+   "ttft_ms_p90": 2144.8,
    "provider": "Google AI Studio",
-   "uptime_30m": 99.802,
+   "uptime_30m": 99.795,
    "source": "openrouter-endpoints-api",
-   "measured_at": "2026-08-22T13:29:03Z"
+   "measured_at": "2026-08-22T13:38:04Z"
   },
   "google/gemma-4-31b-it:free": {
-   "tps": 30,
+   "tps": 31,
    "tps_p90": 35,
-   "ttft_ms_p50": 1154,
-   "ttft_ms_p90": 1882.8,
+   "ttft_ms_p50": 1152,
+   "ttft_ms_p90": 1783,
    "provider": "Google AI Studio",
    "uptime_30m": 100,
    "source": "openrouter-endpoints-api",
-   "measured_at": "2026-08-22T13:29:03Z"
+   "measured_at": "2026-08-22T13:38:04Z"
   },
   "google/lyria-3-pro-preview": {
-   "tps": 2.5,
+   "tps": 6,
    "tps_p90": 15,
-   "ttft_ms_p50": 7149.5,
-   "ttft_ms_p90": 10913.9,
+   "ttft_ms_p50": 7725,
+   "ttft_ms_p90": 10951,
    "provider": "Google AI Studio",
    "uptime_30m": null,
    "source": "openrouter-endpoints-api",
-   "measured_at": "2026-08-22T13:29:04Z"
+   "measured_at": "2026-08-22T13:38:04Z"
   },
   "google/lyria-3-clip-preview": {
    "tps": 1.5,
    "tps_p90": 8,
-   "ttft_ms_p50": 2563.5,
-   "ttft_ms_p90": 3673.8,
+   "ttft_ms_p50": 2533,
+   "ttft_ms_p90": 3697.7,
    "provider": "Google AI Studio",
    "uptime_30m": null,
    "source": "openrouter-endpoints-api",
-   "measured_at": "2026-08-22T13:29:04Z"
+   "measured_at": "2026-08-22T13:38:05Z"
   },
   "nvidia/nemotron-3-super-120b-a12b:free": {
-   "tps": 40,
+   "tps": 41,
    "tps_p90": 90,
-   "ttft_ms_p50": 2316.5,
-   "ttft_ms_p90": 8859.7,
+   "ttft_ms_p50": 2319,
+   "ttft_ms_p90": 8832.9,
    "provider": "Nvidia",
-   "uptime_30m": 99.598,
+   "uptime_30m": 99.578,
    "source": "openrouter-endpoints-api",
-   "measured_at": "2026-08-22T13:29:04Z"
+   "measured_at": "2026-08-22T13:38:05Z"
   },
   "nvidia/nemotron-3-nano-30b-a3b:free": {
-   "tps": 101.5,
+   "tps": 102,
    "tps_p90": 177,
-   "ttft_ms_p50": 691.5,
-   "ttft_ms_p90": 5072.3,
+   "ttft_ms_p50": 681,
+   "ttft_ms_p90": 5239.8,
    "provider": "Nvidia",
-   "uptime_30m": 99.942,
+   "uptime_30m": 99.944,
    "source": "openrouter-endpoints-api",
-   "measured_at": "2026-08-22T13:29:05Z"
+   "measured_at": "2026-08-22T13:38:06Z"
   },
   "nvidia/nemotron-nano-12b-v2-vl:free": {
-   "tps": 16,
+   "tps": 18,
    "tps_p90": 35,
-   "ttft_ms_p50": 2545,
-   "ttft_ms_p90": 19749.2,
+   "ttft_ms_p50": 2248.5,
+   "ttft_ms_p90": 15287.7,
    "provider": "Nvidia",
-   "uptime_30m": 81.833,
+   "uptime_30m": 83.265,
    "source": "openrouter-endpoints-api",
-   "measured_at": "2026-08-22T13:29:05Z"
+   "measured_at": "2026-08-22T13:38:06Z"
   },
   "nvidia/nemotron-nano-9b-v2:free": {
    "tps": 35,
    "tps_p90": 47,
-   "ttft_ms_p50": 1066,
-   "ttft_ms_p90": 7425.0,
+   "ttft_ms_p50": 1010,
+   "ttft_ms_p90": 7073.5,
    "provider": "Nvidia",
-   "uptime_30m": 99.629,
+   "uptime_30m": 99.694,
    "source": "openrouter-endpoints-api",
-   "measured_at": "2026-08-22T13:29:06Z"
+   "measured_at": "2026-08-22T13:38:06Z"
+  },
+  "claude-opus-4-6": {
+   "providers": [
+    {
+     "provider": "Amazon",
+     "tps": 44.0,
+     "ttft_s": null
+    },
+    {
+     "provider": "Google",
+     "tps": 41.9,
+     "ttft_s": null
+    },
+    {
+     "provider": "Anthropic",
+     "tps": 41.0,
+     "ttft_s": null
+    },
+    {
+     "provider": "Azure",
+     "tps": 39.6,
+     "ttft_s": null
+    }
+   ],
+   "source": "artificialanalysis-provider-benchmarks",
+   "measured_at": "2026-08-22T13:39:14Z"
+  },
+  "deepseek-v3.2": {
+   "providers": [
+    {
+     "provider": "Azure",
+     "tps": 167.7,
+     "ttft_s": null
+    },
+    {
+     "provider": "Amazon",
+     "tps": 102.1,
+     "ttft_s": null
+    },
+    {
+     "provider": "DigitalOcean",
+     "tps": 89.5,
+     "ttft_s": null
+    },
+    {
+     "provider": "FriendliAI",
+     "tps": 77.5,
+     "ttft_s": null
+    },
+    {
+     "provider": "GMI",
+     "tps": 55.5,
+     "ttft_s": null
+    }
+   ],
+   "source": "artificialanalysis-provider-benchmarks",
+   "measured_at": "2026-08-22T13:39:15Z"
+  },
+  "glm-5.1": {
+   "providers": [
+    {
+     "provider": "CoreWeave",
+     "tps": 224.7,
+     "ttft_s": null
+    },
+    {
+     "provider": "Parasail (FP8)",
+     "tps": 165.6,
+     "ttft_s": null
+    },
+    {
+     "provider": "FriendliAI",
+     "tps": 133.2,
+     "ttft_s": null
+    },
+    {
+     "provider": "Novita (FP8)",
+     "tps": 74.3,
+     "ttft_s": null
+    },
+    {
+     "provider": "SiliconFlow (FP8)",
+     "tps": 54.7,
+     "ttft_s": null
+    }
+   ],
+   "source": "artificialanalysis-provider-benchmarks",
+   "measured_at": "2026-08-22T13:39:16Z"
+  },
+  "claude-sonnet-4-6": {
+   "providers": [
+    {
+     "provider": "Amazon",
+     "tps": 45.5,
+     "ttft_s": null
+    },
+    {
+     "provider": "Google",
+     "tps": 44.5,
+     "ttft_s": null
+    },
+    {
+     "provider": "Anthropic",
+     "tps": 43.6,
+     "ttft_s": null
+    },
+    {
+     "provider": "Azure",
+     "tps": 43.3,
+     "ttft_s": null
+    }
+   ],
+   "source": "artificialanalysis-provider-benchmarks",
+   "measured_at": "2026-08-22T13:39:22Z"
+  },
+  "gemini-2.5-flash": {
+   "providers": [
+    {
+     "provider": "Google (AI Studio)",
+     "tps": 233.3,
+     "ttft_s": null
+    },
+    {
+     "provider": "Google (Vertex)",
+     "tps": 189.4,
+     "ttft_s": null
+    }
+   ],
+   "source": "artificialanalysis-provider-benchmarks",
+   "measured_at": "2026-08-22T13:39:23Z"
+  },
+  "gpt-oss-120b-medium": {
+   "providers": [
+    {
+     "provider": "Cerebras",
+     "tps": 698.6,
+     "ttft_s": null
+    },
+    {
+     "provider": "Groq",
+     "tps": 474.4,
+     "ttft_s": null
+    },
+    {
+     "provider": "Azure",
+     "tps": 305.6,
+     "ttft_s": null
+    },
+    {
+     "provider": "Baseten",
+     "tps": 295.4,
+     "ttft_s": null
+    }
+   ],
+   "source": "artificialanalysis-provider-benchmarks",
+   "measured_at": "2026-08-22T13:39:40Z"
+  },
+  "google/gemma-4-31b": {
+   "providers": [
+    {
+     "provider": "Cerebras",
+     "tps": 237.6,
+     "ttft_s": null
+    },
+    {
+     "provider": "SambaNova",
+     "tps": 201.3,
+     "ttft_s": null
+    },
+    {
+     "provider": "Lightning AI",
+     "tps": 148.2,
+     "ttft_s": null
+    },
+    {
+     "provider": "FriendliAI",
+     "tps": 138.4,
+     "ttft_s": null
+    }
+   ],
+   "source": "artificialanalysis-provider-benchmarks",
+   "measured_at": "2026-08-22T13:39:47Z"
+  },
+  "deepseek-r1": {
+   "providers": [
+    {
+     "provider": "Google Vertex",
+     "tps": 168.1,
+     "ttft_s": null
+    },
+    {
+     "provider": "Novita",
+     "tps": 27.5,
+     "ttft_s": null
+    },
+    {
+     "provider": "DeepInfra",
+     "tps": 26.2,
+     "ttft_s": null
+    }
+   ],
+   "source": "artificialanalysis-provider-benchmarks",
+   "measured_at": "2026-08-22T13:39:48Z"
+  },
+  "llama-4-maverick": {
+   "providers": [
+    {
+     "provider": "Azure (FP8)",
+     "tps": 453.0,
+     "ttft_s": null
+    },
+    {
+     "provider": "Amazon",
+     "tps": 220.3,
+     "ttft_s": null
+    },
+    {
+     "provider": "Parasail (FP8)",
+     "tps": 88.7,
+     "ttft_s": null
+    },
+    {
+     "provider": "Novita (FP8)",
+     "tps": 77.3,
+     "ttft_s": null
+    },
+    {
+     "provider": "DeepInfra (FP8)",
+     "tps": 64.8,
+     "ttft_s": null
+    }
+   ],
+   "source": "artificialanalysis-provider-benchmarks",
+   "measured_at": "2026-08-22T13:39:50Z"
   }
  },
  "errors": [

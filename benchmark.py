@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import statistics
 import sys
 import time
@@ -221,6 +222,103 @@ def measure_stream_provider(name: str, cfg: dict, key: str | None,
     return results, errors
 
 
+def scrape_aa_providers(model_slug: str) -> list[dict]:
+    """Fetch AA /models/{slug}/providers page, parse provider t/s table.
+
+    AA publicly benchmarks every model against ALL providers (Groq, Cerebras,
+    DeepInfra, Together, Fireworks, ...) with output speed (t/s), TTFT, price.
+    HTML uses: <img alt="ProviderName"> ... <span class="...">VALUE</span><span ...>t/s</span>
+    Returns [{provider, tps, ttft_s}] or [] on failure.
+    """
+    url = f"https://artificialanalysis.ai/models/{model_slug}/providers"
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    try:
+        with urllib.request.urlopen(req, timeout=25) as r:
+            html = r.read().decode()
+    except Exception:
+        return []
+
+    # Find "Fastest" section (top providers with t/s)
+    # Pattern: alt="ProviderName" ... >NUM</span><span ...>t/s</span>
+    fastest_idx = html.find("Fastest")
+    if fastest_idx < 0:
+        return []
+    section = html[fastest_idx:fastest_idx + 30000]
+
+    pattern = re.compile(
+        r'alt="([^"]+)"[^>]*>.*?'
+        r'<span class="(?:font-medium|text-neutral-700)">([\d.]+)</span>'
+        r'<span[^>]*>\s*<!-- -->t/s</span>',
+        re.DOTALL)
+    rows = []
+    for m in pattern.finditer(section):
+        prov, tps = m.group(1).strip(), float(m.group(2))
+        if tps > 10000:
+            continue
+        rows.append({"provider": prov, "tps": round(tps, 1), "ttft_s": None})
+
+    # Dedupe by provider name
+    seen = {}
+    for r in rows:
+        if r["provider"] not in seen:
+            seen[r["provider"]] = r
+    return list(seen.values())
+
+
+# AA slug conversion: our model id -> AA page slug
+def aa_slug(model_id: str) -> str | None:
+    """Map OpenRouter/OmniRoute model id to Artificial Analysis slug."""
+    mid = model_id.lower().rstrip(":free").split("/")[-1]
+    # known mappings (curated from search)
+    known = {
+        "glm-5.2": "glm-5-2",
+        "glm-5.1": "glm-5-1",
+        "gpt-oss-20b": "gpt-oss-20b",
+        "gpt-oss-120b": "gpt-oss-120b",
+        "gpt-oss-120b-medium": "gpt-oss-120b",
+        "gemma-4-31b-it": "gemma-4-31b",
+        "gemma-4-26b-a4b-it": "gemma-4-26b",
+        "llama-3.3-70b-instruct": "llama-3-3-instruct-70b",
+        "llama-3.1-8b-instruct": "llama-3-1-instruct-8b",
+        "llama-3.1-70b-instruct": "llama-3-1-instruct-70b",
+        "nemotron-3-nano-30b-a3b": "nemotron-3-nano-30b",
+        "nemotron-3-super-120b-a12b": "nemotron-3-super-120b",
+        "nemotron-3-ultra-550b-a55b": "nemotron-3-ultra-550b",
+        "deepseek-v4-pro": "deepseek-v4-pro",
+        "laguna-s-2.1": "laguna-s-2-1",
+        "ox-alpha": "ox-alpha",
+    }
+    if mid in known:
+        return known[mid]
+    # fallback: replace dots with dashes, strip -it/-instruct suffixes
+    slug = mid.replace(".", "-")
+    slug = re.sub(r"-(it|instruct|chat|preview)$", "", slug)
+    return slug if len(slug) > 3 else None
+
+
+def collect_aa_measurements(model_ids: list[str]) -> dict:
+    """Scrape AA provider tables for all models. Returns {model_id: {providers: [...]}}."""
+    out = {}
+    for mid in model_ids:
+        slug = aa_slug(mid)
+        if not slug:
+            continue
+        rows = scrape_aa_providers(slug)
+        if rows:
+            out[mid] = {
+                "providers": rows,
+                "source": "artificialanalysis-provider-benchmarks",
+                "measured_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            }
+            best = max(rows, key=lambda r: r["tps"] or 0)
+            print(f"    {mid} -> AA slug {slug}: {len(rows)} providers, "
+                  f"best {best['provider']} {best['tps']} t/s")
+        else:
+            print(f"    {mid} -> AA slug {slug}: no data")
+        time.sleep(0.5)
+    return out
+
+
 def main() -> int:
     all_results: dict = {}
     all_errors: list[str] = []
@@ -256,9 +354,30 @@ def main() -> int:
         all_results.update(r)
         all_errors.extend(e)
 
+    # 3. Artificial Analysis provider benchmarks (public, no key) - the KEY source
+    #    for "all providers per model": AA measures every provider publicly.
+    latest = json.loads((DATA / "latest.json").read_text())
+    free_models = latest["models"]
+
+    # Choose models to enrich: unique basenames, prioritize popular/open ones
+    seen_bases = set()
+    aa_targets = []
+    for m in free_models:
+        base = m["id"].lower().rstrip(":free").split("/")[-1]
+        if base in seen_bases:
+            continue
+        seen_bases.add(base)
+        aa_targets.append(m["id"])
+        if len(aa_targets) >= 40:  # budget: 40 model pages per run
+            break
+
+    print(f"\n  AA provider benchmarks for {len(aa_targets)} models...")
+    aa_data = collect_aa_measurements(aa_targets)
+    all_results.update(aa_data)
+
     out = {
         "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "method": "openrouter endpoints API + own streaming for public providers",
+        "method": "openrouter endpoints API + AA provider benchmarks (public) + own streaming",
         "results": all_results,
         "errors": all_errors,
     }

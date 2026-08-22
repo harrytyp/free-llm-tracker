@@ -127,21 +127,37 @@ def main() -> int:
     # Attach benchmark data to models (results keyed by model id)
     bench_raw_data = bench_raw.get("results", {})
     measured_count = 0
+    aa_models = 0
     for m in models:
         mid = m["id"].lower().rstrip(":free")
         entry = bench_raw_data.get(m["id"]) or bench_raw_data.get(mid)
         if entry:
+            # AA provider benchmarks (multiple providers per model)
+            if entry.get("providers"):
+                aa_providers = sorted(entry["providers"], key=lambda p: p.get("tps") or 0, reverse=True)
+                best = aa_providers[0]
+                m["speed"] = {
+                    "tps": best.get("tps"),
+                    "ttft_s": best.get("ttft_s"),
+                    "providers": aa_providers,
+                    "source": "artificialanalysis",
+                }
+                aa_models += 1
+                measured_count += 1
             # OpenRouter endpoints API values
-            m["speed"] = {
-                "tps": entry.get("tps"),
-                "tps_p90": entry.get("tps_p90"),
-                "ttft_s": (entry.get("ttft_ms_p50") or 0) / 1000 if entry.get("ttft_ms_p50") else None,
-                "ttft_ms": entry.get("ttft_ms_p50"),
-                "uptime": entry.get("uptime_30m"),
-                "cost_verified": entry.get("cost_verified_zero", False),
-                "source": entry.get("source", "openrouter"),
-            }
-            measured_count += 1
+            elif entry.get("tps") is not None:
+                m["speed"] = {
+                    "tps": entry.get("tps"),
+                    "tps_p90": entry.get("tps_p90"),
+                    "ttft_s": (entry.get("ttft_ms_p50") or 0) / 1000 if entry.get("ttft_ms_p50") else None,
+                    "ttft_ms": entry.get("ttft_ms_p50"),
+                    "uptime": entry.get("uptime_30m"),
+                    "cost_verified": entry.get("cost_verified_zero", False),
+                    "source": "openrouter",
+                }
+                measured_count += 1
+            else:
+                m["speed"] = None
         else:
             m["speed"] = None
 
@@ -170,6 +186,9 @@ def main() -> int:
             "link": provider_link(m.get("provider", ""), m["id"]),
         } for m in models
     ], ensure_ascii=False)
+
+    # Provider detail for AA models: "Model: Provider t/s (more...)" in tooltip
+    aa_count = sum(1 for m in models if (m.get("speed") or {}).get("providers"))
 
     page = f"""<!DOCTYPE html>
 <html lang="de">
@@ -314,11 +333,19 @@ function rowHtml(m) {{
   const ttft = sp.ttft_s != null ? `${{sp.ttft_s}}s` : '<span class="dim">–</span>';
   const samples = sp.samples != null ? sp.samples : '<span class="dim">–</span>';
   const ctx = m.context_length ? `<span class="badge">ctx ${{m.context_length >= 1e6 ? (m.context_length/1e6).toFixed(0)+'M' : (m.context_length/1e3).toFixed(0)+'k'}}</span>` : '';
+  // AA provider list: show best provider + expandable list
+  let provDetail = '';
+  if (sp.providers && sp.providers.length > 0) {{
+    const top = sp.providers.slice(0, 3).map(p => `${{p.provider}}: <b>${{p.tps}}</b> t/s`).join('<br>');
+    provDetail = `<small class="dim" title="${{sp.providers.map(p => p.provider + ' ' + p.tps + ' t/s').join(' · ')}}">📊 ${{sp.providers.length}} Provider</small>`;
+  }} else if (sp.source === 'openrouter') {{
+    provDetail = `<small class="dim">via OpenRouter</small>`;
+  }}
   return `<tr>
     <td class="name"><a href="${{m.link}}" target="_blank" rel="noopener">${{m.id}}</a><br><small class="dim">${{m.name || ''}}</small></td>
     <td class="prov"><a href="${{m.link}}" target="_blank" rel="noopener">${{m.provider}}</a></td>
     <td>${{m.free_type}}</td>
-    <td class="num">${{tps}}</td>
+    <td class="num">${{tps}}<br>${{provDetail}}</td>
     <td class="num">${{ttft}}</td>
     <td class="num">${{samples}}</td>
     <td>${{ctx}}</td>
