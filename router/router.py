@@ -43,6 +43,7 @@ BENCH_URL = os.environ.get(
 
 # Providers we can route to. Each needs an OpenAI-compatible base_url.
 # Key env: OPENROUTER_API_KEY etc. Add more by extending this dict.
+# Free model lists come from the free-llm-tracker data (OmniRoute catalog).
 PROVIDERS = {
     "openrouter": {
         "base_url": "https://openrouter.ai/api/v1",
@@ -64,6 +65,54 @@ PROVIDERS = {
     "cerebras": {
         "base_url": "https://api.cerebras.ai/v1",
         "key_env": "CEREBRAS_API_KEY",
+    },
+    "fireworks": {
+        "base_url": "https://api.fireworks.ai/inference/v1",
+        "key_env": "FIREWORKS_API_KEY",
+    },
+    "together": {
+        "base_url": "https://api.together.xyz/v1",
+        "key_env": "TOGETHER_API_KEY",
+    },
+    "siliconflow": {
+        "base_url": "https://api.siliconflow.cn/v1",
+        "key_env": "SILICONFLOW_API_KEY",
+    },
+    "hyperbolic": {
+        "base_url": "https://api.hyperbolic.xyz/v1",
+        "key_env": "HYPERBOLIC_API_KEY",
+    },
+    "mistral": {
+        "base_url": "https://api.mistral.ai/v1",
+        "key_env": "MISTRAL_API_KEY",
+    },
+    "cohere": {
+        "base_url": "https://api.cohere.ai/v1",
+        "key_env": "COHERE_API_KEY",
+    },
+    "sambanova": {
+        "base_url": "https://api.sambanova.ai/v1",
+        "key_env": "SAMBANOVA_API_KEY",
+    },
+    "novita": {
+        "base_url": "https://api.novita.ai/v3/openai",
+        "key_env": "NOVITA_API_KEY",
+    },
+    "google": {
+        "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
+        "key_env": "GOOGLE_API_KEY",
+    },
+    "github-models": {
+        "base_url": "https://models.github.ai/api/rest",
+        "key_env": "GITHUB_MODELS_KEY",
+    },
+    "cloudflare-ai": {
+        "base_url": "https://api.cloudflare.com/client/v4/accounts/{acct}/ai/v1",
+        "key_env": "CLOUDFLARE_API_TOKEN",
+    },
+    "kilo-gateway": {
+        "base_url": "https://api.kilo-gateway.ai/v1",
+        "key_env": "KILO_GATEWAY_API_KEY",
     },
 }
 
@@ -414,6 +463,8 @@ def candidate_models(criteria: dict) -> list[tuple]:
     min_intel = float(criteria.get("min_intel", 0))
     provider = criteria.get("provider")
     mode = criteria.get("mode", "balanced")
+    # DEFAULT: free-only routing (no costs!). Set allow_paid=true to include paid.
+    allow_paid = bool(criteria.get("allow_paid", False))
 
     def provider_available(pname: str) -> bool:
         if pname == "openrouter":
@@ -436,6 +487,14 @@ def candidate_models(criteria: dict) -> list[tuple]:
             continue  # recently rate-limited, skip
         pname = m.get("provider", "")
         if not provider_available(pname):
+            continue
+        # FREE-ONLY guard: skip paid models unless explicitly allowed
+        is_free = (
+            m.get("free_status") == "verified-free"
+            or str(m.get("id", "")).endswith(":free")
+            or m.get("free_type") == "keyless"
+        )
+        if not allow_paid and not is_free:
             continue
         met = model_metrics(m)
         tps = met["tps"] or 0

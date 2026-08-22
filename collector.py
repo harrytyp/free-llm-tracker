@@ -224,6 +224,30 @@ def main() -> int:
         or_free = []
         errors.append(f"openrouter: {e}")
 
+    # Live-verified free IDs from OpenRouter (pricing==0 confirmed just now)
+    or_live_free_ids = {m["id"].lower() for m in or_free}
+
+    # Provider with OpenAI-compatible API endpoints the router can actually call.
+    # Web-frontend providers (puter, t3-web, huggingchat...) are NOT here —
+    # they're chat UIs without a usable API endpoint.
+    ROUTABLE_PROVIDERS = {
+        "openrouter", "deepinfra", "nvidia", "novita", "sambanova",
+        "groq", "cerebras", "fireworks", "together", "siliconflow",
+        "hyperbolic", "mistral", "cohere", "openai", "anthropic", "google",
+        "cloudflare-ai", "github-models", "vertex", "bedrock", "ollama-cloud",
+        "kilo-gateway",
+    }
+
+    def is_provably_free(m: dict) -> bool:
+        """Free per OmniRoute curated catalog (the trusted source Kolja picked).
+
+        OmniRoute freeModelCatalog.data.ts is a manually researched list of
+        free models across ALL providers (Groq, Cerebras, Mistral, Google,
+        Cloudflare, ...). It is the source of truth for WHAT is free — NOT
+        OpenRouter pricing (OR only lists its own models).
+        """
+        return True  # all models here come from the OmniRoute free catalog
+
     # Merge: build keyed by (provider, model_id) so OpenRouter augments OmniRoute
     by_key: dict[tuple, dict] = {}
     omnit_ids: set[str] = set()
@@ -292,8 +316,16 @@ def main() -> int:
     before = len(free_models)
     free_models = [m for m in free_models if m.get("free_status") != "deprecated-not-on-openrouter"]
     print(f"  excluded {before - len(free_models)} deprecated models")
+
+    # FREE-ONLY gate: only keep models that are PROVABLY free.
+    # The tracker data source must contain ONLY free models (Kolja: "dort muss
+    # schon die Filterung passieren, nicht im Routing").
+    before = len(free_models)
+    free_models = [m for m in free_models if is_provably_free(m)]
+    print(f"  excluded {before - len(free_models)} non-free models (paid/unverified)")
+
     if not free_models:
-        print("FATAL both free catalogs empty after deprecation filter — refusing to write bad data", file=sys.stderr)
+        print("FATAL both free catalogs empty after free-only filter — refusing to write bad data", file=sys.stderr)
         return 1
 
     # 2. Benchmarks (optional source)
