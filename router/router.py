@@ -342,26 +342,50 @@ def pick_model(criteria: dict) -> dict:
     if not scored:
         raise RuntimeError(f"no model matches criteria: {criteria}")
 
-    # RANK BY USAGE DATA (Kolja: no artificial benchmarks, only real usage).
-    # Priority:
-    #   1. Proven models (>= PROVEN_OK successes) — proven working, sorted by
-    #      median latency (faster first)
-    #   2. Untested models (no usage yet) — neutral, after proven
-    #   3. Models with failures but not on cooldown — last
-    def usage_rank(mid: str) -> tuple:
+    # RANK = INTELLIGENCE (quality) × USAGE DATA (availability/latency).
+    # Kolja: intelligence is essential — combined with real usage learning.
+    # Availability layer (from real requests):
+    #   0 = proven (>= PROVEN_OK successes) — working right now
+    #   1 = untested (no failures yet) — neutral
+    #   2 = failed before (not on cooldown) — last resort
+    # Within each group, mode decides the quality score:
+    #   smartest → intelligence index
+    #   fastest  → measured latency (usage) / benchmark tps fallback
+    #   balanced → 60% intelligence + 40% speed (latency or tps)
+    def avail_group(mid: str) -> int:
         u = USAGE.get(mid)
         if not u:
-            return (1, 0, 0)  # untested
-        ok = u.get("ok", 0)
-        if ok >= PROVEN_OK:
-            lat = sorted(u.get("latency_ms", []))
-            med = lat[len(lat)//2] if lat else 1e9
-            return (0, med, -ok)  # proven: lower latency = better
+            return 1
+        if u.get("ok", 0) >= PROVEN_OK:
+            return 0
         if u.get("fail", 0) > 0:
-            return (2, u.get("fail", 0), -ok)  # failed before: last
-        return (1, 0, -ok)  # some success but not proven yet
+            return 2
+        return 1
 
-    scored.sort(key=lambda x: usage_rank(x[0]["id"]))
+    def median_latency(mid: str):
+        u = USAGE.get(mid)
+        if not u or not u.get("latency_ms"):
+            return None
+        lat = sorted(u["latency_ms"])
+        return lat[len(lat)//2]
+
+    max_intel = max((x[1]["intel"] or 0) for x in scored) or 1
+    max_tps = max((x[1]["tps"] or 0) for x in scored) or 1
+
+    def quality_score(m, met) -> float:
+        intel_n = (met["intel"] or 0) / max_intel
+        lat = median_latency(m["id"])
+        if lat is not None:
+            speed_n = 1.0 - min(lat / 10000.0, 1.0)  # <10s = faster better
+        else:
+            speed_n = (met["tps"] or 0) / max_tps  # fallback: benchmark tps
+        if mode == "smartest":
+            return intel_n + 0.1 * speed_n
+        if mode == "fastest":
+            return speed_n + 0.1 * intel_n
+        return 0.6 * intel_n + 0.4 * speed_n
+
+    scored.sort(key=lambda x: (avail_group(x[0]["id"]), -quality_score(x[0], x[1])))
 
     return scored
 
