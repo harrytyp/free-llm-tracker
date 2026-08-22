@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-08-22T07:03:20Z",
+ "updated_at": "2026-08-22T12:48:09Z",
  "counts": {
   "free_models": 531,
-  "with_measured_speed": 62,
+  "with_measured_speed": 60,
   "with_intelligence": 0,
   "from_omniroute": 516,
   "from_openrouter": 22
@@ -232,50 +232,6 @@
     "samples": 1,
     "provider_slug": "openai",
     "last_benchmark": "2026-08-21T12:11:44.898Z"
-   },
-   "intelligence": null
-  },
-  {
-   "id": "moonshotai/Kimi-K2.6",
-   "provider": "deepinfra",
-   "name": "moonshotai/Kimi-K2.6",
-   "free_type": "one-time-initial",
-   "monthly_tokens": 0,
-   "credit_tokens": 1000000,
-   "pool_key": "deepinfra",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "speed": {
-    "tps_mean": 34.9,
-    "tps_min": 34.9,
-    "tps_max": 34.9,
-    "gen_tps_mean": 125.0,
-    "ttft_s": 1.49,
-    "samples": 1,
-    "provider_slug": "openrouter",
-    "last_benchmark": "2026-08-18T18:43:37.476Z"
-   },
-   "intelligence": null
-  },
-  {
-   "id": "moonshotai/Kimi-K2.6",
-   "provider": "huggingchat",
-   "name": "Kimi K2.6",
-   "free_type": "recurring-monthly",
-   "monthly_tokens": 500000,
-   "credit_tokens": 0,
-   "pool_key": "huggingchat",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "speed": {
-    "tps_mean": 34.9,
-    "tps_min": 34.9,
-    "tps_max": 34.9,
-    "gen_tps_mean": 125.0,
-    "ttft_s": 1.49,
-    "samples": 1,
-    "provider_slug": "openrouter",
-    "last_benchmark": "2026-08-18T18:43:37.476Z"
    },
    "intelligence": null
   },
@@ -1159,28 +1115,6 @@
    "intelligence": null
   },
   {
-   "id": "deepseek/deepseek-v4-pro",
-   "provider": "puter",
-   "name": "DeepSeek V4 Pro (Puter)",
-   "free_type": "keyless",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "puter",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "speed": {
-    "tps_mean": 4.97,
-    "tps_min": 1.59,
-    "tps_max": 8.34,
-    "gen_tps_mean": 19.1,
-    "ttft_s": 13.2,
-    "samples": 2,
-    "provider_slug": "openrouter",
-    "last_benchmark": "2026-08-20T06:23:49.574Z"
-   },
-   "intelligence": null
-  },
-  {
    "id": "deepseek/deepseek-v4-flash",
    "provider": "puter",
    "name": "DeepSeek V4 Flash (Puter)",
@@ -1301,12 +1235,12 @@
    "tos_verdict": null,
    "source_catalog": "omniroute",
    "speed": {
-    "tps_mean": 2.87,
+    "tps_mean": 2.43,
     "tps_min": 0.56,
     "tps_max": 6.12,
-    "gen_tps_mean": 55.9,
-    "ttft_s": 25.2,
-    "samples": 169,
+    "gen_tps_mean": 47.5,
+    "ttft_s": 29.3,
+    "samples": 84,
     "provider_slug": "openrouter",
     "last_benchmark": "2026-08-18T18:24:35.853Z"
    },
@@ -1323,12 +1257,12 @@
    "tos_verdict": null,
    "source_catalog": "omniroute",
    "speed": {
-    "tps_mean": 2.87,
+    "tps_mean": 2.43,
     "tps_min": 0.56,
     "tps_max": 6.12,
-    "gen_tps_mean": 55.9,
-    "ttft_s": 25.2,
-    "samples": 169,
+    "gen_tps_mean": 47.5,
+    "ttft_s": 29.3,
+    "samples": 84,
     "provider_slug": "openrouter",
     "last_benchmark": "2026-08-18T18:24:35.853Z"
    },
@@ -1345,12 +1279,12 @@
    "tos_verdict": null,
    "source_catalog": "omniroute",
    "speed": {
-    "tps_mean": 2.87,
+    "tps_mean": 2.43,
     "tps_min": 0.56,
     "tps_max": 6.12,
-    "gen_tps_mean": 55.9,
-    "ttft_s": 25.2,
-    "samples": 169,
+    "gen_tps_mean": 47.5,
+    "ttft_s": 29.3,
+    "samples": 84,
     "provider_slug": "openrouter",
     "last_benchmark": "2026-08-18T18:24:35.853Z"
    },
@@ -1367,12 +1301,12 @@
    "tos_verdict": null,
    "source_catalog": "omniroute",
    "speed": {
-    "tps_mean": 2.87,
+    "tps_mean": 2.43,
     "tps_min": 0.56,
     "tps_max": 6.12,
-    "gen_tps_mean": 55.9,
-    "ttft_s": 25.2,
-    "samples": 169,
+    "gen_tps_mean": 47.5,
+    "ttft_s": 29.3,
+    "samples": 84,
     "provider_slug": "openrouter",
     "last_benchmark": "2026-08-18T18:24:35.853Z"
    },
@@ -1397,6 +1331,28 @@
     "samples": 2,
     "provider_slug": "openrouter",
     "last_benchmark": "2026-08-18T18:39:12.163Z"
+   },
+   "intelligence": null
+  },
+  {
+   "id": "deepseek/deepseek-v4-pro",
+   "provider": "puter",
+   "name": "DeepSeek V4 Pro (Puter)",
+   "free_type": "keyless",
+   "monthly_tokens": 0,
+   "credit_tokens": 0,
+   "pool_key": "puter",
+   "tos_verdict": null,
+   "source_catalog": "omniroute",
+   "speed": {
+    "tps_mean": 1.59,
+    "tps_min": 1.59,
+    "tps_max": 1.59,
+    "gen_tps_mean": 7.79,
+    "ttft_s": 21.2,
+    "samples": 1,
+    "provider_slug": "openrouter",
+    "last_benchmark": "2026-08-20T06:23:49.574Z"
    },
    "intelligence": null
   },
@@ -3200,6 +3156,19 @@
    "intelligence": null
   },
   {
+   "id": "moonshotai/Kimi-K2.6",
+   "provider": "deepinfra",
+   "name": "moonshotai/Kimi-K2.6",
+   "free_type": "one-time-initial",
+   "monthly_tokens": 0,
+   "credit_tokens": 1000000,
+   "pool_key": "deepinfra",
+   "tos_verdict": null,
+   "source_catalog": "omniroute",
+   "speed": null,
+   "intelligence": null
+  },
+  {
    "id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
    "provider": "deepinfra",
    "name": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
@@ -4230,6 +4199,19 @@
    "id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
    "provider": "huggingchat",
    "name": "Llama 4 Scout 17B 16E Instruct",
+   "free_type": "recurring-monthly",
+   "monthly_tokens": 500000,
+   "credit_tokens": 0,
+   "pool_key": "huggingchat",
+   "tos_verdict": null,
+   "source_catalog": "omniroute",
+   "speed": null,
+   "intelligence": null
+  },
+  {
+   "id": "moonshotai/Kimi-K2.6",
+   "provider": "huggingchat",
+   "name": "Kimi K2.6",
    "free_type": "recurring-monthly",
    "monthly_tokens": 500000,
    "credit_tokens": 0,

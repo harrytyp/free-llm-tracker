@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-22T07:03:20Z",
+  "updated_at": "2026-08-22T12:48:09Z",
   "total_providers": 81,
   "providers": [
     {
@@ -14,9 +14,9 @@
         21.5,
         20.8,
         20.0,
-        4.97,
         4.46,
-        2.87
+        2.43,
+        1.59
       ],
       "top_models": [
         {
@@ -48,7 +48,7 @@
       "free_types": {
         "keyless": 33
       },
-      "avg_tps": 27.28
+      "avg_tps": 26.9
     },
     {
       "provider": "bazaarlink",
@@ -95,19 +95,13 @@
     {
       "provider": "huggingchat",
       "count": 24,
-      "measured": 4,
+      "measured": 3,
       "tps_values": [
-        34.9,
         12.9,
         11.1,
-        2.87
+        2.43
       ],
       "top_models": [
-        {
-          "id": "moonshotai/Kimi-K2.6",
-          "tps": 34.9,
-          "name": "Kimi K2.6"
-        },
         {
           "id": "openai/gpt-oss-20b",
           "tps": 12.9,
@@ -120,19 +114,24 @@
         },
         {
           "id": "Qwen/Qwen3.5-397B-A17B",
-          "tps": 2.87,
+          "tps": 2.43,
           "name": "Qwen3.5 397B A17B"
         },
         {
           "id": "CohereLabs/c4ai-command-r7b-12-2024",
           "tps": null,
           "name": "Command R7B 12-2024"
+        },
+        {
+          "id": "CohereLabs/command-a-reasoning-08-2025",
+          "tps": null,
+          "name": "Command A Reasoning 08-2025"
         }
       ],
       "free_types": {
         "recurring-monthly": 24
       },
-      "avg_tps": 15.44
+      "avg_tps": 8.81
     },
     {
       "provider": "pollinations",
@@ -263,19 +262,13 @@
     {
       "provider": "deepinfra",
       "count": 22,
-      "measured": 4,
+      "measured": 3,
       "tps_values": [
-        34.9,
         12.9,
         11.1,
-        2.87
+        2.43
       ],
       "top_models": [
-        {
-          "id": "moonshotai/Kimi-K2.6",
-          "tps": 34.9,
-          "name": "moonshotai/Kimi-K2.6"
-        },
         {
           "id": "openai/gpt-oss-20b",
           "tps": 12.9,
@@ -288,19 +281,24 @@
         },
         {
           "id": "Qwen/Qwen3.5-397B-A17B",
-          "tps": 2.87,
+          "tps": 2.43,
           "name": "Qwen/Qwen3.5-397B-A17B"
         },
         {
           "id": "MiniMaxAI/MiniMax-M2.5",
           "tps": null,
           "name": "MiniMaxAI/MiniMax-M2.5"
+        },
+        {
+          "id": "NousResearch/Hermes-3-Llama-3.1-405B",
+          "tps": null,
+          "name": "NousResearch/Hermes-3-Llama-3.1-405B"
         }
       ],
       "free_types": {
         "one-time-initial": 22
       },
-      "avg_tps": 15.44
+      "avg_tps": 8.81
     },
     {
       "provider": "github-models",
@@ -428,7 +426,7 @@
         49.0,
         12.9,
         11.1,
-        2.87,
+        2.43,
         1.99
       ],
       "top_models": [
@@ -449,7 +447,7 @@
         },
         {
           "id": "qwen/qwen3.5-397b-a17b",
-          "tps": 2.87,
+          "tps": 2.43,
           "name": "Qwen3.5-397B-A17B"
         },
         {
@@ -461,7 +459,7 @@
       "free_types": {
         "one-time-initial": 14
       },
-      "avg_tps": 15.57
+      "avg_tps": 15.48
     },
     {
       "provider": "kilo-gateway",
