@@ -384,6 +384,38 @@ def collect_llmbench_measurements() -> dict:
     return out
 
 
+def fetch_aa_free_data(key: str) -> dict:
+    """ONE call to AA free endpoint: /api/v2/data/llms/models.
+
+    Returns {slug: {intelligence_index, coding_index, tps, ttft_s, mmlu_pro, gpqa, ...}}
+    610 models, all metrics in one response. Used sparingly (1 call/run).
+    """
+    url = "https://artificialanalysis.ai/api/v2/data/llms/models"
+    req = urllib.request.Request(url, headers={"x-api-key": key, "User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        d = json.loads(r.read().decode())
+    out = {}
+    for m in d.get("data", []):
+        slug = (m.get("slug") or "").lower()
+        if not slug:
+            continue
+        ev = m.get("evaluations") or {}
+        out[slug] = {
+            "intelligence_index": ev.get("artificial_analysis_intelligence_index"),
+            "coding_index": ev.get("artificial_analysis_coding_index"),
+            "math_index": ev.get("artificial_analysis_math_index"),
+            "mmlu_pro": ev.get("mmlu_pro"),
+            "gpqa": ev.get("gpqa"),
+            "livecodebench": ev.get("livecodebench"),
+            "hle": ev.get("hle"),
+            "aime_25": ev.get("aime_25"),
+            "tps": m.get("median_output_tokens_per_second"),
+            "ttft_s": m.get("median_time_to_first_token_seconds"),
+            "price_1m_blended": (m.get("pricing") or {}).get("price_1m_blended_3_to_1"),
+        }
+    return out
+
+
 def main() -> int:
     all_results: dict = {}
     all_errors: list[str] = []
@@ -424,7 +456,23 @@ def main() -> int:
     latest = json.loads((DATA / "latest.json").read_text())
     free_models = latest["models"]
 
-    # 3a. llm-benchmarks.com provider pages (30-day measured t/s per provider)
+    # 3a. AA free API: ONE call for intelligence index + speed (610 models)
+    aa_key = os.environ.get("ARTIFICIAL_ANALYSIS_API_KEY", "").strip()
+    if aa_key:
+        try:
+            aa_data = fetch_aa_free_data(aa_key)
+            all_results["__aa"] = {
+                "type": "aa-intelligence",
+                "models": aa_data,
+            }
+            with_intel = sum(1 for v in aa_data.values() if v.get("intelligence_index") is not None)
+            print(f"\n  AA API (1 call): {len(aa_data)} models, {with_intel} with intelligence index")
+        except Exception as e:
+            all_errors.append(f"aa-free-api: {e}")
+    else:
+        print("  (no ARTIFICIAL_ANALYSIS_API_KEY - skipping AA intelligence)")
+
+    # 3b. llm-benchmarks.com provider pages (30-day measured t/s per provider)
     print("\n  llm-benchmarks provider pages (30-day measurements)...")
     llmbench = collect_llmbench_measurements()
     all_results["__llmbench"] = {

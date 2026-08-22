@@ -79,6 +79,7 @@ def row_html(m: dict) -> str:
     ttft = sp.get("ttft_s")
     prov = m.get("provider", "")
     mid = m["id"]
+    intel = m.get("intel") or {}
 
     if tps is not None:
         tps_cell = f'<td class="num tps"><b>{tps:g}</b></td>'
@@ -86,10 +87,17 @@ def row_html(m: dict) -> str:
         tps_cell = '<td class="num dim">–</td>'
     ttft_cell = f'<td class="num">{ttft:g}s</td>' if ttft is not None else '<td class="num dim">–</td>'
 
+    ii = intel.get("intelligence_index")
+    if ii is not None:
+        # color by score: <30 red, 30-50 yellow, 50-70 green, >70 lime
+        color = "#f85149" if ii < 30 else "#d29922" if ii < 50 else "#3fb950" if ii < 70 else "#c2ef4e"
+        intel_cell = f'<td class="num intel"><b style="color:{color}">{ii:g}</b></td>'
+    else:
+        intel_cell = '<td class="num dim">–</td>'
+
     ftype = _FREE_TAGS.get(m.get("free_type", ""), (m.get("free_type", "?"), "#e5e7eb"))
     status = _STATUS.get(m.get("free_status", "unverified"), ("❓", "#d29922"))
 
-    # provider chips for AA data
     prov_chips = ""
     if sp.get("providers"):
         tops = sp["providers"][:2]
@@ -114,11 +122,12 @@ def row_html(m: dict) -> str:
             parts.append(f'+{m["credit_tokens"]:,}'.replace(",", "."))
         budget = " / ".join(parts)
 
-    return f"""<tr class="mrow" data-id="{esc(mid.lower())}" data-provider="{esc(prov.lower())}" data-ftype="{esc(m.get('free_type',''))}" data-status="{esc(m.get('free_status','unverified'))}" data-tps="{tps if tps is not None else ''}">
+    return f"""<tr class="mrow" data-id="{esc(mid.lower())}" data-provider="{esc(prov.lower())}" data-ftype="{esc(m.get('free_type',''))}" data-status="{esc(m.get('free_status','unverified'))}" data-tps="{tps if tps is not None else ''}" data-intel="{ii if ii is not None else ''}">
   <td class="model"><a href="{esc(provider_link(prov, mid))}" target="_blank" rel="noopener">{esc(mid)}</a>{prov_chips}</td>
   <td><a class="prov-link" href="{esc(provider_link_plain(prov))}" target="_blank" rel="noopener">{esc(prov)}</a></td>
   <td><span class="tag" style="color:{ftype[1]}">{esc(ftype[0])}</span></td>
   <td><span class="tag" style="color:{status[1]}">{esc(status[0])}</span></td>
+  {intel_cell}
   {tps_cell}
   {ttft_cell}
   {ctx_cell}
@@ -135,9 +144,37 @@ def main() -> int:
 
     bench_raw_data = bench_raw.get("results", {})
     llmbench = (bench_raw_data.get("__llmbench") or {}).get("providers", {}) if bench_raw_data.get("__llmbench") else {}
+    aa_data = (bench_raw_data.get("__aa") or {}).get("models", {}) if bench_raw_data.get("__aa") else {}
+
+    def aa_slug_for(model_id: str) -> str | None:
+        mid = model_id.lower().rstrip(":free").split("/")[-1]
+        if mid in aa_data:
+            return mid
+        slug = mid.replace(".", "-")
+        if slug in aa_data:
+            return slug
+        for aas in aa_data:
+            if mid.startswith(aas) or aas.startswith(mid):
+                return aas
+        return None
+
     for m in models:
         mid = m["id"].lower().rstrip(":free")
         entry = bench_raw_data.get(m["id"]) or bench_raw_data.get(mid)
+        # AA intelligence
+        aaslug = aa_slug_for(m["id"])
+        intel = None
+        if aaslug:
+            intel = {
+                "intelligence_index": aa_data[aaslug].get("intelligence_index"),
+                "coding_index": aa_data[aaslug].get("coding_index"),
+                "mmlu_pro": aa_data[aaslug].get("mmlu_pro"),
+                "gpqa": aa_data[aaslug].get("gpqa"),
+                "tps": aa_data[aaslug].get("tps"),
+                "ttft_s": aa_data[aaslug].get("ttft_s"),
+                "price": aa_data[aaslug].get("price_1m_blended"),
+            }
+        m["intel"] = intel
         if entry:
             if entry.get("providers"):
                 provs = sorted(entry["providers"], key=lambda p: p.get("tps") or 0, reverse=True)
@@ -266,6 +303,14 @@ footer a {{ color:var(--accent); }}
     <option value="measured">Nur mit t/s</option>
     <option value="unmeasured">Nur ohne t/s</option>
   </select>
+  <select id="intel-filter">
+    <option value="">Alle Intelligence</option>
+    <option value="0-30">&lt;30 (schwach)</option>
+    <option value="30-50">30–50 (mittel)</option>
+    <option value="50-70">50–70 (stark)</option>
+    <option value="70+">70+ (top)</option>
+    <option value="none">Ohne Score</option>
+  </select>
   <button class="btn" id="csv">CSV</button>
 </div>
 
@@ -277,6 +322,7 @@ footer a {{ color:var(--accent); }}
   <th data-k="provider">Provider <span class="arr">▲▼</span></th>
   <th data-k="ftype">Free-Typ <span class="arr">▲▼</span></th>
   <th data-k="status">Status <span class="arr">▲▼</span></th>
+  <th data-k="intel" class="num">Intelligence <span class="arr">▲▼</span></th>
   <th data-k="tps" class="num">t/s <span class="arr">▲▼</span></th>
   <th data-k="ttft" class="num">TTFT <span class="arr">▲▼</span></th>
   <th data-k="ctx" class="num">Kontext <span class="arr">▲▼</span></th>
@@ -305,13 +351,17 @@ function getVal(tr, k) {{
       const b = tr.querySelector('.tps b');
       return b ? parseFloat(b.textContent) : -1;
     }}
+    case 'intel': {{
+      const b = tr.querySelector('.intel b');
+      return b ? parseFloat(b.textContent) : -1;
+    }}
     case 'ttft': {{
       const cells = tr.querySelectorAll('td');
-      const t = cells[5] ? cells[5].textContent.replace('s','') : '';
+      const t = cells[6] ? cells[6].textContent.replace('s','') : '';
       return t && t !== '–' ? parseFloat(t) : 9999;
     }}
     case 'ctx': {{
-      const c = tr.querySelectorAll('td')[6];
+      const c = tr.querySelectorAll('td')[7];
       const t = c ? c.textContent : '';
       if (!t || t === '–') return 0;
       if (t.endsWith('M')) return parseFloat(t) * 1e6;
@@ -326,6 +376,7 @@ function apply() {{
   const prov = document.getElementById('provider-filter').value;
   const status = document.getElementById('status-filter').value;
   const measured = document.getElementById('measured-filter').value;
+  const intelF = document.getElementById('intel-filter').value;
   let visible = 0;
 
   [...ROWS.querySelectorAll('.mrow')].forEach(tr => {{
@@ -335,11 +386,21 @@ function apply() {{
     const okS = !status || tr.dataset.status === status;
     const hasTps = tr.dataset.tps !== '';
     const okM = !measured || (measured === 'measured' && hasTps) || (measured === 'unmeasured' && !hasTps);
-    tr.style.display = okQ && okP && okS && okM ? '' : 'none';
-    if (okQ && okP && okS && okM) visible++;
+    // intelligence filter
+    const ii = tr.dataset.intel !== '' ? parseFloat(tr.dataset.intel) : null;
+    let okI = true;
+    if (intelF) {{
+      if (intelF === 'none') okI = ii === null;
+      else if (ii === null) okI = false;
+      else {{
+        const [lo, hi] = intelF.split('-').map(x => x === '' || x === '+' ? (x === '+' ? Infinity : 0) : parseFloat(x));
+        okI = ii >= lo && (hi === undefined || hi === Infinity || ii < hi);
+      }}
+    }}
+    tr.style.display = okQ && okP && okS && okM && okI ? '' : 'none';
+    if (okQ && okP && okS && okM && okI) visible++;
   }});
   document.getElementById('empty').style.display = visible ? 'none' : 'block';
-  // update visible count
   const rows = [...ROWS.querySelectorAll('.mrow')].filter(t => t.style.display !== 'none');
   if (sortK) {{
     rows.sort((a,b) => {{
@@ -365,18 +426,20 @@ document.getElementById('search').addEventListener('input', apply);
 document.getElementById('provider-filter').addEventListener('change', apply);
 document.getElementById('status-filter').addEventListener('change', apply);
 document.getElementById('measured-filter').addEventListener('change', apply);
+document.getElementById('intel-filter').addEventListener('change', apply);
 document.getElementById('csv').addEventListener('click', () => {{
-  const lines = [['id','provider','free_type','free_status','tps','ttft_s','context_length'].join(',')];
+  const lines = [['id','provider','free_type','free_status','intelligence','tps','ttft_s','context_length'].join(',')];
   [...ROWS.querySelectorAll('.mrow')].forEach(tr => {{
     const cells = tr.querySelectorAll('td');
     const id = cells[0].textContent.trim().split('\\n')[0];
     const prov = cells[1].textContent.trim();
     const ft = cells[2].textContent.trim();
     const st = cells[3].textContent.trim();
-    const tps = cells[4].textContent.trim();
-    const ttft = cells[5].textContent.trim();
-    const ctx = cells[6].textContent.trim();
-    lines.push([id, prov, ft, st, tps, ttft, ctx].join(','));
+    const intel = cells[4].textContent.trim();
+    const tps = cells[5].textContent.trim();
+    const ttft = cells[6].textContent.trim();
+    const ctx = cells[7].textContent.trim();
+    lines.push([id, prov, ft, st, intel, tps, ttft, ctx].join(','));
   }});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([lines.join('\\n')], {{type:'text/csv'}}));
