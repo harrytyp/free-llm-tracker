@@ -34,6 +34,9 @@ jobs:
           ARTIFICIAL_ANALYSIS_API_KEY: ${{ secrets.ARTIFICIAL_ANALYSIS_API_KEY }}
         run: python collector.py
 
+      - name: Clean benchmarks (llm-benchmarks n>=3)
+        run: python benchmark.py
+
       - name: Build site
         run: python build_site.py
 
@@ -44,7 +47,7 @@ jobs:
         run: |
           git config user.name "free-llm-tracker bot"
           git config user.email "harrytyp@users.noreply.github.com"
-          git add data/ index.html
+          git add data/ index.html benchmarks.json
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else

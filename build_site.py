@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
-"""Render a static index.html from data/latest.json. No build deps, no JS framework."""
+"""Render a modern, usable static site from data/latest.json + data/benchmarks.json.
+
+Features (vanilla JS, no framework):
+  - Search across model/provider/name
+  - Provider dropdown filter
+  - Sortable columns (click header)
+  - FreeType badges with colors
+  - CSV export
+  - Dark theme, mobile-first
+  - Honest data: only n>=3 benchmarks shown, "nicht gemessen" where missing
+"""
 from __future__ import annotations
 
 import html
@@ -8,14 +18,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-
-
-def fmt_num(x, suffix=""):
-    if x is None:
-        return "<span class='dim'>–</span>"
-    if isinstance(x, float):
-        return f"{x:g}{suffix}"
-    return f"{x}{suffix}"
+DATA = ROOT / "data"
 
 
 def esc(s):
@@ -23,232 +26,370 @@ def esc(s):
 
 
 def provider_link(provider: str, model_id: str) -> str:
-    """Deep link to the provider's page for this model."""
+    """Real provider links where known, else model page."""
     base = model_id[:-5] if model_id.endswith(":free") else model_id
-    if provider == "openrouter":
-        return f"https://openrouter.ai/{base}"
-    if provider in ("deepseek",):
-        return "https://api.deepseek.com"
-    if provider == "google":
-        return "https://ai.google.dev"
-    if provider == "anthropic":
-        return "https://anthropic.com"
-    if provider == "openai":
-        return "https://platform.openai.com"
-    if provider == "zai-org" or provider == "zai":
-        return "https://www.zhipu.ai"
-    # default: search the provider name
-    return f"https://www.google.com/search?q={provider}+free+api"
+    links = {
+        "openrouter": f"https://openrouter.ai/{base}",
+        "deepseek": "https://platform.deepseek.com",
+        "google": "https://ai.google.dev",
+        "anthropic": "https://www.anthropic.com/api",
+        "openai": "https://platform.openai.com",
+        "groq": "https://console.groq.com",
+        "cerebras": "https://cloud.cerebras.ai",
+        "sambanova": "https://cloud.sambanova.ai",
+        "fireworks": "https://fireworks.ai",
+        "together": "https://www.together.ai",
+        "nvidia": "https://build.nvidia.com",
+        "deepinfra": "https://deepinfra.com",
+        "siliconflow": "https://siliconflow.cn",
+        "hyperbolic": "https://hyperbolic.xyz",
+        "novita": "https://novita.ai",
+        "chutes": "https://chutes.ai",
+        "github-models": "https://github.com/marketplace/models",
+        "vertex": "https://cloud.google.com/vertex-ai",
+        "bedrock": "https://aws.amazon.com/bedrock",
+        "ollama": "https://ollama.com",
+    }
+    if provider in links:
+        return links[provider]
+    return f"https://openrouter.ai/{base}"
 
 
-# FreeType badges
 _FREE_TAGS = {
-    "recurring-monthly": "↻ monatlich",
-    "recurring-daily": "↻ täglich",
-    "keyless": "🔓 keylos",
-    "recurring-uncapped": "∞ uncapped",
-    "one-time-initial": "🎁 einmalig",
-    "recurring-credit": "💳 credit",
-    "discontinued": "💀 eingestellt",
+    "recurring-monthly": ("↻ monatlich", "#3fb950"),
+    "recurring-daily": ("↻ täglich", "#58a6ff"),
+    "keyless": ("🔓 keylos", "#d29922"),
+    "recurring-uncapped": ("∞ uncapped", "#8b949e"),
+    "one-time-initial": ("🎁 einmalig", "#a371f7"),
+    "recurring-credit": ("💳 credit", "#f0883e"),
+    "discontinued": ("💀 eingestellt", "#f85149"),
 }
 
 
 def free_badge(ftype: str) -> str:
-    label = _FREE_TAGS.get(ftype, ftype or "?")
-    cls = "badge-free"
-    return f"<span class='badge {cls}'>{esc(label)}</span>"
-
-
-def ctx_badge(ctx) -> str:
-    if not ctx:
-        return ""
-    n = float(ctx)
-    if n >= 1_000_000:
-        txt = f"{n/1e6:.0f}M"
-    elif n >= 1000:
-        txt = f"{n/1e3:.0f}k"
-    else:
-        txt = str(int(n))
-    return f"<span class='badge'>ctx {txt}</span>"
+    label, color = _FREE_TAGS.get(ftype, (ftype or "?", "#8b949e"))
+    return f"<span class='badge' style='color:{color};border-color:{color}33;background:{color}11'>{esc(label)}</span>"
 
 
 def model_row(m: dict) -> str:
     sp = m.get("speed") or {}
-    it = m.get("intelligence") or {}
-
-    tps = sp.get("tps_mean")
-    gen_tps = sp.get("gen_tps_mean")
+    tps = sp.get("tps")
     ttft = sp.get("ttft_s")
     samples = sp.get("samples")
-    intel = it.get("intelligence_index")
+    provider = m.get("provider", "")
+    mid = m["id"]
+    name = m.get("name", mid)
 
-    if tps:
-        speed_cell = f"<b>{tps:g}</b> <span class='dim'>t/s</span>"
+    if tps is not None:
+        speed_cell = f"<b>{tps:g}</b><span class='dim'> t/s</span>"
+        samples_cell = str(samples)
     else:
-        speed_cell = "<span class='dim'>nicht gemessen</span>"
-    gen_cell = fmt_num(gen_tps, " t/s") if gen_tps else "<span class='dim'>–</span>"
-    ttft_cell = fmt_num(ttft, "s") if ttft else "<span class='dim'>–</span>"
-    samples_cell = fmt_num(samples) if samples else "<span class='dim'>–</span>"
-    intel_cell = f"<b>{intel:g}</b>" if intel else "<span class='dim'>–</span>"
+        speed_cell = "<span class='dim'>–</span>"
+        samples_cell = "<span class='dim'>–</span>"
+
+    ttft_cell = f"{ttft:g}s" if ttft is not None else "<span class='dim'>–</span>"
 
     ctx = m.get("context_length")
-    ctx_cell = ctx_badge(ctx)
+    ctx_cell = ""
+    if ctx:
+        n = float(ctx)
+        ctx_cell = f"<span class='badge'>ctx {'{:g}'.format(n/1e6 if n>=1e6 else n/1e3)}</span>"
 
-    badges = (free_badge(m.get("free_type", "recurring-monthly"))
-              + " " + ctx_cell).strip()
-
-    mt = fmt_num(m.get("monthly_tokens"), "k") if m.get("monthly_tokens") else None
-    ct = fmt_num(m.get("credit_tokens"), "k") if m.get("credit_tokens") else None
-
-    budget_parts = [p for p in (f"monat {mt}" if mt else None, f"credit {ct}" if ct else None) if p]
-    budget_cell = "<span class='dim'>" + "/".join(budget_parts) + "</span>" if budget_parts else "<span class='dim'>k.A.</span>"
-
-    provider = esc(m.get("provider", ""))
+    budget_parts = []
+    if m.get("monthly_tokens"):
+        budget_parts.append(f"{m['monthly_tokens']:,}".replace(",", "."))
+    if m.get("credit_tokens"):
+        budget_parts.append(f"+{m['credit_tokens']:,}".replace(",", "."))
+    budget_cell = " / ".join(budget_parts) if budget_parts else "<span class='dim'>k.A.</span>"
 
     return (
         "<tr>"
-        f'<td class="name"><a href="{esc(provider_link(m.get("provider",""), m["id"]))}">{esc(m["id"])}</a>'
-        f"<br><small class='dim'>{esc(m.get('name',''))}</small><br>"
-        f"{badges}</td>"
-        f"<td><small>{provider}</small><br>{budget_cell}</td>"
-        f"<td>{speed_cell}</td>"
-        f"<td>{gen_cell}</td>"
-        f"<td>{ttft_cell}</td>"
-        f"<td>{samples_cell}</td>"
-        f"<td>{intel_cell}</td>"
-        f"</tr>"
+        f'<td class="name"><a href="{esc(provider_link(provider, mid))}" target="_blank" rel="noopener">{esc(mid)}</a>'
+        f"<br><small class='dim'>{esc(name)}</small></td>"
+        f"<td class='prov'><a href=\"{esc(provider_link(provider, mid))}\" target=\"_blank\" rel=\"noopener\">{esc(provider)}</a></td>"
+        f"<td>{free_badge(m.get('free_type', 'recurring-monthly'))}</td>"
+        f"<td class='num'>{speed_cell}</td>"
+        f"<td class='num'>{ttft_cell}</td>"
+        f"<td class='num'>{samples_cell}</td>"
+        f"<td>{ctx_cell}</td>"
+        f"<td class='num'>{budget_cell}</td>"
+        "</tr>"
     )
 
 
 def main() -> int:
-    latest = json.loads((ROOT / "data" / "latest.json").read_text())
+    latest = json.loads((DATA / "latest.json").read_text())
+    bench_raw = json.loads((DATA / "benchmarks.json").read_text())
     models = latest["models"]
     counts = latest["counts"]
     updated = latest["updated_at"]
-    sources = latest["sources"]
 
-    measured = [m for m in models if (m.get("speed") or {}).get("tps_mean")]
+    # Attach clean benchmark data to models
+    bench_map = bench_raw.get("benchmarks", {})
+    measured_count = 0
+    for m in models:
+        mid = m["id"].lower().rstrip(":free")
+        # find benchmark entry for this model
+        entry = None
+        for key, val in bench_map.items():
+            cid, _, prov = key.partition("@@")
+            if cid.lower() == mid:
+                entry = val
+                break
+        if entry:
+            m["speed"] = entry
+            measured_count += 1
+        else:
+            m["speed"] = None
+
     rows = "\n".join(model_row(m) for m in models)
+    providers = sorted({m.get("provider", "") for m in models})
 
-    # trend sparkline data (last 30 runs, free count + avg measured tps)
-    hist_path = ROOT / "data" / "history.jsonl"
-    trend_js = "[]"
-    if hist_path.exists():
-        pts = []
-        for line in hist_path.read_text().splitlines()[-30:]:
-            try:
-                h = json.loads(line)
-                speeds = [v["tps"] for v in (h.get("speeds") or {}).values() if v.get("tps")]
-                pts.append({
-                    "ts": h["ts"],
-                    "free": h.get("counts", {}).get("free_models"),
-                    "avg_tps": round(sum(speeds) / len(speeds), 2) if speeds else None,
-                    "measured": len(speeds),
-                })
-            except Exception:
-                continue
-        trend_js = json.dumps(pts)
+    # Provider options for filter dropdown
+    provider_opts = "".join(
+        f'<option value="{esc(p)}">{esc(p)}</option>' for p in providers
+    )
 
     generated = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     err_note = ""
     if latest.get("source_errors"):
         err_note = (
-            '<p class="warn">Hinweis: einzelne Quellen hatten Fehler beim letzten Lauf: '
-            + esc(", ".join(latest["source_errors"])) + "</p>"
+            '<p class="warn">Hinweis: ' + esc(", ".join(latest["source_errors"])) + "</p>"
         )
 
-    sources_html = (
-        "<tr><td>OmniRoute free-catalog</td><td><a href='"
-        + esc(sources.get("omni_free_catalog", "")) + "'>raw data.ts</a></td></tr>"
-        "<tr><td>OpenRouter API (free-by-pricing)</td><td><a href='https://openrouter.ai/models?max_price=0'>openrouter.ai</a></td></tr>"
-        "<tr><td>Gemessene t/s</td><td><a href='https://llm-benchmarks.com'>llm-benchmarks.com</a> (öffentlich, 30min-Refresh)</td></tr>"
-        "<tr><td>Intelligence Index</td><td><a href='https://artificialanalysis.ai'>artificialanalysis.ai</a> (free Key nötig)</td></tr>"
-    )
+    data_js = json.dumps([
+        {
+            "id": m["id"], "name": m.get("name", m["id"]), "provider": m.get("provider", ""),
+            "free_type": m.get("free_type", "recurring-monthly"),
+            "context_length": m.get("context_length"),
+            "monthly_tokens": m.get("monthly_tokens"), "credit_tokens": m.get("credit_tokens"),
+            "speed": m.get("speed"),
+            "link": provider_link(m.get("provider", ""), m["id"]),
+        } for m in models
+    ], ensure_ascii=False)
 
     page = f"""<!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Free LLM Tracker</title>
+<title>Free LLM Tracker — {counts['free_models']} Free-Modelle mit t/s</title>
+<meta name="description" content="Automatischer Tracker aller {counts['free_models']} Free LLM-API-Modelle mit gemessener Geschwindigkeit (t/s), TTFT und Provider-Statistiken. Aktualisiert alle 6h.">
+<meta property="og:title" content="Free LLM Tracker — {counts['free_models']} Free-Modelle">
+<meta property="og:description" content="{counts['free_models']} Free-Modelle · {counts.get('with_measured_speed', measured_count)} mit gemessenen t/s · aktualisiert alle 6h">
+<meta name="theme-color" content="#0d1117">
+<link rel="canonical" href="https://harrytyp.github.io/free-llm-tracker/">
 <style>
-  :root {{ --bg:#0d1117; --fg:#c9d1d9; --dim:#8b949e; --accent:#58a6ff; --ok:#3fb950; --warn:#d29922; }}
-  * {{ box-sizing:border-box; }}
-  body {{ background:var(--bg); color:var(--fg); font:15px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif;
-         max-width:1280px; margin:0 auto; padding:24px 16px 64px; }}
-  h1 {{ font-size:26px; margin:0 0 4px; }}
-  h2 {{ font-size:20px; margin:24px 0 10px; }}
-  .sub {{ color:var(--dim); margin:0 0 20px; }}
-  .stats {{ display:flex; gap:12px; flex-wrap:wrap; margin-bottom:20px; }}
-  .stat {{ background:#161b22; border:1px solid #30363d; border-radius:8px; padding:10px 16px; min-width:110px; }}
-  .stat b {{ display:block; font-size:22px; color:var(--accent); }}
-  .stat span {{ color:var(--dim); font-size:13px; }}
-  table {{ border-collapse:collapse; width:100%; background:#161b22; border-radius:8px; overflow:hidden; }}
-  th, td {{ padding:10px 12px; text-align:left; border-bottom:1px solid #21262d; font-size:14px; vertical-align:top; }}
-  th {{ background:#1c2128; color:var(--dim); font-weight:600; position:sticky; top:0; }}
-  tr:last-child td {{ border-bottom:none; }}
-  td.name a {{ color:var(--accent); text-decoration:none; word-break:break-all; }}
-  td.name a:hover {{ text-decoration:underline; }}
-  .badge {{ display:inline-block; background:#21262d; color:var(--dim); border-radius:10px;
-            padding:1px 8px; font-size:11px; margin-right:4px; }}
-  .badge-free {{ color:#ffd700; }}
-  td small {{ font-size:12px; }}
-  .dim {{ color:var(--dim); }}
-  .warn {{ color:var(--warn); }}
-  .sources td {{ padding:6px 12px; }}
-  footer {{ margin-top:28px; color:var(--dim); font-size:13px; }}
-  footer a {{ color:var(--accent); }}
-  @media (max-width:800px) {{
-    table {{ font-size:13px; }}
-    td, th {{ padding:8px; }}
-  }}
+:root {{
+  --bg:#0d1117; --bg2:#161b22; --bg3:#1c2128; --border:#30363d;
+  --fg:#c9d1d9; --dim:#8b949e; --accent:#58a6ff; --ok:#3fb950; --warn:#d29922;
+}}
+* {{ box-sizing:border-box; margin:0; padding:0; }}
+body {{
+  background:var(--bg); color:var(--fg);
+  font:15px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif;
+  min-height:100vh;
+}}
+.wrap {{ max-width:1400px; margin:0 auto; padding:24px 20px 64px; }}
+header {{ display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; margin-bottom:20px; }}
+h1 {{ font-size:24px; color:#fff; }}
+h1 span {{ color:var(--accent); }}
+.sub {{ color:var(--dim); font-size:14px; margin-top:2px; }}
+.controls {{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px; }}
+.search {{ flex:1; min-width:220px; background:var(--bg2); border:1px solid var(--border);
+  border-radius:8px; padding:10px 14px; color:var(--fg); font-size:14px; }}
+.search:focus {{ outline:none; border-color:var(--accent); }}
+select, .btn {{ background:var(--bg2); border:1px solid var(--border); border-radius:8px;
+  padding:10px 14px; color:var(--fg); font-size:14px; cursor:pointer; }}
+select:focus {{ outline:none; border-color:var(--accent); }}
+.btn:hover {{ border-color:var(--accent); }}
+.stats {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; margin-bottom:16px; }}
+.stat {{ background:var(--bg2); border:1px solid var(--border); border-radius:10px; padding:12px 16px; }}
+.stat b {{ display:block; font-size:20px; color:#fff; }}
+.stat span {{ color:var(--dim); font-size:12px; }}
+table {{ width:100%; border-collapse:collapse; background:var(--bg2); border-radius:10px; overflow:hidden; }}
+th, td {{ padding:10px 12px; text-align:left; border-bottom:1px solid var(--border); font-size:13px; vertical-align:top; }}
+th {{ background:var(--bg3); color:var(--dim); font-weight:600; position:sticky; top:0; cursor:pointer; user-select:none; white-space:nowrap; }}
+th:hover {{ color:var(--accent); }}
+th .arrow {{ opacity:0; font-size:10px; }}
+th.sorted .arrow {{ opacity:1; }}
+tbody tr:hover {{ background:var(--bg3); }}
+td.name a {{ color:var(--accent); text-decoration:none; word-break:break-all; font-weight:500; }}
+td.name a:hover {{ text-decoration:underline; }}
+td.prov a {{ color:var(--dim); text-decoration:none; }}
+td.prov a:hover {{ color:var(--accent); }}
+.badge {{ display:inline-block; border-radius:10px; padding:2px 8px; font-size:11px; font-weight:500; white-space:nowrap; }}
+.dim {{ color:var(--dim); }}
+.num {{ text-align:right; font-variant-numeric:tabular-nums; }}
+.warn {{ color:var(--warn); font-size:13px; margin-bottom:12px; }}
+footer {{ margin-top:28px; color:var(--dim); font-size:12px; }}
+footer a {{ color:var(--accent); }}
+.empty {{ text-align:center; color:var(--dim); padding:40px; }}
+@media (max-width:800px) {{
+  .wrap {{ padding:16px 10px 48px; }}
+  th, td {{ padding:8px 6px; font-size:12px; }}
+  h1 {{ font-size:20px; }}
+  .stats {{ grid-template-columns:repeat(2,1fr); }}
+}}
 </style>
 </head>
 <body>
-<h1>Free LLM Tracker</h1>
-<p class="sub">Alle kostenlosen LLM-API-Modelle — mit gemessener Geschwindigkeit (t/s), Intelligence-Score und Token-Budget.
-Automatisch aktualisiert alle 6h via GitHub Actions. Keine Tokens werden verbraucht.</p>
+<div class="wrap">
+<header>
+  <div>
+    <h1>Free LLM <span>Tracker</span></h1>
+    <p class="sub">Alle kostenlosen LLM-API-Modelle mit gemessener Geschwindigkeit. Automatisch alle 6h aktualisiert.</p>
+  </div>
+  <a class="btn" href="https://github.com/harrytyp/free-llm-tracker" target="_blank" rel="noopener">GitHub ↗</a>
+</header>
 
 <div class="stats">
   <div class="stat"><b>{counts['free_models']}</b><span>Free-Modelle</span></div>
-  <div class="stat"><b>{counts['with_measured_speed']}</b><span>mit gemessenen t/s</span></div>
-  <div class="stat"><b>{counts['with_intelligence']}</b><span>mit Intelligence</span></div>
-  <div class="stat"><b>{counts.get('from_omniroute',0)}</b><span>OmniRoute Einträge</span></div>
+  <div class="stat"><b>{measured_count}</b><span>mit gemessenen t/s</span></div>
+  <div class="stat"><b>{counts.get('from_omniroute', 0)}</b><span>OmniRoute Einträge</span></div>
   <div class="stat"><b>{updated[11:16]} UTC</b><span>Datenstand {updated[:10]}</span></div>
 </div>
 {err_note}
-<table>
+
+<div class="controls">
+  <input class="search" id="search" type="search" placeholder="Suchen: Modell, Provider, Name…">
+  <select id="provider-filter">
+    <option value="">Alle Provider ({len(providers)})</option>
+    {provider_opts}
+  </select>
+  <select id="free-filter">
+    <option value="">Alle Free-Typen</option>
+    <option value="recurring-monthly">↻ monatlich</option>
+    <option value="recurring-daily">↻ täglich</option>
+    <option value="keyless">🔓 keylos</option>
+    <option value="recurring-uncapped">∞ uncapped</option>
+    <option value="one-time-initial">🎁 einmalig</option>
+    <option value="recurring-credit">💳 credit</option>
+  </select>
+  <button class="btn" id="csv">CSV Export</button>
+</div>
+
+<table id="models">
 <thead>
 <tr>
-  <th>Modell / Provider</th><th>Provider / Budget</th><th>t/s (Stream)</th><th>t/s (generiert)</th>
-  <th>TTFT</th><th>Samples</th><th>Intelligence</th>
+  <th data-key="id">Modell <span class="arrow">↑↓</span></th>
+  <th data-key="provider">Provider <span class="arrow">↑↓</span></th>
+  <th data-key="free_type">Free-Typ <span class="arrow">↑↓</span></th>
+  <th data-key="tps" class="num">t/s <span class="arrow">↑↓</span></th>
+  <th data-key="ttft" class="num">TTFT <span class="arrow">↑↓</span></th>
+  <th data-key="samples" class="num">Samples <span class="arrow">↑↓</span></th>
+  <th data-key="ctx">Kontext</th>
+  <th data-key="budget" class="num">Budget</th>
 </tr>
 </thead>
-<tbody>
+<tbody id="tbody">
 {rows}
 </tbody>
 </table>
-
-<h2>Datenquellen</h2>
-<table class="sources">
-<thead><tr><th>Quelle</th><th>Link</th></tr></thead>
-<tbody>
-{sources_html}
-</tbody>
-</table>
+<div class="empty" id="empty" style="display:none">Keine Modelle gefunden.</div>
 
 <footer>
-<p>Dieser Tracker ersetzt manuelle Recherche. Er sammelt die kuratierte Free-Liste von OmniRoute (523 Einträge, gepflegt per 50-Agenten-Studie), OpenRouters Public-API (Free-by-Pricing) und merged sie mit gemessenen Geschwindigkeitswerten von llm-benchmarks.com. Sobald ein Modell hier fehlt, wird es beim nächsten Lauf automatisch wieder aufgenommen.</p>
-<p>Entwickelt von <a href="https://github.com/harrytyp">harrytyp</a> — <a href="https://github.com/harrytyp/free-llm-tracker">Quellcode auf GitHub</a></p>
+  <p>Quellen: OmniRoute free-catalog · OpenRouter /api/v1/models · llm-benchmarks.com (nur n≥3) · Artificial Analysis (optional)</p>
+  <p>Entwickelt von <a href="https://github.com/harrytyp">harrytyp</a> — <a href="https://github.com/harrytyp/free-llm-tracker">Quellcode</a></p>
 </footer>
-<script id="trend-data" type="application/json">{trend_js}</script>
+</div>
+
+<script>
+const DATA = {data_js};
+let sortKey = 'tps', sortDir = -1;
+
+function fmtBudget(m) {{
+  const parts = [];
+  if (m.monthly_tokens) parts.push(m.monthly_tokens.toLocaleString('de-DE'));
+  if (m.credit_tokens) parts.push('+' + m.credit_tokens.toLocaleString('de-DE'));
+  return parts.join(' / ') || 'k.A.';
+}}
+
+function rowHtml(m) {{
+  const sp = m.speed || {{}};
+  const tps = sp.tps != null ? `<b>${{sp.tps}}</b> <span class="dim">t/s</span>` : '<span class="dim">–</span>';
+  const ttft = sp.ttft_s != null ? `${{sp.ttft_s}}s` : '<span class="dim">–</span>';
+  const samples = sp.samples != null ? sp.samples : '<span class="dim">–</span>';
+  const ctx = m.context_length ? `<span class="badge">ctx ${{m.context_length >= 1e6 ? (m.context_length/1e6).toFixed(0)+'M' : (m.context_length/1e3).toFixed(0)+'k'}}</span>` : '';
+  return `<tr>
+    <td class="name"><a href="${{m.link}}" target="_blank" rel="noopener">${{m.id}}</a><br><small class="dim">${{m.name || ''}}</small></td>
+    <td class="prov"><a href="${{m.link}}" target="_blank" rel="noopener">${{m.provider}}</a></td>
+    <td>${{m.free_type}}</td>
+    <td class="num">${{tps}}</td>
+    <td class="num">${{ttft}}</td>
+    <td class="num">${{samples}}</td>
+    <td>${{ctx}}</td>
+    <td class="num">${{fmtBudget(m)}}</td>
+  </tr>`;
+}}
+
+function getVal(m, key) {{
+  switch(key) {{
+    case 'tps': return (m.speed && m.speed.tps) || -1;
+    case 'ttft': return (m.speed && m.speed.ttft_s) || 9999;
+    case 'samples': return (m.speed && m.speed.samples) || 0;
+    case 'ctx': return m.context_length || 0;
+    case 'budget': return (m.monthly_tokens || 0) + (m.credit_tokens || 0);
+    default: return (m[key] || '').toString().toLowerCase();
+  }}
+}}
+
+function render() {{
+  const q = document.getElementById('search').value.toLowerCase();
+  const prov = document.getElementById('provider-filter').value;
+  const ft = document.getElementById('free-filter').value;
+  const rows = DATA.filter(m => {{
+    if (prov && m.provider !== prov) return false;
+    if (ft && m.free_type !== ft) return false;
+    if (q && !(m.id + ' ' + m.provider + ' ' + (m.name||'')).toLowerCase().includes(q)) return false;
+    return true;
+  }});
+  rows.sort((a,b) => {{
+    const va = getVal(a, sortKey), vb = getVal(b, sortKey);
+    if (va < vb) return -1 * sortDir;
+    if (va > vb) return 1 * sortDir;
+    return 0;
+  }});
+  document.getElementById('tbody').innerHTML = rows.map(rowHtml).join('');
+  document.getElementById('empty').style.display = rows.length ? 'none' : 'block';
+  document.querySelectorAll('th').forEach(th => {{
+    th.classList.toggle('sorted', th.dataset.key === sortKey);
+  }});
+}}
+
+document.querySelectorAll('th').forEach(th => {{
+  th.addEventListener('click', () => {{
+    const k = th.dataset.key;
+    if (sortKey === k) sortDir *= -1;
+    else {{ sortKey = k; sortDir = k === 'tps' || k === 'ttft' || k === 'samples' ? -1 : 1; }}
+    render();
+  }});
+}});
+document.getElementById('search').addEventListener('input', render);
+document.getElementById('provider-filter').addEventListener('change', render);
+document.getElementById('free-filter').addEventListener('change', render);
+document.getElementById('csv').addEventListener('click', () => {{
+  const header = ['id','provider','free_type','tps','ttft_s','samples','context_length','monthly_tokens','credit_tokens'];
+  const lines = [header.join(',')];
+  DATA.forEach(m => {{
+    const sp = m.speed || {{}};
+    lines.push([m.id, m.provider, m.free_type, sp.tps||'', sp.ttft_s||'', sp.samples||'', m.context_length||'', m.monthly_tokens||'', m.credit_tokens||''].join(','));
+  }});
+  const blob = new Blob([lines.join('\\n')], {{type:'text/csv'}});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'free-llm-models.csv';
+  a.click();
+}});
+render();
+</script>
 </body>
 </html>
 """
 
     out = ROOT / "index.html"
     out.write_text(page)
-    print(f"OK wrote {out} ({len(page)} bytes, {len(models)} rows)")
+    print(f"OK wrote {out} ({len(page)} bytes, {len(models)} rows, {measured_count} measured)")
 
 
 if __name__ == "__main__":

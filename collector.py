@@ -296,80 +296,29 @@ def main() -> int:
 
     # Join
     models_out = []
-    matched_bench = matched_aa = 0
-    # Provider alias: OmniRoute provider names -> llm-benchmarks provider slugs
-    _PROVIDER_ALIASES = {
-        "openrouter": "openrouter",
-        "google": "google",
-        "openai": "openai",
-        "anthropic": "openai",
-        "deepseek": "openai",
-        "meta-llama": "openai",
-        "mistral": "openai",
-        "z-ai": "openai",
-        "nvidia": "openai",
-        "groq": "openai",
-        "cerebras": "openai",
-        "sambanova": "openai",
-        "fireworks": "openai",
-        "together": "openai",
-        "hyperbolic": "openai",
-        "novita": "openai",
-        "deepinfra": "openai",
-        "siliconflow": "openai",
-        "chutes": "openai",
-        "vllm": "openai",
-        "ollama": "openai",
-        "bedrock": "bedrock",
-    }
-
-    def _bench_for(model_id: str, provider: str) -> dict | None:
-        """Look up measured speed for (model, provider), falling back to any provider."""
-        mid = model_id.lower().rstrip(":free")
-        # direct (model, provider) match
-        for (cid, pslug), entry in bench.items():
-            if cid.lower() == mid and pslug == provider:
-                return entry
-        # provider-alias match
-        alias = _PROVIDER_ALIASES.get(provider)
-        if alias:
-            for (cid, pslug), entry in bench.items():
-                if cid.lower() == mid and pslug == alias:
-                    return entry
-        # any provider for this model
-        for (cid, pslug), entry in bench.items():
-            if cid.lower() == mid:
-                return entry
-        return None
+    matched_aa = 0
+    # NOTE: No provider aliasing. t/s is attached per (model, provider) by
+    # benchmark.py from llm-benchmarks data (n>=3 only). The old alias map
+    # (groq->openai etc.) was WRONG and is deleted (AGENTS.md rev 2).
 
     for m in free_models:
-        b = _bench_for(m["id"], m.get("provider", ""))
-        if b:
-            matched_bench += 1
         a = next((aa[k] for k in normalize_key(m["id"]) if k in aa), None)
         if a:
             matched_aa += 1
         models_out.append({
             **m,
-            "speed": b,
             "intelligence": a,
         })
 
-    # sort: measured speed desc (None last), then name
+    # sort: by provider + id (stable)
     def sort_key(mo):
-        s = mo["speed"]
-        return (
-            0 if s and s.get("tps_mean") else 1,
-            -(s["tps_mean"] if s and s.get("tps_mean") else 0),
-            (mo["provider"] or "") + mo["id"],
-        )
+        return (mo.get("provider") or "") + mo["id"]
     models_out.sort(key=sort_key)
 
     snapshot = {
         "updated_at": now_iso,
         "counts": {
             "free_models": len(models_out),
-            "with_measured_speed": matched_bench,
             "with_intelligence": matched_aa,
             "from_omniroute": len(omnit_free),
             "from_openrouter": len(or_free),
@@ -391,10 +340,7 @@ def main() -> int:
     line = json.dumps({
         "ts": now_iso,
         "counts": snapshot["counts"],
-        "speeds": {
-            m["id"]: {"tps": (m["speed"] or {}).get("tps_mean"), "gen_tps": (m["speed"] or {}).get("gen_tps_mean")}
-            for m in models_out
-        },
+        "model_count": len(models_out),
     }, separators=(",", ":"))
     lines = []
     if hist_path.exists():
@@ -408,7 +354,7 @@ def main() -> int:
     (DATA / "latest.json").write_text(json.dumps(snapshot, indent=1))
 
     print(f"OK {now_iso}: {len(models_out)} free models, "
-          f"{matched_bench} with measured speed, {matched_aa} with intelligence index")
+          f"{matched_aa} with intelligence index")
     if errors:
         print("source errors:", *errors, sep="\n  ")
     return 0

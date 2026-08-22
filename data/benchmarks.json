@@ -1,0 +1,288 @@
+{
+ "updated_at": "2026-08-22T12:47:51Z",
+ "min_samples": 3,
+ "total_benchmark_rows": 28,
+ "total_matched_free_models": 4,
+ "benchmarks": {
+  "us.anthropic.claude-haiku-4-5-20251001-v1:0@@bedrock": {
+   "tps": 41.5,
+   "tps_min": 22.0,
+   "tps_max": 57.2,
+   "ttft_s": 0.91,
+   "samples": 141,
+   "provider": "bedrock",
+   "last_benchmark": "2026-08-22T12:04:54.000Z",
+   "source": "llm-benchmarks.com"
+  },
+  "us.anthropic.claude-opus-4-1-20250805-v1:0@@bedrock": {
+   "tps": 8.38,
+   "tps_min": 3.7,
+   "tps_max": 15.5,
+   "ttft_s": 3.55,
+   "samples": 141,
+   "provider": "bedrock",
+   "last_benchmark": "2026-08-22T12:04:56.000Z",
+   "source": "llm-benchmarks.com"
+  },
+  "us.anthropic.claude-opus-4-5-20251101-v1:0@@bedrock": {
+   "tps": 19.1,
+   "tps_min": 3.79,
+   "tps_max": 22.8,
+   "ttft_s": 2.07,
+   "samples": 141,
+   "provider": "bedrock",
+   "last_benchmark": "2026-08-22T12:05:03.000Z",
+   "source": "llm-benchmarks.com"
+  },
+  "us.anthropic.claude-opus-4-6-v1@@bedrock": {
+   "tps": 20.9,
+   "tps_min": 4.12,
+   "tps_max": 23.7,
+   "ttft_s": 1.69,
+   "samples": 141,
+   "provider": "bedrock",
+   "last_benchmark": "2026-08-22T12:05:06.000Z",
+   "source": "llm-benchmarks.com"
+  },
+  "us.anthropic.claude-opus-4-7@@bedrock": {
+   "tps": 28.6,
+   "tps_min": 14.3,
+   "tps_max": 34.2,
+   "ttft_s": 1.33,
+   "samples": 141,
+   "provider": "bedrock",
+   "last_benchmark": "2026-08-22T12:05:09.000Z",
+   "source": "llm-benchmarks.com"
+  },
+  "us.anthropic.claude-sonnet-4-5-20250929-v1:0@@bedrock": {
+   "tps": 20.2,
+   "tps_min": 10.5,
+   "tps_max": 26.1,
+   "ttft_s": 1.67,
+   "samples": 141,
+   "provider": "bedrock",
+   "last_benchmark": "2026-08-22T12:05:11.000Z",
+   "source": "llm-benchmarks.com"
+  },
+  "us.anthropic.claude-sonnet-4-6@@bedrock": {
+   "tps": 25.4,
+   "tps_min": 15.1,
+   "tps_max": 29.9,
+   "ttft_s": 1.09,
+   "samples": 141,
+   "provider": "bedrock",
+   "last_benchmark": "2026-08-22T12:05:15.000Z",
+   "source": "llm-benchmarks.com"
+  },
+  "meta.llama3-1-70b-instruct-v1:0@@bedrock": {
+   "tps": 60.1,
+   "tps_min": 24.0,
+   "tps_max": 72.8,
+   "ttft_s": 0.43,
+   "samples": 141,
+   "provider": "bedrock",
+   "last_benchmark": "2026-08-22T12:05:17.000Z",
+   "source": "llm-benchmarks.com"
+  },
+  "meta.llama3-1-8b-instruct-v1:0@@bedrock": {
+   "tps": 95.3,
+   "tps_min": 11.3,
+   "tps_max": 111.0,
+   "ttft_s": 0.44,
+   "samples": 141,
+   "provider": "bedrock",
+   "last_benchmark": "2026-08-22T12:05:18.000Z",
+   "source": "llm-benchmarks.com"
+  },
+  "us.meta.llama3-3-70b-instruct-v1:0@@bedrock": {
+   "tps": 88.7,
+   "tps_min": 14.8,
+   "tps_max": 118.0,
+   "ttft_s": 0.29,
+   "samples": 141,
+   "provider": "bedrock",
+   "last_benchmark": "2026-08-22T12:05:19.000Z",
+   "source": "llm-benchmarks.com"
+  },
+  "us.meta.llama4-maverick-17b-instruct-v1:0@@bedrock": {
+   "tps": 105.0,
+   "tps_min": 82.4,
+   "tps_max": 128.0,
+   "ttft_s": 0.29,
+   "samples": 141,
+   "provider": "bedrock",
+   "last_benchmark": "2026-08-22T12:05:19.000Z",
+   "source": "llm-benchmarks.com"
+  },
+  "us.meta.llama4-scout-17b-instruct-v1:0@@bedrock": {
+   "tps": 96.9,
+   "tps_min": 69.3,
+   "tps_max": 118.0,
+   "ttft_s": 0.3,
+   "samples": 141,
+   "provider": "bedrock",
+   "last_benchmark": "2026-08-22T12:05:20.000Z",
+   "source": "llm-benchmarks.com"
+  },
+  "mistral.mistral-large-2402-v1:0@@bedrock": {
+   "tps": 42.9,
+   "tps_min": 26.5,
+   "tps_max": 45.3,
+   "ttft_s": 0.25,
+   "samples": 120,
+   "provider": "bedrock",
+   "last_benchmark": "2026-08-22T12:05:21.000Z",
+   "source": "llm-benchmarks.com"
+  },
+  "amazon.nova-lite-v1:0@@bedrock": {
+   "tps": 93.0,
+   "tps_min": 66.9,
+   "tps_max": 122.0,
+   "ttft_s": 0.32,
+   "samples": 141,
+   "provider": "bedrock",
+   "last_benchmark": "2026-08-22T12:05:22.000Z",
+   "source": "llm-benchmarks.com"
+  },
+  "amazon.nova-micro-v1:0@@bedrock": {
+   "tps": 119.0,
+   "tps_min": 64.9,
+   "tps_max": 169.0,
+   "ttft_s": 0.31,
+   "samples": 141,
+   "provider": "bedrock",
+   "last_benchmark": "2026-08-22T12:05:23.000Z",
+   "source": "llm-benchmarks.com"
+  },
+  "amazon.nova-pro-v1:0@@bedrock": {
+   "tps": 89.0,
+   "tps_min": 45.9,
+   "tps_max": 123.0,
+   "ttft_s": 0.38,
+   "samples": 141,
+   "provider": "bedrock",
+   "last_benchmark": "2026-08-22T12:05:23.000Z",
+   "source": "llm-benchmarks.com"
+  },
+  "meta.llama3-70b-instruct-v1:0@@bedrock": {
+   "tps": 37.5,
+   "tps_min": 6.58,
+   "tps_max": 41.6,
+   "ttft_s": 0.47,
+   "samples": 141,
+   "provider": "bedrock",
+   "last_benchmark": "2026-08-22T12:05:24.000Z",
+   "source": "llm-benchmarks.com"
+  },
+  "meta.llama3-8b-instruct-v1:0@@bedrock": {
+   "tps": 78.5,
+   "tps_min": 58.2,
+   "tps_max": 82.7,
+   "ttft_s": 0.21,
+   "samples": 141,
+   "provider": "bedrock",
+   "last_benchmark": "2026-08-22T12:05:26.000Z",
+   "source": "llm-benchmarks.com"
+  },
+  "mistral.mistral-7b-instruct-v0:2@@bedrock": {
+   "tps": 82.4,
+   "tps_min": 53.7,
+   "tps_max": 87.6,
+   "ttft_s": 0.19,
+   "samples": 141,
+   "provider": "bedrock",
+   "last_benchmark": "2026-08-22T12:05:27.000Z",
+   "source": "llm-benchmarks.com"
+  },
+  "mistral.mistral-small-2402-v1:0@@bedrock": {
+   "tps": 56.9,
+   "tps_min": 43.0,
+   "tps_max": 59.2,
+   "ttft_s": 0.21,
+   "samples": 141,
+   "provider": "bedrock",
+   "last_benchmark": "2026-08-22T12:05:28.000Z",
+   "source": "llm-benchmarks.com"
+  },
+  "mistral.mixtral-8x7b-instruct-v0:1@@bedrock": {
+   "tps": 74.3,
+   "tps_min": 20.8,
+   "tps_max": 78.8,
+   "ttft_s": 0.23,
+   "samples": 141,
+   "provider": "bedrock",
+   "last_benchmark": "2026-08-22T12:05:29.000Z",
+   "source": "llm-benchmarks.com"
+  },
+  "qwen/qwen3.5-397b-a17b@@openrouter": {
+   "tps": 2.43,
+   "tps_min": 0.56,
+   "tps_max": 6.12,
+   "ttft_s": 29.3,
+   "samples": 84,
+   "provider": "openrouter",
+   "last_benchmark": "2026-08-18T18:24:35.853Z",
+   "source": "llm-benchmarks.com"
+  },
+  "openai/gpt-oss-20b@@openrouter": {
+   "tps": 12.9,
+   "tps_min": 3.52,
+   "tps_max": 29.4,
+   "ttft_s": 5.01,
+   "samples": 234,
+   "provider": "openrouter",
+   "last_benchmark": "2026-08-20T05:50:44.795Z",
+   "source": "llm-benchmarks.com"
+  },
+  "deepseek/deepseek-v4-flash-0731@@openrouter": {
+   "tps": 6.64,
+   "tps_min": 3.19,
+   "tps_max": 10.5,
+   "ttft_s": 11.8,
+   "samples": 3,
+   "provider": "openrouter",
+   "last_benchmark": "2026-08-18T18:01:24.730Z",
+   "source": "llm-benchmarks.com"
+  },
+  "nvidia/nemotron-3-ultra-550b-a55b@@openrouter": {
+   "tps": 23.8,
+   "tps_min": 8.92,
+   "tps_max": 38.3,
+   "ttft_s": 3.23,
+   "samples": 3,
+   "provider": "openrouter",
+   "last_benchmark": "2026-08-20T06:24:48.000Z",
+   "source": "llm-benchmarks.com"
+  },
+  "deepseek/deepseek-v4-flash@@openrouter": {
+   "tps": 4.46,
+   "tps_min": 2.23,
+   "tps_max": 6.29,
+   "ttft_s": 1.4,
+   "samples": 3,
+   "provider": "openrouter",
+   "last_benchmark": "2026-08-20T14:44:20.110Z",
+   "source": "llm-benchmarks.com"
+  },
+  "deepseek/deepseek-v3.2@@openrouter": {
+   "tps": 18.4,
+   "tps_min": 17.5,
+   "tps_max": 19.6,
+   "ttft_s": 1.86,
+   "samples": 5,
+   "provider": "openrouter",
+   "last_benchmark": "2026-08-18T17:48:08.824Z",
+   "source": "llm-benchmarks.com"
+  },
+  "google/gemini-2.5-pro@@openrouter": {
+   "tps": 2.9,
+   "tps_min": 2.73,
+   "tps_max": 3.17,
+   "ttft_s": 6.89,
+   "samples": 4,
+   "provider": "openrouter",
+   "last_benchmark": "2026-08-20T14:47:33.543Z",
+   "source": "llm-benchmarks.com"
+  }
+ }
+}
