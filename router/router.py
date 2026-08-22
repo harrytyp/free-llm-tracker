@@ -864,16 +864,166 @@ class Handler(BaseHTTPRequestHandler):
             return
         try:
             body = self._read_body()
-            resp = route_request(body, stream=False)
-            self._send_json(200, resp)
+            want_stream = bool(body.get("stream"))
+            if want_stream:
+                self._handle_stream(body)
+            else:
+                resp = route_request(body, stream=False)
+                self._send_json(200, resp)
         except urllib.error.HTTPError as e:
             err = e.read().decode()[:500]
             self._send_json(e.code, {"error": err})
         except Exception as e:
             self._send_json(500, {"error": str(e)})
 
+    def _handle_stream(self, body: dict) -> None:
+        """SSE-Streaming-Antwort: leitet Provider-Chunks direkt durch.
+
+        Hermes (und andere OpenAI-Clients) senden stream:true und erwarten
+        text/event-stream mit data:-Chunks. Wir geben genau das zurück —
+        mit TTFT/Idle-Timeout und Auto-Fallback aufs nächste Modell.
+        """
+        self.send_response(200)
+        self.send_header("Content-Type", "text/event-stream; charset=utf-8")
+        self.send_header("Cache-Control", "no-cache")
+        self.send_header("Connection", "keep-alive")
+        self.end_headers()
+
+        criteria = body.get("router", {}) or {}
+        model_field = str(body.get("model", "")).lower()
+        is_auto = model_field in ("auto", "mini-router/auto", "", "minirouter/auto")
+        if not is_auto:
+            if "/" in model_field and model_field.split("/", 1)[0] in ("mini-router", "minirouter"):
+                model_field = model_field.split("/", 1)[1]
+            criteria["model"] = model_field
+        elif not criteria.get("mode") and not criteria.get("model"):
+            criteria["mode"] = "balanced"
+
+        candidates = candidate_models(criteria)
+        if not candidates:
+            self.wfile.write(b'data: {"error": "no model matches criteria"}\n\n')
+            return
+
+        MAX_FALLBACKS = int(os.environ.get("MINI_ROUTER_MAX_FALLBACKS", str(MAX_FALLBACKS_DEFAULT)))
+        ttft_timeout = float(os.environ.get("MINI_ROUTER_TTFT_TIMEOUT", "25"))
+        idle_timeout = float(os.environ.get("MINI_ROUTER_STREAM_IDLE_TIMEOUT", "15"))
+
+        tried = []
+        for rank, (m, _met) in enumerate(candidates[:MAX_FALLBACKS]):
+            model_id = m["id"]
+            provider_name = m.get("provider", "openrouter")
+            tried.append(model_id)
+
+            pcfg = PROVIDERS.get(provider_name)
+            if not pcfg:
+                if "/" in model_id or ":free" in model_id:
+                    pcfg = PROVIDERS["openrouter"]
+                    provider_name = "openrouter"
+                else:
+                    continue
+            key = os.environ.get(pcfg["key_env"], "").strip()
+            if not key:
+                continue
+
+            out_body = {k: v for k, v in body.items() if k not in ("router",)}
+            out_body["model"] = model_id
+            out_body["stream"] = True
+            url = f"{pcfg['base_url']}/chat/completions"
+            req = urllib.request.Request(
+                url,
+                data=json.dumps(out_body).encode(),
+                headers={"Content-Type": "application/json",
+                         "Authorization": f"Bearer {key}",
+                         "User-Agent": "llm-mini-router/1.0"},
+                method="POST",
+            )
+            try:
+                t0 = time.monotonic()
+                resp = urllib.request.urlopen(req, timeout=ttft_timeout + 30)
+                got_first = False
+                ttft_ms = 0.0
+                last_data_t = time.monotonic()
+                empty = True
+                for raw in resp:
+                    now = time.monotonic()
+                    if now - last_data_t > idle_timeout:
+                        raise TimeoutError(f"stream idle > {idle_timeout}s")
+                    if not got_first:
+                        ttft_ms = (now - t0) * 1000
+                        got_first = True
+                        if ttft_ms > ttft_timeout * 1000:
+                            raise TimeoutError(f"TTFT {ttft_ms:.0f}ms > {ttft_timeout}s")
+                    line = raw.decode(errors="replace").strip()
+                    if not line:
+                        continue
+                    # JEDE Zeile (auch Heartbeat-Kommentare ": OPENROUTER PROCESSING")
+                    # setzt den Idle-Timer zurück — die Verbindung lebt.
+                    last_data_t = now
+                    if line.startswith("data: "):
+                        payload = line[6:].strip()
+                        if payload == "[DONE]":
+                            self.wfile.write(b"data: [DONE]\n\n")
+                            self.wfile.flush()
+                            break
+                        # content-Chunk? dann ist der Stream nicht leer
+                        try:
+                            chunk = json.loads(payload)
+                            delta = (chunk.get("choices") or [{}])[0].get("delta", {})
+                            if delta.get("content"):
+                                empty = False
+                        except json.JSONDecodeError:
+                            pass
+                        self.wfile.write(f"data: {payload}\n\n".encode())
+                        self.wfile.flush()
+                if empty:
+                    raise TimeoutError(f"empty content from {model_id}")
+                # Erfolg: usage + push
+                u = USAGE.setdefault(model_id, {"ok": 0, "fail": 0, "latency_ms": [], "last_ok": 0})
+                u["ok"] += 1
+                u["latency_ms"] = (u["latency_ms"] + [round((time.monotonic() - t0) * 1000)])[-50:]
+                u["last_ok"] = time.time()
+                print(f"[router] ✓ {model_id} via {provider_name} (stream, TTFT {ttft_ms:.0f}ms)")
+                save_usage()
+                push_usage()
+                return
+            except urllib.error.HTTPError as e:
+                u = USAGE.setdefault(model_id, {"ok": 0, "fail": 0, "latency_ms": [], "last_ok": 0})
+                u["fail"] += 1
+                mark_failed(model_id)
+                print(f"[router] ✗ {model_id}: HTTP {e.code}, falling back")
+                save_usage()
+            except TimeoutError as e:
+                u = USAGE.setdefault(model_id, {"ok": 0, "fail": 0, "latency_ms": [], "last_ok": 0})
+                u["fail"] += 1
+                mark_failed(model_id)
+                print(f"[router] ✗ {model_id}: {e}, falling back")
+                save_usage()
+            except Exception as e:
+                u = USAGE.setdefault(model_id, {"ok": 0, "fail": 0, "latency_ms": [], "last_ok": 0})
+                u["fail"] += 1
+                mark_failed(model_id)
+                print(f"[router] ✗ {model_id}: {e}, falling back")
+                save_usage()
+
+        # alles fehlgeschlagen → Fehler als SSE
+        self.wfile.write(f'data: {{"error": "all {len(tried)} candidates failed: {tried}"}}\n\n'.encode())
+        self.wfile.flush()
+
 
 def main() -> int:
+    # Doppelstart-Schutz: PID-File — wenn schon ein Router läuft, sofort exit
+    pidfile = "/tmp/mini-router.pid"
+    if os.path.exists(pidfile):
+        try:
+            old_pid = int(open(pidfile).read().strip())
+            if old_pid != os.getpid() and os.path.exists(f"/proc/{old_pid}"):
+                print(f"[router] already running (PID {old_pid}) — exit", file=sys.stderr)
+                return 1
+        except Exception:
+            pass
+    with open(pidfile, "w") as f:
+        f.write(str(os.getpid()))
+
     load_data()
     load_usage()  # persistierte Nutzungsdaten + Cooldowns wiederherstellen
     fetch_live_uptime()  # live availability snapshot (10-min cache)

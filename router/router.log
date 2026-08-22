@@ -65,3 +65,16 @@ Traceback (most recent call last):
     self.socket.bind(self.server_address)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
 OSError: [Errno 98] Address already in use
+[router] data loaded: 517 models, 32 benchmarks
+[router] loaded usage: 27 models, 0 on cooldown
+[router] live uptime: 17 models
+[router] listening on http://127.0.0.1:8080
+[router] endpoint: POST /v1/chat/completions
+[router] health:   GET /health
+[router] models:   GET /models  (filterable data API)
+[http] 127.0.0.1 "GET /health HTTP/1.1" 200 -
+[http] 127.0.0.1 "POST /v1/chat/completions HTTP/1.1" 200 -
+[router] ✓ nvidia/nemotron-3.5-lightning:free via openrouter (stream, TTFT 635ms)
+[router] ⇧ usage.json pushed to GitHub (ec0534b3)
+[http] 127.0.0.1 "POST /v1/chat/completions HTTP/1.1" 200 -
+[router] ✓ nvidia/nemotron-3.5-lightning:free via openrouter (stream, TTFT 573ms)
