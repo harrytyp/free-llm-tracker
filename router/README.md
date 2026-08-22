@@ -116,19 +116,29 @@ mehr Modelle + bessere Auto-Verteilung (verschiedene Rate-Limits = mehr Last).
 
 ## Connect Hermes
 
-Add to `config.yaml`:
+Hermes → Custom endpoint (laut offizieller Doku):
 
-```yaml
-custom_providers:
-  - name: mini-router
-    base_url: "http://127.0.0.1:8080/v1"
-    key_env: MINI_ROUTER_API_KEY   # any dummy value, router uses its own keys
-    models:
-      - name: auto
+```bash
+hermes model
+# Select "Custom endpoint (self-hosted / VLLM / etc.)"
+# Enter URL: http://127.0.0.1:8080/v1
+# Skip API key (or any dummy — the router uses its own provider keys)
+# Enter model name: auto   ← the router picks the best model per criteria
 ```
 
-Then in Hermes: `/model auto` — every request goes through the router,
-which picks the best free model per your criteria.
+In `config.yaml` landen dann:
+
+```yaml
+model:
+  default: auto
+  provider: custom
+  base_url: http://127.0.0.1:8080/v1
+  api_key: dummy   # router uses its own keys
+```
+
+Der Router ist OpenAI-kompatibel, also kann Hermes ihn wie jeden OpenAI-Endpoint
+nutzen. `model: auto` = der Router entscheidet (Kriterien aus `router`-Feld im
+Request, oder Default balanced).
 
 ## Why not OmniRoute/9router?
 
