@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-08-22T01:12:26Z",
+ "updated_at": "2026-08-22T01:31:31Z",
  "counts": {
   "free_models": 531,
   "with_measured_speed": 63,
@@ -769,9 +769,9 @@
     "tps_mean": 19.2,
     "tps_min": 0.8,
     "tps_max": 29.1,
-    "gen_tps_mean": 40.4,
-    "ttft_s": 6.96,
-    "samples": 251,
+    "gen_tps_mean": 39.9,
+    "ttft_s": 7.37,
+    "samples": 200,
     "provider_slug": "openrouter",
     "last_benchmark": "2026-08-18T18:39:12.163Z"
    },
@@ -1323,12 +1323,12 @@
    "tos_verdict": null,
    "source_catalog": "omniroute",
    "speed": {
-    "tps_mean": 3.01,
+    "tps_mean": 3.0,
     "tps_min": 1.35,
     "tps_max": 7.83,
     "gen_tps_mean": 19.1,
-    "ttft_s": 19.8,
-    "samples": 234,
+    "ttft_s": 19.9,
+    "samples": 214,
     "provider_slug": "openrouter",
     "last_benchmark": "2026-08-18T17:47:07.149Z"
    },
@@ -1345,12 +1345,12 @@
    "tos_verdict": null,
    "source_catalog": "omniroute",
    "speed": {
-    "tps_mean": 2.97,
+    "tps_mean": 2.89,
     "tps_min": 0.56,
     "tps_max": 6.12,
-    "gen_tps_mean": 58.0,
-    "ttft_s": 24.1,
-    "samples": 201,
+    "gen_tps_mean": 56.5,
+    "ttft_s": 24.7,
+    "samples": 188,
     "provider_slug": "openrouter",
     "last_benchmark": "2026-08-18T18:24:35.853Z"
    },
@@ -1367,12 +1367,12 @@
    "tos_verdict": null,
    "source_catalog": "omniroute",
    "speed": {
-    "tps_mean": 2.97,
+    "tps_mean": 2.89,
     "tps_min": 0.56,
     "tps_max": 6.12,
-    "gen_tps_mean": 58.0,
-    "ttft_s": 24.1,
-    "samples": 201,
+    "gen_tps_mean": 56.5,
+    "ttft_s": 24.7,
+    "samples": 188,
     "provider_slug": "openrouter",
     "last_benchmark": "2026-08-18T18:24:35.853Z"
    },
@@ -1389,12 +1389,12 @@
    "tos_verdict": null,
    "source_catalog": "omniroute",
    "speed": {
-    "tps_mean": 2.97,
+    "tps_mean": 2.89,
     "tps_min": 0.56,
     "tps_max": 6.12,
-    "gen_tps_mean": 58.0,
-    "ttft_s": 24.1,
-    "samples": 201,
+    "gen_tps_mean": 56.5,
+    "ttft_s": 24.7,
+    "samples": 188,
     "provider_slug": "openrouter",
     "last_benchmark": "2026-08-18T18:24:35.853Z"
    },
@@ -1411,12 +1411,12 @@
    "tos_verdict": null,
    "source_catalog": "omniroute",
    "speed": {
-    "tps_mean": 2.97,
+    "tps_mean": 2.89,
     "tps_min": 0.56,
     "tps_max": 6.12,
-    "gen_tps_mean": 58.0,
-    "ttft_s": 24.1,
-    "samples": 201,
+    "gen_tps_mean": 56.5,
+    "ttft_s": 24.7,
+    "samples": 188,
     "provider_slug": "openrouter",
     "last_benchmark": "2026-08-18T18:24:35.853Z"
    },
