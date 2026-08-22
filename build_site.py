@@ -124,21 +124,22 @@ def main() -> int:
     counts = latest["counts"]
     updated = latest["updated_at"]
 
-    # Attach benchmark data to models (new structure: results keyed by model id)
+    # Attach benchmark data to models (results keyed by model id)
     bench_raw_data = bench_raw.get("results", {})
     measured_count = 0
     for m in models:
         mid = m["id"].lower().rstrip(":free")
-        # new structure: direct id match (with or without :free)
         entry = bench_raw_data.get(m["id"]) or bench_raw_data.get(mid)
         if entry:
-            # map to speed shape expected by UI
+            # OpenRouter endpoints API values
             m["speed"] = {
-                "tps": entry.get("tps_median"),
-                "ttft_s": entry.get("ttft_median_s"),
-                "samples": entry.get("samples"),
-                "cost_verified": entry.get("cost_verified", False),
-                "source": entry.get("source", "own"),
+                "tps": entry.get("tps"),
+                "tps_p90": entry.get("tps_p90"),
+                "ttft_s": (entry.get("ttft_ms_p50") or 0) / 1000 if entry.get("ttft_ms_p50") else None,
+                "ttft_ms": entry.get("ttft_ms_p50"),
+                "uptime": entry.get("uptime_30m"),
+                "cost_verified": entry.get("cost_verified_zero", False),
+                "source": entry.get("source", "openrouter"),
             }
             measured_count += 1
         else:
