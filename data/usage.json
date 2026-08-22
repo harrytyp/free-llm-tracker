@@ -1,0 +1,14 @@
+{
+ "updated_at": "2026-08-22T20:51:00Z",
+ "usage": {
+  "nvidia/nemotron-3.5-lightning:free": {
+   "ok": 1,
+   "fail": 0,
+   "latency_ms": [
+    3847
+   ],
+   "last_ok": 1787431860.3866196
+  }
+ },
+ "cooldowns": {}
+}
