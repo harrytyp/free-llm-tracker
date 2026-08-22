@@ -465,16 +465,15 @@ def pick_model(criteria: dict) -> dict:
     if not scored:
         raise RuntimeError(f"no model matches criteria: {criteria}")
 
-    # RANK = INTELLIGENCE (quality) × USAGE DATA (availability/latency).
-    # Kolja: intelligence is essential — combined with real usage learning.
-    # Availability layer (from real requests):
-    #   0 = proven (>= PROVEN_OK successes) — working right now
-    #   1 = untested (no failures yet) — neutral
-    #   2 = failed before (not on cooldown) — last resort
-    # Within each group, mode decides the quality score:
-    #   smartest → intelligence index
-    #   fastest  → measured latency (usage) / benchmark tps fallback
-    #   balanced → 60% intelligence + 40% speed (latency or tps)
+    # RANK = INTELLIGENCE FIRST (Kolja: das beste Modell), Verfügbarkeit als
+    # Tie-Breaker. Proven (ok>=PROVEN_OK) bricht Gleichstand bei gleicher
+    # Intelligenz. Fehlgeschlagene Modelle sind NICHT abgewertet, solange sie
+    # nicht auf Cooldown sind (Cooldown = aktives Rate-Limit, wird übersprungen).
+    #
+    # Sortierung: (-intel, avail_group, -quality)
+    #   intel: je höher desto besser (primär)
+    #   avail_group: proven(0) < untested(1) < failed(2) — nur Tie-Break
+    #   quality: Latenz/speed bei Gleichstand
     def avail_group(mid: str) -> int:
         u = USAGE.get(mid)
         if not u:
@@ -485,14 +484,6 @@ def pick_model(criteria: dict) -> dict:
             return 2
         return 1
 
-    # Providers with a configured key are more reliable (own quota, not shared
-    # OpenRouter free pool). Give their models a small availability bonus.
-    def provider_bonus(m) -> float:
-        pname = m.get("provider", "")
-        pcfg = PROVIDERS.get(pname)
-        if pcfg and os.environ.get(pcfg.get("key_env", ""), "").strip():
-            return -0.5  # prefer key-backed providers (own rate limits)
-        return 0.0
     def median_latency(mid: str):
         u = USAGE.get(mid)
         if not u or not u.get("latency_ms"):
@@ -500,23 +491,14 @@ def pick_model(criteria: dict) -> dict:
         lat = sorted(u["latency_ms"])
         return lat[len(lat)//2]
 
-    max_intel = max((x[1]["intel"] or 0) for x in scored) or 1
-    max_tps = max((x[1]["tps"] or 0) for x in scored) or 1
-
     def quality_score(m, met) -> float:
-        intel_n = (met["intel"] or 0) / max_intel
         lat = median_latency(m["id"])
         if lat is not None:
-            speed_n = 1.0 - min(lat / 10000.0, 1.0)  # <10s = faster better
-        else:
-            speed_n = (met["tps"] or 0) / max_tps  # fallback: benchmark tps
-        if mode == "smartest":
-            return intel_n + 0.1 * speed_n
-        if mode == "fastest":
-            return speed_n + 0.1 * intel_n
-        return 0.6 * intel_n + 0.4 * speed_n
+            return -lat  # niedrigere Latenz besser
+        return -(met["tps"] or 0)  # Fallback: höhere tps besser
 
-    scored.sort(key=lambda x: (avail_group(x[0]["id"]) + provider_bonus(x[0]), -quality_score(x[0], x[1])))
+    scored.sort(key=lambda x: (-(x[1]["intel"] or 0), avail_group(x[0]["id"]),
+                               quality_score(x[0], x[1])))
 
     return scored
 

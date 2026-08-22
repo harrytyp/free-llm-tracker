@@ -78,3 +78,23 @@ OSError: [Errno 98] Address already in use
 [router] ⇧ usage.json pushed to GitHub (ec0534b3)
 [http] 127.0.0.1 "POST /v1/chat/completions HTTP/1.1" 200 -
 [router] ✓ nvidia/nemotron-3.5-lightning:free via openrouter (stream, TTFT 573ms)
+[http] 127.0.0.1 "GET /api/v1/models HTTP/1.1" 200 -
+[http] 127.0.0.1 "GET /api/v1/models HTTP/1.1" 200 -
+[http] 127.0.0.1 "GET /v1/models/auto HTTP/1.1" 404 -
+[http] 127.0.0.1 "GET /v1/models HTTP/1.1" 200 -
+[http] 127.0.0.1 "POST /api/show HTTP/1.1" 404 -
+[http] 127.0.0.1 "GET /api/v1/models HTTP/1.1" 200 -
+[http] 127.0.0.1 "GET /v1/models/auto HTTP/1.1" 404 -
+[http] 127.0.0.1 "GET /v1/models HTTP/1.1" 200 -
+[http] 127.0.0.1 "POST /api/show HTTP/1.1" 404 -
+[http] 127.0.0.1 "POST /v1/chat/completions HTTP/1.1" 200 -
+[router] ✓ nvidia/nemotron-3.5-lightning:free via openrouter (stream, TTFT 1294ms)
+[http] 127.0.0.1 "POST /v1/chat/completions HTTP/1.1" 200 -
+[router] ✓ nvidia/nemotron-3.5-lightning:free via openrouter (stream, TTFT 1140ms)
+[router] ✓ nvidia/nemotron-3.5-lightning:free via openrouter (rank 1, 29256ms, TTFT 695ms)
+[http] 127.0.0.1 "POST /v1/chat/completions HTTP/1.1" 200 -
+[http] 127.0.0.1 "GET /health HTTP/1.1" 200 -
+[http] 127.0.0.1 "GET /health HTTP/1.1" 200 -
+[http] 127.0.0.1 "GET /health HTTP/1.1" 200 -
+[http] 127.0.0.1 "GET /usage HTTP/1.1" 200 -
+[http] 127.0.0.1 "GET /models HTTP/1.1" 200 -
