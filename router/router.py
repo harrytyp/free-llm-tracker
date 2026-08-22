@@ -16,7 +16,6 @@ from __future__ import annotations
 
 import json
 import os
-import random
 import signal
 import sys
 import threading
@@ -119,6 +118,10 @@ PROVIDERS = {
     "kilo-gateway": {
         "base_url": "https://api.kilo-gateway.ai/v1",
         "key_env": "KILO_GATEWAY_API_KEY",
+    },
+    "manifest": {
+        "base_url": "https://app.manifest.build/v1",
+        "key_env": "MANIFEST_API_KEY",
     },
 }
 
@@ -347,29 +350,6 @@ def pick_model(criteria: dict) -> dict:
     return scored
 
 
-def pick_weighted(candidates: list[tuple], spread: int = 5) -> tuple:
-    """Load-aware pick: weighted-random among the top `spread` candidates.
-
-    Instead of always taking rank #1 (which 100 concurrent users would
-    overload and rate-limit), distribute load across the top candidates:
-    rank 1 gets the most weight, but requests spread over top N.
-    """
-    top = candidates[:spread]
-    if not top:
-        return candidates[0]
-    # weights: rank 1 = N, rank 2 = N-1, ... (linear decay)
-    n = len(top)
-    weights = [n - i for i in range(n)]
-    total = sum(weights)
-    r = random.uniform(0, total)
-    acc = 0
-    for (m, met), w in zip(top, weights):
-        acc += w
-        if r <= acc:
-            return (m, met)
-    return top[-1]
-
-
 # --- Routing --------------------------------------------------------------
 
 def route_request(body: dict, stream: bool) -> dict | None:
@@ -383,7 +363,6 @@ def route_request(body: dict, stream: bool) -> dict | None:
         criteria["mode"] = "balanced"
 
     MAX_FALLBACKS = int(os.environ.get("MINI_ROUTER_MAX_FALLBACKS", "3"))
-    spread = int(os.environ.get("MINI_ROUTER_SPREAD", "5"))
     last_err = None
 
     # Build candidate list once (best first)
@@ -391,14 +370,8 @@ def route_request(body: dict, stream: bool) -> dict | None:
     if not candidates:
         raise RuntimeError(f"no model matches criteria: {criteria}")
 
-    # Load-aware: first pick is weighted-random among top candidates,
-    # so concurrent users spread across models instead of hammering rank 1.
-    if not criteria.get("model"):  # skip for exact-model override
-        first = pick_weighted(candidates, spread)
-        # reorder: chosen candidate first, rest keep ranking
-        ordered = [first] + [c for c in candidates if c[0]["id"] != first[0]["id"]]
-        candidates = ordered
-
+    # Single-user optimization: ALWAYS try the BEST model first (deterministic).
+    # No load-spreading — that was wrong for a single user. Fallback only on failure.
     tried = []
     for rank, (m, match_type) in enumerate(candidates[:MAX_FALLBACKS]):
         model_id = m["id"]
