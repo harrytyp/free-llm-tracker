@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-08-22T21:38:19Z",
+ "updated_at": "2026-08-23T18:58:35Z",
  "usage": {
   "nvidia/nemotron-3.5-lightning:free": {
-   "ok": 17,
+   "ok": 19,
    "fail": 1,
    "latency_ms": [
     3847,
@@ -21,25 +21,27 @@
     975,
     851,
     2410,
-    817
+    817,
+    1035,
+    36509
    ],
-   "last_ok": 1787434699.2200322
+   "last_ok": 1787511515.126336
   },
   "z-ai/glm-5.2": {
    "ok": 0,
-   "fail": 1,
+   "fail": 2,
    "latency_ms": [],
    "last_ok": 0
   },
   "z-ai/glm-5.2:free": {
    "ok": 0,
-   "fail": 1,
+   "fail": 2,
    "latency_ms": [],
    "last_ok": 0
   },
   "deepseek-ai/deepseek-v4-pro": {
    "ok": 0,
-   "fail": 1,
+   "fail": 2,
    "latency_ms": [],
    "last_ok": 0
   },
@@ -57,7 +59,7 @@
   },
   "thinkingmachines/inkling:free": {
    "ok": 0,
-   "fail": 1,
+   "fail": 2,
    "latency_ms": [],
    "last_ok": 0
   },
