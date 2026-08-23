@@ -1,44 +1,7 @@
 {
-  "updated_at": "2026-08-23T13:05:50Z",
-  "total_providers": 79,
+  "updated_at": "2026-08-23T18:51:24Z",
+  "total_providers": 77,
   "providers": [
-    {
-      "provider": "puter",
-      "count": 33,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "claude-haiku-4-5",
-          "tps": null,
-          "name": "Claude Haiku 4.5 (Puter)"
-        },
-        {
-          "id": "claude-opus-4-7",
-          "tps": null,
-          "name": "Claude Opus 4.7 (Puter)"
-        },
-        {
-          "id": "claude-sonnet-4-6",
-          "tps": null,
-          "name": "Claude Sonnet 4.6 (Puter)"
-        },
-        {
-          "id": "codestral-2508",
-          "tps": null,
-          "name": "Codestral (Puter)"
-        },
-        {
-          "id": "deepseek/deepseek-v4-flash",
-          "tps": null,
-          "name": "DeepSeek V4 Flash (Puter)"
-        }
-      ],
-      "free_types": {
-        "keyless": 33
-      },
-      "avg_tps": null
-    },
     {
       "provider": "bazaarlink",
       "count": 31,
@@ -262,43 +225,6 @@
       "avg_tps": null
     },
     {
-      "provider": "github-models",
-      "count": 21,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "cohere/cohere-command-a",
-          "tps": null,
-          "name": "Cohere Command A (Free)"
-        },
-        {
-          "id": "deepseek/deepseek-r1-0528",
-          "tps": null,
-          "name": "DeepSeek-R1-0528 (Free)"
-        },
-        {
-          "id": "deepseek/deepseek-v3-0324",
-          "tps": null,
-          "name": "DeepSeek-V3-0324 (Free)"
-        },
-        {
-          "id": "meta/llama-3.3-70b-instruct",
-          "tps": null,
-          "name": "Llama-3.3-70B-Instruct (Free)"
-        },
-        {
-          "id": "meta/llama-4-maverick-17b-128e-instruct-fp8",
-          "tps": null,
-          "name": "Llama 4 Maverick 17B 128E Instruct FP8 (Free)"
-        }
-      ],
-      "free_types": {
-        "recurring-daily": 21
-      },
-      "avg_tps": null
-    },
-    {
       "provider": "openrouter",
       "count": 16,
       "measured": 0,
@@ -337,53 +263,11 @@
       "avg_tps": null
     },
     {
-      "provider": "agy",
-      "count": 15,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "claude-opus-4-6-thinking",
-          "tps": null,
-          "name": "Claude Opus 4.6 (Thinking)"
-        },
-        {
-          "id": "claude-sonnet-4-6",
-          "tps": null,
-          "name": "Claude Sonnet 4.6 (Thinking)"
-        },
-        {
-          "id": "gemini-2.5-flash",
-          "tps": null,
-          "name": "Gemini 2.5 Flash"
-        },
-        {
-          "id": "gemini-2.5-flash-lite",
-          "tps": null,
-          "name": "Gemini 2.5 Flash Lite"
-        },
-        {
-          "id": "gemini-2.5-flash-thinking",
-          "tps": null,
-          "name": "Gemini 2.5 Flash Thinking"
-        }
-      ],
-      "free_types": {
-        "keyless": 15
-      },
-      "avg_tps": null
-    },
-    {
       "provider": "nvidia",
-      "count": 14,
+      "count": 12,
       "measured": 0,
       "tps_values": [],
       "top_models": [
-        {
-          "id": "deepseek-ai/deepseek-v4-pro",
-          "tps": null,
-          "name": "DeepSeek V4 Pro"
-        },
         {
           "id": "google/gemma-4-31b-it",
           "tps": null,
@@ -403,47 +287,15 @@
           "id": "mistralai/mistral-large-3-675b-instruct-2512",
           "tps": null,
           "name": "Mistral Large 3 675B"
+        },
+        {
+          "id": "mistralai/mistral-small-4-119b-2603",
+          "tps": null,
+          "name": "Mistral Small 4 2603"
         }
       ],
       "free_types": {
-        "one-time-initial": 14
-      },
-      "avg_tps": null
-    },
-    {
-      "provider": "cloudflare-ai",
-      "count": 13,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "@cf/deepseek-ai/deepseek-r1-distill-qwen-32b",
-          "tps": null,
-          "name": "DeepSeek R1 Distill 32B (🆓)"
-        },
-        {
-          "id": "@cf/google/gemma-3-12b-it",
-          "tps": null,
-          "name": "Gemma 3 12B (🆓)"
-        },
-        {
-          "id": "@cf/google/gemma-4-26b-a4b-it",
-          "tps": null,
-          "name": "Gemma 4 26B (🆓)"
-        },
-        {
-          "id": "@cf/meta/llama-3.1-8b-instruct",
-          "tps": null,
-          "name": "Llama 3.1 8B (🆓)"
-        },
-        {
-          "id": "@cf/meta/llama-3.2-3b-instruct",
-          "tps": null,
-          "name": "Llama 3.2 3B (🆓)"
-        }
-      ],
-      "free_types": {
-        "recurring-daily": 13
+        "one-time-initial": 12
       },
       "avg_tps": null
     },
@@ -559,6 +411,43 @@
       "avg_tps": null
     },
     {
+      "provider": "agy",
+      "count": 9,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "claude-opus-4-6-thinking",
+          "tps": null,
+          "name": "Claude Opus 4.6 (Thinking)"
+        },
+        {
+          "id": "claude-sonnet-4-6",
+          "tps": null,
+          "name": "Claude Sonnet 4.6 (Thinking)"
+        },
+        {
+          "id": "gemini-3.1-flash-lite",
+          "tps": null,
+          "name": "Gemini 3.1 Flash Lite"
+        },
+        {
+          "id": "gemini-3.1-pro-low",
+          "tps": null,
+          "name": "Gemini 3.1 Pro (Low)"
+        },
+        {
+          "id": "gemini-3.7-flash-high",
+          "tps": null,
+          "name": "Gemini 3.7 Flash (High)"
+        }
+      ],
+      "free_types": {
+        "keyless": 9
+      },
+      "avg_tps": null
+    },
+    {
       "provider": "ainative",
       "count": 9,
       "measured": 0,
@@ -592,6 +481,43 @@
       ],
       "free_types": {
         "recurring-uncapped": 9
+      },
+      "avg_tps": null
+    },
+    {
+      "provider": "cloudflare-ai",
+      "count": 9,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "@cf/deepseek-ai/deepseek-r1-distill-qwen-32b",
+          "tps": null,
+          "name": "DeepSeek R1 Distill 32B (🆓)"
+        },
+        {
+          "id": "@cf/google/gemma-4-26b-a4b-it",
+          "tps": null,
+          "name": "Gemma 4 26B (🆓)"
+        },
+        {
+          "id": "@cf/meta/llama-3.2-3b-instruct",
+          "tps": null,
+          "name": "Llama 3.2 3B (🆓)"
+        },
+        {
+          "id": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+          "tps": null,
+          "name": "Llama 3.3 70B (FP8 Fast 🆓 ~150 resp/day)"
+        },
+        {
+          "id": "@cf/mistral/mistral-7b-instruct-v0.2-lora",
+          "tps": null,
+          "name": "Mistral 7B (🆓)"
+        }
+      ],
+      "free_types": {
+        "recurring-daily": 9
       },
       "avg_tps": null
     },
@@ -1188,43 +1114,6 @@
       "avg_tps": null
     },
     {
-      "provider": "gemini",
-      "count": 5,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "gemini-2.5-flash",
-          "tps": null,
-          "name": "Gemini 2.5 Flash"
-        },
-        {
-          "id": "gemini-2.5-flash-lite",
-          "tps": null,
-          "name": "Gemini 2.5 Flash-Lite"
-        },
-        {
-          "id": "gemini-3-flash-preview",
-          "tps": null,
-          "name": "Gemini 3 Flash Preview"
-        },
-        {
-          "id": "gemini-3.1-flash-lite",
-          "tps": null,
-          "name": "Gemini 3.1 Flash-Lite"
-        },
-        {
-          "id": "gemini-3.5-flash",
-          "tps": null,
-          "name": "Gemini 3.5 Flash"
-        }
-      ],
-      "free_types": {
-        "recurring-daily": 5
-      },
-      "avg_tps": null
-    },
-    {
       "provider": "groq",
       "count": 5,
       "measured": 0,
@@ -1410,38 +1299,6 @@
       "avg_tps": null
     },
     {
-      "provider": "agentrouter",
-      "count": 4,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "claude-haiku-4-5-20251001",
-          "tps": null,
-          "name": "Claude 4.5 Haiku"
-        },
-        {
-          "id": "claude-opus-4-6",
-          "tps": null,
-          "name": "Claude 4.6 Opus"
-        },
-        {
-          "id": "deepseek-v3.2",
-          "tps": null,
-          "name": "DeepSeek V3.2"
-        },
-        {
-          "id": "glm-5.1",
-          "tps": null,
-          "name": "GLM 5.1"
-        }
-      ],
-      "free_types": {
-        "one-time-initial": 4
-      },
-      "avg_tps": null
-    },
-    {
       "provider": "freemodel-dev",
       "count": 4,
       "measured": 0,
@@ -1470,6 +1327,38 @@
       ],
       "free_types": {
         "one-time-initial": 4
+      },
+      "avg_tps": null
+    },
+    {
+      "provider": "gemini",
+      "count": 4,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "gemini-2.5-flash",
+          "tps": null,
+          "name": "Gemini 2.5 Flash"
+        },
+        {
+          "id": "gemini-2.5-flash-lite",
+          "tps": null,
+          "name": "Gemini 2.5 Flash-Lite"
+        },
+        {
+          "id": "gemini-3-flash-preview",
+          "tps": null,
+          "name": "Gemini 3 Flash Preview"
+        },
+        {
+          "id": "gemini-3.1-flash-lite",
+          "tps": null,
+          "name": "Gemini 3.1 Flash-Lite"
+        }
+      ],
+      "free_types": {
+        "recurring-daily": 4
       },
       "avg_tps": null
     },
@@ -1560,13 +1449,67 @@
           "name": "Qwen3.7 Plus"
         },
         {
-          "id": "qwen3.8-max-preview",
+          "id": "qwen3.8-max",
           "tps": null,
-          "name": "Qwen3.8 Max Preview"
+          "name": "Qwen3.8 Max"
         }
       ],
       "free_types": {
         "keyless": 4
+      },
+      "avg_tps": null
+    },
+    {
+      "provider": "agentrouter",
+      "count": 3,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "claude-opus-4-8",
+          "tps": null,
+          "name": "Claude Opus 4.8"
+        },
+        {
+          "id": "claude-opus-5",
+          "tps": null,
+          "name": "Claude Opus 5"
+        },
+        {
+          "id": "gpt-5.6-sol",
+          "tps": null,
+          "name": "GPT-5.6 Sol"
+        }
+      ],
+      "free_types": {
+        "one-time-initial": 3
+      },
+      "avg_tps": null
+    },
+    {
+      "provider": "agnes",
+      "count": 3,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "agnes-1.5-flash",
+          "tps": null,
+          "name": "Agnes 1.5 Flash"
+        },
+        {
+          "id": "agnes-2.0-flash",
+          "tps": null,
+          "name": "Agnes 2.0 Flash"
+        },
+        {
+          "id": "agnes-2.5-flash",
+          "tps": null,
+          "name": "Agnes 2.5 Flash"
+        }
+      ],
+      "free_types": {
+        "recurring-uncapped": 3
       },
       "avg_tps": null
     },
@@ -1621,33 +1564,6 @@
       ],
       "free_types": {
         "recurring-credit": 3
-      },
-      "avg_tps": null
-    },
-    {
-      "provider": "hackclub",
-      "count": 3,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "deepseek-ai/deepseek-coder-33b",
-          "tps": null,
-          "name": "DeepSeek Coder 33B"
-        },
-        {
-          "id": "meta-llama/llama-3.3-70b-instruct",
-          "tps": null,
-          "name": "Llama 3.3 70B"
-        },
-        {
-          "id": "mistralai/mistral-7b-instruct",
-          "tps": null,
-          "name": "Mistral 7B"
-        }
-      ],
-      "free_types": {
-        "keyless": 3
       },
       "avg_tps": null
     },
@@ -1814,28 +1730,6 @@
       "avg_tps": null
     },
     {
-      "provider": "agnes",
-      "count": 2,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "agnes-1.5-flash",
-          "tps": null,
-          "name": "Agnes 1.5 Flash"
-        },
-        {
-          "id": "agnes-2.0-flash",
-          "tps": null,
-          "name": "Agnes 2.0 Flash"
-        }
-      ],
-      "free_types": {
-        "recurring-uncapped": 2
-      },
-      "avg_tps": null
-    },
-    {
       "provider": "ai21",
       "count": 2,
       "measured": 0,
@@ -1876,6 +1770,28 @@
       ],
       "free_types": {
         "recurring-daily": 2
+      },
+      "avg_tps": null
+    },
+    {
+      "provider": "chatgpt-web",
+      "count": 2,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "gpt-5.6-luna-free",
+          "tps": null,
+          "name": "GPT-5.6 Luna (Free)"
+        },
+        {
+          "id": "gpt-5.6-luna-free-thinking",
+          "tps": null,
+          "name": "GPT-5.6 Luna (Free, Think)"
+        }
+      ],
+      "free_types": {
+        "recurring-uncapped": 2
       },
       "avg_tps": null
     },
