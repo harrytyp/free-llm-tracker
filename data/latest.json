@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-08-24T07:32:20Z",
+ "updated_at": "2026-08-24T13:17:42Z",
  "counts": {
-  "free_models": 449,
+  "free_models": 446,
   "with_intelligence": 0,
   "from_omniroute": 448,
-  "from_openrouter": 22
+  "from_openrouter": 19
  },
  "source_errors": [],
  "sources": {
@@ -4085,32 +4085,6 @@
    "intelligence": null
   },
   {
-   "id": "nvidia/nemotron-3-nano-30b-a3b:free",
-   "provider": "openrouter",
-   "name": "NVIDIA: Nemotron 3 Nano 30B A3B (free)",
-   "free_type": "recurring-monthly",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "openrouter",
-   "tos_verdict": null,
-   "context_length": 256000,
-   "description": "NVIDIA Nemotron 3 Nano 30B A3B is a small language MoE model with highest compute efficiency and accuracy for developers to build specialized agentic AI systems. The model is fully...",
-   "supported_parameters": [
-    "include_reasoning",
-    "max_tokens",
-    "reasoning",
-    "seed",
-    "temperature",
-    "tool_choice",
-    "tools",
-    "top_p"
-   ],
-   "modality": "",
-   "source_catalog": "openrouter",
-   "free_status": "verified-free",
-   "intelligence": null
-  },
-  {
    "id": "nvidia/nemotron-3.5-lightning:free",
    "provider": "openrouter",
    "name": "NVIDIA: Nemotron 3.5 Lightning (free)",
@@ -4126,60 +4100,6 @@
     "max_tokens",
     "reasoning",
     "seed",
-    "temperature",
-    "tool_choice",
-    "tools",
-    "top_p"
-   ],
-   "modality": "",
-   "source_catalog": "openrouter",
-   "free_status": "verified-free",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/nemotron-nano-12b-v2-vl:free",
-   "provider": "openrouter",
-   "name": "NVIDIA: Nemotron Nano 12B 2 VL (free)",
-   "free_type": "recurring-monthly",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "openrouter",
-   "tos_verdict": null,
-   "context_length": 128000,
-   "description": "NVIDIA Nemotron Nano 2 VL is a 12-billion-parameter open multimodal reasoning model designed for video understanding and document intelligence. It introduces a hybrid Transformer-Mamba architecture, combining transformer-level accuracy with Mamba\u2019s...",
-   "supported_parameters": [
-    "include_reasoning",
-    "max_tokens",
-    "reasoning",
-    "seed",
-    "temperature",
-    "tool_choice",
-    "tools",
-    "top_p"
-   ],
-   "modality": "",
-   "source_catalog": "openrouter",
-   "free_status": "verified-free",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/nemotron-nano-9b-v2:free",
-   "provider": "openrouter",
-   "name": "NVIDIA: Nemotron Nano 9B V2 (free)",
-   "free_type": "recurring-monthly",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "openrouter",
-   "tos_verdict": null,
-   "context_length": 128000,
-   "description": "NVIDIA-Nemotron-Nano-9B-v2 is a large language model (LLM) trained from scratch by NVIDIA, and designed as a unified model for both reasoning and non-reasoning tasks. It responds to user queries and...",
-   "supported_parameters": [
-    "include_reasoning",
-    "max_tokens",
-    "reasoning",
-    "response_format",
-    "seed",
-    "structured_outputs",
     "temperature",
     "tool_choice",
     "tools",
