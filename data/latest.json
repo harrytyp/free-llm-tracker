@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-08-24T19:04:14Z",
+ "updated_at": "2026-08-25T01:55:57Z",
  "counts": {
   "free_models": 446,
   "with_intelligence": 0,
@@ -4171,7 +4171,7 @@
    "credit_tokens": null,
    "pool_key": "openrouter",
    "tos_verdict": null,
-   "context_length": 262144,
+   "context_length": 1048576,
    "description": "Inkling Small is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 12B active parameters out of 276B total. It is positioned as the smaller, more efficient member of...",
    "supported_parameters": [
     "frequency_penalty",
@@ -4200,7 +4200,7 @@
    "credit_tokens": null,
    "pool_key": "openrouter",
    "tos_verdict": null,
-   "context_length": 262144,
+   "context_length": 1048576,
    "description": "Inkling is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 41B active parameters out of 975B total. It is designed for general-purpose reasoning, coding, agentic and tool-use systems,...",
    "supported_parameters": [
     "frequency_penalty",
