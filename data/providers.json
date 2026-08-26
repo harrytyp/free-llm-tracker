@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-26T13:26:41Z",
+  "updated_at": "2026-08-26T20:09:50Z",
   "total_providers": 77,
   "providers": [
     {
@@ -257,8 +257,8 @@
         }
       ],
       "free_types": {
-        "recurring-daily": 1,
-        "recurring-monthly": 14
+        "recurring-daily": 2,
+        "recurring-monthly": 13
       },
       "avg_tps": null
     },
