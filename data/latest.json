@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-08-27T09:57:52Z",
+ "updated_at": "2026-08-27T22:24:48Z",
  "counts": {
-  "free_models": 448,
+  "free_models": 449,
   "with_intelligence": 0,
   "from_omniroute": 449,
-  "from_openrouter": 20
+  "from_openrouter": 21
  },
  "source_errors": [],
  "sources": {
@@ -4040,6 +4040,39 @@
     "response_format",
     "seed",
     "temperature",
+    "top_p"
+   ],
+   "modality": "",
+   "source_catalog": "openrouter",
+   "free_status": "verified-free",
+   "intelligence": null
+  },
+  {
+   "id": "inclusionai/ling-3.0-flash-fin:free",
+   "provider": "openrouter",
+   "name": "Ling 3.0 Flash Fin (free)",
+   "free_type": "recurring-monthly",
+   "monthly_tokens": null,
+   "credit_tokens": null,
+   "pool_key": "openrouter",
+   "tos_verdict": null,
+   "context_length": 262144,
+   "description": "Ling 3.0 Flash Fin is a finance-focused mixture-of-experts model from InclusionAI, built on Ling 3.0 Flash with 5.1B active parameters out of 124B total. It is designed for real-world investment...",
+   "supported_parameters": [
+    "frequency_penalty",
+    "include_reasoning",
+    "logprobs",
+    "max_tokens",
+    "presence_penalty",
+    "reasoning",
+    "repetition_penalty",
+    "seed",
+    "stop",
+    "temperature",
+    "tool_choice",
+    "tools",
+    "top_k",
+    "top_logprobs",
     "top_p"
    ],
    "modality": "",
