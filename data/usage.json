@@ -1,9 +1,9 @@
 {
- "updated_at": "2026-08-28T14:15:51Z",
+ "updated_at": "2026-08-28T15:36:56Z",
  "usage": {
   "nvidia/nemotron-3.5-lightning:free": {
    "ok": 24,
-   "fail": 4,
+   "fail": 6,
    "latency_ms": [
     3847,
     83627,
@@ -34,119 +34,123 @@
   },
   "z-ai/glm-5.2": {
    "ok": 0,
-   "fail": 5,
+   "fail": 7,
    "latency_ms": [],
    "last_ok": 0
   },
   "z-ai/glm-5.2:free": {
-   "ok": 0,
-   "fail": 6,
-   "latency_ms": [],
-   "last_ok": 0
+   "ok": 1,
+   "fail": 9,
+   "latency_ms": [
+    2085
+   ],
+   "last_ok": 1787926555.0113022
   },
   "deepseek-ai/deepseek-v4-pro": {
    "ok": 0,
-   "fail": 5,
+   "fail": 8,
    "latency_ms": [],
    "last_ok": 0
   },
   "mistral-medium-3-5": {
-   "ok": 1,
-   "fail": 4,
+   "ok": 2,
+   "fail": 6,
    "latency_ms": [
-    6567
+    6567,
+    348
    ],
-   "last_ok": 1787602616.9624348
+   "last_ok": 1787926589.2933662
   },
   "qwen/qwen3.5-122b-a10b": {
    "ok": 0,
-   "fail": 4,
+   "fail": 7,
    "latency_ms": [],
    "last_ok": 0
   },
   "thinkingmachines/inkling:free": {
    "ok": 0,
-   "fail": 4,
+   "fail": 6,
    "latency_ms": [],
    "last_ok": 0
   },
   "thinkingmachines/inkling-small:free": {
    "ok": 0,
-   "fail": 3,
+   "fail": 5,
    "latency_ms": [],
    "last_ok": 0
   },
   "gpt-oss-120b": {
    "ok": 0,
-   "fail": 2,
+   "fail": 3,
    "latency_ms": [],
    "last_ok": 0
   },
   "openai/gpt-oss-120b": {
    "ok": 0,
-   "fail": 4,
+   "fail": 6,
    "latency_ms": [],
    "last_ok": 0
   },
   "mistralai/mistral-small-4-119b-2603": {
    "ok": 0,
-   "fail": 2,
+   "fail": 4,
    "latency_ms": [],
    "last_ok": 0
   },
   "qwen/qwen3.5-397b-a17b": {
    "ok": 0,
-   "fail": 2,
+   "fail": 3,
    "latency_ms": [],
    "last_ok": 0
   },
   "z-ai/glm-5.1": {
    "ok": 0,
-   "fail": 2,
+   "fail": 3,
    "latency_ms": [],
    "last_ok": 0
   },
   "openai/gpt-oss-20b": {
-   "ok": 1,
-   "fail": 3,
+   "ok": 2,
+   "fail": 4,
    "latency_ms": [
-    2446
+    2446,
+    14300
    ],
-   "last_ok": 1787570807.4625976
+   "last_ok": 1787926612.4992666
   },
   "meta-llama/llama-4-scout-17b-16e-instruct": {
    "ok": 0,
-   "fail": 2,
+   "fail": 3,
    "latency_ms": [],
    "last_ok": 0
   },
   "google/gemma-4-31b-it": {
    "ok": 0,
-   "fail": 2,
+   "fail": 4,
    "latency_ms": [],
    "last_ok": 0
   },
   "google/gemma-4-31b-it:free": {
    "ok": 0,
-   "fail": 2,
+   "fail": 4,
    "latency_ms": [],
    "last_ok": 0
   },
   "minimaxai/minimax-m2.7": {
    "ok": 0,
-   "fail": 2,
+   "fail": 4,
    "latency_ms": [],
    "last_ok": 0
   },
   "liquid/lfm-2.5-2.6b:free": {
    "ok": 0,
-   "fail": 2,
+   "fail": 3,
    "latency_ms": [],
    "last_ok": 0
   },
   "nvidia/nemotron-3-nano-30b-a3b:free": {
    "ok": 13,
-   "fail": 1,
+   "fail": 3,
    "latency_ms": [
     612,
     510,
@@ -166,49 +170,49 @@
   },
   "mistralai/devstral-2-123b-instruct-2512": {
    "ok": 0,
-   "fail": 2,
+   "fail": 3,
    "latency_ms": [],
    "last_ok": 0
   },
   "mistralai/mistral-large-3-675b-instruct-2512": {
    "ok": 0,
-   "fail": 2,
+   "fail": 4,
    "latency_ms": [],
    "last_ok": 0
   },
   "stepfun-ai/step-3.5-flash": {
    "ok": 0,
-   "fail": 2,
+   "fail": 3,
    "latency_ms": [],
    "last_ok": 0
   },
   "google/gemma-4-26b-a4b-it:free": {
    "ok": 0,
-   "fail": 2,
+   "fail": 3,
    "latency_ms": [],
    "last_ok": 0
   },
   "qwen/qwen3-32b": {
    "ok": 0,
-   "fail": 4,
+   "fail": 5,
    "latency_ms": [],
    "last_ok": 0
   },
   "mistral-small-latest": {
    "ok": 0,
-   "fail": 3,
+   "fail": 4,
    "latency_ms": [],
    "last_ok": 0
   },
   "mistral-large-latest": {
    "ok": 0,
-   "fail": 3,
+   "fail": 4,
    "latency_ms": [],
    "last_ok": 0
   },
   "dots-studio/dots-3-note-preview:free": {
-   "ok": 21,
-   "fail": 1,
+   "ok": 22,
+   "fail": 2,
    "latency_ms": [
     2855,
     2584,
@@ -230,84 +234,87 @@
     3107,
     3863,
     5018,
-    3928
+    3928,
+    4419
    ],
-   "last_ok": 1787571014.079776
+   "last_ok": 1787926716.9057984
   },
   "nvidia/nemotron-nano-9b-v2:free": {
    "ok": 0,
-   "fail": 2,
+   "fail": 3,
    "latency_ms": [],
    "last_ok": 0
   },
   "poolside/laguna-s-2.1:free": {
-   "ok": 0,
-   "fail": 3,
-   "latency_ms": [],
-   "last_ok": 0
+   "ok": 1,
+   "fail": 4,
+   "latency_ms": [
+    5921
+   ],
+   "last_ok": 1787926727.0356023
   },
   "auto": {
    "ok": 0,
-   "fail": 3,
+   "fail": 4,
    "latency_ms": [],
    "last_ok": 0
   },
   "stealth/ox-alpha": {
    "ok": 0,
-   "fail": 4,
+   "fail": 5,
    "latency_ms": [],
    "last_ok": 0
   },
   "nvidia/nemotron-nano-12b-v2-vl:free": {
    "ok": 0,
-   "fail": 4,
+   "fail": 5,
    "latency_ms": [],
    "last_ok": 0
   },
   "nvidia/nemotron-3-super-120b-a12b": {
    "ok": 0,
-   "fail": 2,
+   "fail": 3,
    "latency_ms": [],
    "last_ok": 0
   },
   "google/lyria-3-pro-preview": {
    "ok": 0,
-   "fail": 2,
+   "fail": 3,
    "latency_ms": [],
    "last_ok": 0
   },
   "google/lyria-3-clip-preview": {
    "ok": 0,
-   "fail": 2,
+   "fail": 3,
    "latency_ms": [],
    "last_ok": 0
   },
   "zai-glm-4.7": {
    "ok": 0,
-   "fail": 2,
+   "fail": 4,
    "latency_ms": [],
    "last_ok": 0
   },
   "llama-3.3-70b-versatile": {
    "ok": 0,
-   "fail": 2,
+   "fail": 4,
    "latency_ms": [],
    "last_ok": 0
   },
   "codestral-latest": {
    "ok": 0,
-   "fail": 2,
+   "fail": 4,
    "latency_ms": [],
    "last_ok": 0
   },
   "devstral-latest": {
    "ok": 0,
-   "fail": 1,
+   "fail": 3,
    "latency_ms": [],
    "last_ok": 0
   }
  },
  "cooldowns": {
-  "nvidia/nemotron-3.5-lightning:free": 1787927151.057348
+  "nvidia/nemotron-3.5-lightning:free": 1787932016.1730118
  }
 }
