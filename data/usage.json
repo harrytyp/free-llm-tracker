@@ -1,9 +1,9 @@
 {
- "updated_at": "2026-08-24T20:15:13Z",
+ "updated_at": "2026-08-28T14:15:51Z",
  "usage": {
   "nvidia/nemotron-3.5-lightning:free": {
-   "ok": 21,
-   "fail": 2,
+   "ok": 24,
+   "fail": 4,
    "latency_ms": [
     3847,
     83627,
@@ -25,49 +25,54 @@
     1035,
     36509,
     285567,
-    11499
+    11499,
+    7828,
+    16127,
+    105638
    ],
-   "last_ok": 1787602513.5992367
+   "last_ok": 1787602607.7246542
   },
   "z-ai/glm-5.2": {
    "ok": 0,
-   "fail": 4,
+   "fail": 5,
    "latency_ms": [],
    "last_ok": 0
   },
   "z-ai/glm-5.2:free": {
    "ok": 0,
-   "fail": 4,
+   "fail": 6,
    "latency_ms": [],
    "last_ok": 0
   },
   "deepseek-ai/deepseek-v4-pro": {
    "ok": 0,
-   "fail": 4,
+   "fail": 5,
    "latency_ms": [],
    "last_ok": 0
   },
   "mistral-medium-3-5": {
-   "ok": 0,
-   "fail": 3,
-   "latency_ms": [],
-   "last_ok": 0
+   "ok": 1,
+   "fail": 4,
+   "latency_ms": [
+    6567
+   ],
+   "last_ok": 1787602616.9624348
   },
   "qwen/qwen3.5-122b-a10b": {
    "ok": 0,
-   "fail": 3,
+   "fail": 4,
    "latency_ms": [],
    "last_ok": 0
   },
   "thinkingmachines/inkling:free": {
    "ok": 0,
-   "fail": 3,
+   "fail": 4,
    "latency_ms": [],
    "last_ok": 0
   },
   "thinkingmachines/inkling-small:free": {
    "ok": 0,
-   "fail": 2,
+   "fail": 3,
    "latency_ms": [],
    "last_ok": 0
   },
@@ -302,5 +307,7 @@
    "last_ok": 0
   }
  },
- "cooldowns": {}
+ "cooldowns": {
+  "nvidia/nemotron-3.5-lightning:free": 1787927151.057348
+ }
 }
