@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-09-06T11:05:02Z",
+ "updated_at": "2026-09-06T15:32:11Z",
  "counts": {
-  "free_models": 450,
+  "free_models": 449,
   "with_intelligence": 0,
   "from_omniroute": 449,
-  "from_openrouter": 22
+  "from_openrouter": 21
  },
  "source_errors": [],
  "sources": {
@@ -4317,41 +4317,6 @@
     "stop",
     "temperature",
     "tools",
-    "top_p"
-   ],
-   "modality": "",
-   "source_catalog": "openrouter",
-   "free_status": "verified-free",
-   "intelligence": null
-  },
-  {
-   "id": "z-ai/glm-5.2:free",
-   "provider": "openrouter",
-   "name": "Z.ai: GLM 5.2 (free)",
-   "free_type": "recurring-monthly",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "openrouter",
-   "tos_verdict": null,
-   "context_length": 256000,
-   "description": "GLM 5.2 is a large-scale reasoning model from Z.ai. It supports text input and output with a 1M-token context window, and is suited for long-horizon agent workflows, project-level software engineering,...",
-   "supported_parameters": [
-    "frequency_penalty",
-    "include_reasoning",
-    "max_tokens",
-    "min_p",
-    "presence_penalty",
-    "reasoning",
-    "reasoning_effort",
-    "repetition_penalty",
-    "response_format",
-    "seed",
-    "stop",
-    "structured_outputs",
-    "temperature",
-    "tool_choice",
-    "tools",
-    "top_k",
     "top_p"
    ],
    "modality": "",
