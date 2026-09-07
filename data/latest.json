@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-09-07T12:44:34Z",
+ "updated_at": "2026-09-07T21:35:00Z",
  "counts": {
-  "free_models": 449,
+  "free_models": 447,
   "with_intelligence": 0,
   "from_omniroute": 449,
-  "from_openrouter": 21
+  "from_openrouter": 19
  },
  "source_errors": [],
  "sources": {
@@ -4143,60 +4143,6 @@
     "tools",
     "top_k",
     "top_logprobs",
-    "top_p"
-   ],
-   "modality": "",
-   "source_catalog": "openrouter",
-   "free_status": "verified-free",
-   "intelligence": null
-  },
-  {
-   "id": "minimax/minimax-m2.7:free",
-   "provider": "openrouter",
-   "name": "MiniMax: MiniMax M2.7 (free)",
-   "free_type": "recurring-monthly",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "openrouter",
-   "tos_verdict": null,
-   "context_length": 196608,
-   "description": "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic capabilities through multi-agent...",
-   "supported_parameters": [
-    "include_reasoning",
-    "max_tokens",
-    "reasoning",
-    "response_format",
-    "seed",
-    "temperature",
-    "tool_choice",
-    "tools",
-    "top_p"
-   ],
-   "modality": "",
-   "source_catalog": "openrouter",
-   "free_status": "verified-free",
-   "intelligence": null
-  },
-  {
-   "id": "minimax/minimax-m3:free",
-   "provider": "openrouter",
-   "name": "MiniMax: MiniMax M3 (free)",
-   "free_type": "recurring-monthly",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "openrouter",
-   "tos_verdict": null,
-   "context_length": 1048576,
-   "description": "MiniMax-M3 is a multimodal foundation model from MiniMax. It supports text, image, and video inputs with text output, a 1M-token context window, and is suited for long-horizon agentic work, coding,...",
-   "supported_parameters": [
-    "include_reasoning",
-    "max_tokens",
-    "reasoning",
-    "response_format",
-    "seed",
-    "temperature",
-    "tool_choice",
-    "tools",
     "top_p"
    ],
    "modality": "",
