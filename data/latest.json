@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-08T04:48:00Z",
+ "updated_at": "2026-09-08T11:27:13Z",
  "counts": {
   "free_models": 447,
   "with_intelligence": 0,
@@ -4226,6 +4226,7 @@
    "supported_parameters": [
     "frequency_penalty",
     "include_reasoning",
+    "logprobs",
     "max_tokens",
     "presence_penalty",
     "reasoning",
@@ -4234,6 +4235,7 @@
     "stop",
     "temperature",
     "tools",
+    "top_logprobs",
     "top_p"
    ],
    "modality": "",
