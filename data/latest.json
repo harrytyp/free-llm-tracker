@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-09-10T16:30:26Z",
+ "updated_at": "2026-09-10T20:56:30Z",
  "counts": {
-  "free_models": 449,
+  "free_models": 450,
   "with_intelligence": 0,
   "from_omniroute": 449,
-  "from_openrouter": 21
+  "from_openrouter": 22
  },
  "source_errors": [],
  "sources": {
@@ -4114,6 +4114,39 @@
    "intelligence": null
   },
   {
+   "id": "inclusionai/ling-3.0-flash-vl:free",
+   "provider": "openrouter",
+   "name": "inclusionAI: Ling 3.0 Flash VL (free)",
+   "free_type": "recurring-monthly",
+   "monthly_tokens": null,
+   "credit_tokens": null,
+   "pool_key": "openrouter",
+   "tos_verdict": null,
+   "context_length": 262144,
+   "description": "Ling 3.0 Flash VL builds on Ling 3.0 Flash (124B total / 5.5B active MoE from InclusionAI), further strengthening its language capabilities while adding native visual perception and advanced visual...",
+   "supported_parameters": [
+    "frequency_penalty",
+    "include_reasoning",
+    "logprobs",
+    "max_tokens",
+    "presence_penalty",
+    "reasoning",
+    "repetition_penalty",
+    "seed",
+    "stop",
+    "temperature",
+    "tool_choice",
+    "tools",
+    "top_k",
+    "top_logprobs",
+    "top_p"
+   ],
+   "modality": "",
+   "source_catalog": "openrouter",
+   "free_status": "verified-free",
+   "intelligence": null
+  },
+  {
    "id": "liquid/lfm-2.5-2.6b:free",
    "provider": "openrouter",
    "name": "LiquidAI: LFM2.5-2.6B (free)",
@@ -4288,7 +4321,6 @@
    "supported_parameters": [
     "frequency_penalty",
     "include_reasoning",
-    "logprobs",
     "max_tokens",
     "presence_penalty",
     "reasoning",
@@ -4297,7 +4329,6 @@
     "stop",
     "temperature",
     "tools",
-    "top_logprobs",
     "top_p"
    ],
    "modality": "",
