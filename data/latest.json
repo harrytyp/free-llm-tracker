@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-09-16T11:46:08Z",
+ "updated_at": "2026-09-16T17:06:35Z",
  "counts": {
-  "free_models": 451,
+  "free_models": 452,
   "with_intelligence": 0,
   "from_omniroute": 449,
-  "from_openrouter": 23
+  "from_openrouter": 24
  },
  "source_errors": [],
  "sources": {
@@ -4304,6 +4304,30 @@
    "pool_key": "openrouter-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
+   "intelligence": null
+  },
+  {
+   "id": "stealth/union-alpha",
+   "provider": "openrouter",
+   "name": "Union Alpha",
+   "free_type": "recurring-monthly",
+   "monthly_tokens": null,
+   "credit_tokens": null,
+   "pool_key": "openrouter",
+   "tos_verdict": null,
+   "context_length": 262144,
+   "description": "Union Alpha is a multimodal model built for research, coding, and agentic workflows, while delivering frontier-level performance across a broad range of general-purpose tasks. Union Alpha is a stealth model....",
+   "supported_parameters": [
+    "max_tokens",
+    "response_format",
+    "temperature",
+    "tool_choice",
+    "tools",
+    "top_p"
+   ],
+   "modality": "",
+   "source_catalog": "openrouter",
+   "free_status": "verified-free",
    "intelligence": null
   },
   {
