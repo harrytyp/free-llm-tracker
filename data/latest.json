@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-09-17T17:07:03Z",
+ "updated_at": "2026-09-17T21:28:31Z",
  "counts": {
-  "free_models": 452,
+  "free_models": 453,
   "with_intelligence": 0,
   "from_omniroute": 449,
-  "from_openrouter": 24
+  "from_openrouter": 25
  },
  "source_errors": [],
  "sources": {
@@ -4288,6 +4288,37 @@
     "temperature",
     "tool_choice",
     "tools"
+   ],
+   "modality": "",
+   "source_catalog": "openrouter",
+   "free_status": "verified-free",
+   "intelligence": null
+  },
+  {
+   "id": "qwen/qwen3.8-27b:free",
+   "provider": "openrouter",
+   "name": "Qwen: Qwen3.8 27B (free)",
+   "free_type": "recurring-monthly",
+   "monthly_tokens": null,
+   "credit_tokens": null,
+   "pool_key": "openrouter",
+   "tos_verdict": null,
+   "context_length": 262144,
+   "description": "Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thinking that can be...",
+   "supported_parameters": [
+    "frequency_penalty",
+    "include_reasoning",
+    "max_tokens",
+    "presence_penalty",
+    "reasoning",
+    "reasoning_effort",
+    "repetition_penalty",
+    "stop",
+    "structured_outputs",
+    "temperature",
+    "tool_choice",
+    "tools",
+    "top_p"
    ],
    "modality": "",
    "source_catalog": "openrouter",
