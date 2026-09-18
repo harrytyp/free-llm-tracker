@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-17T21:28:31Z",
+  "updated_at": "2026-09-18T04:51:49Z",
   "total_providers": 77,
   "providers": [
     {
@@ -236,6 +236,11 @@
           "name": "Auto (Best Available)"
         },
         {
+          "id": "deepseek/deepseek-v4-flash-0731:free",
+          "tps": null,
+          "name": "DeepSeek: DeepSeek V4 Flash 0731 (free)"
+        },
+        {
           "id": "dots-studio/dots-3-note-preview:free",
           "tps": null,
           "name": "Dots Studio: Dots3-Note Preview (free)"
@@ -249,11 +254,6 @@
           "id": "google/gemma-4-31b-it:free",
           "tps": null,
           "name": "Google: Gemma 4 31B (free)"
-        },
-        {
-          "id": "google/lyria-3-clip-preview",
-          "tps": null,
-          "name": "Google: Lyria 3 Clip Preview"
         }
       ],
       "free_types": {

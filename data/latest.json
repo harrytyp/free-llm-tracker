@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-17T21:28:31Z",
+ "updated_at": "2026-09-18T04:51:49Z",
  "counts": {
   "free_models": 453,
   "with_intelligence": 0,
@@ -2998,6 +2998,7 @@
    "supported_parameters": [
     "frequency_penalty",
     "include_reasoning",
+    "logit_bias",
     "logprobs",
     "max_completion_tokens",
     "max_tokens",
@@ -3921,6 +3922,42 @@
    "intelligence": null
   },
   {
+   "id": "deepseek/deepseek-v4-flash-0731:free",
+   "provider": "openrouter",
+   "name": "DeepSeek: DeepSeek V4 Flash 0731 (free)",
+   "free_type": "recurring-monthly",
+   "monthly_tokens": null,
+   "credit_tokens": null,
+   "pool_key": "openrouter",
+   "tos_verdict": null,
+   "context_length": 1048576,
+   "description": "DeepSeek V4 Flash 0731 is a sparse mixture-of-experts model from DeepSeek, with 13B active parameters out of 284B total. This re-post-trained revision is suited for coding, reasoning, and agent workflows....",
+   "supported_parameters": [
+    "frequency_penalty",
+    "include_reasoning",
+    "logit_bias",
+    "max_tokens",
+    "min_p",
+    "presence_penalty",
+    "reasoning",
+    "reasoning_effort",
+    "repetition_penalty",
+    "response_format",
+    "seed",
+    "stop",
+    "structured_outputs",
+    "temperature",
+    "tool_choice",
+    "tools",
+    "top_k",
+    "top_p"
+   ],
+   "modality": "",
+   "source_catalog": "openrouter",
+   "free_status": "verified-free",
+   "intelligence": null
+  },
+  {
    "id": "dots-studio/dots-3-note-preview:free",
    "provider": "openrouter",
    "name": "Dots Studio: Dots3-Note Preview (free)",
@@ -4335,30 +4372,6 @@
    "pool_key": "openrouter-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "stealth/union-alpha",
-   "provider": "openrouter",
-   "name": "Union Alpha",
-   "free_type": "recurring-monthly",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "openrouter",
-   "tos_verdict": null,
-   "context_length": 262144,
-   "description": "Union Alpha is a multimodal model built for research, coding, and agentic workflows, while delivering frontier-level performance across a broad range of general-purpose tasks. Union Alpha is a stealth model....",
-   "supported_parameters": [
-    "max_tokens",
-    "response_format",
-    "temperature",
-    "tool_choice",
-    "tools",
-    "top_p"
-   ],
-   "modality": "",
-   "source_catalog": "openrouter",
-   "free_status": "verified-free",
    "intelligence": null
   },
   {
