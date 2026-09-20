@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T20:48:46Z",
+  "updated_at": "2026-09-20T05:00:17Z",
   "total_providers": 77,
   "providers": [
     {
@@ -226,7 +226,7 @@
     },
     {
       "provider": "openrouter",
-      "count": 20,
+      "count": 19,
       "measured": 0,
       "tps_values": [],
       "top_models": [
@@ -234,11 +234,6 @@
           "id": "auto",
           "tps": null,
           "name": "Auto (Best Available)"
-        },
-        {
-          "id": "deepseek/deepseek-v4-flash-0731:free",
-          "tps": null,
-          "name": "DeepSeek: DeepSeek V4 Flash 0731 (free)"
         },
         {
           "id": "dots-studio/dots-3-note-preview:free",
@@ -254,11 +249,16 @@
           "id": "google/gemma-4-31b-it:free",
           "tps": null,
           "name": "Google: Gemma 4 31B (free)"
+        },
+        {
+          "id": "google/lyria-3-clip-preview",
+          "tps": null,
+          "name": "Google: Lyria 3 Clip Preview"
         }
       ],
       "free_types": {
         "recurring-daily": 2,
-        "recurring-monthly": 18
+        "recurring-monthly": 17
       },
       "avg_tps": null
     },
