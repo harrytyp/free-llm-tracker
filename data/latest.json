@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-22T21:25:37Z",
+ "updated_at": "2026-09-23T11:48:14Z",
  "counts": {
   "free_models": 452,
   "with_intelligence": 0,
@@ -4175,7 +4175,8 @@
     "tool_choice",
     "tools",
     "top_k",
-    "top_logprobs"
+    "top_logprobs",
+    "top_p"
    ],
    "modality": "",
    "source_catalog": "openrouter",
