@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T13:29:25Z",
+  "updated_at": "2026-10-01T22:45:48Z",
   "total_providers": 75,
   "providers": [
     {
@@ -225,6 +225,44 @@
       "avg_tps": null
     },
     {
+      "provider": "openrouter",
+      "count": 16,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "apodex/apodex-1.1-mini:free",
+          "tps": null,
+          "name": "Apodex: Apodex 1.1 Mini (free)"
+        },
+        {
+          "id": "auto",
+          "tps": null,
+          "name": "Auto (Best Available)"
+        },
+        {
+          "id": "dots-studio/dots-3-note-preview:free",
+          "tps": null,
+          "name": "Dots Studio: Dots3-Note Preview (free)"
+        },
+        {
+          "id": "google/gemma-4-26b-a4b-it:free",
+          "tps": null,
+          "name": "Google: Gemma 4 26B A4B  (free)"
+        },
+        {
+          "id": "google/gemma-4-31b-it:free",
+          "tps": null,
+          "name": "Google: Gemma 4 31B (free)"
+        }
+      ],
+      "free_types": {
+        "recurring-monthly": 13,
+        "recurring-daily": 3
+      },
+      "avg_tps": null
+    },
+    {
       "provider": "vertex",
       "count": 16,
       "measured": 0,
@@ -258,44 +296,6 @@
       ],
       "free_types": {
         "one-time-initial": 16
-      },
-      "avg_tps": null
-    },
-    {
-      "provider": "openrouter",
-      "count": 15,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "auto",
-          "tps": null,
-          "name": "Auto (Best Available)"
-        },
-        {
-          "id": "dots-studio/dots-3-note-preview:free",
-          "tps": null,
-          "name": "Dots Studio: Dots3-Note Preview (free)"
-        },
-        {
-          "id": "google/gemma-4-26b-a4b-it:free",
-          "tps": null,
-          "name": "Google: Gemma 4 26B A4B  (free)"
-        },
-        {
-          "id": "google/gemma-4-31b-it:free",
-          "tps": null,
-          "name": "Google: Gemma 4 31B (free)"
-        },
-        {
-          "id": "google/lyria-3-clip-preview",
-          "tps": null,
-          "name": "Google: Lyria 3 Clip Preview"
-        }
-      ],
-      "free_types": {
-        "recurring-daily": 3,
-        "recurring-monthly": 12
       },
       "avg_tps": null
     },
