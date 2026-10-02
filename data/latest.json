@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-10-02T12:48:08Z",
+ "updated_at": "2026-10-02T22:19:54Z",
  "counts": {
-  "free_models": 451,
+  "free_models": 452,
   "with_intelligence": 0,
   "from_omniroute": 477,
-  "from_openrouter": 21
+  "from_openrouter": 22
  },
  "source_errors": [],
  "sources": {
@@ -3959,6 +3959,39 @@
    "tos_verdict": null,
    "context_length": 262144,
    "description": "Ling 3.0 Flash Sante is a health and medicine-focused mixture-of-experts model from InclusionAI, built on Ling 3.0 Flash with 5.1B active parameters out of 124B total. It is designed for...",
+   "supported_parameters": [
+    "frequency_penalty",
+    "include_reasoning",
+    "logprobs",
+    "max_tokens",
+    "presence_penalty",
+    "reasoning",
+    "repetition_penalty",
+    "seed",
+    "stop",
+    "temperature",
+    "tool_choice",
+    "tools",
+    "top_k",
+    "top_logprobs",
+    "top_p"
+   ],
+   "modality": "",
+   "source_catalog": "openrouter",
+   "free_status": "verified-free",
+   "intelligence": null
+  },
+  {
+   "id": "inclusionai/ling-3.1-flash",
+   "provider": "openrouter",
+   "name": "inclusionAI: Ling 3.1 Flash",
+   "free_type": "recurring-monthly",
+   "monthly_tokens": null,
+   "credit_tokens": null,
+   "pool_key": "openrouter",
+   "tos_verdict": null,
+   "context_length": 262144,
+   "description": "Ling 3.1 Flash is a hybrid reasoning mixture-of-experts model from inclusionAI, with 25B active parameters out of 560B total.",
    "supported_parameters": [
     "frequency_penalty",
     "include_reasoning",
