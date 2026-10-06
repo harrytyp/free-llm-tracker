@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-10-05T14:54:30Z",
+ "updated_at": "2026-10-06T00:08:12Z",
  "counts": {
-  "free_models": 452,
+  "free_models": 450,
   "with_intelligence": 0,
   "from_omniroute": 477,
-  "from_openrouter": 22
+  "from_openrouter": 20
  },
  "source_errors": [],
  "sources": {
@@ -4102,37 +4102,6 @@
    "intelligence": null
   },
   {
-   "id": "qwen/qwen3.8-27b:free",
-   "provider": "openrouter",
-   "name": "Qwen: Qwen3.8 27B (free)",
-   "free_type": "recurring-monthly",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "openrouter",
-   "tos_verdict": null,
-   "context_length": 262144,
-   "description": "Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thinking that can be...",
-   "supported_parameters": [
-    "frequency_penalty",
-    "include_reasoning",
-    "max_tokens",
-    "presence_penalty",
-    "reasoning",
-    "reasoning_effort",
-    "repetition_penalty",
-    "stop",
-    "structured_outputs",
-    "temperature",
-    "tool_choice",
-    "tools",
-    "top_p"
-   ],
-   "modality": "",
-   "source_catalog": "openrouter",
-   "free_status": "verified-free",
-   "intelligence": null
-  },
-  {
    "id": "stealth/ox-alpha",
    "provider": "openrouter",
    "name": "Stealth Ox Alpha (free)",
@@ -4142,33 +4111,6 @@
    "pool_key": "openrouter-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "stealth/space-bunny-alpha",
-   "provider": "openrouter",
-   "name": "Space Bunny Alpha",
-   "free_type": "recurring-monthly",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "openrouter",
-   "tos_verdict": null,
-   "context_length": 1000000,
-   "description": "Space Bunny Alpha is an anonymous large model with blazing-fast inference, strong coding capabilities and native multimodal input support. It delivers adjustable reasoning effort, and a 1M-token context window. Space...",
-   "supported_parameters": [
-    "include_reasoning",
-    "max_tokens",
-    "reasoning",
-    "reasoning_effort",
-    "response_format",
-    "temperature",
-    "tool_choice",
-    "tools",
-    "top_p"
-   ],
-   "modality": "",
-   "source_catalog": "openrouter",
-   "free_status": "verified-free",
    "intelligence": null
   },
   {
