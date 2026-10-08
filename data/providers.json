@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-08T13:44:32Z",
+  "updated_at": "2026-10-08T23:25:53Z",
   "total_providers": 75,
   "providers": [
     {
@@ -263,7 +263,7 @@
     },
     {
       "provider": "openrouter",
-      "count": 15,
+      "count": 14,
       "measured": 0,
       "tps_values": [],
       "top_models": [
@@ -294,7 +294,7 @@
         }
       ],
       "free_types": {
-        "recurring-monthly": 12,
+        "recurring-monthly": 11,
         "recurring-daily": 3
       },
       "avg_tps": null
