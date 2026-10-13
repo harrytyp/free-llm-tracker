@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-10-13T14:21:43Z",
+ "updated_at": "2026-10-13T22:53:26Z",
  "counts": {
-  "free_models": 449,
+  "free_models": 447,
   "with_intelligence": 0,
   "from_omniroute": 477,
-  "from_openrouter": 19
+  "from_openrouter": 17
  },
  "source_errors": [],
  "sources": {
@@ -3777,39 +3777,6 @@
    "intelligence": null
   },
   {
-   "id": "apodex/apodex-1.1-mini:free",
-   "provider": "openrouter",
-   "name": "Apodex: Apodex 1.1 Mini (free)",
-   "free_type": "recurring-monthly",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "openrouter",
-   "tos_verdict": null,
-   "context_length": 262144,
-   "description": "Apodex 1.1 Mini is a reasoning-first model from Apodex, built for complex, long-horizon research and forecasting tasks. It works directly with files, data, code, and tools to produce verifiable results,...",
-   "supported_parameters": [
-    "frequency_penalty",
-    "include_reasoning",
-    "max_tokens",
-    "presence_penalty",
-    "reasoning",
-    "repetition_penalty",
-    "response_format",
-    "seed",
-    "stop",
-    "structured_outputs",
-    "temperature",
-    "tool_choice",
-    "tools",
-    "top_k",
-    "top_p"
-   ],
-   "modality": "",
-   "source_catalog": "openrouter",
-   "free_status": "verified-free",
-   "intelligence": null
-  },
-  {
    "id": "auto",
    "provider": "openrouter",
    "name": "Auto (Best Available)",
@@ -3949,39 +3916,6 @@
    "intelligence": null
   },
   {
-   "id": "inclusionai/ling-3.1-flash",
-   "provider": "openrouter",
-   "name": "inclusionAI: Ling 3.1 Flash",
-   "free_type": "recurring-monthly",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "openrouter",
-   "tos_verdict": null,
-   "context_length": 262144,
-   "description": "Ling 3.1 Flash is a hybrid reasoning mixture-of-experts model from inclusionAI, with 25B active parameters out of 560B total.",
-   "supported_parameters": [
-    "frequency_penalty",
-    "include_reasoning",
-    "logprobs",
-    "max_tokens",
-    "presence_penalty",
-    "reasoning",
-    "repetition_penalty",
-    "seed",
-    "stop",
-    "temperature",
-    "tool_choice",
-    "tools",
-    "top_k",
-    "top_logprobs",
-    "top_p"
-   ],
-   "modality": "",
-   "source_catalog": "openrouter",
-   "free_status": "verified-free",
-   "intelligence": null
-  },
-  {
    "id": "liquid/lfm-2.5-2.6b:free",
    "provider": "openrouter",
    "name": "LiquidAI: LFM2.5-2.6B (free)",
@@ -4012,8 +3946,7 @@
     "tool_choice",
     "tools",
     "top_k",
-    "top_logprobs",
-    "top_p"
+    "top_logprobs"
    ],
    "modality": "",
    "intelligence": null
