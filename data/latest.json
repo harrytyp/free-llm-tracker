@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-10-15T11:40:50Z",
+ "updated_at": "2026-10-15T17:08:33Z",
  "counts": {
-  "free_models": 447,
+  "free_models": 448,
   "with_intelligence": 0,
   "from_omniroute": 477,
-  "from_openrouter": 17
+  "from_openrouter": 18
  },
  "source_errors": [],
  "sources": {
@@ -3967,6 +3967,34 @@
     "max_tokens",
     "reasoning",
     "seed",
+    "temperature",
+    "tool_choice",
+    "tools",
+    "top_p"
+   ],
+   "modality": "",
+   "source_catalog": "openrouter",
+   "free_status": "verified-free",
+   "intelligence": null
+  },
+  {
+   "id": "nvidia/nemotron-3.5-super-vl:free",
+   "provider": "openrouter",
+   "name": "NVIDIA: Nemotron 3.5 Super VL (free)",
+   "free_type": "recurring-monthly",
+   "monthly_tokens": null,
+   "credit_tokens": null,
+   "pool_key": "openrouter",
+   "tos_verdict": null,
+   "context_length": 1000000,
+   "description": "NVIDIA Nemotron 3.5 Super VL is an open multimodal mixture-of-experts model from NVIDIA, with 12B active parameters out of 120B total. It takes text, images, documents, GUI screenshots, and video...",
+   "supported_parameters": [
+    "include_reasoning",
+    "max_tokens",
+    "reasoning",
+    "response_format",
+    "seed",
+    "structured_outputs",
     "temperature",
     "tool_choice",
     "tools",
