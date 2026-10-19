@@ -1,9 +1,9 @@
 {
- "updated_at": "2026-10-19T13:33:55Z",
+ "updated_at": "2026-10-19T22:27:21Z",
  "counts": {
-  "free_models": 450,
+  "free_models": 428,
   "with_intelligence": 0,
-  "from_omniroute": 477,
+  "from_omniroute": 455,
   "from_openrouter": 20
  },
  "source_errors": [],
@@ -171,9 +171,9 @@
    "intelligence": null
   },
   {
-   "id": "gemini-3.7-flash-high",
+   "id": "gemini-3.8-flash-high",
    "provider": "agy",
-   "name": "Gemini 3.7 Flash (High)",
+   "name": "Gemini 3.8 Flash (High)",
    "free_type": "keyless",
    "monthly_tokens": 0,
    "credit_tokens": 0,
@@ -183,9 +183,9 @@
    "intelligence": null
   },
   {
-   "id": "gemini-3.7-flash-low",
+   "id": "gemini-3.8-flash-low",
    "provider": "agy",
-   "name": "Gemini 3.7 Flash (Low)",
+   "name": "Gemini 3.8 Flash (Low)",
    "free_type": "keyless",
    "monthly_tokens": 0,
    "credit_tokens": 0,
@@ -195,9 +195,9 @@
    "intelligence": null
   },
   {
-   "id": "gemini-3.7-flash-medium",
+   "id": "gemini-3.8-flash-medium",
    "provider": "agy",
-   "name": "Gemini 3.7 Flash (Medium)",
+   "name": "Gemini 3.8 Flash (Medium)",
    "free_type": "keyless",
    "monthly_tokens": 0,
    "credit_tokens": 0,
@@ -1275,36 +1275,12 @@
    "intelligence": null
   },
   {
-   "id": "Qwen/Qwen2.5-72B-Instruct",
-   "provider": "bytez",
-   "name": "Qwen/Qwen2.5-72B-Instruct",
-   "free_type": "recurring-credit",
-   "monthly_tokens": 0,
-   "credit_tokens": 1000000,
-   "pool_key": "bytez",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "meta-llama/Llama-3.3-70B-Instruct",
-   "provider": "bytez",
-   "name": "meta-llama/Llama-3.3-70B-Instruct",
-   "free_type": "recurring-credit",
-   "monthly_tokens": 0,
-   "credit_tokens": 1000000,
-   "pool_key": "bytez",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
    "id": "mistralai/Mistral-7B-Instruct-v0.3",
    "provider": "bytez",
    "name": "mistralai/Mistral-7B-Instruct-v0.3",
    "free_type": "recurring-credit",
    "monthly_tokens": 0,
-   "credit_tokens": 1000000,
+   "credit_tokens": 0,
    "pool_key": "bytez",
    "tos_verdict": null,
    "source_catalog": "omniroute",
@@ -2863,18 +2839,6 @@
    "intelligence": null
   },
   {
-   "id": "openrouter/auto-beta",
-   "provider": "kilo-gateway",
-   "name": "OpenRouter Auto Router (beta)",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "kilo-gateway-free",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
    "id": "openrouter/free",
    "provider": "kilo-gateway",
    "name": "OpenRouter Free Models Router",
@@ -3381,30 +3345,6 @@
    "intelligence": null
   },
   {
-   "id": "Hermes-4-405B",
-   "provider": "nous-research",
-   "name": "Hermes 4 405B (Nous Research)",
-   "free_type": "recurring-credit",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "nous-research",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "Hermes-4-70B",
-   "provider": "nous-research",
-   "name": "Hermes 4 70B (Nous Research)",
-   "free_type": "recurring-credit",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "nous-research",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
    "id": "ai-ai/llama-3.1-8b-instruct",
    "provider": "novita",
    "name": "Llama 3.1 8B",
@@ -3633,9 +3573,9 @@
    "intelligence": null
   },
   {
-   "id": "opencode/deepseek-v4-flash-free",
+   "id": "opencode/deepseek-v4.1-flash-free",
    "provider": "opencode-zen",
-   "name": "DeepSeek V4 Flash (free)",
+   "name": "DeepSeek V4.1 Flash (free)",
    "free_type": "recurring-uncapped",
    "monthly_tokens": 0,
    "credit_tokens": 0,
@@ -3688,90 +3628,6 @@
    "monthly_tokens": 0,
    "credit_tokens": 0,
    "pool_key": "opencode-zen-free",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "big-pickle",
-   "provider": "opencode",
-   "name": "Big Pickle",
-   "free_type": "keyless",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "opencode",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "deepseek-v4-flash-free",
-   "provider": "opencode",
-   "name": "DeepSeek V4 Flash Free",
-   "free_type": "keyless",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "opencode",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "ling-2.6-1t-free",
-   "provider": "opencode",
-   "name": "Ling 2.6 Free",
-   "free_type": "keyless",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "opencode",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "minimax-m2.5-free",
-   "provider": "opencode",
-   "name": "MiniMax M2.5 Free",
-   "free_type": "keyless",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "opencode",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "nemotron-3-super-free",
-   "provider": "opencode",
-   "name": "Nemotron 3 Super Free",
-   "free_type": "keyless",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "opencode",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "qwen3.6-plus-free",
-   "provider": "opencode",
-   "name": "Qwen3.6 Plus Free",
-   "free_type": "keyless",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "opencode",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "trinity-large-preview-free",
-   "provider": "opencode",
-   "name": "Trinity Large Preview Free",
-   "free_type": "keyless",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "opencode",
    "tos_verdict": null,
    "source_catalog": "omniroute",
    "intelligence": null
@@ -4725,9 +4581,9 @@
    "intelligence": null
   },
   {
-   "id": "DeepSeek-V3.2",
+   "id": "DeepSeek-V3.1",
    "provider": "sambanova",
-   "name": "DeepSeek-V3.2",
+   "name": "DeepSeek-V3.1",
    "free_type": "recurring-daily",
    "monthly_tokens": 6000000,
    "credit_tokens": 0,
@@ -4737,9 +4593,9 @@
    "intelligence": null
   },
   {
-   "id": "Llama-4-Maverick-17B-128E-Instruct",
+   "id": "DeepSeek-V3.2",
    "provider": "sambanova",
-   "name": "Llama-4-Maverick-17B-128E-Instruct",
+   "name": "DeepSeek-V3.2",
    "free_type": "recurring-daily",
    "monthly_tokens": 6000000,
    "credit_tokens": 0,
@@ -4761,9 +4617,9 @@
    "intelligence": null
   },
   {
-   "id": "MiniMax-M2.7",
+   "id": "gemma-4-31B-it",
    "provider": "sambanova",
-   "name": "MiniMax-M2.7",
+   "name": "gemma-4-31B-it",
    "free_type": "recurring-daily",
    "monthly_tokens": 6000000,
    "credit_tokens": 0,
@@ -4924,126 +4780,6 @@
    "monthly_tokens": 0,
    "credit_tokens": 0,
    "pool_key": "sensenova",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "Qwen/Qwen3-235B-A22B-Instruct-2507",
-   "provider": "siliconflow",
-   "name": "Qwen3 235B",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "siliconflow",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "Qwen/Qwen3-32B",
-   "provider": "siliconflow",
-   "name": "Qwen3 32B",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "siliconflow",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
-   "provider": "siliconflow",
-   "name": "Qwen3 Coder 480B",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "siliconflow",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "baidu/ERNIE-4.5-300B-A47B",
-   "provider": "siliconflow",
-   "name": "ERNIE 4.5 300B",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "siliconflow",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "deepseek-ai/DeepSeek-R1",
-   "provider": "siliconflow",
-   "name": "DeepSeek R1",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "siliconflow",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "deepseek-ai/DeepSeek-V3.1",
-   "provider": "siliconflow",
-   "name": "DeepSeek V3.1",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "siliconflow",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "deepseek-ai/DeepSeek-V3.2",
-   "provider": "siliconflow",
-   "name": "DeepSeek V3.2",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "siliconflow",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "moonshotai/Kimi-K2.5",
-   "provider": "siliconflow",
-   "name": "Kimi K2.5",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "siliconflow",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "openai/gpt-oss-120b",
-   "provider": "siliconflow",
-   "name": "GPT OSS 120B",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "siliconflow",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "zai-org/GLM-4.7",
-   "provider": "siliconflow",
-   "name": "GLM 4.7",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "siliconflow",
    "tos_verdict": null,
    "source_catalog": "omniroute",
    "intelligence": null
@@ -5361,9 +5097,9 @@
    "intelligence": null
   },
   {
-   "id": "Lorbus/Qwen3.6-27B-int4-AutoRound",
+   "id": "turboderp/Qwen3.8-27B-exl3",
    "provider": "uncloseai",
-   "name": "Qwen3.6 27B int4 AutoRound (\ud83c\udd93 Free)",
+   "name": "Qwen3.8 27B exl3 (\ud83c\udd93 Free)",
    "free_type": "keyless",
    "monthly_tokens": 0,
    "credit_tokens": 0,

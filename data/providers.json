@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-19T13:33:55Z",
-  "total_providers": 75,
+  "updated_at": "2026-10-19T22:27:21Z",
+  "total_providers": 72,
   "providers": [
     {
       "provider": "bazaarlink",
@@ -374,43 +374,6 @@
       "avg_tps": null
     },
     {
-      "provider": "siliconflow",
-      "count": 10,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "Qwen/Qwen3-235B-A22B-Instruct-2507",
-          "tps": null,
-          "name": "Qwen3 235B"
-        },
-        {
-          "id": "Qwen/Qwen3-32B",
-          "tps": null,
-          "name": "Qwen3 32B"
-        },
-        {
-          "id": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
-          "tps": null,
-          "name": "Qwen3 Coder 480B"
-        },
-        {
-          "id": "baidu/ERNIE-4.5-300B-A47B",
-          "tps": null,
-          "name": "ERNIE 4.5 300B"
-        },
-        {
-          "id": "deepseek-ai/DeepSeek-R1",
-          "tps": null,
-          "name": "DeepSeek R1"
-        }
-      ],
-      "free_types": {
-        "recurring-uncapped": 10
-      },
-      "avg_tps": null
-    },
-    {
       "provider": "agy",
       "count": 9,
       "measured": 0,
@@ -437,9 +400,9 @@
           "name": "Gemini 3.1 Pro (Low)"
         },
         {
-          "id": "gemini-3.7-flash-high",
+          "id": "gemini-3.8-flash-high",
           "tps": null,
-          "name": "Gemini 3.7 Flash (High)"
+          "name": "Gemini 3.8 Flash (High)"
         }
       ],
       "free_types": {
@@ -522,43 +485,6 @@
       "avg_tps": null
     },
     {
-      "provider": "kilo-gateway",
-      "count": 9,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "cohere/north-mini-code:free",
-          "tps": null,
-          "name": "Cohere North Mini Code (free)"
-        },
-        {
-          "id": "kilo-auto/free",
-          "tps": null,
-          "name": "Kilo Auto Free (auto-router)"
-        },
-        {
-          "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-          "tps": null,
-          "name": "NVIDIA Nemotron 3 Nano Omni (free)"
-        },
-        {
-          "id": "nvidia/nemotron-3-super-120b-a12b:free",
-          "tps": null,
-          "name": "NVIDIA Nemotron 3 Super (free)"
-        },
-        {
-          "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
-          "tps": null,
-          "name": "NVIDIA Nemotron 3 Ultra (free)"
-        }
-      ],
-      "free_types": {
-        "recurring-uncapped": 9
-      },
-      "avg_tps": null
-    },
-    {
       "provider": "qoder",
       "count": 9,
       "measured": 0,
@@ -629,6 +555,43 @@
       ],
       "free_types": {
         "one-time-initial": 8
+      },
+      "avg_tps": null
+    },
+    {
+      "provider": "kilo-gateway",
+      "count": 8,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "cohere/north-mini-code:free",
+          "tps": null,
+          "name": "Cohere North Mini Code (free)"
+        },
+        {
+          "id": "kilo-auto/free",
+          "tps": null,
+          "name": "Kilo Auto Free (auto-router)"
+        },
+        {
+          "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+          "tps": null,
+          "name": "NVIDIA Nemotron 3 Nano Omni (free)"
+        },
+        {
+          "id": "nvidia/nemotron-3-super-120b-a12b:free",
+          "tps": null,
+          "name": "NVIDIA Nemotron 3 Super (free)"
+        },
+        {
+          "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+          "tps": null,
+          "name": "NVIDIA Nemotron 3 Ultra (free)"
+        }
+      ],
+      "free_types": {
+        "recurring-uncapped": 8
       },
       "avg_tps": null
     },
@@ -777,43 +740,6 @@
       ],
       "free_types": {
         "recurring-monthly": 7
-      },
-      "avg_tps": null
-    },
-    {
-      "provider": "opencode",
-      "count": 7,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "big-pickle",
-          "tps": null,
-          "name": "Big Pickle"
-        },
-        {
-          "id": "deepseek-v4-flash-free",
-          "tps": null,
-          "name": "DeepSeek V4 Flash Free"
-        },
-        {
-          "id": "ling-2.6-1t-free",
-          "tps": null,
-          "name": "Ling 2.6 Free"
-        },
-        {
-          "id": "minimax-m2.5-free",
-          "tps": null,
-          "name": "MiniMax M2.5 Free"
-        },
-        {
-          "id": "nemotron-3-super-free",
-          "tps": null,
-          "name": "Nemotron 3 Super Free"
-        }
-      ],
-      "free_types": {
-        "keyless": 7
       },
       "avg_tps": null
     },
@@ -1014,9 +940,9 @@
           "name": "Big Pickle (stealth)"
         },
         {
-          "id": "opencode/deepseek-v4-flash-free",
+          "id": "opencode/deepseek-v4.1-flash-free",
           "tps": null,
-          "name": "DeepSeek V4 Flash (free)"
+          "name": "DeepSeek V4.1 Flash (free)"
         },
         {
           "id": "opencode/mimo-v2.5-free",
@@ -1194,14 +1120,14 @@
       "tps_values": [],
       "top_models": [
         {
+          "id": "DeepSeek-V3.1",
+          "tps": null,
+          "name": "DeepSeek-V3.1"
+        },
+        {
           "id": "DeepSeek-V3.2",
           "tps": null,
           "name": "DeepSeek-V3.2"
-        },
-        {
-          "id": "Llama-4-Maverick-17B-128E-Instruct",
-          "tps": null,
-          "name": "Llama-4-Maverick-17B-128E-Instruct"
         },
         {
           "id": "Meta-Llama-3.3-70B-Instruct",
@@ -1209,9 +1135,9 @@
           "name": "Meta-Llama-3.3-70B-Instruct"
         },
         {
-          "id": "MiniMax-M2.7",
+          "id": "gemma-4-31B-it",
           "tps": null,
-          "name": "MiniMax-M2.7"
+          "name": "gemma-4-31B-it"
         },
         {
           "id": "gpt-oss-120b",
@@ -1495,33 +1421,6 @@
       ],
       "free_types": {
         "keyless": 3
-      },
-      "avg_tps": null
-    },
-    {
-      "provider": "bytez",
-      "count": 3,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "Qwen/Qwen2.5-72B-Instruct",
-          "tps": null,
-          "name": "Qwen/Qwen2.5-72B-Instruct"
-        },
-        {
-          "id": "meta-llama/Llama-3.3-70B-Instruct",
-          "tps": null,
-          "name": "meta-llama/Llama-3.3-70B-Instruct"
-        },
-        {
-          "id": "mistralai/Mistral-7B-Instruct-v0.3",
-          "tps": null,
-          "name": "mistralai/Mistral-7B-Instruct-v0.3"
-        }
-      ],
-      "free_types": {
-        "recurring-credit": 3
       },
       "avg_tps": null
     },
@@ -1815,28 +1714,6 @@
       "avg_tps": null
     },
     {
-      "provider": "nous-research",
-      "count": 2,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "Hermes-4-405B",
-          "tps": null,
-          "name": "Hermes 4 405B (Nous Research)"
-        },
-        {
-          "id": "Hermes-4-70B",
-          "tps": null,
-          "name": "Hermes 4 70B (Nous Research)"
-        }
-      ],
-      "free_types": {
-        "recurring-credit": 2
-      },
-      "avg_tps": null
-    },
-    {
       "provider": "reka",
       "count": 2,
       "measured": 0,
@@ -1889,6 +1766,23 @@
       ],
       "free_types": {
         "recurring-uncapped": 1
+      },
+      "avg_tps": null
+    },
+    {
+      "provider": "bytez",
+      "count": 1,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "mistralai/Mistral-7B-Instruct-v0.3",
+          "tps": null,
+          "name": "mistralai/Mistral-7B-Instruct-v0.3"
+        }
+      ],
+      "free_types": {
+        "recurring-credit": 1
       },
       "avg_tps": null
     },
@@ -2154,9 +2048,9 @@
       "tps_values": [],
       "top_models": [
         {
-          "id": "Lorbus/Qwen3.6-27B-int4-AutoRound",
+          "id": "turboderp/Qwen3.8-27B-exl3",
           "tps": null,
-          "name": "Qwen3.6 27B int4 AutoRound (🆓 Free)"
+          "name": "Qwen3.8 27B exl3 (🆓 Free)"
         }
       ],
       "free_types": {
