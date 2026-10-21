@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-10-21T17:20:36Z",
+ "updated_at": "2026-10-21T21:48:39Z",
  "counts": {
-  "free_models": 428,
+  "free_models": 429,
   "with_intelligence": 0,
   "from_omniroute": 455,
-  "from_openrouter": 20
+  "from_openrouter": 21
  },
  "source_errors": [],
  "sources": {
@@ -3906,6 +3906,37 @@
     "temperature",
     "tool_choice",
     "tools"
+   ],
+   "modality": "",
+   "source_catalog": "openrouter",
+   "free_status": "verified-free",
+   "intelligence": null
+  },
+  {
+   "id": "recursive/flint-v1.0:free",
+   "provider": "openrouter",
+   "name": "Recursive: Flint (free)",
+   "free_type": "recurring-monthly",
+   "monthly_tokens": null,
+   "credit_tokens": null,
+   "pool_key": "openrouter",
+   "tos_verdict": null,
+   "context_length": 262144,
+   "description": "Flint is an open-weight mixture-of-experts model from Recursive, with about 2.5B active parameters out of 40B total, built by Recursive's autoresearch system Eureka Machine for coding agents. It is suited...",
+   "supported_parameters": [
+    "include_reasoning",
+    "logprobs",
+    "max_tokens",
+    "reasoning",
+    "response_format",
+    "seed",
+    "stop",
+    "structured_outputs",
+    "temperature",
+    "tool_choice",
+    "tools",
+    "top_logprobs",
+    "top_p"
    ],
    "modality": "",
    "source_catalog": "openrouter",
