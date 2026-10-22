@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-10-22T12:03:30Z",
+ "updated_at": "2026-10-22T17:17:59Z",
  "counts": {
-  "free_models": 429,
+  "free_models": 428,
   "with_intelligence": 0,
   "from_omniroute": 455,
-  "from_openrouter": 21
+  "from_openrouter": 20
  },
  "source_errors": [],
  "sources": {
@@ -3805,33 +3805,6 @@
     "top_logprobs"
    ],
    "modality": "",
-   "intelligence": null
-  },
-  {
-   "id": "minimax/minimax-m3.1-flash:free",
-   "provider": "openrouter",
-   "name": "MiniMax: MiniMax M3.1 Flash (free)",
-   "free_type": "recurring-monthly",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "openrouter",
-   "tos_verdict": null,
-   "context_length": 1000000,
-   "description": "MiniMax-M3.1-Flash is a multimodal model from MiniMax. Compared with M3, it delivers significant improvements across multiple benchmarks, particularly in complex agentic tasks, coding, and cybersecurity. It is built for complex,...",
-   "supported_parameters": [
-    "include_reasoning",
-    "max_tokens",
-    "reasoning",
-    "reasoning_effort",
-    "response_format",
-    "temperature",
-    "tool_choice",
-    "tools",
-    "top_p"
-   ],
-   "modality": "",
-   "source_catalog": "openrouter",
-   "free_status": "verified-free",
    "intelligence": null
   },
   {
