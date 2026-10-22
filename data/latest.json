@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-21T21:48:39Z",
+ "updated_at": "2026-10-22T05:00:17Z",
  "counts": {
   "free_models": 429,
   "with_intelligence": 0,
@@ -3931,9 +3931,7 @@
     "response_format",
     "seed",
     "stop",
-    "structured_outputs",
     "temperature",
-    "tool_choice",
     "tools",
     "top_logprobs",
     "top_p"
