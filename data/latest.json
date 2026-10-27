@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-10-27T05:15:04Z",
+ "updated_at": "2026-10-27T12:24:02Z",
  "counts": {
-  "free_models": 428,
+  "free_models": 427,
   "with_intelligence": 0,
   "from_omniroute": 455,
-  "from_openrouter": 20
+  "from_openrouter": 19
  },
  "source_errors": [],
  "sources": {
@@ -2750,35 +2750,6 @@
     "max_tokens",
     "reasoning",
     "seed",
-    "temperature",
-    "tool_choice",
-    "tools",
-    "top_p"
-   ],
-   "modality": "",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/nemotron-3-super-120b-a12b:free",
-   "provider": "kilo-gateway",
-   "name": "NVIDIA Nemotron 3 Super (free)",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "kilo-gateway-free",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "free_status": "verified-free",
-   "context_length": 262144,
-   "description": "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications. Built on a hybrid Mamba-Transformer...",
-   "supported_parameters": [
-    "include_reasoning",
-    "max_tokens",
-    "reasoning",
-    "reasoning_effort",
-    "response_format",
-    "seed",
-    "structured_outputs",
     "temperature",
     "tool_choice",
     "tools",
