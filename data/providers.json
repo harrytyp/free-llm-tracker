@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T12:45:00Z",
+  "updated_at": "2026-10-31T21:42:48Z",
   "total_providers": 72,
   "providers": [
     {
@@ -263,7 +263,7 @@
     },
     {
       "provider": "openrouter",
-      "count": 15,
+      "count": 14,
       "measured": 0,
       "tps_values": [],
       "top_models": [
@@ -295,7 +295,7 @@
       ],
       "free_types": {
         "recurring-daily": 3,
-        "recurring-monthly": 12
+        "recurring-monthly": 11
       },
       "avg_tps": null
     },
@@ -670,43 +670,6 @@
       "avg_tps": null
     },
     {
-      "provider": "kilo-gateway",
-      "count": 7,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "cohere/north-mini-code:free",
-          "tps": null,
-          "name": "Cohere North Mini Code (free)"
-        },
-        {
-          "id": "kilo-auto/free",
-          "tps": null,
-          "name": "Kilo Auto Free (auto-router)"
-        },
-        {
-          "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-          "tps": null,
-          "name": "NVIDIA Nemotron 3 Nano Omni (free)"
-        },
-        {
-          "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
-          "tps": null,
-          "name": "NVIDIA Nemotron 3 Ultra (free)"
-        },
-        {
-          "id": "nvidia/nemotron-3.5-content-safety:free",
-          "tps": null,
-          "name": "NVIDIA Nemotron 3.5 Content Safety (free)"
-        }
-      ],
-      "free_types": {
-        "recurring-uncapped": 7
-      },
-      "avg_tps": null
-    },
-    {
       "provider": "kiro",
       "count": 7,
       "measured": 0,
@@ -888,6 +851,43 @@
       ],
       "free_types": {
         "recurring-monthly": 6
+      },
+      "avg_tps": null
+    },
+    {
+      "provider": "kilo-gateway",
+      "count": 6,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "cohere/north-mini-code:free",
+          "tps": null,
+          "name": "Cohere North Mini Code (free)"
+        },
+        {
+          "id": "kilo-auto/free",
+          "tps": null,
+          "name": "Kilo Auto Free (auto-router)"
+        },
+        {
+          "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+          "tps": null,
+          "name": "NVIDIA Nemotron 3 Nano Omni (free)"
+        },
+        {
+          "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+          "tps": null,
+          "name": "NVIDIA Nemotron 3 Ultra (free)"
+        },
+        {
+          "id": "nvidia/nemotron-3.5-content-safety:free",
+          "tps": null,
+          "name": "NVIDIA Nemotron 3.5 Content Safety (free)"
+        }
+      ],
+      "free_types": {
+        "recurring-uncapped": 6
       },
       "avg_tps": null
     },
