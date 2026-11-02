@@ -497,6 +497,27 @@ def main() -> int:
     aa_data = collect_aa_measurements(aa_targets)
     all_results.update(aa_data)
 
+    # AA liefert fuer neue Modelle oft noch keinen Intelligence-Index (Feld null).
+    # Dann die aelteren, bereits gemessenen Werte behalten statt sie zu loeschen:
+    # sonst faellt die Intelligence-Spalte von Lauf zu Lauf zusammen.
+    old_path = DATA / "benchmarks.json"
+    if old_path.exists() and isinstance(all_results.get("__aa"), dict):
+        try:
+            old = json.loads(old_path.read_text())
+            old_aa = ((old.get("results") or {}).get("__aa") or {}).get("models") or {}
+            new_aa = all_results["__aa"].get("models") or {}
+            kept = 0
+            for slug, om in old_aa.items():
+                nm = new_aa.setdefault(slug, {})
+                for field, val in om.items():
+                    if nm.get(field) is None and val is not None:
+                        nm[field] = val
+                        kept += 1
+            if kept:
+                print(f"  AA: {kept} aeltere Messwerte behalten (neue API liefert null)")
+        except Exception as e:
+            all_errors.append(f"aa-merge: {e}")
+
     out = {
         "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "method": "openrouter endpoints API + AA provider benchmarks (public) + own streaming",
