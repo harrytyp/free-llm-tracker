@@ -51,6 +51,7 @@ jobs:
         run: |
           if [ -z "$OPENROUTER_API_KEY" ] && [ -z "$ARTIFICIAL_ANALYSIS_API_KEY" ]; then
             echo "No secrets — skipping benchmark (collect + deploy still run)"
+            echo "::warning::benchmark uebersprungen: Secrets ARTIFICIAL_ANALYSIS_API_KEY / OPENROUTER_API_KEY fehlen, Daten veralten"
             exit 0
           fi
           python benchmark.py
