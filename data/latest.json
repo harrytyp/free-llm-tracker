@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-03T06:58:03Z",
+ "updated_at": "2026-11-03T19:35:25Z",
  "counts": {
   "free_models": 425,
   "with_intelligence": 0,
@@ -3749,7 +3749,8 @@
     "tool_choice",
     "tools",
     "top_k",
-    "top_logprobs"
+    "top_logprobs",
+    "top_p"
    ],
    "modality": "",
    "intelligence": null
