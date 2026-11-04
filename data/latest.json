@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-04T06:39:28Z",
+ "updated_at": "2026-11-04T19:51:57Z",
  "counts": {
-  "free_models": 426,
+  "free_models": 424,
   "with_intelligence": 0,
   "from_omniroute": 455,
-  "from_openrouter": 18
+  "from_openrouter": 16
  },
  "source_errors": [],
  "sources": {
@@ -3876,64 +3876,6 @@
    "pool_key": "openrouter-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "thinkingmachines/inkling-small:free",
-   "provider": "openrouter",
-   "name": "Thinking Machines: Inkling Small (free)",
-   "free_type": "recurring-monthly",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "openrouter",
-   "tos_verdict": null,
-   "context_length": 1048576,
-   "description": "Inkling Small is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 12B active parameters out of 276B total. It is positioned as the smaller, more efficient member of...",
-   "supported_parameters": [
-    "frequency_penalty",
-    "include_reasoning",
-    "max_tokens",
-    "presence_penalty",
-    "reasoning",
-    "reasoning_effort",
-    "seed",
-    "stop",
-    "temperature",
-    "tools",
-    "top_p"
-   ],
-   "modality": "",
-   "source_catalog": "openrouter",
-   "free_status": "verified-free",
-   "intelligence": null
-  },
-  {
-   "id": "thinkingmachines/inkling:free",
-   "provider": "openrouter",
-   "name": "Thinking Machines: Inkling (free)",
-   "free_type": "recurring-monthly",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "openrouter",
-   "tos_verdict": null,
-   "context_length": 1048576,
-   "description": "Inkling is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 41B active parameters out of 975B total. It is designed for general-purpose reasoning, coding, agentic and tool-use systems,...",
-   "supported_parameters": [
-    "frequency_penalty",
-    "include_reasoning",
-    "max_tokens",
-    "presence_penalty",
-    "reasoning",
-    "reasoning_effort",
-    "seed",
-    "stop",
-    "temperature",
-    "tools",
-    "top_p"
-   ],
-   "modality": "",
-   "source_catalog": "openrouter",
-   "free_status": "verified-free",
    "intelligence": null
   },
   {
