@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-06T06:58:02Z",
-  "total_providers": 72,
+  "updated_at": "2026-11-06T19:30:04Z",
+  "total_providers": 73,
   "providers": [
     {
       "provider": "bazaarlink",
@@ -299,6 +299,43 @@
       "avg_tps": null
     },
     {
+      "provider": "onomeo",
+      "count": 13,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "auto",
+          "tps": null,
+          "name": "Auto"
+        },
+        {
+          "id": "codestral-latest",
+          "tps": null,
+          "name": "Codestral Latest"
+        },
+        {
+          "id": "deepseek-v4-flash",
+          "tps": null,
+          "name": "DeepSeek V4 Flash"
+        },
+        {
+          "id": "gemini-3.1-flash-lite",
+          "tps": null,
+          "name": "Gemini 3.1 Flash Lite"
+        },
+        {
+          "id": "glm-4.5-flash",
+          "tps": null,
+          "name": "GLM 4.5 Flash"
+        }
+      ],
+      "free_types": {
+        "recurring-uncapped": 13
+      },
+      "avg_tps": null
+    },
+    {
       "provider": "openrouter",
       "count": 13,
       "measured": 0,
@@ -370,6 +407,43 @@
       ],
       "free_types": {
         "one-time-initial": 10
+      },
+      "avg_tps": null
+    },
+    {
+      "provider": "opencode-zen",
+      "count": 10,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "opencode/beam-free",
+          "tps": null,
+          "name": "Beam (free)"
+        },
+        {
+          "id": "opencode/big-pickle",
+          "tps": null,
+          "name": "Big Pickle (stealth)"
+        },
+        {
+          "id": "opencode/deepseek-v4.1-flash-free",
+          "tps": null,
+          "name": "DeepSeek V4.1 Flash (free)"
+        },
+        {
+          "id": "opencode/glm-5.3-flash-free",
+          "tps": null,
+          "name": "GLM 5.3 Flash (free)"
+        },
+        {
+          "id": "opencode/jev-1.13-free",
+          "tps": null,
+          "name": "Jev 1.13 (free)"
+        }
+      ],
+      "free_types": {
+        "recurring-uncapped": 10
       },
       "avg_tps": null
     },
@@ -855,43 +929,6 @@
       "avg_tps": null
     },
     {
-      "provider": "kilo-gateway",
-      "count": 6,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "cohere/north-mini-code:free",
-          "tps": null,
-          "name": "Cohere North Mini Code (free)"
-        },
-        {
-          "id": "kilo-auto/free",
-          "tps": null,
-          "name": "Kilo Auto Free (auto-router)"
-        },
-        {
-          "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-          "tps": null,
-          "name": "NVIDIA Nemotron 3 Nano Omni (free)"
-        },
-        {
-          "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
-          "tps": null,
-          "name": "NVIDIA Nemotron 3 Ultra (free)"
-        },
-        {
-          "id": "nvidia/nemotron-3.5-content-safety:free",
-          "tps": null,
-          "name": "NVIDIA Nemotron 3.5 Content Safety (free)"
-        }
-      ],
-      "free_types": {
-        "recurring-uncapped": 6
-      },
-      "avg_tps": null
-    },
-    {
       "provider": "nscale",
       "count": 6,
       "measured": 0,
@@ -925,43 +962,6 @@
       ],
       "free_types": {
         "one-time-initial": 6
-      },
-      "avg_tps": null
-    },
-    {
-      "provider": "opencode-zen",
-      "count": 6,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "opencode/big-pickle",
-          "tps": null,
-          "name": "Big Pickle (stealth)"
-        },
-        {
-          "id": "opencode/deepseek-v4.1-flash-free",
-          "tps": null,
-          "name": "DeepSeek V4.1 Flash (free)"
-        },
-        {
-          "id": "opencode/mimo-v2.5-free",
-          "tps": null,
-          "name": "MiMo V2.5 (free)"
-        },
-        {
-          "id": "opencode/nemotron-3-super-free",
-          "tps": null,
-          "name": "Nemotron 3 Super (free)"
-        },
-        {
-          "id": "opencode/nemotron-3-ultra-free",
-          "tps": null,
-          "name": "Nemotron 3 Ultra (free)"
-        }
-      ],
-      "free_types": {
-        "recurring-uncapped": 6
       },
       "avg_tps": null
     },
@@ -1032,6 +1032,43 @@
           "id": "aion-labs/aion-rp-llama-3.1-8b",
           "tps": null,
           "name": "Aion RP Llama 3.1 8B"
+        }
+      ],
+      "free_types": {
+        "recurring-uncapped": 5
+      },
+      "avg_tps": null
+    },
+    {
+      "provider": "kilo-gateway",
+      "count": 5,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "cohere/north-mini-code:free",
+          "tps": null,
+          "name": "Cohere North Mini Code (free)"
+        },
+        {
+          "id": "kilo-auto/free",
+          "tps": null,
+          "name": "Kilo Auto Free (auto-router)"
+        },
+        {
+          "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+          "tps": null,
+          "name": "NVIDIA Nemotron 3 Nano Omni (free)"
+        },
+        {
+          "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+          "tps": null,
+          "name": "NVIDIA Nemotron 3 Ultra (free)"
+        },
+        {
+          "id": "openrouter/free",
+          "tps": null,
+          "name": "OpenRouter Free Models Router"
         }
       ],
       "free_types": {
@@ -1479,33 +1516,6 @@
       "avg_tps": null
     },
     {
-      "provider": "nvidia",
-      "count": 3,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "google/gemma-4-31b-it",
-          "tps": null,
-          "name": "Gemma 4 31B"
-        },
-        {
-          "id": "nvidia/nemotron-3-super-120b-a12b",
-          "tps": null,
-          "name": "Nemotron 3 Super 120B A12B"
-        },
-        {
-          "id": "openai/gpt-oss-120b",
-          "tps": null,
-          "name": "GPT OSS 120B"
-        }
-      ],
-      "free_types": {
-        "one-time-initial": 3
-      },
-      "avg_tps": null
-    },
-    {
       "provider": "publicai",
       "count": 3,
       "measured": 0,
@@ -1710,6 +1720,28 @@
       ],
       "free_types": {
         "recurring-monthly": 2
+      },
+      "avg_tps": null
+    },
+    {
+      "provider": "nvidia",
+      "count": 2,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "google/gemma-4-31b-it",
+          "tps": null,
+          "name": "Gemma 4 31B"
+        },
+        {
+          "id": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+          "tps": null,
+          "name": "Nemotron 3.5 Super VL 120B A12B"
+        }
+      ],
+      "free_types": {
+        "recurring-uncapped": 2
       },
       "avg_tps": null
     },

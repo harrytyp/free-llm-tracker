@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-06T06:58:02Z",
+ "updated_at": "2026-11-06T19:30:04Z",
  "counts": {
-  "free_models": 424,
+  "free_models": 439,
   "with_intelligence": 0,
-  "from_omniroute": 455,
-  "from_openrouter": 16
+  "from_omniroute": 473,
+  "from_openrouter": 15
  },
  "source_errors": [],
  "sources": {
@@ -2786,30 +2786,6 @@
    "intelligence": null
   },
   {
-   "id": "nvidia/nemotron-3.5-content-safety:free",
-   "provider": "kilo-gateway",
-   "name": "NVIDIA Nemotron 3.5 Content Safety (free)",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "kilo-gateway-free",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "free_status": "verified-free",
-   "context_length": 128000,
-   "description": "NVIDIA Nemotron 3.5 Content Safety is a compact 4B-parameter multimodal guardrail model from NVIDIA, fine-tuned from Google Gemma-3-4B. It moderates both inputs to and responses from LLMs and VLMs, accepting...",
-   "supported_parameters": [
-    "include_reasoning",
-    "max_tokens",
-    "reasoning",
-    "seed",
-    "temperature",
-    "top_p"
-   ],
-   "modality": "",
-   "intelligence": null
-  },
-  {
    "id": "openrouter/free",
    "provider": "kilo-gateway",
    "name": "OpenRouter Free Models Router",
@@ -3379,7 +3355,7 @@
    "id": "google/gemma-4-31b-it",
    "provider": "nvidia",
    "name": "Gemma 4 31B",
-   "free_type": "one-time-initial",
+   "free_type": "recurring-uncapped",
    "monthly_tokens": 0,
    "credit_tokens": 0,
    "pool_key": "nvidia",
@@ -3388,22 +3364,10 @@
    "intelligence": null
   },
   {
-   "id": "nvidia/nemotron-3-super-120b-a12b",
+   "id": "nvidia/nemotron-3.5-super-vl-120b-a12b",
    "provider": "nvidia",
-   "name": "Nemotron 3 Super 120B A12B",
-   "free_type": "one-time-initial",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "openai/gpt-oss-120b",
-   "provider": "nvidia",
-   "name": "GPT OSS 120B",
-   "free_type": "one-time-initial",
+   "name": "Nemotron 3.5 Super VL 120B A12B",
+   "free_type": "recurring-uncapped",
    "monthly_tokens": 0,
    "credit_tokens": 0,
    "pool_key": "nvidia",
@@ -3508,6 +3472,174 @@
    "intelligence": null
   },
   {
+   "id": "auto",
+   "provider": "onomeo",
+   "name": "Auto",
+   "free_type": "recurring-uncapped",
+   "monthly_tokens": 0,
+   "credit_tokens": 0,
+   "pool_key": "onomeo",
+   "tos_verdict": null,
+   "source_catalog": "omniroute",
+   "intelligence": null
+  },
+  {
+   "id": "codestral-latest",
+   "provider": "onomeo",
+   "name": "Codestral Latest",
+   "free_type": "recurring-uncapped",
+   "monthly_tokens": 0,
+   "credit_tokens": 0,
+   "pool_key": "onomeo",
+   "tos_verdict": null,
+   "source_catalog": "omniroute",
+   "intelligence": null
+  },
+  {
+   "id": "deepseek-v4-flash",
+   "provider": "onomeo",
+   "name": "DeepSeek V4 Flash",
+   "free_type": "recurring-uncapped",
+   "monthly_tokens": 0,
+   "credit_tokens": 0,
+   "pool_key": "onomeo",
+   "tos_verdict": null,
+   "source_catalog": "omniroute",
+   "intelligence": null
+  },
+  {
+   "id": "gemini-3.1-flash-lite",
+   "provider": "onomeo",
+   "name": "Gemini 3.1 Flash Lite",
+   "free_type": "recurring-uncapped",
+   "monthly_tokens": 0,
+   "credit_tokens": 0,
+   "pool_key": "onomeo",
+   "tos_verdict": null,
+   "source_catalog": "omniroute",
+   "intelligence": null
+  },
+  {
+   "id": "glm-4.5-flash",
+   "provider": "onomeo",
+   "name": "GLM 4.5 Flash",
+   "free_type": "recurring-uncapped",
+   "monthly_tokens": 0,
+   "credit_tokens": 0,
+   "pool_key": "onomeo",
+   "tos_verdict": null,
+   "source_catalog": "omniroute",
+   "intelligence": null
+  },
+  {
+   "id": "glm-4.6v-flash",
+   "provider": "onomeo",
+   "name": "GLM 4.6v Flash",
+   "free_type": "recurring-uncapped",
+   "monthly_tokens": 0,
+   "credit_tokens": 0,
+   "pool_key": "onomeo",
+   "tos_verdict": null,
+   "source_catalog": "omniroute",
+   "intelligence": null
+  },
+  {
+   "id": "glm-4.7-flash",
+   "provider": "onomeo",
+   "name": "GLM 4.7 Flash",
+   "free_type": "recurring-uncapped",
+   "monthly_tokens": 0,
+   "credit_tokens": 0,
+   "pool_key": "onomeo",
+   "tos_verdict": null,
+   "source_catalog": "omniroute",
+   "intelligence": null
+  },
+  {
+   "id": "glm-5.2",
+   "provider": "onomeo",
+   "name": "GLM 5.2",
+   "free_type": "recurring-uncapped",
+   "monthly_tokens": 0,
+   "credit_tokens": 0,
+   "pool_key": "onomeo",
+   "tos_verdict": null,
+   "source_catalog": "omniroute",
+   "intelligence": null
+  },
+  {
+   "id": "glm-5.3-flash",
+   "provider": "onomeo",
+   "name": "GLM 5.3 Flash",
+   "free_type": "recurring-uncapped",
+   "monthly_tokens": 0,
+   "credit_tokens": 0,
+   "pool_key": "onomeo",
+   "tos_verdict": null,
+   "source_catalog": "omniroute",
+   "intelligence": null
+  },
+  {
+   "id": "gpt-oss-20b",
+   "provider": "onomeo",
+   "name": "GPT-OSS 20B",
+   "free_type": "recurring-uncapped",
+   "monthly_tokens": 0,
+   "credit_tokens": 0,
+   "pool_key": "onomeo",
+   "tos_verdict": null,
+   "source_catalog": "omniroute",
+   "intelligence": null
+  },
+  {
+   "id": "hy4-preview",
+   "provider": "onomeo",
+   "name": "HY4 Preview",
+   "free_type": "recurring-uncapped",
+   "monthly_tokens": 0,
+   "credit_tokens": 0,
+   "pool_key": "onomeo",
+   "tos_verdict": null,
+   "source_catalog": "omniroute",
+   "intelligence": null
+  },
+  {
+   "id": "ministral-14b-latest",
+   "provider": "onomeo",
+   "name": "Ministral 14B Latest",
+   "free_type": "recurring-uncapped",
+   "monthly_tokens": 0,
+   "credit_tokens": 0,
+   "pool_key": "onomeo",
+   "tos_verdict": null,
+   "source_catalog": "omniroute",
+   "intelligence": null
+  },
+  {
+   "id": "muse-glimmer-30b",
+   "provider": "onomeo",
+   "name": "Muse Glimmer 30B",
+   "free_type": "recurring-uncapped",
+   "monthly_tokens": 0,
+   "credit_tokens": 0,
+   "pool_key": "onomeo",
+   "tos_verdict": null,
+   "source_catalog": "omniroute",
+   "intelligence": null
+  },
+  {
+   "id": "opencode/beam-free",
+   "provider": "opencode-zen",
+   "name": "Beam (free)",
+   "free_type": "recurring-uncapped",
+   "monthly_tokens": 0,
+   "credit_tokens": 0,
+   "pool_key": "opencode-zen-free",
+   "tos_verdict": null,
+   "source_catalog": "omniroute",
+   "intelligence": null
+  },
+  {
    "id": "opencode/big-pickle",
    "provider": "opencode-zen",
    "name": "Big Pickle (stealth)",
@@ -3532,9 +3664,9 @@
    "intelligence": null
   },
   {
-   "id": "opencode/mimo-v2.5-free",
+   "id": "opencode/glm-5.3-flash-free",
    "provider": "opencode-zen",
-   "name": "MiMo V2.5 (free)",
+   "name": "GLM 5.3 Flash (free)",
    "free_type": "recurring-uncapped",
    "monthly_tokens": 0,
    "credit_tokens": 0,
@@ -3544,9 +3676,9 @@
    "intelligence": null
   },
   {
-   "id": "opencode/nemotron-3-super-free",
+   "id": "opencode/jev-1.13-free",
    "provider": "opencode-zen",
-   "name": "Nemotron 3 Super (free)",
+   "name": "Jev 1.13 (free)",
    "free_type": "recurring-uncapped",
    "monthly_tokens": 0,
    "credit_tokens": 0,
@@ -3556,9 +3688,9 @@
    "intelligence": null
   },
   {
-   "id": "opencode/nemotron-3-ultra-free",
+   "id": "opencode/longcat-2.5-preview-free",
    "provider": "opencode-zen",
-   "name": "Nemotron 3 Ultra (free)",
+   "name": "LongCat 2.5 Preview (free)",
    "free_type": "recurring-uncapped",
    "monthly_tokens": 0,
    "credit_tokens": 0,
@@ -3568,9 +3700,45 @@
    "intelligence": null
   },
   {
-   "id": "opencode/north-mini-code-free",
+   "id": "opencode/mimo-v2.6-flash-free",
    "provider": "opencode-zen",
-   "name": "North Mini Code (free)",
+   "name": "MiMo V2.6 Flash (free)",
+   "free_type": "recurring-uncapped",
+   "monthly_tokens": 0,
+   "credit_tokens": 0,
+   "pool_key": "opencode-zen-free",
+   "tos_verdict": null,
+   "source_catalog": "omniroute",
+   "intelligence": null
+  },
+  {
+   "id": "opencode/minimax-m3.1-flash-free",
+   "provider": "opencode-zen",
+   "name": "MiniMax M3.1 Flash (free)",
+   "free_type": "recurring-uncapped",
+   "monthly_tokens": 0,
+   "credit_tokens": 0,
+   "pool_key": "opencode-zen-free",
+   "tos_verdict": null,
+   "source_catalog": "omniroute",
+   "intelligence": null
+  },
+  {
+   "id": "opencode/nemotron-3.5-lightning-free",
+   "provider": "opencode-zen",
+   "name": "Nemotron 3.5 Lightning (free)",
+   "free_type": "recurring-uncapped",
+   "monthly_tokens": 0,
+   "credit_tokens": 0,
+   "pool_key": "opencode-zen-free",
+   "tos_verdict": null,
+   "source_catalog": "omniroute",
+   "intelligence": null
+  },
+  {
+   "id": "opencode/nemotron-3.5-super-vl-free",
+   "provider": "opencode-zen",
+   "name": "Nemotron 3.5 Super VL (free)",
    "free_type": "recurring-uncapped",
    "monthly_tokens": 0,
    "credit_tokens": 0,
