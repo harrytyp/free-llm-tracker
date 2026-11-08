@@ -297,14 +297,21 @@ def aa_slug(model_id: str) -> str | None:
 
 
 def collect_aa_measurements(model_ids: list[str]) -> dict:
-    """Scrape AA provider tables for all models. Returns {model_id: {providers: [...]}}."""
+    """Scrape AA provider tables for all models. Returns {model_id: {providers: [...]}}.
+
+    Die /providers-Seiten liefern seit dem Site-Relaunch kein parsebares HTML mehr
+    (jede Seite -> no data). Nach 3 leeren Treffern in Folge abbrechen, statt 40
+    Requests pro Lauf gegen eine tote Quelle zu schicken.
+    """
     out = {}
+    misses = 0
     for mid in model_ids:
         slug = aa_slug(mid)
         if not slug:
             continue
         rows = scrape_aa_providers(slug)
         if rows:
+            misses = 0
             out[mid] = {
                 "providers": rows,
                 "source": "artificialanalysis-provider-benchmarks",
@@ -314,7 +321,11 @@ def collect_aa_measurements(model_ids: list[str]) -> dict:
             print(f"    {mid} -> AA slug {slug}: {len(rows)} providers, "
                   f"best {best['provider']} {best['tps']} t/s")
         else:
+            misses += 1
             print(f"    {mid} -> AA slug {slug}: no data")
+            if misses >= 3:
+                print("  AA-Providerseiten liefern kein HTML mehr -> Rest uebersprungen")
+                break
         time.sleep(0.5)
     return out
 
@@ -385,34 +396,47 @@ def collect_llmbench_measurements() -> dict:
 
 
 def fetch_aa_free_data(key: str) -> dict:
-    """ONE call to AA free endpoint: /api/v2/data/llms/models.
+    """AA V2 free endpoint: /api/v2/language/models/free (paginated, 200/Seite).
 
+    Die Legacy-Pfade /api/v2/data/* sind seit 04.11.2026 abgeschaltet (410 Gone).
     Returns {slug: {intelligence_index, coding_index, tps, ttft_s, mmlu_pro, gpqa, ...}}
-    610 models, all metrics in one response. Used sparingly (1 call/run).
     """
-    url = "https://artificialanalysis.ai/api/v2/data/llms/models"
-    req = urllib.request.Request(url, headers={"x-api-key": key, "User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        d = json.loads(r.read().decode())
-    out = {}
-    for m in d.get("data", []):
-        slug = (m.get("slug") or "").lower()
-        if not slug:
-            continue
-        ev = m.get("evaluations") or {}
-        out[slug] = {
-            "intelligence_index": ev.get("artificial_analysis_intelligence_index"),
-            "coding_index": ev.get("artificial_analysis_coding_index"),
-            "math_index": ev.get("artificial_analysis_math_index"),
-            "mmlu_pro": ev.get("mmlu_pro"),
-            "gpqa": ev.get("gpqa"),
-            "livecodebench": ev.get("livecodebench"),
-            "hle": ev.get("hle"),
-            "aime_25": ev.get("aime_25"),
-            "tps": m.get("median_output_tokens_per_second"),
-            "ttft_s": m.get("median_time_to_first_token_seconds"),
-            "price_1m_blended": (m.get("pricing") or {}).get("price_1m_blended_3_to_1"),
-        }
+    out: dict = {}
+    page = 1
+    while True:
+        url = f"https://artificialanalysis.ai/api/v2/language/models/free?page={page}"
+        req = urllib.request.Request(url, headers={"x-api-key": key, "User-Agent": UA})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            d = json.loads(r.read().decode())
+        for m in d.get("data", []):
+            slug = (m.get("slug") or "").lower()
+            if not slug:
+                continue
+            ev = m.get("evaluations") or {}
+            perf = m.get("performance") or {}
+            pr = m.get("pricing") or {}
+            blended = pr.get("price_1m_blended_3_to_1")
+            if blended is None and pr.get("price_1m_input_tokens") is not None \
+                    and pr.get("price_1m_output_tokens") is not None:
+                blended = (3 * pr["price_1m_input_tokens"] + pr["price_1m_output_tokens"]) / 4
+            out[slug] = {
+                "intelligence_index": ev.get("artificial_analysis_intelligence_index"),
+                "coding_index": ev.get("artificial_analysis_coding_index"),
+                "math_index": ev.get("artificial_analysis_math_index"),
+                "mmlu_pro": ev.get("mmlu_pro"),
+                "gpqa": ev.get("gpqa"),
+                "livecodebench": ev.get("livecodebench"),
+                "hle": ev.get("hle"),
+                "aime_25": ev.get("aime_25"),
+                "tps": perf.get("median_output_tokens_per_second"),
+                "ttft_s": perf.get("median_time_to_first_token_seconds"),
+                "price_1m_blended": blended,
+            }
+        if not (d.get("pagination") or {}).get("has_more"):
+            break
+        page += 1
+        if page > 20:  # Sicherung gegen Endlosschleife bei kaputter Pagination
+            break
     return out
 
 
@@ -524,6 +548,9 @@ def main() -> int:
         "results": all_results,
         "errors": all_errors,
     }
+    if aa_key and not ((all_results.get("__aa") or {}).get("models")):
+        # Schema-Drift / Endpoint-Abschaltung soll nicht still durchgehen
+        all_errors.append("aa-free-api: 0 Modelle -> Endpoint oder Schema pruefen")
     (DATA / "benchmarks.json").write_text(json.dumps(out, indent=1, ensure_ascii=False))
     print(f"\nOK benchmarks.json: {len(all_results)} models measured, {len(all_errors)} errors")
     if all_errors:
