@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-09T06:49:14Z",
+ "updated_at": "2026-11-09T22:29:06Z",
  "counts": {
   "free_models": 440,
   "with_intelligence": 0,
@@ -4044,34 +4044,6 @@
    "intelligence": null
   },
   {
-   "id": "stealth/crouton-alpha",
-   "provider": "openrouter",
-   "name": "Crouton Alpha",
-   "free_type": "recurring-monthly",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "openrouter",
-   "tos_verdict": null,
-   "context_length": 1048576,
-   "description": "Crouton Alpha is a lightweight model built for scalable coding, agentic, and multimodal workflows. It's ideal for executing agentic sub-tasks, tool use, and document analysis in high-volume, repeated work. Developers...",
-   "supported_parameters": [
-    "include_reasoning",
-    "max_tokens",
-    "reasoning",
-    "reasoning_effort",
-    "response_format",
-    "structured_outputs",
-    "temperature",
-    "tool_choice",
-    "tools",
-    "top_p"
-   ],
-   "modality": "",
-   "source_catalog": "openrouter",
-   "free_status": "verified-free",
-   "intelligence": null
-  },
-  {
    "id": "stealth/ox-alpha",
    "provider": "openrouter",
    "name": "Stealth Ox Alpha (free)",
@@ -4081,6 +4053,33 @@
    "pool_key": "openrouter-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
+   "intelligence": null
+  },
+  {
+   "id": "thinkingmachines/inkling-2-small:free",
+   "provider": "openrouter",
+   "name": "Thinking Machines: Inkling 2 Small (free)",
+   "free_type": "recurring-monthly",
+   "monthly_tokens": null,
+   "credit_tokens": null,
+   "pool_key": "openrouter",
+   "tos_verdict": null,
+   "context_length": 1048576,
+   "description": "Inkling 2 Small is a multimodal mixture-of-experts reasoning model from Thinking Machines Lab, with 17B active parameters out of 594B total. It is the first model in the second Inkling...",
+   "supported_parameters": [
+    "include_reasoning",
+    "max_tokens",
+    "reasoning",
+    "reasoning_effort",
+    "seed",
+    "stop",
+    "temperature",
+    "tools",
+    "top_p"
+   ],
+   "modality": "",
+   "source_catalog": "openrouter",
+   "free_status": "verified-free",
    "intelligence": null
   },
   {
