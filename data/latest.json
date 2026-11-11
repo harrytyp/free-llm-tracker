@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-11T06:42:16Z",
+ "updated_at": "2026-11-11T19:42:10Z",
  "counts": {
-  "free_models": 439,
+  "free_models": 440,
   "with_intelligence": 0,
   "from_omniroute": 473,
-  "from_openrouter": 15
+  "from_openrouter": 16
  },
  "source_errors": [],
  "sources": {
@@ -3757,6 +3757,34 @@
    "pool_key": "openrouter-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
+   "intelligence": null
+  },
+  {
+   "id": "baidu/ernie-5.5-flash-preview:free",
+   "provider": "openrouter",
+   "name": "Baidu: ERNIE-5.5-Flash-Preview (free)",
+   "free_type": "recurring-monthly",
+   "monthly_tokens": null,
+   "credit_tokens": null,
+   "pool_key": "openrouter",
+   "tos_verdict": null,
+   "context_length": 1024000,
+   "description": "ERNIE 5.5 Flash Preview is the latest foundation model in the ERNIE family, with comprehensive improvements in coding, agentic capabilities, knowledge work, and deep research. It has 280 billion total...",
+   "supported_parameters": [
+    "include_reasoning",
+    "max_tokens",
+    "reasoning",
+    "reasoning_effort",
+    "response_format",
+    "structured_outputs",
+    "temperature",
+    "tool_choice",
+    "tools",
+    "top_p"
+   ],
+   "modality": "",
+   "source_catalog": "openrouter",
+   "free_status": "verified-free",
    "intelligence": null
   },
   {
