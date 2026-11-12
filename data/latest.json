@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-12T07:23:04Z",
+ "updated_at": "2026-11-12T20:05:12Z",
  "counts": {
-  "free_models": 440,
+  "free_models": 441,
   "with_intelligence": 0,
   "from_omniroute": 473,
-  "from_openrouter": 16
+  "from_openrouter": 17
  },
  "source_errors": [],
  "sources": {
@@ -3745,6 +3745,38 @@
    "pool_key": "opencode-zen-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
+   "intelligence": null
+  },
+  {
+   "id": "apodex/apodex-1.1-mini:free",
+   "provider": "openrouter",
+   "name": "Apodex: Apodex 1.1 Mini (free)",
+   "free_type": "recurring-monthly",
+   "monthly_tokens": null,
+   "credit_tokens": null,
+   "pool_key": "openrouter",
+   "tos_verdict": null,
+   "context_length": 262144,
+   "description": "Apodex 1.1 Mini is a reasoning-first model from Apodex, built for complex, long-horizon research and forecasting tasks. It works directly with files, data, code, and tools to produce verifiable results,...",
+   "supported_parameters": [
+    "frequency_penalty",
+    "include_reasoning",
+    "max_tokens",
+    "presence_penalty",
+    "reasoning",
+    "repetition_penalty",
+    "response_format",
+    "seed",
+    "stop",
+    "temperature",
+    "tool_choice",
+    "tools",
+    "top_k",
+    "top_p"
+   ],
+   "modality": "",
+   "source_catalog": "openrouter",
+   "free_status": "verified-free",
    "intelligence": null
   },
   {

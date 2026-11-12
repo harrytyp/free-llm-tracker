@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T07:23:04Z",
+  "updated_at": "2026-11-12T20:05:12Z",
   "total_providers": 73,
   "providers": [
     {
@@ -263,10 +263,15 @@
     },
     {
       "provider": "openrouter",
-      "count": 14,
+      "count": 15,
       "measured": 0,
       "tps_values": [],
       "top_models": [
+        {
+          "id": "apodex/apodex-1.1-mini:free",
+          "tps": null,
+          "name": "Apodex: Apodex 1.1 Mini (free)"
+        },
         {
           "id": "auto",
           "tps": null,
@@ -286,16 +291,11 @@
           "id": "google/gemma-4-26b-a4b-it:free",
           "tps": null,
           "name": "Google: Gemma 4 26B A4B  (free)"
-        },
-        {
-          "id": "google/gemma-4-31b-it:free",
-          "tps": null,
-          "name": "Google: Gemma 4 31B (free)"
         }
       ],
       "free_types": {
-        "recurring-daily": 3,
-        "recurring-monthly": 11
+        "recurring-monthly": 12,
+        "recurring-daily": 3
       },
       "avg_tps": null
     },
