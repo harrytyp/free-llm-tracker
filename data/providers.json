@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T07:28:22Z",
+  "updated_at": "2026-11-12T07:23:04Z",
   "total_providers": 73,
   "providers": [
     {
@@ -273,6 +273,11 @@
           "name": "Auto (Best Available)"
         },
         {
+          "id": "baidu/ernie-5.5-flash-preview:free",
+          "tps": null,
+          "name": "Baidu: ERNIE-5.5-Flash-Preview (free)"
+        },
+        {
           "id": "dots-studio/dots-3-note-preview:free",
           "tps": null,
           "name": "Dots Studio: Dots3-Note Preview (free)"
@@ -286,11 +291,6 @@
           "id": "google/gemma-4-31b-it:free",
           "tps": null,
           "name": "Google: Gemma 4 31B (free)"
-        },
-        {
-          "id": "google/lyria-3-clip-preview",
-          "tps": null,
-          "name": "Google: Lyria 3 Clip Preview"
         }
       ],
       "free_types": {
