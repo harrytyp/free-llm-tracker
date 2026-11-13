@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-13T06:55:10Z",
+ "updated_at": "2026-11-13T19:50:41Z",
  "counts": {
-  "free_models": 442,
+  "free_models": 441,
   "with_intelligence": 0,
   "from_omniroute": 473,
-  "from_openrouter": 18
+  "from_openrouter": 17
  },
  "source_errors": [],
  "sources": {
@@ -3748,38 +3748,6 @@
    "intelligence": null
   },
   {
-   "id": "apodex/apodex-1.1-mini:free",
-   "provider": "openrouter",
-   "name": "Apodex: Apodex 1.1 Mini (free)",
-   "free_type": "recurring-monthly",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "openrouter",
-   "tos_verdict": null,
-   "context_length": 262144,
-   "description": "Apodex 1.1 Mini is a reasoning-first model from Apodex, built for complex, long-horizon research and forecasting tasks. It works directly with files, data, code, and tools to produce verifiable results,...",
-   "supported_parameters": [
-    "frequency_penalty",
-    "include_reasoning",
-    "max_tokens",
-    "presence_penalty",
-    "reasoning",
-    "repetition_penalty",
-    "response_format",
-    "seed",
-    "stop",
-    "temperature",
-    "tool_choice",
-    "tools",
-    "top_k",
-    "top_p"
-   ],
-   "modality": "",
-   "source_catalog": "openrouter",
-   "free_status": "verified-free",
-   "intelligence": null
-  },
-  {
    "id": "auto",
    "provider": "openrouter",
    "name": "Auto (Best Available)",
@@ -3947,28 +3915,22 @@
    "intelligence": null
   },
   {
-   "id": "liquid/lfm-2.5-2.6b:free",
+   "id": "inclusionai/ling-3.2-flash:free",
    "provider": "openrouter",
-   "name": "LiquidAI: LFM2.5-2.6B (free)",
-   "free_type": "recurring-daily",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "openrouter-free",
+   "name": "inclusionAI: Ling 3.2 Flash (free)",
+   "free_type": "recurring-monthly",
+   "monthly_tokens": null,
+   "credit_tokens": null,
+   "pool_key": "openrouter",
    "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "free_status": "verified-free",
-   "context_length": 65536,
-   "description": "LFM2.5-2.6B is a compact reasoning model from Liquid AI. It is suited for agent workflows, data extraction, RAG, and long-context processing. Liquid advises against using it for agentic coding or...",
+   "context_length": 1048576,
+   "description": "Ling 3.2 Flash is a hybrid reasoning model from inclusionAI that accepts text and image input, with a 1M-token context window and up to 200 images per request. Thinking can...",
    "supported_parameters": [
     "frequency_penalty",
     "include_reasoning",
-    "logprobs",
-    "max_completion_tokens",
     "max_tokens",
-    "min_p",
     "presence_penalty",
     "reasoning",
-    "repetition_penalty",
     "response_format",
     "seed",
     "stop",
@@ -3977,10 +3939,11 @@
     "tool_choice",
     "tools",
     "top_k",
-    "top_logprobs",
     "top_p"
    ],
    "modality": "",
+   "source_catalog": "openrouter",
+   "free_status": "verified-free",
    "intelligence": null
   },
   {
