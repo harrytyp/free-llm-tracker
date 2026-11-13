@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-12T20:05:12Z",
+ "updated_at": "2026-11-13T06:55:10Z",
  "counts": {
-  "free_models": 441,
+  "free_models": 442,
   "with_intelligence": 0,
   "from_omniroute": 473,
-  "from_openrouter": 17
+  "from_openrouter": 18
  },
  "source_errors": [],
  "sources": {
@@ -4075,6 +4075,43 @@
    "intelligence": null
   },
   {
+   "id": "particle-ai/particle-1:free",
+   "provider": "openrouter",
+   "name": "Particle AI: Particle-1 (free)",
+   "free_type": "recurring-monthly",
+   "monthly_tokens": null,
+   "credit_tokens": null,
+   "pool_key": "openrouter",
+   "tos_verdict": null,
+   "context_length": 1048576,
+   "description": "Particle-1 is a token-efficient agentic coding model from Particle AI, post-trained on DeepSeek V4.1 Flash. It is suited for software engineering work such as terminal workflows, codebase changes, and data...",
+   "supported_parameters": [
+    "frequency_penalty",
+    "include_reasoning",
+    "logprobs",
+    "max_tokens",
+    "min_p",
+    "presence_penalty",
+    "reasoning",
+    "reasoning_effort",
+    "repetition_penalty",
+    "response_format",
+    "seed",
+    "stop",
+    "structured_outputs",
+    "temperature",
+    "tool_choice",
+    "tools",
+    "top_k",
+    "top_logprobs",
+    "top_p"
+   ],
+   "modality": "",
+   "source_catalog": "openrouter",
+   "free_status": "verified-free",
+   "intelligence": null
+  },
+  {
    "id": "recursive/flint-v1.0:free",
    "provider": "openrouter",
    "name": "Recursive: Flint (free)",
@@ -4125,7 +4162,7 @@
    "pool_key": "openrouter",
    "tos_verdict": null,
    "context_length": 1048576,
-   "description": "Inkling 2 Small is a multimodal mixture-of-experts reasoning model from Thinking Machines Lab, with 17B active parameters out of 594B total. It is the first model in the second Inkling...",
+   "description": "Inkling 2 Small is an open-weight multimodal mixture-of-experts reasoning model from Thinking Machines Lab, with 17B active parameters out of 594B total. It is the first model in the second...",
    "supported_parameters": [
     "include_reasoning",
     "max_tokens",
