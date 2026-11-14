@@ -564,6 +564,13 @@ def main() -> int:
             if filled:
                 all_errors.append(
                     f"benchmark: {filled} Messwerte aus letztem Stand uebernommen (Quelle lieferte null)")
+            # Ohne AA-Key entsteht kein __aa-Block; die alten Intelligence-Werte
+            # trotzdem behalten, sonst leert sich die Spalte im Site-Build.
+            old_aa = old_res.get("__aa") or {}
+            if "__aa" not in all_results and old_aa.get("models"):
+                all_results["__aa"] = old_aa
+                all_errors.append(
+                    f"benchmark: {len(old_aa['models'])} AA-Werte aus letztem Stand behalten (kein Key)")
         except Exception as e:
             all_errors.append(f"benchmark-merge: {e}")
 
