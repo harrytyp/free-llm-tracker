@@ -1,12 +1,14 @@
 {
- "updated_at": "2026-11-14T07:52:10Z",
+ "updated_at": "2026-11-14T07:46:26Z",
  "counts": {
-  "free_models": 441,
+  "free_models": 442,
   "with_intelligence": 0,
   "from_omniroute": 473,
   "from_openrouter": 17
  },
- "source_errors": [],
+ "source_errors": [
+  "artificial-analysis: kein Key -> keine Intelligence-Werte"
+ ],
  "sources": {
   "omni_free_catalog": "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/open-sse/config/freeModelCatalog.data.ts",
   "openrouter": "https://openrouter.ai/api/v1/models",
@@ -1296,6 +1298,19 @@
    "pool_key": "cerebras",
    "tos_verdict": null,
    "source_catalog": "omniroute",
+   "intelligence": null
+  },
+  {
+   "id": "qwen-3.8-27b",
+   "provider": "cerebras",
+   "name": "qwen-3.8-27b",
+   "free_type": "free-tier",
+   "monthly_tokens": null,
+   "credit_tokens": null,
+   "pool_key": "cerebras",
+   "tos_verdict": null,
+   "source_catalog": "key-provider",
+   "free_status": "free-tier",
    "intelligence": null
   },
   {

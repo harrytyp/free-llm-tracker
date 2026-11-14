@@ -421,6 +421,14 @@ def main() -> int:
             aa = fetch_aa(aa_key)
         except Exception as e:
             errors.append(f"artificial-analysis: {e}")
+        else:
+            if not any(v.get("intelligence_index") is not None for v in aa.values()):
+                errors.append(
+                    f"artificial-analysis: {len(aa)} Modelle, aber kein Intelligence-Index "
+                    "(API retired/Free-Tier ohne Scores)")
+    else:
+        # Ohne Key bleibt die Intelligence-Spalte leer; das soll nicht still passieren.
+        errors.append("artificial-analysis: kein Key -> keine Intelligence-Werte")
 
     # Join
     models_out = []

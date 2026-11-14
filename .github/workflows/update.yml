@@ -44,16 +44,15 @@ jobs:
           MANIFEST_API_KEY: ${{ secrets.MANIFEST_API_KEY }}
         run: python collector.py
 
-      - name: Measure free models (needs OPENROUTER_API_KEY + ARTIFICIAL_ANALYSIS_API_KEY secrets)
+      - name: Measure free models (openrouter + AA; keys optional)
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           ARTIFICIAL_ANALYSIS_API_KEY: ${{ secrets.ARTIFICIAL_ANALYSIS_API_KEY }}
         run: |
-          if [ -z "$OPENROUTER_API_KEY" ] && [ -z "$ARTIFICIAL_ANALYSIS_API_KEY" ]; then
-            echo "No secrets — skipping benchmark (collect + deploy still run)"
-            echo "::warning::benchmark uebersprungen: Secrets ARTIFICIAL_ANALYSIS_API_KEY / OPENROUTER_API_KEY fehlen, Daten veralten"
-            exit 0
-          fi
+          # Die OpenRouter-Messung ist oeffentlich und braucht keinen Key.
+          # Frueher wurde der ganze Schritt ohne Secrets uebersprungen, wodurch
+          # benchmarks.json nur bei manuellen Laeufen frisch wurde.
+          [ -z "$ARTIFICIAL_ANALYSIS_API_KEY" ] && echo "::notice::ohne ARTIFICIAL_ANALYSIS_API_KEY: kein Intelligence-Index"
           python benchmark.py
 
       - name: Build site

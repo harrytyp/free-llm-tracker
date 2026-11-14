@@ -112,11 +112,15 @@ def get_json(url: str, key: str | None = None) -> dict:
         return json.loads(r.read().decode())
 
 
-def measure_openrouter(key: str) -> tuple[dict, list[str]]:
-    """Free models from OR endpoints API (own 30-min measurements)."""
+def measure_openrouter(key: str | None) -> tuple[dict, list[str]]:
+    """Free models from OR endpoints API (own 30-min measurements).
+
+    Beide Endpunkte sind oeffentlich; der Key ist nur ein optionaler Header.
+    Keyless laufen lassen, sonst haengen die Messwerte an einem Repo-Secret.
+    """
     results, errors = {}, []
     try:
-        d = get_json("https://openrouter.ai/api/v1/models", key)
+        d = get_json("https://openrouter.ai/api/v1/models", key or None)
         free = [m["id"] for m in d.get("data", [])
                 if str((m.get("pricing") or {}).get("prompt", "1")) == "0"
                 and str((m.get("pricing") or {}).get("completion", "1")) == "0"]
@@ -148,6 +152,9 @@ def measure_openrouter(key: str) -> tuple[dict, list[str]]:
             except Exception as e:
                 errors.append(f"{mid}: {e}")
         print(f"  openrouter: {len(results)} measured")
+        if results and not any(v.get("tps") for v in results.values()):
+            # 14.11.2026: API liefert throughput_last_30m/latency_last_30m = null
+            errors.append("openrouter: API liefert null throughput/latency (Quelle degradiert)")
     except Exception as e:
         errors.append(f"openrouter: {e}")
     return results, errors
@@ -444,14 +451,11 @@ def main() -> int:
     all_results: dict = {}
     all_errors: list[str] = []
 
-    # 1. OpenRouter (needs key)
+    # 1. OpenRouter (public; key optional)
     or_key = os.environ.get("OPENROUTER_API_KEY", "").strip()
-    if or_key:
-        r, e = measure_openrouter(or_key)
-        all_results.update(r)
-        all_errors.extend(e)
-    else:
-        all_errors.append("openrouter: no key")
+    r, e = measure_openrouter(or_key or None)
+    all_results.update(r)
+    all_errors.extend(e)
 
     # 2. Public providers (no key): list models, match free from snapshot
     latest = json.loads((DATA / "latest.json").read_text())
@@ -541,6 +545,27 @@ def main() -> int:
                 print(f"  AA: {kept} aeltere Messwerte behalten (neue API liefert null)")
         except Exception as e:
             all_errors.append(f"aa-merge: {e}")
+
+    # Keine echte Messung durch null ersetzen: OpenRouter liefert seit 14.11.2026
+    # throughput_last_30m/latency_last_30m = null, die Endpunkte existieren aber.
+    # Fehlende tps aus dem letzten Stand auffuellen statt die Zeile zu leeren.
+    old_path = DATA / "benchmarks.json"
+    filled = 0
+    if old_path.exists():
+        try:
+            old_res = json.loads(old_path.read_text()).get("results") or {}
+            for k, v in old_res.items():
+                if k.startswith("__") or not isinstance(v, dict):
+                    continue
+                nv = all_results.get(k)
+                if not isinstance(nv, dict) or (nv.get("tps") is None and v.get("tps") is not None):
+                    all_results[k] = v
+                    filled += 1
+            if filled:
+                all_errors.append(
+                    f"benchmark: {filled} Messwerte aus letztem Stand uebernommen (Quelle lieferte null)")
+        except Exception as e:
+            all_errors.append(f"benchmark-merge: {e}")
 
     out = {
         "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),

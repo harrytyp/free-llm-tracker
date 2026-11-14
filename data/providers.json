@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T07:52:10Z",
+  "updated_at": "2026-11-14T07:46:26Z",
   "total_providers": 73,
   "providers": [
     {
@@ -1462,6 +1462,34 @@
       "avg_tps": null
     },
     {
+      "provider": "cerebras",
+      "count": 3,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "gpt-oss-120b",
+          "tps": null,
+          "name": "GPT OSS 120B"
+        },
+        {
+          "id": "qwen-3.8-27b",
+          "tps": null,
+          "name": "qwen-3.8-27b"
+        },
+        {
+          "id": "zai-glm-4.7",
+          "tps": null,
+          "name": "GLM 4.7"
+        }
+      ],
+      "free_types": {
+        "one-time-initial": 2,
+        "free-tier": 1
+      },
+      "avg_tps": null
+    },
+    {
       "provider": "inference-net",
       "count": 3,
       "measured": 0,
@@ -1584,28 +1612,6 @@
           "id": "jamba-mini-2",
           "tps": null,
           "name": "jamba-mini-2"
-        }
-      ],
-      "free_types": {
-        "one-time-initial": 2
-      },
-      "avg_tps": null
-    },
-    {
-      "provider": "cerebras",
-      "count": 2,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "gpt-oss-120b",
-          "tps": null,
-          "name": "GPT OSS 120B"
-        },
-        {
-          "id": "zai-glm-4.7",
-          "tps": null,
-          "name": "GLM 4.7"
         }
       ],
       "free_types": {
