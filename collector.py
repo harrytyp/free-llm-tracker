@@ -8,7 +8,8 @@ Writes:
 Design goals:
 - Never crash on a single source failing: each fetch is independent.
 - Zero token cost: only public catalog/benchmark endpoints are queried.
-- AA key optional (env ARTIFICIAL_ANALYSIS_API_KEY): adds intelligence index.
+- AA intelligence comes from the __aa block in benchmarks.json (written by
+  benchmark.py), so the snapshot works with or without an AA key in CI.
 """
 from __future__ import annotations
 
@@ -152,50 +153,38 @@ def fetch_benchmarks() -> dict[tuple, dict]:
     return out
 
 
-def fetch_aa(key: str | None) -> dict[str, dict]:
-    """Artificial Analysis v2: intelligence index + median tps, keyed by lowercase slug."""
-    if not key:
+# --- Artificial Analysis ------------------------------------------------
+# Eine Quelle: der Block results.__aa in benchmarks.json, den benchmark.py pflegt
+# (mit AA-Key frisch gemessen, ohne Key aus dem letzten Stand uebernommen). Der
+# Collector ruft AA nicht selbst auf: die Legacy-Endpunkte /api/v2/data/* sind
+# seit 04.11.2026 410 Gone, und die Intelligence-Spalte soll nicht davon
+# abhaengen, ob im CI ein Repo-Secret liegt.
+
+def load_aa_block() -> dict[str, dict]:
+    try:
+        d = json.loads((DATA / "benchmarks.json").read_text())
+    except (OSError, json.JSONDecodeError):
         return {}
-    d = http_get_json(
-        "https://artificialanalysis.ai/api/v2/data/llms/models",
-        headers={"x-api-key": key},
-        timeout=45,
-    )
-    out = {}
-    for m in d.get("data", []):
-        slug = (m.get("slug") or "").lower()
-        if not slug:
-            continue
-        ev = m.get("evaluations") or {}
-        out[slug] = {
-            "intelligence_index": ev.get("artificial_analysis_intelligence_index"),
-            "coding_index": ev.get("artificial_analysis_coding_index"),
-            "aa_tps_median": _num(m.get("median_output_tokens_per_second")),
-            "aa_ttft_s": _num(m.get("median_time_to_first_token_seconds")),
-        }
-    return out
+    models = ((d.get("results") or {}).get("__aa") or {}).get("models") or {}
+    return {str(k).lower(): v for k, v in models.items() if isinstance(v, dict)}
+
+
+def aa_slug_for(model_id: str, aa: dict[str, dict]) -> str | None:
+    """Model-Id -> AA-Slug. Gleiche Regeln wie in build_site.py, damit Site und
+    latest.json dieselben Werte zeigen."""
+    mid = model_id.lower().rstrip(":free").split("/")[-1]
+    if mid in aa:
+        return mid
+    slug = mid.replace(".", "-")
+    if slug in aa:
+        return slug
+    for a in aa:
+        if mid.startswith(a) or a.startswith(mid):
+            return a
+    return None
 
 
 # --- OpenRouter id <-> AA slug matching -------------------------------------
-
-_OR_STRIP_PREFIXES = ("openrouter/",)
-
-
-def normalize_key(model_id: str) -> list[str]:
-    """Generate candidate lookup keys for a model id across sources."""
-    base = model_id.lower()
-    keys = [base]
-    for p in _OR_STRIP_PREFIXES:
-        if base.startswith(p):
-            keys.append(base[len(p):])
-    # strip openrouter ":free" suffix for cross-source matching
-    if base.endswith(":free"):
-        keys.append(base[:-5])
-        for p in _OR_STRIP_PREFIXES:
-            if keys[-1].startswith(p):
-                keys.append(keys[-1][len(p):])
-    return keys
-
 
 def _num(x):
     try:
@@ -413,22 +402,12 @@ def main() -> int:
     except Exception as e:
         errors.append(f"llm-benchmarks: {e}")
 
-    # 3. Artificial Analysis (optional source, needs key)
-    aa: dict = {}
-    aa_key = os.environ.get("ARTIFICIAL_ANALYSIS_API_KEY", "").strip()
-    if aa_key:
-        try:
-            aa = fetch_aa(aa_key)
-        except Exception as e:
-            errors.append(f"artificial-analysis: {e}")
-        else:
-            if not any(v.get("intelligence_index") is not None for v in aa.values()):
-                errors.append(
-                    f"artificial-analysis: {len(aa)} Modelle, aber kein Intelligence-Index "
-                    "(API retired/Free-Tier ohne Scores)")
-    else:
-        # Ohne Key bleibt die Intelligence-Spalte leer; das soll nicht still passieren.
-        errors.append("artificial-analysis: kein Key -> keine Intelligence-Werte")
+    # 3. Artificial Analysis (aus benchmarks.json, von benchmark.py gepflegt)
+    aa = load_aa_block()
+    if not aa:
+        errors.append("artificial-analysis: kein __aa-Block in benchmarks.json")
+    elif not any(v.get("intelligence_index") is not None for v in aa.values()):
+        errors.append(f"artificial-analysis: {len(aa)} Modelle im __aa-Block, aber ohne Intelligence-Index")
 
     # Join
     models_out = []
@@ -438,12 +417,15 @@ def main() -> int:
     # (groq->openai etc.) was WRONG and is deleted (AGENTS.md rev 2).
 
     for m in free_models:
-        a = next((aa[k] for k in normalize_key(m["id"]) if k in aa), None)
-        if a:
+        slug_match = aa_slug_for(m["id"], aa)
+        a = aa.get(slug_match) if slug_match else None
+        intel = None
+        if a and a.get("intelligence_index") is not None:
             matched_aa += 1
+            intel = {k: a.get(k) for k in ("intelligence_index", "coding_index", "tps", "ttft_s")}
         models_out.append({
             **m,
-            "intelligence": a,
+            "intelligence": intel,
         })
 
     # sort: by provider + id (stable)
@@ -464,7 +446,7 @@ def main() -> int:
             "omni_free_catalog": _OMNIRoute_CATALOG_URL,
             "openrouter": "https://openrouter.ai/api/v1/models",
             "benchmarks": "https://llm-benchmarks.com/api/processed",
-            "intelligence": "https://artificialanalysis.ai/api/v2/data/llms/models",
+            "intelligence": "https://artificialanalysis.ai/api/v2/language/models/free",
         },
         "models": models_out,
     }
