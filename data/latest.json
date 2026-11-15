@@ -1,19 +1,17 @@
 {
- "updated_at": "2026-11-15T06:46:06Z",
+ "updated_at": "2026-11-15T07:35:32Z",
  "counts": {
   "free_models": 441,
-  "with_intelligence": 0,
+  "with_intelligence": 277,
   "from_omniroute": 473,
   "from_openrouter": 17
  },
- "source_errors": [
-  "artificial-analysis: kein Key -> keine Intelligence-Werte"
- ],
+ "source_errors": [],
  "sources": {
   "omni_free_catalog": "https://raw.githubusercontent.com/diegosouzapw/OmniRoute/main/open-sse/config/freeModelCatalog.data.ts",
   "openrouter": "https://openrouter.ai/api/v1/models",
   "benchmarks": "https://llm-benchmarks.com/api/processed",
-  "intelligence": "https://artificialanalysis.ai/api/v2/data/llms/models"
+  "intelligence": "https://artificialanalysis.ai/api/v2/language/models/free"
  },
  "models": [
   {
@@ -26,7 +24,12 @@
    "pool_key": "agentrouter",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 57.3,
+    "coding_index": 74.3,
+    "tps": 66.47,
+    "ttft_s": 50.19
+   }
   },
   {
    "id": "claude-opus-5",
@@ -38,7 +41,12 @@
    "pool_key": "agentrouter",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 44.2,
+    "coding_index": 78,
+    "tps": 54.55,
+    "ttft_s": 49.63
+   }
   },
   {
    "id": "gpt-5.6-sol",
@@ -50,7 +58,12 @@
    "pool_key": "agentrouter",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 60.9,
+    "coding_index": 77.4,
+    "tps": 127.17,
+    "ttft_s": 152.33
+   }
   },
   {
    "id": "agnes-2.0-flash",
@@ -134,7 +147,12 @@
    "pool_key": "agy",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 38.8,
+    "coding_index": null,
+    "tps": 40.93,
+    "ttft_s": 1.92
+   }
   },
   {
    "id": "claude-sonnet-4-6",
@@ -146,7 +164,12 @@
    "pool_key": "agy",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 36.8,
+    "coding_index": null,
+    "tps": 46.47,
+    "ttft_s": 1.27
+   }
   },
   {
    "id": "gemini-3.1-flash-lite",
@@ -194,7 +217,12 @@
    "pool_key": "agy",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 22.5,
+    "coding_index": null,
+    "tps": 125.19,
+    "ttft_s": 1.45
+   }
   },
   {
    "id": "gemini-3.8-flash-medium",
@@ -206,7 +234,12 @@
    "pool_key": "agy",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 30.1,
+    "coding_index": null,
+    "tps": 126.65,
+    "ttft_s": 15.39
+   }
   },
   {
    "id": "gemini-pro-agent",
@@ -230,7 +263,12 @@
    "pool_key": "agy",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 3.8,
+    "coding_index": 30.4,
+    "tps": 219.38,
+    "ttft_s": 0.84
+   }
   },
   {
    "id": "jamba-large-1.7",
@@ -290,7 +328,12 @@
    "pool_key": "aihorde-anon",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 4.4,
+    "coding_index": 43.4,
+    "tps": 34.36,
+    "ttft_s": 1.07
+   }
   },
   {
    "id": "deepseek-r1",
@@ -302,7 +345,12 @@
    "pool_key": "ainative-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 20.4,
+    "coding_index": null,
+    "tps": 37.2,
+    "ttft_s": 1.18
+   }
   },
   {
    "id": "gemini-flash",
@@ -326,7 +374,12 @@
    "pool_key": "ainative-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 14.5,
+    "coding_index": 16.3,
+    "tps": 89.39,
+    "ttft_s": 1.04
+   }
   },
   {
    "id": "llama3.1-8b-cerebras",
@@ -362,7 +415,12 @@
    "pool_key": "ainative-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 10.4,
+    "coding_index": 13.8,
+    "tps": 35.8,
+    "ttft_s": 0.93
+   }
   },
   {
    "id": "qwen3-235b-cerebras",
@@ -386,7 +444,12 @@
    "pool_key": "ainative-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 11.4,
+    "coding_index": 15.3,
+    "tps": 26.76,
+    "ttft_s": 1.36
+   }
   },
   {
    "id": "qwen3-8b",
@@ -398,7 +461,12 @@
    "pool_key": "ainative-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 8.3,
+    "coding_index": 9,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "aion-labs/aion-2.0",
@@ -470,7 +538,12 @@
    "pool_key": "api-airforce",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 23.9,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "deepseek/deepseek-v3",
@@ -482,7 +555,12 @@
    "pool_key": "api-airforce",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 14.2,
+    "coding_index": 23,
+    "tps": 82.26,
+    "ttft_s": 1.01
+   }
   },
   {
    "id": "google/gemini-2.5-flash",
@@ -494,7 +572,12 @@
    "pool_key": "api-airforce",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 14.2,
+    "coding_index": null,
+    "tps": 206.11,
+    "ttft_s": 0.36
+   }
   },
   {
    "id": "moonshot/kimi-k2.6",
@@ -506,7 +589,12 @@
    "pool_key": "api-airforce",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 45.1,
+    "coding_index": 61.8,
+    "tps": 44.73,
+    "ttft_s": 2.94
+   }
   },
   {
    "id": "qwen/qwen3-32b",
@@ -518,7 +606,12 @@
    "pool_key": "api-airforce",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 11.4,
+    "coding_index": 15.3,
+    "tps": 26.76,
+    "ttft_s": 1.36
+   }
   },
   {
    "id": "x-ai/grok-2-1212",
@@ -530,7 +623,12 @@
    "pool_key": "api-airforce",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 7.8,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "x-ai/grok-3",
@@ -542,7 +640,12 @@
    "pool_key": "api-airforce",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 18.6,
+    "coding_index": null,
+    "tps": 81.79,
+    "ttft_s": 1.44
+   }
   },
   {
    "id": "Baichuan4",
@@ -590,7 +693,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 55,
+    "coding_index": 73.6,
+    "tps": 52.88,
+    "ttft_s": 19.81
+   }
   },
   {
    "id": "claude-sonnet-4.6",
@@ -602,7 +710,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 36.8,
+    "coding_index": null,
+    "tps": 46.47,
+    "ttft_s": 1.27
+   }
   },
   {
    "id": "deepseek-v3.2",
@@ -614,7 +727,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 25.1,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "gemini-3-flash-preview",
@@ -626,7 +744,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 27.9,
+    "coding_index": null,
+    "tps": 225.89,
+    "ttft_s": 0.78
+   }
   },
   {
    "id": "gemini-3.1-flash-lite-preview",
@@ -638,7 +761,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 6.2,
+    "coding_index": 34.7,
+    "tps": 367.41,
+    "ttft_s": 4.33
+   }
   },
   {
    "id": "gemini-3.1-pro-preview",
@@ -650,7 +778,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 47.7,
+    "coding_index": 68.8,
+    "tps": 147.68,
+    "ttft_s": 20.32
+   }
   },
   {
    "id": "gemma-4-26b-a4b-it",
@@ -662,7 +795,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 26.1,
+    "coding_index": 39.3,
+    "tps": 89.61,
+    "ttft_s": 0.91
+   }
   },
   {
    "id": "gemma-4-31b-it",
@@ -674,7 +812,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 4.4,
+    "coding_index": 43.4,
+    "tps": 34.36,
+    "ttft_s": 1.07
+   }
   },
   {
    "id": "glm-5",
@@ -686,7 +829,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 40.6,
+    "coding_index": null,
+    "tps": 67.5,
+    "ttft_s": 1.6
+   }
   },
   {
    "id": "glm-5.1",
@@ -698,7 +846,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 41,
+    "coding_index": 55.8,
+    "tps": 84.2,
+    "ttft_s": 1.33
+   }
   },
   {
    "id": "gpt-5.4",
@@ -710,7 +863,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 53.1,
+    "coding_index": 71.1,
+    "tps": 84.84,
+    "ttft_s": 215.09
+   }
   },
   {
    "id": "gpt-5.4-mini",
@@ -722,7 +880,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 40.9,
+    "coding_index": 56.1,
+    "tps": 228.38,
+    "ttft_s": 129.18
+   }
   },
   {
    "id": "gpt-5.4-nano",
@@ -734,7 +897,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 39.7,
+    "coding_index": 56.1,
+    "tps": 160.75,
+    "ttft_s": 125.76
+   }
   },
   {
    "id": "gpt-5.5",
@@ -746,7 +914,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 56.3,
+    "coding_index": 74.9,
+    "tps": 80.2,
+    "ttft_s": 86.85
+   }
   },
   {
    "id": "grok-4.20",
@@ -758,7 +931,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 38,
+    "coding_index": null,
+    "tps": 125.13,
+    "ttft_s": 16.68
+   }
   },
   {
    "id": "grok-4.3",
@@ -770,7 +948,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 37.9,
+    "coding_index": 42.2,
+    "tps": 104.45,
+    "ttft_s": 23.05
+   }
   },
   {
    "id": "kimi-k2.5",
@@ -782,7 +965,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 36,
+    "coding_index": 46.8,
+    "tps": 53.85,
+    "ttft_s": 1.78
+   }
   },
   {
    "id": "kimi-k2.6",
@@ -794,7 +982,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 45.1,
+    "coding_index": 61.8,
+    "tps": 44.73,
+    "ttft_s": 2.94
+   }
   },
   {
    "id": "llama-3.3-70b-instruct",
@@ -818,7 +1011,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 14.5,
+    "coding_index": 16.3,
+    "tps": 89.39,
+    "ttft_s": 1.04
+   }
   },
   {
    "id": "llama-4-scout",
@@ -830,7 +1028,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 10.3,
+    "coding_index": 8.2,
+    "tps": 133.52,
+    "ttft_s": 0.74
+   }
   },
   {
    "id": "mimo-v2.5",
@@ -854,7 +1057,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 42.9,
+    "coding_index": 60.2,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "minimax-m2.5",
@@ -866,7 +1074,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 34.5,
+    "coding_index": null,
+    "tps": 60.46,
+    "ttft_s": 1.88
+   }
   },
   {
    "id": "minimax-m2.7",
@@ -878,7 +1091,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 38.9,
+    "coding_index": 52.6,
+    "tps": 52.94,
+    "ttft_s": 2.22
+   }
   },
   {
    "id": "mistral-large-2512",
@@ -890,7 +1108,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 9,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "mistral-medium-3.1",
@@ -902,7 +1125,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 14.7,
+    "coding_index": 20.5,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "mistral-small-2603",
@@ -914,7 +1142,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 4.3,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "nemotron-3-super-120b-a12b",
@@ -938,7 +1171,12 @@
    "pool_key": "bazaarlink",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 40.5,
+    "coding_index": 54.5,
+    "tps": 53.56,
+    "ttft_s": 1.97
+   }
   },
   {
    "id": "blackboxai",
@@ -974,7 +1212,12 @@
    "pool_key": "blackbox",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 36.8,
+    "coding_index": null,
+    "tps": 46.47,
+    "ttft_s": 1.27
+   }
   },
   {
    "id": "deepseek-v3",
@@ -986,7 +1229,12 @@
    "pool_key": "blackbox",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 14.2,
+    "coding_index": 23,
+    "tps": 82.26,
+    "ttft_s": 1.01
+   }
   },
   {
    "id": "gemini-2.5-flash",
@@ -998,7 +1246,12 @@
    "pool_key": "blackbox",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 14.2,
+    "coding_index": null,
+    "tps": 206.11,
+    "ttft_s": 0.36
+   }
   },
   {
    "id": "gpt-4o",
@@ -1010,7 +1263,12 @@
    "pool_key": "blackbox",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 11.1,
+    "coding_index": null,
+    "tps": 177.79,
+    "ttft_s": 1.86
+   }
   },
   {
    "id": "claude-haiku-4-5",
@@ -1034,7 +1292,12 @@
    "pool_key": "bluesminds",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 35.6,
+    "coding_index": null,
+    "tps": 50.02,
+    "ttft_s": 1.39
+   }
   },
   {
    "id": "claude-sonnet-4-5",
@@ -1082,7 +1345,12 @@
    "pool_key": "bluesminds",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 12.2,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "gemini-2.0-flash-exp",
@@ -1106,7 +1374,12 @@
    "pool_key": "bluesminds",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 25.9,
+    "coding_index": 33.3,
+    "tps": 112.94,
+    "ttft_s": 19.56
+   }
   },
   {
    "id": "glm-4-flash",
@@ -1130,7 +1403,12 @@
    "pool_key": "bluesminds",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 34.5,
+    "coding_index": 45.3,
+    "tps": 43.26,
+    "ttft_s": 1.68
+   }
   },
   {
    "id": "gpt-4.1",
@@ -1142,7 +1420,12 @@
    "pool_key": "bluesminds",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 19.6,
+    "coding_index": null,
+    "tps": 147.59,
+    "ttft_s": 1.88
+   }
   },
   {
    "id": "gpt-4.1-mini",
@@ -1154,7 +1437,12 @@
    "pool_key": "bluesminds",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 14.8,
+    "coding_index": 20.2,
+    "tps": 151.57,
+    "ttft_s": 1.62
+   }
   },
   {
    "id": "gpt-4.1-nano",
@@ -1166,7 +1454,12 @@
    "pool_key": "bluesminds",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 9.6,
+    "coding_index": 11.1,
+    "tps": 324.74,
+    "ttft_s": 1.38
+   }
   },
   {
    "id": "gpt-4o",
@@ -1178,7 +1471,12 @@
    "pool_key": "bluesminds",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 11.1,
+    "coding_index": null,
+    "tps": 177.79,
+    "ttft_s": 1.86
+   }
   },
   {
    "id": "gpt-4o-mini",
@@ -1190,7 +1488,12 @@
    "pool_key": "bluesminds",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 6.7,
+    "coding_index": 11.4,
+    "tps": 76.32,
+    "ttft_s": 1.93
+   }
   },
   {
    "id": "grok-3",
@@ -1202,7 +1505,12 @@
    "pool_key": "bluesminds",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 18.6,
+    "coding_index": null,
+    "tps": 81.79,
+    "ttft_s": 1.44
+   }
   },
   {
    "id": "kimi-k2",
@@ -1214,7 +1522,12 @@
    "pool_key": "bluesminds",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 19.7,
+    "coding_index": null,
+    "tps": 47.32,
+    "ttft_s": 2.01
+   }
   },
   {
    "id": "kimi-k2-thinking",
@@ -1226,7 +1539,12 @@
    "pool_key": "bluesminds",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 33.5,
+    "coding_index": null,
+    "tps": 122.99,
+    "ttft_s": 1.65
+   }
   },
   {
    "id": "minimax-m2.5",
@@ -1238,7 +1556,12 @@
    "pool_key": "bluesminds",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 34.5,
+    "coding_index": null,
+    "tps": 60.46,
+    "ttft_s": 1.88
+   }
   },
   {
    "id": "qwen-max",
@@ -1274,7 +1597,12 @@
    "pool_key": "bluesminds",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 6,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "mistralai/Mistral-7B-Instruct-v0.3",
@@ -1286,7 +1614,12 @@
    "pool_key": "bytez",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 1.7,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "gpt-oss-120b",
@@ -1298,7 +1631,12 @@
    "pool_key": "cerebras",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 3.8,
+    "coding_index": 30.4,
+    "tps": 219.38,
+    "ttft_s": 0.84
+   }
   },
   {
    "id": "zai-glm-4.7",
@@ -1322,7 +1660,12 @@
    "pool_key": "cloudflare-ai",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 11,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "@cf/google/gemma-4-26b-a4b-it",
@@ -1334,7 +1677,12 @@
    "pool_key": "cloudflare-ai",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 26.1,
+    "coding_index": 39.3,
+    "tps": 89.61,
+    "ttft_s": 0.91
+   }
   },
   {
    "id": "@cf/meta/llama-3.2-3b-instruct",
@@ -1370,7 +1718,12 @@
    "pool_key": "cloudflare-ai",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 1.7,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "@cf/moonshotai/kimi-k2.6",
@@ -1382,7 +1735,12 @@
    "pool_key": "cloudflare-ai",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 45.1,
+    "coding_index": 61.8,
+    "tps": 44.73,
+    "ttft_s": 2.94
+   }
   },
   {
    "id": "@cf/qwen/qwen2.5-coder-32b-instruct",
@@ -1394,7 +1752,12 @@
    "pool_key": "cloudflare-ai",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 6.9,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "@cf/qwen/qwq-32b",
@@ -1406,7 +1769,12 @@
    "pool_key": "cloudflare-ai",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 13.4,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "@cf/zai-org/glm-4.7-flash",
@@ -1418,7 +1786,12 @@
    "pool_key": "cloudflare-ai",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 23.3,
+    "coding_index": null,
+    "tps": 93.32,
+    "ttft_s": 1.06
+   }
   },
   {
    "id": "command-a-03-2025",
@@ -1430,7 +1803,12 @@
    "pool_key": "cohere",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 7.5,
+    "coding_index": null,
+    "tps": 16.72,
+    "ttft_s": 1.81
+   }
   },
   {
    "id": "command-a-reasoning-08-2025",
@@ -1442,7 +1820,12 @@
    "pool_key": "cohere",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 7.5,
+    "coding_index": null,
+    "tps": 16.72,
+    "ttft_s": 1.81
+   }
   },
   {
    "id": "command-a-vision-07-2025",
@@ -1454,7 +1837,12 @@
    "pool_key": "cohere",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 7.5,
+    "coding_index": null,
+    "tps": 16.72,
+    "ttft_s": 1.81
+   }
   },
   {
    "id": "command-r-08-2024",
@@ -1502,7 +1890,12 @@
    "pool_key": "coze",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 23.9,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "MiniMaxAI/MiniMax-M2.5",
@@ -1514,7 +1907,12 @@
    "pool_key": "deepinfra",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 34.5,
+    "coding_index": null,
+    "tps": 60.46,
+    "ttft_s": 1.88
+   }
   },
   {
    "id": "NousResearch/Hermes-3-Llama-3.1-405B",
@@ -1538,7 +1936,12 @@
    "pool_key": "deepinfra",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 32.8,
+    "coding_index": 45.7,
+    "tps": 129.09,
+    "ttft_s": 2.26
+   }
   },
   {
    "id": "Qwen/Qwen3.5-397B-A17B",
@@ -1550,7 +1953,12 @@
    "pool_key": "deepinfra",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 34.3,
+    "coding_index": 48.2,
+    "tps": 57.36,
+    "ttft_s": 2.11
+   }
   },
   {
    "id": "Qwen/Qwen3.6-35B-A3B",
@@ -1562,7 +1970,12 @@
    "pool_key": "deepinfra",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 32.1,
+    "coding_index": 41.9,
+    "tps": 116.26,
+    "ttft_s": 2.07
+   }
   },
   {
    "id": "XiaomiMiMo/MiMo-V2.5",
@@ -1586,7 +1999,12 @@
    "pool_key": "deepinfra",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 42.9,
+    "coding_index": 60.2,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "anthropic/claude-4-opus",
@@ -1598,7 +2016,12 @@
    "pool_key": "deepinfra",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 26,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "anthropic/claude-4-sonnet",
@@ -1610,7 +2033,12 @@
    "pool_key": "deepinfra",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 26,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "deepseek-ai/DeepSeek-V4-Flash",
@@ -1622,7 +2050,12 @@
    "pool_key": "deepinfra",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 51.8,
+    "coding_index": 69.1,
+    "tps": 117.77,
+    "ttft_s": 1.53
+   }
   },
   {
    "id": "deepseek-ai/DeepSeek-V4-Pro",
@@ -1634,7 +2067,12 @@
    "pool_key": "deepinfra",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 23.1,
+    "coding_index": 68.8,
+    "tps": 75.34,
+    "ttft_s": 1.72
+   }
   },
   {
    "id": "google/gemma-4-26B-A4B-it",
@@ -1646,7 +2084,12 @@
    "pool_key": "deepinfra",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 26.1,
+    "coding_index": 39.3,
+    "tps": 89.61,
+    "ttft_s": 0.91
+   }
   },
   {
    "id": "google/gemma-4-31B-it",
@@ -1658,7 +2101,12 @@
    "pool_key": "deepinfra",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 4.4,
+    "coding_index": 43.4,
+    "tps": 34.36,
+    "ttft_s": 1.07
+   }
   },
   {
    "id": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
@@ -1682,7 +2130,12 @@
    "pool_key": "deepinfra",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 14.5,
+    "coding_index": 16.3,
+    "tps": 89.39,
+    "ttft_s": 1.04
+   }
   },
   {
    "id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
@@ -1694,7 +2147,12 @@
    "pool_key": "deepinfra",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 10.3,
+    "coding_index": 8.2,
+    "tps": 133.52,
+    "ttft_s": 0.74
+   }
   },
   {
    "id": "moonshotai/Kimi-K2.6",
@@ -1706,7 +2164,12 @@
    "pool_key": "deepinfra",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 45.1,
+    "coding_index": 61.8,
+    "tps": 44.73,
+    "ttft_s": 2.94
+   }
   },
   {
    "id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B",
@@ -1718,7 +2181,12 @@
    "pool_key": "deepinfra",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 25.7,
+    "coding_index": 37.7,
+    "tps": 160.52,
+    "ttft_s": 0.86
+   }
   },
   {
    "id": "nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning",
@@ -1730,7 +2198,12 @@
    "pool_key": "deepinfra",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 15,
+    "coding_index": 13.8,
+    "tps": 232.13,
+    "ttft_s": 0.81
+   }
   },
   {
    "id": "openai/gpt-oss-120b",
@@ -1742,7 +2215,12 @@
    "pool_key": "deepinfra",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 3.8,
+    "coding_index": 30.4,
+    "tps": 219.38,
+    "ttft_s": 0.84
+   }
   },
   {
    "id": "openai/gpt-oss-20b",
@@ -1754,7 +2232,12 @@
    "pool_key": "deepinfra",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 15.2,
+    "coding_index": 20.7,
+    "tps": 146.31,
+    "ttft_s": 0.71
+   }
   },
   {
    "id": "zai-org/GLM-5.1",
@@ -1766,7 +2249,12 @@
    "pool_key": "deepinfra",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 41,
+    "coding_index": 55.8,
+    "tps": 84.2,
+    "ttft_s": 1.33
+   }
   },
   {
    "id": "deepseek-v4-flash",
@@ -1778,7 +2266,12 @@
    "pool_key": "deepseek",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 51.8,
+    "coding_index": 69.1,
+    "tps": 117.77,
+    "ttft_s": 1.53
+   }
   },
   {
    "id": "deepseek-v4-pro",
@@ -1790,7 +2283,12 @@
    "pool_key": "deepseek",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 23.1,
+    "coding_index": 68.8,
+    "tps": 75.34,
+    "ttft_s": 1.72
+   }
   },
   {
    "id": "doubao-pro-32k",
@@ -1826,7 +2324,12 @@
    "pool_key": "duckduckgo-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 40.9,
+    "coding_index": 56.1,
+    "tps": 228.38,
+    "ttft_s": 129.18
+   }
   },
   {
    "id": "gpt-5.6-luna",
@@ -1838,7 +2341,12 @@
    "pool_key": "duckduckgo-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 23.8,
+    "coding_index": 71.4,
+    "tps": 122.3,
+    "ttft_s": 171.22
+   }
   },
   {
    "id": "mistral-small-2603",
@@ -1850,7 +2358,12 @@
    "pool_key": "duckduckgo-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 4.3,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "tinfoil/gemma4-31b",
@@ -1874,7 +2387,12 @@
    "pool_key": "duckduckgo-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 3.8,
+    "coding_index": 30.4,
+    "tps": 219.38,
+    "ttft_s": 0.84
+   }
   },
   {
    "id": "deepseek-v4-flash",
@@ -1886,7 +2404,12 @@
    "pool_key": "fireworks",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 51.8,
+    "coding_index": 69.1,
+    "tps": 117.77,
+    "ttft_s": 1.53
+   }
   },
   {
    "id": "deepseek-v4-pro",
@@ -1898,7 +2421,12 @@
    "pool_key": "fireworks",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 23.1,
+    "coding_index": 68.8,
+    "tps": 75.34,
+    "ttft_s": 1.72
+   }
   },
   {
    "id": "glm-5p1",
@@ -1910,7 +2438,12 @@
    "pool_key": "fireworks",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 40.6,
+    "coding_index": null,
+    "tps": 67.5,
+    "ttft_s": 1.6
+   }
   },
   {
    "id": "gpt-oss-120b",
@@ -1922,7 +2455,12 @@
    "pool_key": "fireworks",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 3.8,
+    "coding_index": 30.4,
+    "tps": 219.38,
+    "ttft_s": 0.84
+   }
   },
   {
    "id": "gpt-oss-20b",
@@ -1934,7 +2472,12 @@
    "pool_key": "fireworks",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 15.2,
+    "coding_index": 20.7,
+    "tps": 146.31,
+    "ttft_s": 0.71
+   }
   },
   {
    "id": "kimi-k2p5",
@@ -1946,7 +2489,12 @@
    "pool_key": "fireworks",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 19.7,
+    "coding_index": null,
+    "tps": 47.32,
+    "ttft_s": 2.01
+   }
   },
   {
    "id": "kimi-k2p6",
@@ -1958,7 +2506,12 @@
    "pool_key": "fireworks",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 19.7,
+    "coding_index": null,
+    "tps": 47.32,
+    "ttft_s": 2.01
+   }
   },
   {
    "id": "minimax-m2p5",
@@ -1970,7 +2523,12 @@
    "pool_key": "fireworks",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 28.9,
+    "coding_index": null,
+    "tps": 124.6,
+    "ttft_s": 1
+   }
   },
   {
    "id": "minimax-m2p7",
@@ -1982,7 +2540,12 @@
    "pool_key": "fireworks",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 28.9,
+    "coding_index": null,
+    "tps": 124.6,
+    "ttft_s": 1
+   }
   },
   {
    "id": "qwen3p6-plus",
@@ -2006,7 +2569,12 @@
    "pool_key": "freemodel-dev",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 45.5,
+    "coding_index": null,
+    "tps": 96.6,
+    "ttft_s": 94.6
+   }
   },
   {
    "id": "gpt-5.4",
@@ -2018,7 +2586,12 @@
    "pool_key": "freemodel-dev",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 53.1,
+    "coding_index": 71.1,
+    "tps": 84.84,
+    "ttft_s": 215.09
+   }
   },
   {
    "id": "gpt-5.4-mini",
@@ -2030,7 +2603,12 @@
    "pool_key": "freemodel-dev",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 40.9,
+    "coding_index": 56.1,
+    "tps": 228.38,
+    "ttft_s": 129.18
+   }
   },
   {
    "id": "gpt-5.5",
@@ -2042,7 +2620,12 @@
    "pool_key": "freemodel-dev",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 56.3,
+    "coding_index": 74.9,
+    "tps": 80.2,
+    "ttft_s": 86.85
+   }
   },
   {
    "id": "meta-llama-3.1-70b-instruct",
@@ -2078,7 +2661,12 @@
    "pool_key": "gemini-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 14.2,
+    "coding_index": null,
+    "tps": 206.11,
+    "ttft_s": 0.36
+   }
   },
   {
    "id": "gemini-2.5-flash-lite",
@@ -2102,7 +2690,12 @@
    "pool_key": "gemini-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 27.9,
+    "coding_index": null,
+    "tps": 225.89,
+    "ttft_s": 0.78
+   }
   },
   {
    "id": "gemini-3.1-flash-lite",
@@ -2138,7 +2731,12 @@
    "pool_key": "zhipu-flash-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 19.7,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "glm-4.7-flash",
@@ -2150,7 +2748,12 @@
    "pool_key": "zhipu-flash-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 23.3,
+    "coding_index": null,
+    "tps": 93.32,
+    "ttft_s": 1.06
+   }
   },
   {
    "id": "glm-signup-bonus",
@@ -2174,7 +2777,12 @@
    "pool_key": "zhipu-flash-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 19.7,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "glm-4.7-flash",
@@ -2186,7 +2794,12 @@
    "pool_key": "zhipu-flash-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 23.3,
+    "coding_index": null,
+    "tps": 93.32,
+    "ttft_s": 1.06
+   }
   },
   {
    "id": "CohereLabs/c4ai-command-r7b-12-2024",
@@ -2210,7 +2823,12 @@
    "pool_key": "huggingchat",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 7.5,
+    "coding_index": null,
+    "tps": 16.72,
+    "ttft_s": 1.81
+   }
   },
   {
    "id": "CohereLabs/command-a-vision-07-2025",
@@ -2222,7 +2840,12 @@
    "pool_key": "huggingchat",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 7.5,
+    "coding_index": null,
+    "tps": 16.72,
+    "ttft_s": 1.81
+   }
   },
   {
    "id": "MiniMaxAI/MiniMax-M3",
@@ -2234,7 +2857,12 @@
    "pool_key": "huggingchat",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 18.9,
+    "coding_index": 58.6,
+    "tps": 116.66,
+    "ttft_s": 0.93
+   }
   },
   {
    "id": "Qwen/Qwen3.5-122B-A10B",
@@ -2246,7 +2874,12 @@
    "pool_key": "huggingchat",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 32.8,
+    "coding_index": 45.7,
+    "tps": 129.09,
+    "ttft_s": 2.26
+   }
   },
   {
    "id": "Qwen/Qwen3.5-397B-A17B",
@@ -2258,7 +2891,12 @@
    "pool_key": "huggingchat",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 34.3,
+    "coding_index": 48.2,
+    "tps": 57.36,
+    "ttft_s": 2.11
+   }
   },
   {
    "id": "Qwen/Qwen3.6-27B",
@@ -2270,7 +2908,12 @@
    "pool_key": "huggingchat",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 37.7,
+    "coding_index": 53.7,
+    "tps": 56.8,
+    "ttft_s": 3.51
+   }
   },
   {
    "id": "Qwen/Qwen3.6-35B-A3B",
@@ -2282,7 +2925,12 @@
    "pool_key": "huggingchat",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 32.1,
+    "coding_index": 41.9,
+    "tps": 116.26,
+    "ttft_s": 2.07
+   }
   },
   {
    "id": "XiaomiMiMo/MiMo-V2.5-Pro",
@@ -2294,7 +2942,12 @@
    "pool_key": "huggingchat",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 42.9,
+    "coding_index": 60.2,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "baidu/ERNIE-4.5-VL-424B-A47B-Base-PT",
@@ -2318,7 +2971,12 @@
    "pool_key": "huggingchat",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 51.8,
+    "coding_index": 69.1,
+    "tps": 117.77,
+    "ttft_s": 1.53
+   }
   },
   {
    "id": "deepseek-ai/DeepSeek-V4-Pro",
@@ -2330,7 +2988,12 @@
    "pool_key": "huggingchat",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 23.1,
+    "coding_index": 68.8,
+    "tps": 75.34,
+    "ttft_s": 1.72
+   }
   },
   {
    "id": "google/gemma-4-26B-A4B-it",
@@ -2342,7 +3005,12 @@
    "pool_key": "huggingchat",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 26.1,
+    "coding_index": 39.3,
+    "tps": 89.61,
+    "ttft_s": 0.91
+   }
   },
   {
    "id": "google/gemma-4-31B-it",
@@ -2354,7 +3022,12 @@
    "pool_key": "huggingchat",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 4.4,
+    "coding_index": 43.4,
+    "tps": 34.36,
+    "ttft_s": 1.07
+   }
   },
   {
    "id": "inclusionAI/Ling-2.6-1T",
@@ -2366,7 +3039,12 @@
    "pool_key": "huggingchat",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 26.6,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
@@ -2378,7 +3056,12 @@
    "pool_key": "huggingchat",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 14.5,
+    "coding_index": 16.3,
+    "tps": 89.39,
+    "ttft_s": 1.04
+   }
   },
   {
    "id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
@@ -2390,7 +3073,12 @@
    "pool_key": "huggingchat",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 10.3,
+    "coding_index": 8.2,
+    "tps": 133.52,
+    "ttft_s": 0.74
+   }
   },
   {
    "id": "moonshotai/Kimi-K2.6",
@@ -2402,7 +3090,12 @@
    "pool_key": "huggingchat",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 45.1,
+    "coding_index": 61.8,
+    "tps": 44.73,
+    "ttft_s": 2.94
+   }
   },
   {
    "id": "moonshotai/Kimi-K2.7-Code",
@@ -2414,7 +3107,12 @@
    "pool_key": "huggingchat",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 19.7,
+    "coding_index": null,
+    "tps": 47.32,
+    "ttft_s": 2.01
+   }
   },
   {
    "id": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
@@ -2426,7 +3124,12 @@
    "pool_key": "huggingchat",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 11.8,
+    "coding_index": 49.3,
+    "tps": 242.74,
+    "ttft_s": 1.16
+   }
   },
   {
    "id": "openai/gpt-oss-120b",
@@ -2438,7 +3141,12 @@
    "pool_key": "huggingchat",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 3.8,
+    "coding_index": 30.4,
+    "tps": 219.38,
+    "ttft_s": 0.84
+   }
   },
   {
    "id": "openai/gpt-oss-20b",
@@ -2450,7 +3158,12 @@
    "pool_key": "huggingchat",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 15.2,
+    "coding_index": 20.7,
+    "tps": 146.31,
+    "ttft_s": 0.71
+   }
   },
   {
    "id": "stepfun-ai/Step-3.7-Flash",
@@ -2462,7 +3175,12 @@
    "pool_key": "huggingchat",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 30.9,
+    "coding_index": 39.6,
+    "tps": 214.98,
+    "ttft_s": 2.5
+   }
   },
   {
    "id": "zai-org/GLM-5.2",
@@ -2474,7 +3192,12 @@
    "pool_key": "huggingchat",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 52.6,
+    "coding_index": 68.8,
+    "tps": 80.9,
+    "ttft_s": 1.58
+   }
   },
   {
    "id": "Qwen/Qwen2.5-7B-Instruct",
@@ -2498,7 +3221,12 @@
    "pool_key": "huggingface",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 14.2,
+    "coding_index": 23,
+    "tps": 82.26,
+    "ttft_s": 1.01
+   }
   },
   {
    "id": "google/gemma-2-9b-it",
@@ -2546,7 +3274,12 @@
    "pool_key": "huggingface",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 1.7,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "NousResearch/Hermes-3-Llama-3.1-70B",
@@ -2558,7 +3291,12 @@
    "pool_key": "hyperbolic",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 4.8,
+    "coding_index": null,
+    "tps": 134.17,
+    "ttft_s": 0.68
+   }
   },
   {
    "id": "Qwen/QwQ-32B",
@@ -2570,7 +3308,12 @@
    "pool_key": "hyperbolic",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 13.4,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "Qwen/Qwen2.5-72B-Instruct",
@@ -2582,7 +3325,12 @@
    "pool_key": "hyperbolic",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 9.4,
+    "coding_index": null,
+    "tps": 29.9,
+    "ttft_s": 4.02
+   }
   },
   {
    "id": "Qwen/Qwen2.5-Coder-32B-Instruct",
@@ -2594,7 +3342,12 @@
    "pool_key": "hyperbolic",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 6.9,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "deepseek-ai/DeepSeek-R1",
@@ -2606,7 +3359,12 @@
    "pool_key": "hyperbolic",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 20.4,
+    "coding_index": null,
+    "tps": 37.2,
+    "ttft_s": 1.18
+   }
   },
   {
    "id": "deepseek-ai/DeepSeek-V3",
@@ -2618,7 +3376,12 @@
    "pool_key": "hyperbolic",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 14.2,
+    "coding_index": 23,
+    "tps": 82.26,
+    "ttft_s": 1.01
+   }
   },
   {
    "id": "meta-llama/Llama-3.2-3B-Instruct",
@@ -2666,7 +3429,12 @@
    "pool_key": "inference-net",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 9.4,
+    "coding_index": null,
+    "tps": 29.9,
+    "ttft_s": 4.02
+   }
   },
   {
    "id": "deepseek-ai/DeepSeek-R1",
@@ -2678,7 +3446,12 @@
    "pool_key": "inference-net",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 20.4,
+    "coding_index": null,
+    "tps": 37.2,
+    "ttft_s": 1.18
+   }
   },
   {
    "id": "meta-llama/Llama-3.3-70B-Instruct",
@@ -2720,7 +3493,12 @@
     "top_p"
    ],
    "modality": "",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 3.4,
+    "coding_index": 36.5,
+    "tps": 191.55,
+    "ttft_s": 0.33
+   }
   },
   {
    "id": "kilo-auto/free",
@@ -2732,7 +3510,12 @@
    "pool_key": "kilo-gateway-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 6.8,
+    "coding_index": null,
+    "tps": 54.74,
+    "ttft_s": 3.37
+   }
   },
   {
    "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
@@ -2758,7 +3541,12 @@
     "top_p"
    ],
    "modality": "",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 15,
+    "coding_index": 13.8,
+    "tps": 232.13,
+    "ttft_s": 0.81
+   }
   },
   {
    "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
@@ -2823,7 +3611,12 @@
     "top_p"
    ],
    "modality": "",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 6.8,
+    "coding_index": null,
+    "tps": 54.74,
+    "ttft_s": 3.37
+   }
   },
   {
    "id": "claude-haiku-4.5",
@@ -2871,7 +3664,12 @@
    "pool_key": "kiro",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 40.6,
+    "coding_index": null,
+    "tps": 67.5,
+    "ttft_s": 1.6
+   }
   },
   {
    "id": "minimax-m2.1",
@@ -2883,7 +3681,12 @@
    "pool_key": "kiro",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 32.1,
+    "coding_index": null,
+    "tps": 57.32,
+    "ttft_s": 1.79
+   }
   },
   {
    "id": "minimax-m2.5",
@@ -2895,7 +3698,12 @@
    "pool_key": "kiro",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 34.5,
+    "coding_index": null,
+    "tps": 60.46,
+    "ttft_s": 1.88
+   }
   },
   {
    "id": "qwen3-coder-next",
@@ -2907,7 +3715,12 @@
    "pool_key": "kiro",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 21.3,
+    "coding_index": 36.2,
+    "tps": 85.89,
+    "ttft_s": 0.89
+   }
   },
   {
    "id": "liquid-lfm-40b",
@@ -2931,7 +3744,12 @@
    "pool_key": "llm7-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 20.4,
+    "coding_index": null,
+    "tps": 37.2,
+    "ttft_s": 1.18
+   }
   },
   {
    "id": "gpt-4.1-nano-2025-04-14",
@@ -2943,7 +3761,12 @@
    "pool_key": "llm7-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 6.8,
+    "coding_index": 13.1,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "gpt-4o-mini-2024-07-18",
@@ -2955,7 +3778,12 @@
    "pool_key": "llm7-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 6.8,
+    "coding_index": 13.1,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "qwen2.5-coder-32b-instruct",
@@ -2967,7 +3795,12 @@
    "pool_key": "llm7-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 6.9,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "LongCat-2.0",
@@ -2979,7 +3812,12 @@
    "pool_key": "longcat-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 34,
+    "coding_index": 45.3,
+    "tps": 60.89,
+    "ttft_s": 2.88
+   }
   },
   {
    "id": "codestral-latest",
@@ -3015,7 +3853,12 @@
    "pool_key": "mistral",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 4.1,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "mistral-medium-3-5",
@@ -3027,7 +3870,12 @@
    "pool_key": "mistral",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 4.6,
+    "coding_index": 46.9,
+    "tps": 165.63,
+    "ttft_s": 2.44
+   }
   },
   {
    "id": "mistral-small-latest",
@@ -3039,7 +3887,12 @@
    "pool_key": "mistral",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 4.3,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "Qwen/Qwen3.5-397B-A17B",
@@ -3051,7 +3904,12 @@
    "pool_key": "modelscope-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 34.3,
+    "coding_index": 48.2,
+    "tps": 57.36,
+    "ttft_s": 2.11
+   }
   },
   {
    "id": "deepseek-ai/DeepSeek-V4-Pro",
@@ -3063,7 +3921,12 @@
    "pool_key": "modelscope-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 23.1,
+    "coding_index": 68.8,
+    "tps": 75.34,
+    "ttft_s": 1.72
+   }
   },
   {
    "id": "llama-3-8b-fuse",
@@ -3111,7 +3974,12 @@
    "pool_key": "muse-spark-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 44.3,
+    "coding_index": 58.6,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "muse-spark-contemplating",
@@ -3123,7 +3991,12 @@
    "pool_key": "muse-spark-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 44.3,
+    "coding_index": 58.6,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "muse-spark-thinking",
@@ -3135,7 +4008,12 @@
    "pool_key": "muse-spark-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 44.3,
+    "coding_index": 58.6,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "agnes-2.0-flash",
@@ -3183,7 +4061,12 @@
    "pool_key": "nara-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 18.9,
+    "coding_index": 58.6,
+    "tps": 116.66,
+    "ttft_s": 0.93
+   }
   },
   {
    "id": "mistral-large",
@@ -3195,7 +4078,12 @@
    "pool_key": "nara-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 7,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "mistral-medium-3-5",
@@ -3207,7 +4095,12 @@
    "pool_key": "nara-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 4.6,
+    "coding_index": 46.9,
+    "tps": 165.63,
+    "ttft_s": 2.44
+   }
   },
   {
    "id": "qwen3.8-27b",
@@ -3219,7 +4112,12 @@
    "pool_key": "nara-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 20.1,
+    "coding_index": 68.1,
+    "tps": 37.06,
+    "ttft_s": 3.83
+   }
   },
   {
    "id": "stepfun-3.7-flash",
@@ -3291,7 +4189,12 @@
    "pool_key": "nscale",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 18.4,
+    "coding_index": null,
+    "tps": 44.5,
+    "ttft_s": 1.05
+   }
   },
   {
    "id": "meta-llama/Llama-3.3-70B-Instruct",
@@ -3315,7 +4218,12 @@
    "pool_key": "nscale",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 10.3,
+    "coding_index": 8.2,
+    "tps": 133.52,
+    "ttft_s": 0.74
+   }
   },
   {
    "id": "moonshotai/Kimi-K2.5",
@@ -3327,7 +4235,12 @@
    "pool_key": "nscale",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 36,
+    "coding_index": 46.8,
+    "tps": 53.85,
+    "ttft_s": 1.78
+   }
   },
   {
    "id": "openai/gpt-oss-120b",
@@ -3339,7 +4252,12 @@
    "pool_key": "nscale",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 3.8,
+    "coding_index": 30.4,
+    "tps": 219.38,
+    "ttft_s": 0.84
+   }
   },
   {
    "id": "openai/gpt-oss-20b",
@@ -3351,7 +4269,12 @@
    "pool_key": "nscale",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 15.2,
+    "coding_index": 20.7,
+    "tps": 146.31,
+    "ttft_s": 0.71
+   }
   },
   {
    "id": "google/gemma-4-31b-it",
@@ -3363,7 +4286,12 @@
    "pool_key": "nvidia",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 4.4,
+    "coding_index": 43.4,
+    "tps": 34.36,
+    "ttft_s": 1.07
+   }
   },
   {
    "id": "nvidia/nemotron-3.5-super-vl-120b-a12b",
@@ -3387,7 +4315,12 @@
    "pool_key": "ollama-cloud",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 51.8,
+    "coding_index": 69.1,
+    "tps": 117.77,
+    "ttft_s": 1.53
+   }
   },
   {
    "id": "deepseek-v4-pro",
@@ -3399,7 +4332,12 @@
    "pool_key": "ollama-cloud",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 23.1,
+    "coding_index": 68.8,
+    "tps": 75.34,
+    "ttft_s": 1.72
+   }
   },
   {
    "id": "gemma4:31b",
@@ -3423,7 +4361,12 @@
    "pool_key": "ollama-cloud",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 41,
+    "coding_index": 55.8,
+    "tps": 84.2,
+    "ttft_s": 1.33
+   }
   },
   {
    "id": "kimi-k2.6",
@@ -3435,7 +4378,12 @@
    "pool_key": "ollama-cloud",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 45.1,
+    "coding_index": 61.8,
+    "tps": 44.73,
+    "ttft_s": 2.94
+   }
   },
   {
    "id": "minimax-m2.7",
@@ -3447,7 +4395,12 @@
    "pool_key": "ollama-cloud",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 38.9,
+    "coding_index": 52.6,
+    "tps": 52.94,
+    "ttft_s": 2.22
+   }
   },
   {
    "id": "nemotron-3-super",
@@ -3507,7 +4460,12 @@
    "pool_key": "onomeo",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 51.8,
+    "coding_index": 69.1,
+    "tps": 117.77,
+    "ttft_s": 1.53
+   }
   },
   {
    "id": "gemini-3.1-flash-lite",
@@ -3531,7 +4489,12 @@
    "pool_key": "onomeo",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 19.7,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "glm-4.6v-flash",
@@ -3555,7 +4518,12 @@
    "pool_key": "onomeo",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 23.3,
+    "coding_index": null,
+    "tps": 93.32,
+    "ttft_s": 1.06
+   }
   },
   {
    "id": "glm-5.2",
@@ -3567,7 +4535,12 @@
    "pool_key": "onomeo",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 52.6,
+    "coding_index": 68.8,
+    "tps": 80.9,
+    "ttft_s": 1.58
+   }
   },
   {
    "id": "glm-5.3-flash",
@@ -3579,7 +4552,12 @@
    "pool_key": "onomeo",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 27.8,
+    "coding_index": null,
+    "tps": 51.75,
+    "ttft_s": 2.17
+   }
   },
   {
    "id": "gpt-oss-20b",
@@ -3591,7 +4569,12 @@
    "pool_key": "onomeo",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 15.2,
+    "coding_index": 20.7,
+    "tps": 146.31,
+    "ttft_s": 0.71
+   }
   },
   {
    "id": "hy4-preview",
@@ -3627,7 +4610,12 @@
    "pool_key": "onomeo",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 6.3,
+    "coding_index": 49,
+    "tps": 101.75,
+    "ttft_s": 0.93
+   }
   },
   {
    "id": "opencode/beam-free",
@@ -3675,7 +4663,12 @@
    "pool_key": "opencode-zen-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 40.6,
+    "coding_index": null,
+    "tps": 67.5,
+    "ttft_s": 1.6
+   }
   },
   {
    "id": "opencode/jev-1.13-free",
@@ -3723,7 +4716,12 @@
    "pool_key": "opencode-zen-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 18.9,
+    "coding_index": 58.6,
+    "tps": 116.66,
+    "ttft_s": 0.93
+   }
   },
   {
    "id": "opencode/nemotron-3.5-lightning-free",
@@ -3841,7 +4839,12 @@
    "modality": "",
    "source_catalog": "openrouter",
    "free_status": "verified-free",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 26.1,
+    "coding_index": 39.3,
+    "tps": 89.61,
+    "ttft_s": 0.91
+   }
   },
   {
    "id": "google/gemma-4-31b-it:free",
@@ -3868,7 +4871,12 @@
    "modality": "",
    "source_catalog": "openrouter",
    "free_status": "verified-free",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 4.4,
+    "coding_index": 43.4,
+    "tps": 34.36,
+    "ttft_s": 1.07
+   }
   },
   {
    "id": "google/lyria-3-clip-preview",
@@ -4009,7 +5017,12 @@
    "modality": "",
    "source_catalog": "openrouter",
    "free_status": "verified-free",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 5.5,
+    "coding_index": 26.8,
+    "tps": 277.56,
+    "ttft_s": 0.64
+   }
   },
   {
    "id": "nvidia/nemotron-3.5-super-vl:free",
@@ -4037,7 +5050,12 @@
    "modality": "",
    "source_catalog": "openrouter",
    "free_status": "verified-free",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 13.6,
+    "coding_index": null,
+    "tps": 277.92,
+    "ttft_s": 0.84
+   }
   },
   {
    "id": "particle-ai/particle-1:free",
@@ -4142,7 +5160,12 @@
    "modality": "",
    "source_catalog": "openrouter",
    "free_status": "verified-free",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 30.6,
+    "coding_index": null,
+    "tps": 73.88,
+    "ttft_s": 2.44
+   }
   },
   {
    "id": "Mistral-Small-3.2-24B-Instruct-2506",
@@ -4154,7 +5177,12 @@
    "pool_key": "ovhcloud-anon",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 4.3,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "Qwen2.5-VL-72B-Instruct",
@@ -4178,7 +5206,12 @@
    "pool_key": "ovhcloud-anon",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 37.7,
+    "coding_index": 53.7,
+    "tps": 56.8,
+    "ttft_s": 3.51
+   }
   },
   {
    "id": "gpt-oss-120b",
@@ -4190,7 +5223,12 @@
    "pool_key": "ovhcloud-anon",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 3.8,
+    "coding_index": 30.4,
+    "tps": 219.38,
+    "ttft_s": 0.84
+   }
   },
   {
    "id": "gpt-oss-20b",
@@ -4202,7 +5240,12 @@
    "pool_key": "ovhcloud-anon",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 15.2,
+    "coding_index": 20.7,
+    "tps": 146.31,
+    "ttft_s": 0.71
+   }
   },
   {
    "id": "deepseek",
@@ -4214,7 +5257,12 @@
    "pool_key": "pollinations",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 21.7,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "gemini-flash-lite-3.1",
@@ -4262,7 +5310,12 @@
    "pool_key": "pollinations",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 6.8,
+    "coding_index": null,
+    "tps": 54.74,
+    "ttft_s": 3.37
+   }
   },
   {
    "id": "grok",
@@ -4274,7 +5327,12 @@
    "pool_key": "pollinations",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 37.4,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "grok-large",
@@ -4298,7 +5356,12 @@
    "pool_key": "pollinations",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 45.1,
+    "coding_index": 61.8,
+    "tps": 44.73,
+    "ttft_s": 2.94
+   }
   },
   {
    "id": "minimax",
@@ -4310,7 +5373,12 @@
    "pool_key": "pollinations",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 34.5,
+    "coding_index": null,
+    "tps": 60.46,
+    "ttft_s": 1.88
+   }
   },
   {
    "id": "mistral",
@@ -4322,7 +5390,12 @@
    "pool_key": "pollinations",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 14.7,
+    "coding_index": 20.5,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "mistral-large",
@@ -4334,7 +5407,12 @@
    "pool_key": "pollinations",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 7,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "nova",
@@ -4346,7 +5424,12 @@
    "pool_key": "pollinations",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 21.3,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "nova-fast",
@@ -4526,7 +5609,12 @@
    "pool_key": "publicai",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 6.1,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "swiss-ai/apertus-70b-instruct",
@@ -4538,7 +5626,12 @@
    "pool_key": "publicai",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 2,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "deepseek-v4-flash",
@@ -4550,7 +5643,12 @@
    "pool_key": "qoder",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 51.8,
+    "coding_index": 69.1,
+    "tps": 117.77,
+    "ttft_s": 1.53
+   }
   },
   {
    "id": "deepseek-v4-pro",
@@ -4562,7 +5660,12 @@
    "pool_key": "qoder",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 23.1,
+    "coding_index": 68.8,
+    "tps": 75.34,
+    "ttft_s": 1.72
+   }
   },
   {
    "id": "glm-5.2",
@@ -4574,7 +5677,12 @@
    "pool_key": "qoder",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 52.6,
+    "coding_index": 68.8,
+    "tps": 80.9,
+    "ttft_s": 1.58
+   }
   },
   {
    "id": "kimi-k2.7-code",
@@ -4586,7 +5694,12 @@
    "pool_key": "qoder",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 19.7,
+    "coding_index": null,
+    "tps": 47.32,
+    "ttft_s": 2.01
+   }
   },
   {
    "id": "kimi-k3",
@@ -4598,7 +5711,12 @@
    "pool_key": "qoder",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 59.7,
+    "coding_index": 76.2,
+    "tps": 51.16,
+    "ttft_s": 4.91
+   }
   },
   {
    "id": "minimax-m3",
@@ -4610,7 +5728,12 @@
    "pool_key": "qoder",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 18.9,
+    "coding_index": 58.6,
+    "tps": 116.66,
+    "ttft_s": 0.93
+   }
   },
   {
    "id": "qwen3.7-max",
@@ -4622,7 +5745,12 @@
    "pool_key": "qoder",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 46.7,
+    "coding_index": 66,
+    "tps": 202.06,
+    "ttft_s": 2.19
+   }
   },
   {
    "id": "qwen3.7-plus",
@@ -4634,7 +5762,12 @@
    "pool_key": "qoder",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 39.4,
+    "coding_index": 55.9,
+    "tps": 56.26,
+    "ttft_s": 2.24
+   }
   },
   {
    "id": "qwen3.8-max-preview",
@@ -4670,7 +5803,12 @@
    "pool_key": "reka",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 3.7,
+    "coding_index": null,
+    "tps": 88.36,
+    "ttft_s": 1.31
+   }
   },
   {
    "id": "mistral/leanstral-1-5",
@@ -4706,7 +5844,12 @@
    "pool_key": "requesty-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 3.8,
+    "coding_index": 30.4,
+    "tps": 219.38,
+    "ttft_s": 0.84
+   }
   },
   {
    "id": "DeepSeek-V3.1",
@@ -4718,7 +5861,12 @@
    "pool_key": "sambanova",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 21.4,
+    "coding_index": null,
+    "tps": 83,
+    "ttft_s": 1.29
+   }
   },
   {
    "id": "DeepSeek-V3.2",
@@ -4730,7 +5878,12 @@
    "pool_key": "sambanova",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 25.1,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "Meta-Llama-3.3-70B-Instruct",
@@ -4754,7 +5907,12 @@
    "pool_key": "sambanova",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 4.4,
+    "coding_index": 43.4,
+    "tps": 34.36,
+    "ttft_s": 1.07
+   }
   },
   {
    "id": "gpt-oss-120b",
@@ -4766,7 +5924,12 @@
    "pool_key": "sambanova",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 3.8,
+    "coding_index": 30.4,
+    "tps": 219.38,
+    "ttft_s": 0.84
+   }
   },
   {
    "id": "deepseek-v3-0324",
@@ -4778,7 +5941,12 @@
    "pool_key": "scaleway",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 15.2,
+    "coding_index": 21.2,
+    "tps": 147.12,
+    "ttft_s": 0.74
+   }
   },
   {
    "id": "gpt-oss-120b",
@@ -4790,7 +5958,12 @@
    "pool_key": "scaleway",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 3.8,
+    "coding_index": 30.4,
+    "tps": 219.38,
+    "ttft_s": 0.84
+   }
   },
   {
    "id": "llama-3.1-70b-instruct",
@@ -4826,7 +5999,12 @@
    "pool_key": "scaleway",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 4.3,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "qwen3-235b-a22b-instruct-2507",
@@ -4838,7 +6016,12 @@
    "pool_key": "scaleway",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 18.4,
+    "coding_index": null,
+    "tps": 44.5,
+    "ttft_s": 1.05
+   }
   },
   {
    "id": "aisingapore/Gemma-SEA-LION-v4-27B-IT",
@@ -4970,7 +6153,12 @@
    "pool_key": "t3-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 41.9,
+    "coding_index": null,
+    "tps": 56.15,
+    "ttft_s": 16.83
+   }
   },
   {
    "id": "claude-sonnet-4",
@@ -4982,7 +6170,12 @@
    "pool_key": "t3-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 36.8,
+    "coding_index": null,
+    "tps": 46.47,
+    "ttft_s": 1.27
+   }
   },
   {
    "id": "deepseek-r1",
@@ -4994,7 +6187,12 @@
    "pool_key": "t3-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 20.4,
+    "coding_index": null,
+    "tps": 37.2,
+    "ttft_s": 1.18
+   }
   },
   {
    "id": "deepseek-v3",
@@ -5006,7 +6204,12 @@
    "pool_key": "t3-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 14.2,
+    "coding_index": 23,
+    "tps": 82.26,
+    "ttft_s": 1.01
+   }
   },
   {
    "id": "devstral",
@@ -5018,7 +6221,12 @@
    "pool_key": "t3-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 19.2,
+    "coding_index": 31.3,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "gemini-2.5-flash",
@@ -5030,7 +6238,12 @@
    "pool_key": "t3-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 14.2,
+    "coding_index": null,
+    "tps": 206.11,
+    "ttft_s": 0.36
+   }
   },
   {
    "id": "gemini-2.5-pro",
@@ -5042,7 +6255,12 @@
    "pool_key": "t3-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 25.9,
+    "coding_index": 33.3,
+    "tps": 112.94,
+    "ttft_s": 19.56
+   }
   },
   {
    "id": "gpt-4.1",
@@ -5054,7 +6272,12 @@
    "pool_key": "t3-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 19.6,
+    "coding_index": null,
+    "tps": 147.59,
+    "ttft_s": 1.88
+   }
   },
   {
    "id": "gpt-4o",
@@ -5066,7 +6289,12 @@
    "pool_key": "t3-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 11.1,
+    "coding_index": null,
+    "tps": 177.79,
+    "ttft_s": 1.86
+   }
   },
   {
    "id": "gpt-5",
@@ -5078,7 +6306,12 @@
    "pool_key": "t3-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 35.3,
+    "coding_index": 37.8,
+    "tps": 91.33,
+    "ttft_s": 103.81
+   }
   },
   {
    "id": "grok-3",
@@ -5090,7 +6323,12 @@
    "pool_key": "t3-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 18.6,
+    "coding_index": null,
+    "tps": 81.79,
+    "ttft_s": 1.44
+   }
   },
   {
    "id": "grok-3-mini",
@@ -5102,7 +6340,12 @@
    "pool_key": "t3-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 18.6,
+    "coding_index": null,
+    "tps": 81.79,
+    "ttft_s": 1.44
+   }
   },
   {
    "id": "kimi-k2",
@@ -5114,7 +6357,12 @@
    "pool_key": "t3-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 19.7,
+    "coding_index": null,
+    "tps": 47.32,
+    "ttft_s": 2.01
+   }
   },
   {
    "id": "llama-3.3-70b",
@@ -5138,7 +6386,12 @@
    "pool_key": "t3-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 14.5,
+    "coding_index": 16.3,
+    "tps": 89.39,
+    "ttft_s": 1.04
+   }
   },
   {
    "id": "llama-4-scout",
@@ -5150,7 +6403,12 @@
    "pool_key": "t3-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 10.3,
+    "coding_index": 8.2,
+    "tps": 133.52,
+    "ttft_s": 0.74
+   }
   },
   {
    "id": "mistral-large",
@@ -5162,7 +6420,12 @@
    "pool_key": "t3-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 7,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "o3",
@@ -5174,7 +6437,12 @@
    "pool_key": "t3-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 31.1,
+    "coding_index": null,
+    "tps": 155.3,
+    "ttft_s": 7.44
+   }
   },
   {
    "id": "o4-mini",
@@ -5186,7 +6454,12 @@
    "pool_key": "t3-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 26.1,
+    "coding_index": null,
+    "tps": 152.9,
+    "ttft_s": 20.6
+   }
   },
   {
    "id": "qwen3-235b",
@@ -5198,7 +6471,12 @@
    "pool_key": "t3-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 18.4,
+    "coding_index": null,
+    "tps": 44.5,
+    "ttft_s": 1.05
+   }
   },
   {
    "id": "qwen3-32b",
@@ -5210,7 +6488,12 @@
    "pool_key": "t3-web",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 11.4,
+    "coding_index": 15.3,
+    "tps": 26.76,
+    "ttft_s": 1.36
+   }
   },
   {
    "id": "hunyuan-pro",
@@ -5246,7 +6529,12 @@
    "pool_key": "vertex",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 55,
+    "coding_index": 73.6,
+    "tps": 52.88,
+    "ttft_s": 19.81
+   }
   },
   {
    "id": "claude-sonnet-4-6",
@@ -5258,7 +6546,12 @@
    "pool_key": "vertex",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 36.8,
+    "coding_index": null,
+    "tps": 46.47,
+    "ttft_s": 1.27
+   }
   },
   {
    "id": "deepseek-ai/deepseek-v3.1-maas",
@@ -5270,7 +6563,12 @@
    "pool_key": "vertex",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 14.2,
+    "coding_index": 23,
+    "tps": 82.26,
+    "ttft_s": 1.01
+   }
   },
   {
    "id": "deepseek-ai/deepseek-v3.2-maas",
@@ -5282,7 +6580,12 @@
    "pool_key": "vertex",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 14.2,
+    "coding_index": 23,
+    "tps": 82.26,
+    "ttft_s": 1.01
+   }
   },
   {
    "id": "gemini-2.5-flash",
@@ -5294,7 +6597,12 @@
    "pool_key": "vertex",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 14.2,
+    "coding_index": null,
+    "tps": 206.11,
+    "ttft_s": 0.36
+   }
   },
   {
    "id": "gemini-2.5-flash-lite",
@@ -5318,7 +6626,12 @@
    "pool_key": "vertex",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 25.9,
+    "coding_index": 33.3,
+    "tps": 112.94,
+    "ttft_s": 19.56
+   }
   },
   {
    "id": "gemini-3-flash-preview",
@@ -5330,7 +6643,12 @@
    "pool_key": "vertex",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 27.9,
+    "coding_index": null,
+    "tps": 225.89,
+    "ttft_s": 0.78
+   }
   },
   {
    "id": "gemini-3.1-flash-lite",
@@ -5354,7 +6672,12 @@
    "pool_key": "vertex",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 47.7,
+    "coding_index": 68.8,
+    "tps": 147.68,
+    "ttft_s": 20.32
+   }
   },
   {
    "id": "gemini-3.5-flash",
@@ -5366,7 +6689,12 @@
    "pool_key": "vertex",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 52,
+    "coding_index": 70.1,
+    "tps": 195.54,
+    "ttft_s": 14.95
+   }
   },
   {
    "id": "gemini-3.5-flash-lite",
@@ -5390,7 +6718,12 @@
    "pool_key": "vertex",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 51.6,
+    "coding_index": 69.2,
+    "tps": 200.97,
+    "ttft_s": 16.36
+   }
   },
   {
    "id": "gemini-3.7-flash",
@@ -5402,7 +6735,12 @@
    "pool_key": "vertex",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 56,
+    "coding_index": 76.1,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "qwen/qwen3-next-80b-a3b-instruct-maas",
@@ -5414,7 +6752,12 @@
    "pool_key": "vertex",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 13.8,
+    "coding_index": null,
+    "tps": 146.75,
+    "ttft_s": 0.83
+   }
   },
   {
    "id": "zai-org/glm-5-maas",
@@ -5426,7 +6769,12 @@
    "pool_key": "vertex",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 40.6,
+    "coding_index": null,
+    "tps": 67.5,
+    "ttft_s": 1.6
+   }
   },
   {
    "id": "deepseek/deepseek-chat-v3.1",
@@ -5450,7 +6798,12 @@
    "pool_key": "xkiro-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 25.1,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "deepseek/deepseek-v4-flash",
@@ -5462,7 +6815,12 @@
    "pool_key": "xkiro-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 51.8,
+    "coding_index": 69.1,
+    "tps": 117.77,
+    "ttft_s": 1.53
+   }
   },
   {
    "id": "deepseek/deepseek-v4-pro",
@@ -5474,7 +6832,12 @@
    "pool_key": "xkiro-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 23.1,
+    "coding_index": 68.8,
+    "tps": 75.34,
+    "ttft_s": 1.72
+   }
   },
   {
    "id": "mistralai/codestral-2508",
@@ -5498,7 +6861,12 @@
    "pool_key": "xkiro-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 12.4,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "mistralai/ministral-14b",
@@ -5546,7 +6914,12 @@
    "pool_key": "xkiro-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 9,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "mistralai/mistral-medium-3.5",
@@ -5558,7 +6931,12 @@
    "pool_key": "xkiro-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 4.6,
+    "coding_index": 46.9,
+    "tps": 165.63,
+    "ttft_s": 2.44
+   }
   },
   {
    "id": "mistralai/mistral-small-2603",
@@ -5570,7 +6948,12 @@
    "pool_key": "xkiro-free",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
+   "intelligence": {
+    "intelligence_index": 4.3,
+    "coding_index": null,
+    "tps": 0,
+    "ttft_s": 0
+   }
   },
   {
    "id": "sensenova/sensenova-6.7-flash-lite",
