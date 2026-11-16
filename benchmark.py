@@ -153,8 +153,11 @@ def measure_openrouter(key: str | None) -> tuple[dict, list[str]]:
                 errors.append(f"{mid}: {e}")
         print(f"  openrouter: {len(results)} measured")
         if results and not any(v.get("tps") for v in results.values()):
-            # 14.11.2026: API liefert throughput_last_30m/latency_last_30m = null
-            errors.append("openrouter: API liefert null throughput/latency (Quelle degradiert)")
+            # 14.11.2026: API liefert throughput_last_30m/latency_last_30m = null.
+            # Mit Key kommen echte Werte (16.11. geprueft: 39/19/72 tps), ohne Key
+            # bleibt das Feld durchgehend null -> Ursache im Fehlertext nennen.
+            hint = "" if key else " - kein OPENROUTER_API_KEY gesetzt"
+            errors.append("openrouter: API liefert null throughput/latency (Quelle degradiert)" + hint)
     except Exception as e:
         errors.append(f"openrouter: {e}")
     return results, errors
