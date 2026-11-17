@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-17T08:05:23Z",
-  "total_providers": 73,
+  "updated_at": "2026-11-17T21:03:19Z",
+  "total_providers": 70,
   "providers": [
     {
       "provider": "bazaarlink",
@@ -411,43 +411,6 @@
       "avg_tps": null
     },
     {
-      "provider": "opencode-zen",
-      "count": 10,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "opencode/beam-free",
-          "tps": null,
-          "name": "Beam (free)"
-        },
-        {
-          "id": "opencode/big-pickle",
-          "tps": null,
-          "name": "Big Pickle (stealth)"
-        },
-        {
-          "id": "opencode/deepseek-v4.1-flash-free",
-          "tps": null,
-          "name": "DeepSeek V4.1 Flash (free)"
-        },
-        {
-          "id": "opencode/glm-5.3-flash-free",
-          "tps": null,
-          "name": "GLM 5.3 Flash (free)"
-        },
-        {
-          "id": "opencode/jev-1.13-free",
-          "tps": null,
-          "name": "Jev 1.13 (free)"
-        }
-      ],
-      "free_types": {
-        "recurring-uncapped": 10
-      },
-      "avg_tps": null
-    },
-    {
       "provider": "agy",
       "count": 9,
       "measured": 0,
@@ -481,43 +444,6 @@
       ],
       "free_types": {
         "keyless": 9
-      },
-      "avg_tps": null
-    },
-    {
-      "provider": "ainative",
-      "count": 9,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "deepseek-r1",
-          "tps": null,
-          "name": "DeepSeek R1"
-        },
-        {
-          "id": "gemini-flash",
-          "tps": null,
-          "name": "Gemini Flash"
-        },
-        {
-          "id": "llama-4-maverick",
-          "tps": null,
-          "name": "Llama 4 Maverick"
-        },
-        {
-          "id": "llama3.1-8b-cerebras",
-          "tps": null,
-          "name": "Llama 3.1 8B (Cerebras)"
-        },
-        {
-          "id": "nous-coder",
-          "tps": null,
-          "name": "Nous Coder"
-        }
-      ],
-      "free_types": {
-        "recurring-uncapped": 9
       },
       "avg_tps": null
     },
@@ -670,39 +596,39 @@
       "avg_tps": null
     },
     {
-      "provider": "ollama-cloud",
-      "count": 8,
+      "provider": "ainative",
+      "count": 7,
       "measured": 0,
       "tps_values": [],
       "top_models": [
         {
-          "id": "deepseek-v4-flash",
+          "id": "gemini-flash",
           "tps": null,
-          "name": "DeepSeek V4 Flash"
+          "name": "Gemini Flash"
         },
         {
-          "id": "deepseek-v4-pro",
+          "id": "llama-4-maverick",
           "tps": null,
-          "name": "DeepSeek V4 Pro"
+          "name": "Llama 4 Maverick"
         },
         {
-          "id": "gemma4:31b",
+          "id": "llama3.1-8b-cerebras",
           "tps": null,
-          "name": "Gemma 4 31B"
+          "name": "Llama 3.1 8B (Cerebras)"
         },
         {
-          "id": "glm-5.1",
+          "id": "qwen3-14b",
           "tps": null,
-          "name": "GLM 5.1"
+          "name": "Qwen3 14B"
         },
         {
-          "id": "kimi-k2.6",
+          "id": "qwen3-235b-cerebras",
           "tps": null,
-          "name": "Kimi K2.6"
+          "name": "Qwen3 235B (Cerebras)"
         }
       ],
       "free_types": {
-        "recurring-uncapped": 8
+        "recurring-uncapped": 7
       },
       "avg_tps": null
     },
@@ -1516,6 +1442,33 @@
       "avg_tps": null
     },
     {
+      "provider": "nvidia",
+      "count": 3,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "google/gemma-4-31b-it",
+          "tps": null,
+          "name": "Gemma 4 31B"
+        },
+        {
+          "id": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+          "tps": null,
+          "name": "Nemotron 3.5 Super VL 120B A12B"
+        },
+        {
+          "id": "openai/gpt-oss-20b",
+          "tps": null,
+          "name": "GPT OSS 20B"
+        }
+      ],
+      "free_types": {
+        "recurring-uncapped": 3
+      },
+      "avg_tps": null
+    },
+    {
       "provider": "publicai",
       "count": 3,
       "measured": 0,
@@ -1720,28 +1673,6 @@
       ],
       "free_types": {
         "recurring-monthly": 2
-      },
-      "avg_tps": null
-    },
-    {
-      "provider": "nvidia",
-      "count": 2,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "google/gemma-4-31b-it",
-          "tps": null,
-          "name": "Gemma 4 31B"
-        },
-        {
-          "id": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-          "tps": null,
-          "name": "Nemotron 3.5 Super VL 120B A12B"
-        }
-      ],
-      "free_types": {
-        "recurring-uncapped": 2
       },
       "avg_tps": null
     },
@@ -2053,23 +1984,6 @@
       ],
       "free_types": {
         "one-time-initial": 1
-      },
-      "avg_tps": null
-    },
-    {
-      "provider": "tencent",
-      "count": 1,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "hunyuan-pro",
-          "tps": null,
-          "name": "Hunyuan Pro"
-        }
-      ],
-      "free_types": {
-        "recurring-uncapped": 1
       },
       "avg_tps": null
     },

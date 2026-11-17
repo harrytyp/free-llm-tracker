@@ -1,9 +1,9 @@
 {
- "updated_at": "2026-11-17T08:05:23Z",
+ "updated_at": "2026-11-17T21:03:19Z",
  "counts": {
-  "free_models": 441,
-  "with_intelligence": 277,
-  "from_omniroute": 473,
+  "free_models": 421,
+  "with_intelligence": 270,
+  "from_omniroute": 453,
   "from_openrouter": 17
  },
  "source_errors": [],
@@ -336,23 +336,6 @@
    }
   },
   {
-   "id": "deepseek-r1",
-   "provider": "ainative",
-   "name": "DeepSeek R1",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "ainative-free",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": {
-    "intelligence_index": 20.4,
-    "coding_index": null,
-    "tps": 37.2,
-    "ttft_s": 1.18
-   }
-  },
-  {
    "id": "gemini-flash",
    "provider": "ainative",
    "name": "Gemini Flash",
@@ -385,18 +368,6 @@
    "id": "llama3.1-8b-cerebras",
    "provider": "ainative",
    "name": "Llama 3.1 8B (Cerebras)",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "ainative-free",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "nous-coder",
-   "provider": "ainative",
-   "name": "Nous Coder",
    "free_type": "recurring-uncapped",
    "monthly_tokens": 0,
    "credit_tokens": 0,
@@ -4306,125 +4277,21 @@
    "intelligence": null
   },
   {
-   "id": "deepseek-v4-flash",
-   "provider": "ollama-cloud",
-   "name": "DeepSeek V4 Flash",
+   "id": "openai/gpt-oss-20b",
+   "provider": "nvidia",
+   "name": "GPT OSS 20B",
    "free_type": "recurring-uncapped",
    "monthly_tokens": 0,
    "credit_tokens": 0,
-   "pool_key": "ollama-cloud",
+   "pool_key": "nvidia",
    "tos_verdict": null,
    "source_catalog": "omniroute",
    "intelligence": {
-    "intelligence_index": 51.8,
-    "coding_index": 69.1,
-    "tps": 117.77,
-    "ttft_s": 1.53
+    "intelligence_index": 15.2,
+    "coding_index": 20.7,
+    "tps": 146.31,
+    "ttft_s": 0.71
    }
-  },
-  {
-   "id": "deepseek-v4-pro",
-   "provider": "ollama-cloud",
-   "name": "DeepSeek V4 Pro",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "ollama-cloud",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": {
-    "intelligence_index": 23.1,
-    "coding_index": 68.8,
-    "tps": 75.34,
-    "ttft_s": 1.72
-   }
-  },
-  {
-   "id": "gemma4:31b",
-   "provider": "ollama-cloud",
-   "name": "Gemma 4 31B",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "ollama-cloud",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "glm-5.1",
-   "provider": "ollama-cloud",
-   "name": "GLM 5.1",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "ollama-cloud",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": {
-    "intelligence_index": 41,
-    "coding_index": 55.8,
-    "tps": 84.2,
-    "ttft_s": 1.33
-   }
-  },
-  {
-   "id": "kimi-k2.6",
-   "provider": "ollama-cloud",
-   "name": "Kimi K2.6",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "ollama-cloud",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": {
-    "intelligence_index": 45.1,
-    "coding_index": 61.8,
-    "tps": 44.73,
-    "ttft_s": 2.94
-   }
-  },
-  {
-   "id": "minimax-m2.7",
-   "provider": "ollama-cloud",
-   "name": "MiniMax M2.7",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "ollama-cloud",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": {
-    "intelligence_index": 38.9,
-    "coding_index": 52.6,
-    "tps": 52.94,
-    "ttft_s": 2.22
-   }
-  },
-  {
-   "id": "nemotron-3-super",
-   "provider": "ollama-cloud",
-   "name": "NVIDIA Nemotron 3 Super",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "ollama-cloud",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "qwen3.5:397b",
-   "provider": "ollama-cloud",
-   "name": "Qwen 3.5 397B",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "ollama-cloud",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
   },
   {
    "id": "auto",
@@ -4616,136 +4483,6 @@
     "tps": 101.75,
     "ttft_s": 0.93
    }
-  },
-  {
-   "id": "opencode/beam-free",
-   "provider": "opencode-zen",
-   "name": "Beam (free)",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "opencode-zen-free",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "opencode/big-pickle",
-   "provider": "opencode-zen",
-   "name": "Big Pickle (stealth)",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "opencode-zen-free",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "opencode/deepseek-v4.1-flash-free",
-   "provider": "opencode-zen",
-   "name": "DeepSeek V4.1 Flash (free)",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "opencode-zen-free",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "opencode/glm-5.3-flash-free",
-   "provider": "opencode-zen",
-   "name": "GLM 5.3 Flash (free)",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "opencode-zen-free",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": {
-    "intelligence_index": 40.6,
-    "coding_index": null,
-    "tps": 67.5,
-    "ttft_s": 1.6
-   }
-  },
-  {
-   "id": "opencode/jev-1.13-free",
-   "provider": "opencode-zen",
-   "name": "Jev 1.13 (free)",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "opencode-zen-free",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "opencode/longcat-2.5-preview-free",
-   "provider": "opencode-zen",
-   "name": "LongCat 2.5 Preview (free)",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "opencode-zen-free",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "opencode/mimo-v2.6-flash-free",
-   "provider": "opencode-zen",
-   "name": "MiMo V2.6 Flash (free)",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "opencode-zen-free",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "opencode/minimax-m3.1-flash-free",
-   "provider": "opencode-zen",
-   "name": "MiniMax M3.1 Flash (free)",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "opencode-zen-free",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": {
-    "intelligence_index": 18.9,
-    "coding_index": 58.6,
-    "tps": 116.66,
-    "ttft_s": 0.93
-   }
-  },
-  {
-   "id": "opencode/nemotron-3.5-lightning-free",
-   "provider": "opencode-zen",
-   "name": "Nemotron 3.5 Lightning (free)",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "opencode-zen-free",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "opencode/nemotron-3.5-super-vl-free",
-   "provider": "opencode-zen",
-   "name": "Nemotron 3.5 Super VL (free)",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "opencode-zen-free",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
   },
   {
    "id": "auto",
@@ -6494,18 +6231,6 @@
     "tps": 26.76,
     "ttft_s": 1.36
    }
-  },
-  {
-   "id": "hunyuan-pro",
-   "provider": "tencent",
-   "name": "Hunyuan Pro",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "tencent",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "intelligence": null
   },
   {
    "id": "turboderp/Qwen3.8-27B-exl3",
