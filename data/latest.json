@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-19T07:37:06Z",
+ "updated_at": "2026-11-19T20:46:06Z",
  "counts": {
-  "free_models": 421,
-  "with_intelligence": 270,
+  "free_models": 420,
+  "with_intelligence": 269,
   "from_omniroute": 453,
-  "from_openrouter": 17
+  "from_openrouter": 16
  },
  "source_errors": [],
  "sources": {
@@ -4871,38 +4871,6 @@
    "tos_verdict": null,
    "source_catalog": "omniroute",
    "intelligence": null
-  },
-  {
-   "id": "thinkingmachines/inkling-2-small:free",
-   "provider": "openrouter",
-   "name": "Thinking Machines: Inkling 2 Small (free)",
-   "free_type": "recurring-monthly",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "openrouter",
-   "tos_verdict": null,
-   "context_length": 1048576,
-   "description": "Inkling 2 Small is an open-weight multimodal mixture-of-experts reasoning model from Thinking Machines Lab, with 17B active parameters out of 594B total. It is the first model in the second...",
-   "supported_parameters": [
-    "include_reasoning",
-    "max_tokens",
-    "reasoning",
-    "reasoning_effort",
-    "seed",
-    "stop",
-    "temperature",
-    "tools",
-    "top_p"
-   ],
-   "modality": "",
-   "source_catalog": "openrouter",
-   "free_status": "verified-free",
-   "intelligence": {
-    "intelligence_index": 30.6,
-    "coding_index": null,
-    "tps": 73.88,
-    "ttft_s": 2.44
-   }
   },
   {
    "id": "Mistral-Small-3.2-24B-Instruct-2506",
