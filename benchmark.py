@@ -494,6 +494,7 @@ def main() -> int:
             aa_data = fetch_aa_free_data(aa_key)
             all_results["__aa"] = {
                 "type": "aa-intelligence",
+                "fetched_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
                 "models": aa_data,
             }
             with_intel = sum(1 for v in aa_data.values() if v.get("intelligence_index") is not None)
@@ -572,8 +573,16 @@ def main() -> int:
             old_aa = old_res.get("__aa") or {}
             if "__aa" not in all_results and old_aa.get("models"):
                 all_results["__aa"] = old_aa
+                since = old_aa.get("fetched_at") or "unbekannt"
+                age = ""
+                try:
+                    days = (datetime.now(timezone.utc) - datetime.strptime(
+                        since, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)).days
+                    age = f", seit {days} Tagen unveraendert -> ARTIFICIAL_ANALYSIS_API_KEY setzen"
+                except Exception:
+                    pass
                 all_errors.append(
-                    f"benchmark: {len(old_aa['models'])} AA-Werte aus letztem Stand behalten (kein Key)")
+                    f"benchmark: {len(old_aa['models'])} AA-Werte aus letztem Stand behalten (kein Key), Abruf {since}{age}")
         except Exception as e:
             all_errors.append(f"benchmark-merge: {e}")
 
