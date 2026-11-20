@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-19T20:46:06Z",
+ "updated_at": "2026-11-20T07:28:16Z",
  "counts": {
-  "free_models": 420,
-  "with_intelligence": 269,
+  "free_models": 419,
+  "with_intelligence": 268,
   "from_omniroute": 453,
-  "from_openrouter": 16
+  "from_openrouter": 15
  },
  "source_errors": [],
  "sources": {
@@ -3435,41 +3435,6 @@
    "tos_verdict": null,
    "source_catalog": "omniroute",
    "intelligence": null
-  },
-  {
-   "id": "cohere/north-mini-code:free",
-   "provider": "kilo-gateway",
-   "name": "Cohere North Mini Code (free)",
-   "free_type": "recurring-uncapped",
-   "monthly_tokens": 0,
-   "credit_tokens": 0,
-   "pool_key": "kilo-gateway-free",
-   "tos_verdict": null,
-   "source_catalog": "omniroute",
-   "free_status": "verified-free",
-   "context_length": 256000,
-   "description": "North Mini Code is Cohere's first agentic coding model and the debut of its North family. A sparse mixture-of-experts model with 30B total parameters and 3B active, it is optimized...",
-   "supported_parameters": [
-    "frequency_penalty",
-    "include_reasoning",
-    "max_tokens",
-    "presence_penalty",
-    "reasoning",
-    "seed",
-    "stop",
-    "temperature",
-    "tool_choice",
-    "tools",
-    "top_k",
-    "top_p"
-   ],
-   "modality": "",
-   "intelligence": {
-    "intelligence_index": 3.4,
-    "coding_index": 36.5,
-    "tps": 191.55,
-    "ttft_s": 0.33
-   }
   },
   {
    "id": "kilo-auto/free",

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T20:46:06Z",
+  "updated_at": "2026-11-20T07:28:16Z",
   "total_providers": 70,
   "providers": [
     {
@@ -966,43 +966,6 @@
       "avg_tps": null
     },
     {
-      "provider": "kilo-gateway",
-      "count": 5,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "cohere/north-mini-code:free",
-          "tps": null,
-          "name": "Cohere North Mini Code (free)"
-        },
-        {
-          "id": "kilo-auto/free",
-          "tps": null,
-          "name": "Kilo Auto Free (auto-router)"
-        },
-        {
-          "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-          "tps": null,
-          "name": "NVIDIA Nemotron 3 Nano Omni (free)"
-        },
-        {
-          "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
-          "tps": null,
-          "name": "NVIDIA Nemotron 3 Ultra (free)"
-        },
-        {
-          "id": "openrouter/free",
-          "tps": null,
-          "name": "OpenRouter Free Models Router"
-        }
-      ],
-      "free_types": {
-        "recurring-uncapped": 5
-      },
-      "avg_tps": null
-    },
-    {
       "provider": "mistral",
       "count": 5,
       "measured": 0,
@@ -1244,6 +1207,38 @@
       "free_types": {
         "recurring-uncapped": 3,
         "one-time-initial": 1
+      },
+      "avg_tps": null
+    },
+    {
+      "provider": "kilo-gateway",
+      "count": 4,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "kilo-auto/free",
+          "tps": null,
+          "name": "Kilo Auto Free (auto-router)"
+        },
+        {
+          "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+          "tps": null,
+          "name": "NVIDIA Nemotron 3 Nano Omni (free)"
+        },
+        {
+          "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+          "tps": null,
+          "name": "NVIDIA Nemotron 3 Ultra (free)"
+        },
+        {
+          "id": "openrouter/free",
+          "tps": null,
+          "name": "OpenRouter Free Models Router"
+        }
+      ],
+      "free_types": {
+        "recurring-uncapped": 4
       },
       "avg_tps": null
     },
