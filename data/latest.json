@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-20T20:30:03Z",
+ "updated_at": "2026-11-21T07:22:55Z",
  "counts": {
-  "free_models": 419,
+  "free_models": 418,
   "with_intelligence": 268,
   "from_omniroute": 453,
-  "from_openrouter": 15
+  "from_openrouter": 14
  },
  "source_errors": [],
  "sources": {
@@ -4477,33 +4477,6 @@
     "max_tokens",
     "reasoning",
     "reasoning_effort",
-    "response_format",
-    "structured_outputs",
-    "temperature",
-    "tool_choice",
-    "tools",
-    "top_p"
-   ],
-   "modality": "",
-   "source_catalog": "openrouter",
-   "free_status": "verified-free",
-   "intelligence": null
-  },
-  {
-   "id": "dots-studio/dots-3-note-preview:free",
-   "provider": "openrouter",
-   "name": "Dots Studio: Dots3-Note Preview (free)",
-   "free_type": "recurring-monthly",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "openrouter",
-   "tos_verdict": null,
-   "context_length": 512000,
-   "description": "Dots3-Note Preview is an open-weight mixture-of-experts model from Dots Studio, with 16B active parameters out of 280B total. It is the lightest model in the Dots 3 family and is...",
-   "supported_parameters": [
-    "include_reasoning",
-    "max_tokens",
-    "reasoning",
     "response_format",
     "structured_outputs",
     "temperature",
