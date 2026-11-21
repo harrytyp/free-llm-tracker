@@ -488,7 +488,8 @@ def main() -> int:
     free_models = latest["models"]
 
     # 3a. AA free API: ONE call for intelligence index + speed (610 models)
-    aa_key = os.environ.get("ARTIFICIAL_ANALYSIS_API_KEY", "").strip()
+    aa_key = (os.environ.get("ARTIFICIAL_ANALYSIS_API_KEY", "")
+              or os.environ.get("AA_API_KEY", "")).strip()
     if aa_key:
         try:
             aa_data = fetch_aa_free_data(aa_key)

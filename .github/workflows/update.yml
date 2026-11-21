@@ -27,6 +27,7 @@ jobs:
       - name: Collect data
         env:
           ARTIFICIAL_ANALYSIS_API_KEY: ${{ secrets.ARTIFICIAL_ANALYSIS_API_KEY }}
+          AA_API_KEY: ${{ secrets.AA_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
@@ -48,11 +49,17 @@ jobs:
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           ARTIFICIAL_ANALYSIS_API_KEY: ${{ secrets.ARTIFICIAL_ANALYSIS_API_KEY }}
+          AA_API_KEY: ${{ secrets.AA_API_KEY }}
+          # Nur Presence-Flags, nie Werte: zeigt welcher Secret-Name belegt ist
+          HAVE_ARTIFICIAL_ANALYSIS_API_KEY: ${{ secrets.ARTIFICIAL_ANALYSIS_API_KEY != '' }}
+          HAVE_AA_API_KEY: ${{ secrets.AA_API_KEY != '' }}
+          HAVE_OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY != '' }}
         run: |
           # Die OpenRouter-Messung ist oeffentlich und braucht keinen Key.
           # Frueher wurde der ganze Schritt ohne Secrets uebersprungen, wodurch
           # benchmarks.json nur bei manuellen Laeufen frisch wurde.
           [ -z "$ARTIFICIAL_ANALYSIS_API_KEY" ] && echo "::notice::ohne ARTIFICIAL_ANALYSIS_API_KEY: kein Intelligence-Index"
+          echo "Key-Presence: AA_alt=$HAVE_ARTIFICIAL_ANALYSIS_API_KEY AA_neu=$HAVE_AA_API_KEY OpenRouter=$HAVE_OPENROUTER_API_KEY"
           python benchmark.py
 
       - name: Build site
