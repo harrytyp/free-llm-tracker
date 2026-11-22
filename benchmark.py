@@ -528,6 +528,11 @@ def main() -> int:
 
     print(f"\n  AA provider benchmarks for {len(aa_targets)} models...")
     aa_data = collect_aa_measurements(aa_targets)
+    if not aa_data:
+        # Die /providers-Seiten sind seit dem Site-Relaunch reines Client-Rendering:
+        # im HTML stehen keine Messwerte mehr, nur noch RSC-Payload ohne Tabellen.
+        # Sichtbar machen statt still 40 Requests pro Lauf ins Leere schicken.
+        all_errors.append("aa-provider-pages: 0 Modelle geparst (kein Tabellen-HTML mehr), alte Werte behalten")
     all_results.update(aa_data)
 
     # AA liefert fuer neue Modelle oft noch keinen Intelligence-Index (Feld null).
