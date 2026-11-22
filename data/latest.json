@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-11-22T07:36:55Z",
+ "updated_at": "2026-11-22T19:49:21Z",
  "counts": {
-  "free_models": 458,
-  "with_intelligence": 277,
+  "free_models": 418,
+  "with_intelligence": 268,
   "from_omniroute": 453,
   "from_openrouter": 14
  },
@@ -27,8 +27,8 @@
    "intelligence": {
     "intelligence_index": 57.3,
     "coding_index": 74.3,
-    "tps": 66.47,
-    "ttft_s": 50.19
+    "tps": 55.54,
+    "ttft_s": 27.32
    }
   },
   {
@@ -44,8 +44,8 @@
    "intelligence": {
     "intelligence_index": 44.2,
     "coding_index": 78,
-    "tps": 54.55,
-    "ttft_s": 49.63
+    "tps": 49,
+    "ttft_s": 56.39
    }
   },
   {
@@ -61,8 +61,8 @@
    "intelligence": {
     "intelligence_index": 60.9,
     "coding_index": 77.4,
-    "tps": 127.17,
-    "ttft_s": 152.33
+    "tps": 119.56,
+    "ttft_s": 61.76
    }
   },
   {
@@ -150,8 +150,8 @@
    "intelligence": {
     "intelligence_index": 38.8,
     "coding_index": null,
-    "tps": 40.93,
-    "ttft_s": 1.92
+    "tps": 38,
+    "ttft_s": 1.75
    }
   },
   {
@@ -167,8 +167,8 @@
    "intelligence": {
     "intelligence_index": 36.8,
     "coding_index": null,
-    "tps": 46.47,
-    "ttft_s": 1.27
+    "tps": 43.02,
+    "ttft_s": 1.19
    }
   },
   {
@@ -220,8 +220,8 @@
    "intelligence": {
     "intelligence_index": 22.5,
     "coding_index": null,
-    "tps": 125.19,
-    "ttft_s": 1.45
+    "tps": 107.21,
+    "ttft_s": 1.39
    }
   },
   {
@@ -237,8 +237,8 @@
    "intelligence": {
     "intelligence_index": 30.1,
     "coding_index": null,
-    "tps": 126.65,
-    "ttft_s": 15.39
+    "tps": 105.58,
+    "ttft_s": 18.43
    }
   },
   {
@@ -266,8 +266,8 @@
    "intelligence": {
     "intelligence_index": 3.8,
     "coding_index": 30.4,
-    "tps": 219.38,
-    "ttft_s": 0.84
+    "tps": 259.42,
+    "ttft_s": 0.81
    }
   },
   {
@@ -331,8 +331,8 @@
    "intelligence": {
     "intelligence_index": 4.4,
     "coding_index": 43.4,
-    "tps": 34.36,
-    "ttft_s": 1.07
+    "tps": 35.69,
+    "ttft_s": 1.02
    }
   },
   {
@@ -360,8 +360,8 @@
    "intelligence": {
     "intelligence_index": 14.5,
     "coding_index": 16.3,
-    "tps": 89.39,
-    "ttft_s": 1.04
+    "tps": 190.91,
+    "ttft_s": 0.96
    }
   },
   {
@@ -389,8 +389,8 @@
    "intelligence": {
     "intelligence_index": 10.4,
     "coding_index": 13.8,
-    "tps": 35.8,
-    "ttft_s": 0.93
+    "tps": 52.08,
+    "ttft_s": 0.92
    }
   },
   {
@@ -418,8 +418,8 @@
    "intelligence": {
     "intelligence_index": 11.4,
     "coding_index": 15.3,
-    "tps": 26.76,
-    "ttft_s": 1.36
+    "tps": 28.06,
+    "ttft_s": 1.61
    }
   },
   {
@@ -529,8 +529,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": 23,
-    "tps": 82.26,
-    "ttft_s": 1.01
+    "tps": 83.53,
+    "ttft_s": 1.26
    }
   },
   {
@@ -546,8 +546,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": null,
-    "tps": 206.11,
-    "ttft_s": 0.36
+    "tps": 198.5,
+    "ttft_s": 0.4
    }
   },
   {
@@ -563,8 +563,8 @@
    "intelligence": {
     "intelligence_index": 45.1,
     "coding_index": 61.8,
-    "tps": 44.73,
-    "ttft_s": 2.94
+    "tps": 42.24,
+    "ttft_s": 3
    }
   },
   {
@@ -580,8 +580,8 @@
    "intelligence": {
     "intelligence_index": 11.4,
     "coding_index": 15.3,
-    "tps": 26.76,
-    "ttft_s": 1.36
+    "tps": 28.06,
+    "ttft_s": 1.61
    }
   },
   {
@@ -667,8 +667,8 @@
    "intelligence": {
     "intelligence_index": 55,
     "coding_index": 73.6,
-    "tps": 52.88,
-    "ttft_s": 19.81
+    "tps": 47.4,
+    "ttft_s": 20.3
    }
   },
   {
@@ -684,8 +684,8 @@
    "intelligence": {
     "intelligence_index": 36.8,
     "coding_index": null,
-    "tps": 46.47,
-    "ttft_s": 1.27
+    "tps": 43.02,
+    "ttft_s": 1.19
    }
   },
   {
@@ -718,8 +718,8 @@
    "intelligence": {
     "intelligence_index": 27.9,
     "coding_index": null,
-    "tps": 225.89,
-    "ttft_s": 0.78
+    "tps": 206.42,
+    "ttft_s": 0.87
    }
   },
   {
@@ -735,8 +735,8 @@
    "intelligence": {
     "intelligence_index": 6.2,
     "coding_index": 34.7,
-    "tps": 367.41,
-    "ttft_s": 4.33
+    "tps": 316.99,
+    "ttft_s": 4.99
    }
   },
   {
@@ -752,8 +752,8 @@
    "intelligence": {
     "intelligence_index": 47.7,
     "coding_index": 68.8,
-    "tps": 147.68,
-    "ttft_s": 20.32
+    "tps": 135.12,
+    "ttft_s": 19.11
    }
   },
   {
@@ -769,8 +769,8 @@
    "intelligence": {
     "intelligence_index": 26.1,
     "coding_index": 39.3,
-    "tps": 89.61,
-    "ttft_s": 0.91
+    "tps": 99.84,
+    "ttft_s": 0.93
    }
   },
   {
@@ -786,8 +786,8 @@
    "intelligence": {
     "intelligence_index": 4.4,
     "coding_index": 43.4,
-    "tps": 34.36,
-    "ttft_s": 1.07
+    "tps": 35.69,
+    "ttft_s": 1.02
    }
   },
   {
@@ -803,8 +803,8 @@
    "intelligence": {
     "intelligence_index": 40.6,
     "coding_index": null,
-    "tps": 67.5,
-    "ttft_s": 1.6
+    "tps": 60.2,
+    "ttft_s": 2.13
    }
   },
   {
@@ -820,8 +820,8 @@
    "intelligence": {
     "intelligence_index": 41,
     "coding_index": 55.8,
-    "tps": 84.2,
-    "ttft_s": 1.33
+    "tps": 84.56,
+    "ttft_s": 1.96
    }
   },
   {
@@ -837,8 +837,8 @@
    "intelligence": {
     "intelligence_index": 53.1,
     "coding_index": 71.1,
-    "tps": 84.84,
-    "ttft_s": 215.09
+    "tps": 91.93,
+    "ttft_s": 168.82
    }
   },
   {
@@ -854,8 +854,8 @@
    "intelligence": {
     "intelligence_index": 40.9,
     "coding_index": 56.1,
-    "tps": 228.38,
-    "ttft_s": 129.18
+    "tps": 286.02,
+    "ttft_s": 106.65
    }
   },
   {
@@ -871,8 +871,8 @@
    "intelligence": {
     "intelligence_index": 39.7,
     "coding_index": 56.1,
-    "tps": 160.75,
-    "ttft_s": 125.76
+    "tps": 163.32,
+    "ttft_s": 59.92
    }
   },
   {
@@ -888,8 +888,8 @@
    "intelligence": {
     "intelligence_index": 56.3,
     "coding_index": 74.9,
-    "tps": 80.2,
-    "ttft_s": 86.85
+    "tps": 68.65,
+    "ttft_s": 49.07
    }
   },
   {
@@ -905,8 +905,8 @@
    "intelligence": {
     "intelligence_index": 38,
     "coding_index": null,
-    "tps": 125.13,
-    "ttft_s": 16.68
+    "tps": 139.81,
+    "ttft_s": 14.57
    }
   },
   {
@@ -922,8 +922,8 @@
    "intelligence": {
     "intelligence_index": 37.9,
     "coding_index": 42.2,
-    "tps": 104.45,
-    "ttft_s": 23.05
+    "tps": 109.2,
+    "ttft_s": 22.22
    }
   },
   {
@@ -939,8 +939,8 @@
    "intelligence": {
     "intelligence_index": 36,
     "coding_index": 46.8,
-    "tps": 53.85,
-    "ttft_s": 1.78
+    "tps": 50.04,
+    "ttft_s": 1.87
    }
   },
   {
@@ -956,8 +956,8 @@
    "intelligence": {
     "intelligence_index": 45.1,
     "coding_index": 61.8,
-    "tps": 44.73,
-    "ttft_s": 2.94
+    "tps": 42.24,
+    "ttft_s": 3
    }
   },
   {
@@ -985,8 +985,8 @@
    "intelligence": {
     "intelligence_index": 14.5,
     "coding_index": 16.3,
-    "tps": 89.39,
-    "ttft_s": 1.04
+    "tps": 190.91,
+    "ttft_s": 0.96
    }
   },
   {
@@ -1002,8 +1002,8 @@
    "intelligence": {
     "intelligence_index": 10.3,
     "coding_index": 8.2,
-    "tps": 133.52,
-    "ttft_s": 0.74
+    "tps": 127.67,
+    "ttft_s": 0.76
    }
   },
   {
@@ -1048,8 +1048,8 @@
    "intelligence": {
     "intelligence_index": 34.5,
     "coding_index": null,
-    "tps": 60.46,
-    "ttft_s": 1.88
+    "tps": 64.63,
+    "ttft_s": 2.09
    }
   },
   {
@@ -1065,8 +1065,8 @@
    "intelligence": {
     "intelligence_index": 38.9,
     "coding_index": 52.6,
-    "tps": 52.94,
-    "ttft_s": 2.22
+    "tps": 54.38,
+    "ttft_s": 2.28
    }
   },
   {
@@ -1145,8 +1145,8 @@
    "intelligence": {
     "intelligence_index": 40.5,
     "coding_index": 54.5,
-    "tps": 53.56,
-    "ttft_s": 1.97
+    "tps": 55.99,
+    "ttft_s": 2.02
    }
   },
   {
@@ -1186,8 +1186,8 @@
    "intelligence": {
     "intelligence_index": 36.8,
     "coding_index": null,
-    "tps": 46.47,
-    "ttft_s": 1.27
+    "tps": 43.02,
+    "ttft_s": 1.19
    }
   },
   {
@@ -1203,8 +1203,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": 23,
-    "tps": 82.26,
-    "ttft_s": 1.01
+    "tps": 83.53,
+    "ttft_s": 1.26
    }
   },
   {
@@ -1220,8 +1220,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": null,
-    "tps": 206.11,
-    "ttft_s": 0.36
+    "tps": 198.5,
+    "ttft_s": 0.4
    }
   },
   {
@@ -1237,8 +1237,8 @@
    "intelligence": {
     "intelligence_index": 11.1,
     "coding_index": null,
-    "tps": 177.79,
-    "ttft_s": 1.86
+    "tps": 199.87,
+    "ttft_s": 1.69
    }
   },
   {
@@ -1266,7 +1266,7 @@
    "intelligence": {
     "intelligence_index": 35.6,
     "coding_index": null,
-    "tps": 50.02,
+    "tps": 47.39,
     "ttft_s": 1.39
    }
   },
@@ -1348,8 +1348,8 @@
    "intelligence": {
     "intelligence_index": 25.9,
     "coding_index": 33.3,
-    "tps": 112.94,
-    "ttft_s": 19.56
+    "tps": 136.09,
+    "ttft_s": 22.02
    }
   },
   {
@@ -1377,8 +1377,8 @@
    "intelligence": {
     "intelligence_index": 34.5,
     "coding_index": 45.3,
-    "tps": 43.26,
-    "ttft_s": 1.68
+    "tps": 86.11,
+    "ttft_s": 1.58
    }
   },
   {
@@ -1394,8 +1394,8 @@
    "intelligence": {
     "intelligence_index": 19.6,
     "coding_index": null,
-    "tps": 147.59,
-    "ttft_s": 1.88
+    "tps": 183.3,
+    "ttft_s": 1.65
    }
   },
   {
@@ -1411,8 +1411,8 @@
    "intelligence": {
     "intelligence_index": 14.8,
     "coding_index": 20.2,
-    "tps": 151.57,
-    "ttft_s": 1.62
+    "tps": 112.47,
+    "ttft_s": 1.53
    }
   },
   {
@@ -1428,8 +1428,8 @@
    "intelligence": {
     "intelligence_index": 9.6,
     "coding_index": 11.1,
-    "tps": 324.74,
-    "ttft_s": 1.38
+    "tps": 282.06,
+    "ttft_s": 1.22
    }
   },
   {
@@ -1445,8 +1445,8 @@
    "intelligence": {
     "intelligence_index": 11.1,
     "coding_index": null,
-    "tps": 177.79,
-    "ttft_s": 1.86
+    "tps": 199.87,
+    "ttft_s": 1.69
    }
   },
   {
@@ -1462,8 +1462,8 @@
    "intelligence": {
     "intelligence_index": 6.7,
     "coding_index": 11.4,
-    "tps": 76.32,
-    "ttft_s": 1.93
+    "tps": 75.58,
+    "ttft_s": 1.7
    }
   },
   {
@@ -1496,8 +1496,8 @@
    "intelligence": {
     "intelligence_index": 19.7,
     "coding_index": null,
-    "tps": 47.32,
-    "ttft_s": 2.01
+    "tps": 46.2,
+    "ttft_s": 1.9
    }
   },
   {
@@ -1513,8 +1513,8 @@
    "intelligence": {
     "intelligence_index": 33.5,
     "coding_index": null,
-    "tps": 122.99,
-    "ttft_s": 1.65
+    "tps": 122.84,
+    "ttft_s": 1.47
    }
   },
   {
@@ -1530,8 +1530,8 @@
    "intelligence": {
     "intelligence_index": 34.5,
     "coding_index": null,
-    "tps": 60.46,
-    "ttft_s": 1.88
+    "tps": 64.63,
+    "ttft_s": 2.09
    }
   },
   {
@@ -1605,22 +1605,9 @@
    "intelligence": {
     "intelligence_index": 3.8,
     "coding_index": 30.4,
-    "tps": 219.38,
-    "ttft_s": 0.84
+    "tps": 259.42,
+    "ttft_s": 0.81
    }
-  },
-  {
-   "id": "qwen-3.8-27b",
-   "provider": "cerebras",
-   "name": "qwen-3.8-27b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "cerebras",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
   },
   {
    "id": "zai-glm-4.7",
@@ -1664,8 +1651,8 @@
    "intelligence": {
     "intelligence_index": 26.1,
     "coding_index": 39.3,
-    "tps": 89.61,
-    "ttft_s": 0.91
+    "tps": 99.84,
+    "ttft_s": 0.93
    }
   },
   {
@@ -1722,8 +1709,8 @@
    "intelligence": {
     "intelligence_index": 45.1,
     "coding_index": 61.8,
-    "tps": 44.73,
-    "ttft_s": 2.94
+    "tps": 42.24,
+    "ttft_s": 3
    }
   },
   {
@@ -1773,8 +1760,8 @@
    "intelligence": {
     "intelligence_index": 23.3,
     "coding_index": null,
-    "tps": 93.32,
-    "ttft_s": 1.06
+    "tps": 83.73,
+    "ttft_s": 1.59
    }
   },
   {
@@ -1790,8 +1777,8 @@
    "intelligence": {
     "intelligence_index": 7.5,
     "coding_index": null,
-    "tps": 16.72,
-    "ttft_s": 1.81
+    "tps": 69.38,
+    "ttft_s": 1.7
    }
   },
   {
@@ -1807,8 +1794,8 @@
    "intelligence": {
     "intelligence_index": 7.5,
     "coding_index": null,
-    "tps": 16.72,
-    "ttft_s": 1.81
+    "tps": 69.38,
+    "ttft_s": 1.7
    }
   },
   {
@@ -1824,8 +1811,8 @@
    "intelligence": {
     "intelligence_index": 7.5,
     "coding_index": null,
-    "tps": 16.72,
-    "ttft_s": 1.81
+    "tps": 69.38,
+    "ttft_s": 1.7
    }
   },
   {
@@ -1894,8 +1881,8 @@
    "intelligence": {
     "intelligence_index": 34.5,
     "coding_index": null,
-    "tps": 60.46,
-    "ttft_s": 1.88
+    "tps": 64.63,
+    "ttft_s": 2.09
    }
   },
   {
@@ -1923,8 +1910,8 @@
    "intelligence": {
     "intelligence_index": 32.8,
     "coding_index": 45.7,
-    "tps": 129.09,
-    "ttft_s": 2.26
+    "tps": 128.12,
+    "ttft_s": 2.24
    }
   },
   {
@@ -1940,8 +1927,8 @@
    "intelligence": {
     "intelligence_index": 34.3,
     "coding_index": 48.2,
-    "tps": 57.36,
-    "ttft_s": 2.11
+    "tps": 59.18,
+    "ttft_s": 2.22
    }
   },
   {
@@ -1957,8 +1944,8 @@
    "intelligence": {
     "intelligence_index": 32.1,
     "coding_index": 41.9,
-    "tps": 116.26,
-    "ttft_s": 2.07
+    "tps": 91.4,
+    "ttft_s": 1.99
    }
   },
   {
@@ -2037,8 +2024,8 @@
    "intelligence": {
     "intelligence_index": 51.8,
     "coding_index": 69.1,
-    "tps": 117.77,
-    "ttft_s": 1.53
+    "tps": 139.05,
+    "ttft_s": 1.14
    }
   },
   {
@@ -2054,8 +2041,8 @@
    "intelligence": {
     "intelligence_index": 23.1,
     "coding_index": 68.8,
-    "tps": 75.34,
-    "ttft_s": 1.72
+    "tps": 82.7,
+    "ttft_s": 1.68
    }
   },
   {
@@ -2071,8 +2058,8 @@
    "intelligence": {
     "intelligence_index": 26.1,
     "coding_index": 39.3,
-    "tps": 89.61,
-    "ttft_s": 0.91
+    "tps": 99.84,
+    "ttft_s": 0.93
    }
   },
   {
@@ -2088,8 +2075,8 @@
    "intelligence": {
     "intelligence_index": 4.4,
     "coding_index": 43.4,
-    "tps": 34.36,
-    "ttft_s": 1.07
+    "tps": 35.69,
+    "ttft_s": 1.02
    }
   },
   {
@@ -2117,8 +2104,8 @@
    "intelligence": {
     "intelligence_index": 14.5,
     "coding_index": 16.3,
-    "tps": 89.39,
-    "ttft_s": 1.04
+    "tps": 190.91,
+    "ttft_s": 0.96
    }
   },
   {
@@ -2134,8 +2121,8 @@
    "intelligence": {
     "intelligence_index": 10.3,
     "coding_index": 8.2,
-    "tps": 133.52,
-    "ttft_s": 0.74
+    "tps": 127.67,
+    "ttft_s": 0.76
    }
   },
   {
@@ -2151,8 +2138,8 @@
    "intelligence": {
     "intelligence_index": 45.1,
     "coding_index": 61.8,
-    "tps": 44.73,
-    "ttft_s": 2.94
+    "tps": 42.24,
+    "ttft_s": 3
    }
   },
   {
@@ -2168,8 +2155,8 @@
    "intelligence": {
     "intelligence_index": 25.7,
     "coding_index": 37.7,
-    "tps": 160.52,
-    "ttft_s": 0.86
+    "tps": 207.35,
+    "ttft_s": 0.56
    }
   },
   {
@@ -2202,8 +2189,8 @@
    "intelligence": {
     "intelligence_index": 3.8,
     "coding_index": 30.4,
-    "tps": 219.38,
-    "ttft_s": 0.84
+    "tps": 259.42,
+    "ttft_s": 0.81
    }
   },
   {
@@ -2219,8 +2206,8 @@
    "intelligence": {
     "intelligence_index": 15.2,
     "coding_index": 20.7,
-    "tps": 146.31,
-    "ttft_s": 0.71
+    "tps": 126.12,
+    "ttft_s": 0.75
    }
   },
   {
@@ -2236,8 +2223,8 @@
    "intelligence": {
     "intelligence_index": 41,
     "coding_index": 55.8,
-    "tps": 84.2,
-    "ttft_s": 1.33
+    "tps": 84.56,
+    "ttft_s": 1.96
    }
   },
   {
@@ -2253,8 +2240,8 @@
    "intelligence": {
     "intelligence_index": 51.8,
     "coding_index": 69.1,
-    "tps": 117.77,
-    "ttft_s": 1.53
+    "tps": 139.05,
+    "ttft_s": 1.14
    }
   },
   {
@@ -2270,8 +2257,8 @@
    "intelligence": {
     "intelligence_index": 23.1,
     "coding_index": 68.8,
-    "tps": 75.34,
-    "ttft_s": 1.72
+    "tps": 82.7,
+    "ttft_s": 1.68
    }
   },
   {
@@ -2311,8 +2298,8 @@
    "intelligence": {
     "intelligence_index": 40.9,
     "coding_index": 56.1,
-    "tps": 228.38,
-    "ttft_s": 129.18
+    "tps": 286.02,
+    "ttft_s": 106.65
    }
   },
   {
@@ -2328,8 +2315,8 @@
    "intelligence": {
     "intelligence_index": 23.8,
     "coding_index": 71.4,
-    "tps": 122.3,
-    "ttft_s": 171.22
+    "tps": 126.86,
+    "ttft_s": 107.74
    }
   },
   {
@@ -2374,8 +2361,8 @@
    "intelligence": {
     "intelligence_index": 3.8,
     "coding_index": 30.4,
-    "tps": 219.38,
-    "ttft_s": 0.84
+    "tps": 259.42,
+    "ttft_s": 0.81
    }
   },
   {
@@ -2391,8 +2378,8 @@
    "intelligence": {
     "intelligence_index": 51.8,
     "coding_index": 69.1,
-    "tps": 117.77,
-    "ttft_s": 1.53
+    "tps": 139.05,
+    "ttft_s": 1.14
    }
   },
   {
@@ -2408,8 +2395,8 @@
    "intelligence": {
     "intelligence_index": 23.1,
     "coding_index": 68.8,
-    "tps": 75.34,
-    "ttft_s": 1.72
+    "tps": 82.7,
+    "ttft_s": 1.68
    }
   },
   {
@@ -2425,8 +2412,8 @@
    "intelligence": {
     "intelligence_index": 40.6,
     "coding_index": null,
-    "tps": 67.5,
-    "ttft_s": 1.6
+    "tps": 60.2,
+    "ttft_s": 2.13
    }
   },
   {
@@ -2442,8 +2429,8 @@
    "intelligence": {
     "intelligence_index": 3.8,
     "coding_index": 30.4,
-    "tps": 219.38,
-    "ttft_s": 0.84
+    "tps": 259.42,
+    "ttft_s": 0.81
    }
   },
   {
@@ -2459,8 +2446,8 @@
    "intelligence": {
     "intelligence_index": 15.2,
     "coding_index": 20.7,
-    "tps": 146.31,
-    "ttft_s": 0.71
+    "tps": 126.12,
+    "ttft_s": 0.75
    }
   },
   {
@@ -2476,8 +2463,8 @@
    "intelligence": {
     "intelligence_index": 19.7,
     "coding_index": null,
-    "tps": 47.32,
-    "ttft_s": 2.01
+    "tps": 46.2,
+    "ttft_s": 1.9
    }
   },
   {
@@ -2493,8 +2480,8 @@
    "intelligence": {
     "intelligence_index": 19.7,
     "coding_index": null,
-    "tps": 47.32,
-    "ttft_s": 2.01
+    "tps": 46.2,
+    "ttft_s": 1.9
    }
   },
   {
@@ -2510,8 +2497,8 @@
    "intelligence": {
     "intelligence_index": 28.9,
     "coding_index": null,
-    "tps": 124.6,
-    "ttft_s": 1
+    "tps": 126.5,
+    "ttft_s": 1.04
    }
   },
   {
@@ -2527,8 +2514,8 @@
    "intelligence": {
     "intelligence_index": 28.9,
     "coding_index": null,
-    "tps": 124.6,
-    "ttft_s": 1
+    "tps": 126.5,
+    "ttft_s": 1.04
    }
   },
   {
@@ -2556,8 +2543,8 @@
    "intelligence": {
     "intelligence_index": 45.5,
     "coding_index": null,
-    "tps": 96.6,
-    "ttft_s": 94.6
+    "tps": 113.68,
+    "ttft_s": 64.68
    }
   },
   {
@@ -2573,8 +2560,8 @@
    "intelligence": {
     "intelligence_index": 53.1,
     "coding_index": 71.1,
-    "tps": 84.84,
-    "ttft_s": 215.09
+    "tps": 91.93,
+    "ttft_s": 168.82
    }
   },
   {
@@ -2590,8 +2577,8 @@
    "intelligence": {
     "intelligence_index": 40.9,
     "coding_index": 56.1,
-    "tps": 228.38,
-    "ttft_s": 129.18
+    "tps": 286.02,
+    "ttft_s": 106.65
    }
   },
   {
@@ -2607,8 +2594,8 @@
    "intelligence": {
     "intelligence_index": 56.3,
     "coding_index": 74.9,
-    "tps": 80.2,
-    "ttft_s": 86.85
+    "tps": 68.65,
+    "ttft_s": 49.07
    }
   },
   {
@@ -2648,8 +2635,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": null,
-    "tps": 206.11,
-    "ttft_s": 0.36
+    "tps": 198.5,
+    "ttft_s": 0.4
    }
   },
   {
@@ -2677,8 +2664,8 @@
    "intelligence": {
     "intelligence_index": 27.9,
     "coding_index": null,
-    "tps": 225.89,
-    "ttft_s": 0.78
+    "tps": 206.42,
+    "ttft_s": 0.87
    }
   },
   {
@@ -2735,8 +2722,8 @@
    "intelligence": {
     "intelligence_index": 23.3,
     "coding_index": null,
-    "tps": 93.32,
-    "ttft_s": 1.06
+    "tps": 83.73,
+    "ttft_s": 1.59
    }
   },
   {
@@ -2781,131 +2768,9 @@
    "intelligence": {
     "intelligence_index": 23.3,
     "coding_index": null,
-    "tps": 93.32,
-    "ttft_s": 1.06
+    "tps": 83.73,
+    "ttft_s": 1.59
    }
-  },
-  {
-   "id": "allam-2-7b",
-   "provider": "groq",
-   "name": "allam-2-7b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "groq",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "canopylabs/orpheus-arabic-saudi",
-   "provider": "groq",
-   "name": "canopylabs/orpheus-arabic-saudi",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "groq",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "canopylabs/orpheus-v1-english",
-   "provider": "groq",
-   "name": "canopylabs/orpheus-v1-english",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "groq",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "meta-llama/llama-prompt-guard-2-22m",
-   "provider": "groq",
-   "name": "meta-llama/llama-prompt-guard-2-22m",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "groq",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "meta-llama/llama-prompt-guard-2-86m",
-   "provider": "groq",
-   "name": "meta-llama/llama-prompt-guard-2-86m",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "groq",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "openai/gpt-oss-safeguard-20b",
-   "provider": "groq",
-   "name": "openai/gpt-oss-safeguard-20b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "groq",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "qwen/qwen3.8-27b",
-   "provider": "groq",
-   "name": "qwen/qwen3.8-27b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "groq",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 20.1,
-    "coding_index": 68.1,
-    "tps": 37.06,
-    "ttft_s": 3.83
-   }
-  },
-  {
-   "id": "whisper-large-v3",
-   "provider": "groq",
-   "name": "whisper-large-v3",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "groq",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "whisper-large-v3-turbo",
-   "provider": "groq",
-   "name": "whisper-large-v3-turbo",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "groq",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
   },
   {
    "id": "CohereLabs/c4ai-command-r7b-12-2024",
@@ -2932,8 +2797,8 @@
    "intelligence": {
     "intelligence_index": 7.5,
     "coding_index": null,
-    "tps": 16.72,
-    "ttft_s": 1.81
+    "tps": 69.38,
+    "ttft_s": 1.7
    }
   },
   {
@@ -2949,8 +2814,8 @@
    "intelligence": {
     "intelligence_index": 7.5,
     "coding_index": null,
-    "tps": 16.72,
-    "ttft_s": 1.81
+    "tps": 69.38,
+    "ttft_s": 1.7
    }
   },
   {
@@ -2966,8 +2831,8 @@
    "intelligence": {
     "intelligence_index": 18.9,
     "coding_index": 58.6,
-    "tps": 116.66,
-    "ttft_s": 0.93
+    "tps": 88.96,
+    "ttft_s": 0.79
    }
   },
   {
@@ -2983,8 +2848,8 @@
    "intelligence": {
     "intelligence_index": 32.8,
     "coding_index": 45.7,
-    "tps": 129.09,
-    "ttft_s": 2.26
+    "tps": 128.12,
+    "ttft_s": 2.24
    }
   },
   {
@@ -3000,8 +2865,8 @@
    "intelligence": {
     "intelligence_index": 34.3,
     "coding_index": 48.2,
-    "tps": 57.36,
-    "ttft_s": 2.11
+    "tps": 59.18,
+    "ttft_s": 2.22
    }
   },
   {
@@ -3017,8 +2882,8 @@
    "intelligence": {
     "intelligence_index": 37.7,
     "coding_index": 53.7,
-    "tps": 56.8,
-    "ttft_s": 3.51
+    "tps": 56.49,
+    "ttft_s": 3.47
    }
   },
   {
@@ -3034,8 +2899,8 @@
    "intelligence": {
     "intelligence_index": 32.1,
     "coding_index": 41.9,
-    "tps": 116.26,
-    "ttft_s": 2.07
+    "tps": 91.4,
+    "ttft_s": 1.99
    }
   },
   {
@@ -3080,8 +2945,8 @@
    "intelligence": {
     "intelligence_index": 51.8,
     "coding_index": 69.1,
-    "tps": 117.77,
-    "ttft_s": 1.53
+    "tps": 139.05,
+    "ttft_s": 1.14
    }
   },
   {
@@ -3097,8 +2962,8 @@
    "intelligence": {
     "intelligence_index": 23.1,
     "coding_index": 68.8,
-    "tps": 75.34,
-    "ttft_s": 1.72
+    "tps": 82.7,
+    "ttft_s": 1.68
    }
   },
   {
@@ -3114,8 +2979,8 @@
    "intelligence": {
     "intelligence_index": 26.1,
     "coding_index": 39.3,
-    "tps": 89.61,
-    "ttft_s": 0.91
+    "tps": 99.84,
+    "ttft_s": 0.93
    }
   },
   {
@@ -3131,8 +2996,8 @@
    "intelligence": {
     "intelligence_index": 4.4,
     "coding_index": 43.4,
-    "tps": 34.36,
-    "ttft_s": 1.07
+    "tps": 35.69,
+    "ttft_s": 1.02
    }
   },
   {
@@ -3165,8 +3030,8 @@
    "intelligence": {
     "intelligence_index": 14.5,
     "coding_index": 16.3,
-    "tps": 89.39,
-    "ttft_s": 1.04
+    "tps": 190.91,
+    "ttft_s": 0.96
    }
   },
   {
@@ -3182,8 +3047,8 @@
    "intelligence": {
     "intelligence_index": 10.3,
     "coding_index": 8.2,
-    "tps": 133.52,
-    "ttft_s": 0.74
+    "tps": 127.67,
+    "ttft_s": 0.76
    }
   },
   {
@@ -3199,8 +3064,8 @@
    "intelligence": {
     "intelligence_index": 45.1,
     "coding_index": 61.8,
-    "tps": 44.73,
-    "ttft_s": 2.94
+    "tps": 42.24,
+    "ttft_s": 3
    }
   },
   {
@@ -3216,8 +3081,8 @@
    "intelligence": {
     "intelligence_index": 19.7,
     "coding_index": null,
-    "tps": 47.32,
-    "ttft_s": 2.01
+    "tps": 46.2,
+    "ttft_s": 1.9
    }
   },
   {
@@ -3233,8 +3098,8 @@
    "intelligence": {
     "intelligence_index": 11.8,
     "coding_index": 49.3,
-    "tps": 242.74,
-    "ttft_s": 1.16
+    "tps": 264.89,
+    "ttft_s": 0.98
    }
   },
   {
@@ -3250,8 +3115,8 @@
    "intelligence": {
     "intelligence_index": 3.8,
     "coding_index": 30.4,
-    "tps": 219.38,
-    "ttft_s": 0.84
+    "tps": 259.42,
+    "ttft_s": 0.81
    }
   },
   {
@@ -3267,8 +3132,8 @@
    "intelligence": {
     "intelligence_index": 15.2,
     "coding_index": 20.7,
-    "tps": 146.31,
-    "ttft_s": 0.71
+    "tps": 126.12,
+    "ttft_s": 0.75
    }
   },
   {
@@ -3284,8 +3149,8 @@
    "intelligence": {
     "intelligence_index": 30.9,
     "coding_index": 39.6,
-    "tps": 214.98,
-    "ttft_s": 2.5
+    "tps": 177.87,
+    "ttft_s": 2.56
    }
   },
   {
@@ -3301,8 +3166,8 @@
    "intelligence": {
     "intelligence_index": 52.6,
     "coding_index": 68.8,
-    "tps": 80.9,
-    "ttft_s": 1.58
+    "tps": 63.21,
+    "ttft_s": 1.95
    }
   },
   {
@@ -3330,8 +3195,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": 23,
-    "tps": 82.26,
-    "ttft_s": 1.01
+    "tps": 83.53,
+    "ttft_s": 1.26
    }
   },
   {
@@ -3434,8 +3299,8 @@
    "intelligence": {
     "intelligence_index": 9.4,
     "coding_index": null,
-    "tps": 29.9,
-    "ttft_s": 4.02
+    "tps": 31.39,
+    "ttft_s": 3.94
    }
   },
   {
@@ -3468,8 +3333,8 @@
    "intelligence": {
     "intelligence_index": 20.4,
     "coding_index": null,
-    "tps": 37.2,
-    "ttft_s": 1.18
+    "tps": 29.79,
+    "ttft_s": 1.94
    }
   },
   {
@@ -3485,8 +3350,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": 23,
-    "tps": 82.26,
-    "ttft_s": 1.01
+    "tps": 83.53,
+    "ttft_s": 1.26
    }
   },
   {
@@ -3538,8 +3403,8 @@
    "intelligence": {
     "intelligence_index": 9.4,
     "coding_index": null,
-    "tps": 29.9,
-    "ttft_s": 4.02
+    "tps": 31.39,
+    "ttft_s": 3.94
    }
   },
   {
@@ -3555,8 +3420,8 @@
    "intelligence": {
     "intelligence_index": 20.4,
     "coding_index": null,
-    "tps": 37.2,
-    "ttft_s": 1.18
+    "tps": 29.79,
+    "ttft_s": 1.94
    }
   },
   {
@@ -3584,8 +3449,8 @@
    "intelligence": {
     "intelligence_index": 6.8,
     "coding_index": null,
-    "tps": 54.74,
-    "ttft_s": 3.37
+    "tps": 47.47,
+    "ttft_s": 3.76
    }
   },
   {
@@ -3685,8 +3550,8 @@
    "intelligence": {
     "intelligence_index": 6.8,
     "coding_index": null,
-    "tps": 54.74,
-    "ttft_s": 3.37
+    "tps": 47.47,
+    "ttft_s": 3.76
    }
   },
   {
@@ -3738,8 +3603,8 @@
    "intelligence": {
     "intelligence_index": 40.6,
     "coding_index": null,
-    "tps": 67.5,
-    "ttft_s": 1.6
+    "tps": 60.2,
+    "ttft_s": 2.13
    }
   },
   {
@@ -3772,8 +3637,8 @@
    "intelligence": {
     "intelligence_index": 34.5,
     "coding_index": null,
-    "tps": 60.46,
-    "ttft_s": 1.88
+    "tps": 64.63,
+    "ttft_s": 2.09
    }
   },
   {
@@ -3789,8 +3654,8 @@
    "intelligence": {
     "intelligence_index": 21.3,
     "coding_index": 36.2,
-    "tps": 85.89,
-    "ttft_s": 0.89
+    "tps": 79.38,
+    "ttft_s": 1.04
    }
   },
   {
@@ -3818,8 +3683,8 @@
    "intelligence": {
     "intelligence_index": 20.4,
     "coding_index": null,
-    "tps": 37.2,
-    "ttft_s": 1.18
+    "tps": 29.79,
+    "ttft_s": 1.94
    }
   },
   {
@@ -3886,8 +3751,8 @@
    "intelligence": {
     "intelligence_index": 34,
     "coding_index": 45.3,
-    "tps": 60.89,
-    "ttft_s": 2.88
+    "tps": 60.94,
+    "ttft_s": 2.79
    }
   },
   {
@@ -3944,8 +3809,8 @@
    "intelligence": {
     "intelligence_index": 4.6,
     "coding_index": 46.9,
-    "tps": 165.63,
-    "ttft_s": 2.44
+    "tps": 175.25,
+    "ttft_s": 2.38
    }
   },
   {
@@ -3978,8 +3843,8 @@
    "intelligence": {
     "intelligence_index": 34.3,
     "coding_index": 48.2,
-    "tps": 57.36,
-    "ttft_s": 2.11
+    "tps": 59.18,
+    "ttft_s": 2.22
    }
   },
   {
@@ -3995,8 +3860,8 @@
    "intelligence": {
     "intelligence_index": 23.1,
     "coding_index": 68.8,
-    "tps": 75.34,
-    "ttft_s": 1.72
+    "tps": 82.7,
+    "ttft_s": 1.68
    }
   },
   {
@@ -4135,8 +4000,8 @@
    "intelligence": {
     "intelligence_index": 18.9,
     "coding_index": 58.6,
-    "tps": 116.66,
-    "ttft_s": 0.93
+    "tps": 88.96,
+    "ttft_s": 0.79
    }
   },
   {
@@ -4169,8 +4034,8 @@
    "intelligence": {
     "intelligence_index": 4.6,
     "coding_index": 46.9,
-    "tps": 165.63,
-    "ttft_s": 2.44
+    "tps": 175.25,
+    "ttft_s": 2.38
    }
   },
   {
@@ -4186,8 +4051,8 @@
    "intelligence": {
     "intelligence_index": 20.1,
     "coding_index": 68.1,
-    "tps": 37.06,
-    "ttft_s": 3.83
+    "tps": 69.87,
+    "ttft_s": 3.05
    }
   },
   {
@@ -4263,8 +4128,8 @@
    "intelligence": {
     "intelligence_index": 18.4,
     "coding_index": null,
-    "tps": 44.5,
-    "ttft_s": 1.05
+    "tps": 56.14,
+    "ttft_s": 1.26
    }
   },
   {
@@ -4292,8 +4157,8 @@
    "intelligence": {
     "intelligence_index": 10.3,
     "coding_index": 8.2,
-    "tps": 133.52,
-    "ttft_s": 0.74
+    "tps": 127.67,
+    "ttft_s": 0.76
    }
   },
   {
@@ -4309,8 +4174,8 @@
    "intelligence": {
     "intelligence_index": 36,
     "coding_index": 46.8,
-    "tps": 53.85,
-    "ttft_s": 1.78
+    "tps": 50.04,
+    "ttft_s": 1.87
    }
   },
   {
@@ -4326,8 +4191,8 @@
    "intelligence": {
     "intelligence_index": 3.8,
     "coding_index": 30.4,
-    "tps": 219.38,
-    "ttft_s": 0.84
+    "tps": 259.42,
+    "ttft_s": 0.81
    }
   },
   {
@@ -4343,70 +4208,8 @@
    "intelligence": {
     "intelligence_index": 15.2,
     "coding_index": 20.7,
-    "tps": 146.31,
-    "ttft_s": 0.71
-   }
-  },
-  {
-   "id": "bigcode/starcoder2-15b",
-   "provider": "nvidia",
-   "name": "bigcode/starcoder2-15b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "fastino/gliner2-pii",
-   "provider": "nvidia",
-   "name": "fastino/gliner2-pii",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "google/gemma-3-12b-it",
-   "provider": "nvidia",
-   "name": "google/gemma-3-12b-it",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 5.5,
-    "coding_index": 5.8,
-    "tps": 0,
-    "ttft_s": 0
-   }
-  },
-  {
-   "id": "google/gemma-3-4b-it",
-   "provider": "nvidia",
-   "name": "google/gemma-3-4b-it",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 1,
-    "coding_index": 2.7,
-    "tps": 0,
-    "ttft_s": 0
+    "tps": 126.12,
+    "ttft_s": 0.75
    }
   },
   {
@@ -4422,276 +4225,9 @@
    "intelligence": {
     "intelligence_index": 4.4,
     "coding_index": 43.4,
-    "tps": 34.36,
-    "ttft_s": 1.07
+    "tps": 35.69,
+    "ttft_s": 1.02
    }
-  },
-  {
-   "id": "meta/muse-glimmer-30b",
-   "provider": "nvidia",
-   "name": "meta/muse-glimmer-30b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 6.3,
-    "coding_index": 49,
-    "tps": 101.75,
-    "ttft_s": 0.93
-   }
-  },
-  {
-   "id": "minimaxai/minimax-m3.1-flash",
-   "provider": "nvidia",
-   "name": "minimaxai/minimax-m3.1-flash",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 29.1,
-    "coding_index": null,
-    "tps": 140.61,
-    "ttft_s": 1.15
-   }
-  },
-  {
-   "id": "mistralai/mistral-large-4-1t-a52b",
-   "provider": "nvidia",
-   "name": "mistralai/mistral-large-4-1t-a52b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 4.1,
-    "coding_index": null,
-    "tps": 0,
-    "ttft_s": 0
-   }
-  },
-  {
-   "id": "moonshotai/kimi-k3.1-pro",
-   "provider": "nvidia",
-   "name": "moonshotai/kimi-k3.1-pro",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 46.5,
-    "coding_index": null,
-    "tps": 29.76,
-    "ttft_s": 2.53
-   }
-  },
-  {
-   "id": "nvidia/ai-synthetic-video-detector",
-   "provider": "nvidia",
-   "name": "nvidia/ai-synthetic-video-detector",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/cosmos-reason2-8b",
-   "provider": "nvidia",
-   "name": "nvidia/cosmos-reason2-8b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/embed-qa-4",
-   "provider": "nvidia",
-   "name": "nvidia/embed-qa-4",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/ising-calibration-1.5-31b",
-   "provider": "nvidia",
-   "name": "nvidia/ising-calibration-1.5-31b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/llama-3.1-nemoguard-8b-topic-control",
-   "provider": "nvidia",
-   "name": "nvidia/llama-3.1-nemoguard-8b-topic-control",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/llama-3.1-nemotron-safety-guard-8b-v3",
-   "provider": "nvidia",
-   "name": "nvidia/llama-3.1-nemotron-safety-guard-8b-v3",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/llama-3.2-nemoretriever-1b-vlm-embed-v1",
-   "provider": "nvidia",
-   "name": "nvidia/llama-3.2-nemoretriever-1b-vlm-embed-v1",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/llama-3.2-nv-embedqa-1b-v1",
-   "provider": "nvidia",
-   "name": "nvidia/llama-3.2-nv-embedqa-1b-v1",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/nemotron-3-embed-1b",
-   "provider": "nvidia",
-   "name": "nvidia/nemotron-3-embed-1b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/nemotron-3-ultra-550b-a55b",
-   "provider": "nvidia",
-   "name": "nvidia/nemotron-3-ultra-550b-a55b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/nemotron-3.5-bolt-e4b",
-   "provider": "nvidia",
-   "name": "nvidia/nemotron-3.5-bolt-e4b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/nemotron-3.5-content-safety",
-   "provider": "nvidia",
-   "name": "nvidia/nemotron-3.5-content-safety",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/nemotron-3.5-embed-1b",
-   "provider": "nvidia",
-   "name": "nvidia/nemotron-3.5-embed-1b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/nemotron-3.5-embed-8b",
-   "provider": "nvidia",
-   "name": "nvidia/nemotron-3.5-embed-8b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "provider": "nvidia",
-   "name": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
   },
   {
    "id": "nvidia/nemotron-3.5-super-vl-120b-a12b",
@@ -4703,45 +4239,6 @@
    "pool_key": "nvidia",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/nv-embedqa-mistral-7b-v2",
-   "provider": "nvidia",
-   "name": "nvidia/nv-embedqa-mistral-7b-v2",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/nvclip",
-   "provider": "nvidia",
-   "name": "nvidia/nvclip",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/riva-translate-4b-instruct-v2",
-   "provider": "nvidia",
-   "name": "nvidia/riva-translate-4b-instruct-v2",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
    "intelligence": null
   },
   {
@@ -4757,70 +4254,8 @@
    "intelligence": {
     "intelligence_index": 15.2,
     "coding_index": 20.7,
-    "tps": 146.31,
-    "ttft_s": 0.71
-   }
-  },
-  {
-   "id": "poolside/laguna-xs-2.1",
-   "provider": "nvidia",
-   "name": "poolside/laguna-xs-2.1",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "snowflake/arctic-embed-l",
-   "provider": "nvidia",
-   "name": "snowflake/arctic-embed-l",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "stepfun-ai/step-5-preview",
-   "provider": "nvidia",
-   "name": "stepfun-ai/step-5-preview",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 28.5,
-    "coding_index": null,
-    "tps": 147.63,
-    "ttft_s": 0.89
-   }
-  },
-  {
-   "id": "z-ai/glm-5.3-flash",
-   "provider": "nvidia",
-   "name": "z-ai/glm-5.3-flash",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 27.8,
-    "coding_index": null,
-    "tps": 51.75,
-    "ttft_s": 2.17
+    "tps": 126.12,
+    "ttft_s": 0.75
    }
   },
   {
@@ -4860,8 +4295,8 @@
    "intelligence": {
     "intelligence_index": 51.8,
     "coding_index": 69.1,
-    "tps": 117.77,
-    "ttft_s": 1.53
+    "tps": 139.05,
+    "ttft_s": 1.14
    }
   },
   {
@@ -4918,8 +4353,8 @@
    "intelligence": {
     "intelligence_index": 23.3,
     "coding_index": null,
-    "tps": 93.32,
-    "ttft_s": 1.06
+    "tps": 83.73,
+    "ttft_s": 1.59
    }
   },
   {
@@ -4935,8 +4370,8 @@
    "intelligence": {
     "intelligence_index": 52.6,
     "coding_index": 68.8,
-    "tps": 80.9,
-    "ttft_s": 1.58
+    "tps": 63.21,
+    "ttft_s": 1.95
    }
   },
   {
@@ -4952,8 +4387,8 @@
    "intelligence": {
     "intelligence_index": 27.8,
     "coding_index": null,
-    "tps": 51.75,
-    "ttft_s": 2.17
+    "tps": 65.71,
+    "ttft_s": 1.57
    }
   },
   {
@@ -4969,8 +4404,8 @@
    "intelligence": {
     "intelligence_index": 15.2,
     "coding_index": 20.7,
-    "tps": 146.31,
-    "ttft_s": 0.71
+    "tps": 126.12,
+    "ttft_s": 0.75
    }
   },
   {
@@ -5010,8 +4445,8 @@
    "intelligence": {
     "intelligence_index": 6.3,
     "coding_index": 49,
-    "tps": 101.75,
-    "ttft_s": 0.93
+    "tps": 102.6,
+    "ttft_s": 0.83
    }
   },
   {
@@ -5082,8 +4517,8 @@
    "intelligence": {
     "intelligence_index": 26.1,
     "coding_index": 39.3,
-    "tps": 89.61,
-    "ttft_s": 0.91
+    "tps": 99.84,
+    "ttft_s": 0.93
    }
   },
   {
@@ -5114,8 +4549,8 @@
    "intelligence": {
     "intelligence_index": 4.4,
     "coding_index": 43.4,
-    "tps": 34.36,
-    "ttft_s": 1.07
+    "tps": 35.69,
+    "ttft_s": 1.02
    }
   },
   {
@@ -5260,8 +4695,8 @@
    "intelligence": {
     "intelligence_index": 5.5,
     "coding_index": 26.8,
-    "tps": 277.56,
-    "ttft_s": 0.64
+    "tps": 303.43,
+    "ttft_s": 0.58
    }
   },
   {
@@ -5293,8 +4728,8 @@
    "intelligence": {
     "intelligence_index": 13.6,
     "coding_index": null,
-    "tps": 277.92,
-    "ttft_s": 0.84
+    "tps": 390.55,
+    "ttft_s": 0.67
    }
   },
   {
@@ -5417,8 +4852,8 @@
    "intelligence": {
     "intelligence_index": 37.7,
     "coding_index": 53.7,
-    "tps": 56.8,
-    "ttft_s": 3.51
+    "tps": 56.49,
+    "ttft_s": 3.47
    }
   },
   {
@@ -5434,8 +4869,8 @@
    "intelligence": {
     "intelligence_index": 3.8,
     "coding_index": 30.4,
-    "tps": 219.38,
-    "ttft_s": 0.84
+    "tps": 259.42,
+    "ttft_s": 0.81
    }
   },
   {
@@ -5451,8 +4886,8 @@
    "intelligence": {
     "intelligence_index": 15.2,
     "coding_index": 20.7,
-    "tps": 146.31,
-    "ttft_s": 0.71
+    "tps": 126.12,
+    "ttft_s": 0.75
    }
   },
   {
@@ -5521,8 +4956,8 @@
    "intelligence": {
     "intelligence_index": 6.8,
     "coding_index": null,
-    "tps": 54.74,
-    "ttft_s": 3.37
+    "tps": 47.47,
+    "ttft_s": 3.76
    }
   },
   {
@@ -5567,8 +5002,8 @@
    "intelligence": {
     "intelligence_index": 45.1,
     "coding_index": 61.8,
-    "tps": 44.73,
-    "ttft_s": 2.94
+    "tps": 42.24,
+    "ttft_s": 3
    }
   },
   {
@@ -5584,8 +5019,8 @@
    "intelligence": {
     "intelligence_index": 34.5,
     "coding_index": null,
-    "tps": 60.46,
-    "ttft_s": 1.88
+    "tps": 64.63,
+    "ttft_s": 2.09
    }
   },
   {
@@ -5854,8 +5289,8 @@
    "intelligence": {
     "intelligence_index": 51.8,
     "coding_index": 69.1,
-    "tps": 117.77,
-    "ttft_s": 1.53
+    "tps": 139.05,
+    "ttft_s": 1.14
    }
   },
   {
@@ -5871,8 +5306,8 @@
    "intelligence": {
     "intelligence_index": 23.1,
     "coding_index": 68.8,
-    "tps": 75.34,
-    "ttft_s": 1.72
+    "tps": 82.7,
+    "ttft_s": 1.68
    }
   },
   {
@@ -5888,8 +5323,8 @@
    "intelligence": {
     "intelligence_index": 52.6,
     "coding_index": 68.8,
-    "tps": 80.9,
-    "ttft_s": 1.58
+    "tps": 63.21,
+    "ttft_s": 1.95
    }
   },
   {
@@ -5905,8 +5340,8 @@
    "intelligence": {
     "intelligence_index": 19.7,
     "coding_index": null,
-    "tps": 47.32,
-    "ttft_s": 2.01
+    "tps": 46.2,
+    "ttft_s": 1.9
    }
   },
   {
@@ -5922,8 +5357,8 @@
    "intelligence": {
     "intelligence_index": 59.7,
     "coding_index": 76.2,
-    "tps": 51.16,
-    "ttft_s": 4.91
+    "tps": 44.53,
+    "ttft_s": 3.57
    }
   },
   {
@@ -5939,8 +5374,8 @@
    "intelligence": {
     "intelligence_index": 18.9,
     "coding_index": 58.6,
-    "tps": 116.66,
-    "ttft_s": 0.93
+    "tps": 88.96,
+    "ttft_s": 0.79
    }
   },
   {
@@ -5956,8 +5391,8 @@
    "intelligence": {
     "intelligence_index": 46.7,
     "coding_index": 66,
-    "tps": 202.06,
-    "ttft_s": 2.19
+    "tps": 192.51,
+    "ttft_s": 2.17
    }
   },
   {
@@ -5973,8 +5408,8 @@
    "intelligence": {
     "intelligence_index": 39.4,
     "coding_index": 55.9,
-    "tps": 56.26,
-    "ttft_s": 2.24
+    "tps": 55.55,
+    "ttft_s": 2.31
    }
   },
   {
@@ -6014,8 +5449,8 @@
    "intelligence": {
     "intelligence_index": 3.7,
     "coding_index": null,
-    "tps": 88.36,
-    "ttft_s": 1.31
+    "tps": 90.13,
+    "ttft_s": 1.32
    }
   },
   {
@@ -6055,8 +5490,8 @@
    "intelligence": {
     "intelligence_index": 3.8,
     "coding_index": 30.4,
-    "tps": 219.38,
-    "ttft_s": 0.84
+    "tps": 259.42,
+    "ttft_s": 0.81
    }
   },
   {
@@ -6072,8 +5507,8 @@
    "intelligence": {
     "intelligence_index": 21.4,
     "coding_index": null,
-    "tps": 83,
-    "ttft_s": 1.29
+    "tps": 93.27,
+    "ttft_s": 1.3
    }
   },
   {
@@ -6118,8 +5553,8 @@
    "intelligence": {
     "intelligence_index": 4.4,
     "coding_index": 43.4,
-    "tps": 34.36,
-    "ttft_s": 1.07
+    "tps": 35.69,
+    "ttft_s": 1.02
    }
   },
   {
@@ -6135,8 +5570,8 @@
    "intelligence": {
     "intelligence_index": 3.8,
     "coding_index": 30.4,
-    "tps": 219.38,
-    "ttft_s": 0.84
+    "tps": 259.42,
+    "ttft_s": 0.81
    }
   },
   {
@@ -6169,8 +5604,8 @@
    "intelligence": {
     "intelligence_index": 3.8,
     "coding_index": 30.4,
-    "tps": 219.38,
-    "ttft_s": 0.84
+    "tps": 259.42,
+    "ttft_s": 0.81
    }
   },
   {
@@ -6227,8 +5662,8 @@
    "intelligence": {
     "intelligence_index": 18.4,
     "coding_index": null,
-    "tps": 44.5,
-    "ttft_s": 1.05
+    "tps": 56.14,
+    "ttft_s": 1.26
    }
   },
   {
@@ -6364,8 +5799,8 @@
    "intelligence": {
     "intelligence_index": 41.9,
     "coding_index": null,
-    "tps": 56.15,
-    "ttft_s": 16.83
+    "tps": 46.77,
+    "ttft_s": 11.1
    }
   },
   {
@@ -6381,8 +5816,8 @@
    "intelligence": {
     "intelligence_index": 36.8,
     "coding_index": null,
-    "tps": 46.47,
-    "ttft_s": 1.27
+    "tps": 43.02,
+    "ttft_s": 1.19
    }
   },
   {
@@ -6398,8 +5833,8 @@
    "intelligence": {
     "intelligence_index": 20.4,
     "coding_index": null,
-    "tps": 37.2,
-    "ttft_s": 1.18
+    "tps": 29.79,
+    "ttft_s": 1.94
    }
   },
   {
@@ -6415,8 +5850,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": 23,
-    "tps": 82.26,
-    "ttft_s": 1.01
+    "tps": 83.53,
+    "ttft_s": 1.26
    }
   },
   {
@@ -6449,8 +5884,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": null,
-    "tps": 206.11,
-    "ttft_s": 0.36
+    "tps": 198.5,
+    "ttft_s": 0.4
    }
   },
   {
@@ -6466,8 +5901,8 @@
    "intelligence": {
     "intelligence_index": 25.9,
     "coding_index": 33.3,
-    "tps": 112.94,
-    "ttft_s": 19.56
+    "tps": 136.09,
+    "ttft_s": 22.02
    }
   },
   {
@@ -6483,8 +5918,8 @@
    "intelligence": {
     "intelligence_index": 19.6,
     "coding_index": null,
-    "tps": 147.59,
-    "ttft_s": 1.88
+    "tps": 183.3,
+    "ttft_s": 1.65
    }
   },
   {
@@ -6500,8 +5935,8 @@
    "intelligence": {
     "intelligence_index": 11.1,
     "coding_index": null,
-    "tps": 177.79,
-    "ttft_s": 1.86
+    "tps": 199.87,
+    "ttft_s": 1.69
    }
   },
   {
@@ -6517,8 +5952,8 @@
    "intelligence": {
     "intelligence_index": 35.3,
     "coding_index": 37.8,
-    "tps": 91.33,
-    "ttft_s": 103.81
+    "tps": 85.96,
+    "ttft_s": 71.12
    }
   },
   {
@@ -6568,8 +6003,8 @@
    "intelligence": {
     "intelligence_index": 19.7,
     "coding_index": null,
-    "tps": 47.32,
-    "ttft_s": 2.01
+    "tps": 46.2,
+    "ttft_s": 1.9
    }
   },
   {
@@ -6597,8 +6032,8 @@
    "intelligence": {
     "intelligence_index": 14.5,
     "coding_index": 16.3,
-    "tps": 89.39,
-    "ttft_s": 1.04
+    "tps": 190.91,
+    "ttft_s": 0.96
    }
   },
   {
@@ -6614,8 +6049,8 @@
    "intelligence": {
     "intelligence_index": 10.3,
     "coding_index": 8.2,
-    "tps": 133.52,
-    "ttft_s": 0.74
+    "tps": 127.67,
+    "ttft_s": 0.76
    }
   },
   {
@@ -6648,8 +6083,8 @@
    "intelligence": {
     "intelligence_index": 31.1,
     "coding_index": null,
-    "tps": 155.3,
-    "ttft_s": 7.44
+    "tps": 139.62,
+    "ttft_s": 6.84
    }
   },
   {
@@ -6665,8 +6100,8 @@
    "intelligence": {
     "intelligence_index": 26.1,
     "coding_index": null,
-    "tps": 152.9,
-    "ttft_s": 20.6
+    "tps": 151.52,
+    "ttft_s": 14.66
    }
   },
   {
@@ -6682,8 +6117,8 @@
    "intelligence": {
     "intelligence_index": 18.4,
     "coding_index": null,
-    "tps": 44.5,
-    "ttft_s": 1.05
+    "tps": 56.14,
+    "ttft_s": 1.26
    }
   },
   {
@@ -6699,8 +6134,8 @@
    "intelligence": {
     "intelligence_index": 11.4,
     "coding_index": 15.3,
-    "tps": 26.76,
-    "ttft_s": 1.36
+    "tps": 28.06,
+    "ttft_s": 1.61
    }
   },
   {
@@ -6728,8 +6163,8 @@
    "intelligence": {
     "intelligence_index": 55,
     "coding_index": 73.6,
-    "tps": 52.88,
-    "ttft_s": 19.81
+    "tps": 47.4,
+    "ttft_s": 20.3
    }
   },
   {
@@ -6745,8 +6180,8 @@
    "intelligence": {
     "intelligence_index": 36.8,
     "coding_index": null,
-    "tps": 46.47,
-    "ttft_s": 1.27
+    "tps": 43.02,
+    "ttft_s": 1.19
    }
   },
   {
@@ -6762,8 +6197,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": 23,
-    "tps": 82.26,
-    "ttft_s": 1.01
+    "tps": 83.53,
+    "ttft_s": 1.26
    }
   },
   {
@@ -6779,8 +6214,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": 23,
-    "tps": 82.26,
-    "ttft_s": 1.01
+    "tps": 83.53,
+    "ttft_s": 1.26
    }
   },
   {
@@ -6796,8 +6231,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": null,
-    "tps": 206.11,
-    "ttft_s": 0.36
+    "tps": 198.5,
+    "ttft_s": 0.4
    }
   },
   {
@@ -6825,8 +6260,8 @@
    "intelligence": {
     "intelligence_index": 25.9,
     "coding_index": 33.3,
-    "tps": 112.94,
-    "ttft_s": 19.56
+    "tps": 136.09,
+    "ttft_s": 22.02
    }
   },
   {
@@ -6842,8 +6277,8 @@
    "intelligence": {
     "intelligence_index": 27.9,
     "coding_index": null,
-    "tps": 225.89,
-    "ttft_s": 0.78
+    "tps": 206.42,
+    "ttft_s": 0.87
    }
   },
   {
@@ -6871,8 +6306,8 @@
    "intelligence": {
     "intelligence_index": 47.7,
     "coding_index": 68.8,
-    "tps": 147.68,
-    "ttft_s": 20.32
+    "tps": 135.12,
+    "ttft_s": 19.11
    }
   },
   {
@@ -6888,8 +6323,8 @@
    "intelligence": {
     "intelligence_index": 52,
     "coding_index": 70.1,
-    "tps": 195.54,
-    "ttft_s": 14.95
+    "tps": 198.1,
+    "ttft_s": 15.39
    }
   },
   {
@@ -6917,8 +6352,8 @@
    "intelligence": {
     "intelligence_index": 51.6,
     "coding_index": 69.2,
-    "tps": 200.97,
-    "ttft_s": 16.36
+    "tps": 191.08,
+    "ttft_s": 13.65
    }
   },
   {
@@ -6951,8 +6386,8 @@
    "intelligence": {
     "intelligence_index": 13.8,
     "coding_index": null,
-    "tps": 146.75,
-    "ttft_s": 0.83
+    "tps": 157.85,
+    "ttft_s": 0.79
    }
   },
   {
@@ -6968,8 +6403,8 @@
    "intelligence": {
     "intelligence_index": 40.6,
     "coding_index": null,
-    "tps": 67.5,
-    "ttft_s": 1.6
+    "tps": 60.2,
+    "ttft_s": 2.13
    }
   },
   {
@@ -7014,8 +6449,8 @@
    "intelligence": {
     "intelligence_index": 51.8,
     "coding_index": 69.1,
-    "tps": 117.77,
-    "ttft_s": 1.53
+    "tps": 139.05,
+    "ttft_s": 1.14
    }
   },
   {
@@ -7031,8 +6466,8 @@
    "intelligence": {
     "intelligence_index": 23.1,
     "coding_index": 68.8,
-    "tps": 75.34,
-    "ttft_s": 1.72
+    "tps": 82.7,
+    "ttft_s": 1.68
    }
   },
   {
@@ -7130,8 +6565,8 @@
    "intelligence": {
     "intelligence_index": 4.6,
     "coding_index": 46.9,
-    "tps": 165.63,
-    "ttft_s": 2.44
+    "tps": 175.25,
+    "ttft_s": 2.38
    }
   },
   {
