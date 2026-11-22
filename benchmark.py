@@ -573,7 +573,7 @@ def main() -> int:
                     filled += 1
             if filled:
                 all_errors.append(
-                    f"benchmark: {filled} Messwerte aus letztem Stand uebernommen (Quelle lieferte null)")
+                    f"benchmark: {filled} Messwerte aus letztem Stand uebernommen (in diesem Lauf nicht gemessen)")
             # Ohne AA-Key entsteht kein __aa-Block; die alten Intelligence-Werte
             # trotzdem behalten, sonst leert sich die Spalte im Site-Build.
             old_aa = old_res.get("__aa") or {}
