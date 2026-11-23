@@ -88,3 +88,7 @@ python3 collector.py && python3 build_site.py && python3 build_providers.py
 ## Lizenz
 
 MIT — siehe [LICENSE](LICENSE).
+
+## License
+
+MIT, see [LICENSE](LICENSE).
