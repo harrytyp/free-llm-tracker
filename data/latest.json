@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-11-23T07:32:29Z",
+ "updated_at": "2026-11-23T07:51:48Z",
  "counts": {
-  "free_models": 570,
-  "with_intelligence": 301,
+  "free_models": 419,
+  "with_intelligence": 268,
   "from_omniroute": 453,
   "from_openrouter": 15
  },
@@ -27,8 +27,8 @@
    "intelligence": {
     "intelligence_index": 57.3,
     "coding_index": 74.3,
-    "tps": 55.54,
-    "ttft_s": 27.32
+    "tps": 61.02,
+    "ttft_s": 26.72
    }
   },
   {
@@ -44,8 +44,8 @@
    "intelligence": {
     "intelligence_index": 44.2,
     "coding_index": 78,
-    "tps": 49,
-    "ttft_s": 56.39
+    "tps": 55.7,
+    "ttft_s": 59.86
    }
   },
   {
@@ -61,8 +61,8 @@
    "intelligence": {
     "intelligence_index": 60.9,
     "coding_index": 77.4,
-    "tps": 119.56,
-    "ttft_s": 61.76
+    "tps": 125.25,
+    "ttft_s": 61.68
    }
   },
   {
@@ -150,8 +150,8 @@
    "intelligence": {
     "intelligence_index": 38.8,
     "coding_index": null,
-    "tps": 38,
-    "ttft_s": 1.75
+    "tps": 41.59,
+    "ttft_s": 1.9
    }
   },
   {
@@ -167,8 +167,8 @@
    "intelligence": {
     "intelligence_index": 36.8,
     "coding_index": null,
-    "tps": 43.02,
-    "ttft_s": 1.19
+    "tps": 47.8,
+    "ttft_s": 1.07
    }
   },
   {
@@ -220,8 +220,8 @@
    "intelligence": {
     "intelligence_index": 22.5,
     "coding_index": null,
-    "tps": 107.21,
-    "ttft_s": 1.39
+    "tps": 112.87,
+    "ttft_s": 1.42
    }
   },
   {
@@ -237,8 +237,8 @@
    "intelligence": {
     "intelligence_index": 30.1,
     "coding_index": null,
-    "tps": 105.58,
-    "ttft_s": 18.43
+    "tps": 114.46,
+    "ttft_s": 16.37
    }
   },
   {
@@ -266,8 +266,8 @@
    "intelligence": {
     "intelligence_index": 3.8,
     "coding_index": 30.4,
-    "tps": 259.42,
-    "ttft_s": 0.81
+    "tps": 261.03,
+    "ttft_s": 0.79
    }
   },
   {
@@ -331,8 +331,8 @@
    "intelligence": {
     "intelligence_index": 4.4,
     "coding_index": 43.4,
-    "tps": 35.69,
-    "ttft_s": 1.02
+    "tps": 35.76,
+    "ttft_s": 1.05
    }
   },
   {
@@ -360,8 +360,8 @@
    "intelligence": {
     "intelligence_index": 14.5,
     "coding_index": 16.3,
-    "tps": 190.91,
-    "ttft_s": 0.96
+    "tps": 191.89,
+    "ttft_s": 1.07
    }
   },
   {
@@ -389,8 +389,8 @@
    "intelligence": {
     "intelligence_index": 10.4,
     "coding_index": 13.8,
-    "tps": 52.08,
-    "ttft_s": 0.92
+    "tps": 60.18,
+    "ttft_s": 0.91
    }
   },
   {
@@ -418,8 +418,8 @@
    "intelligence": {
     "intelligence_index": 11.4,
     "coding_index": 15.3,
-    "tps": 28.06,
-    "ttft_s": 1.61
+    "tps": 29.18,
+    "ttft_s": 1.62
    }
   },
   {
@@ -529,8 +529,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": 23,
-    "tps": 83.53,
-    "ttft_s": 1.26
+    "tps": 81.1,
+    "ttft_s": 1
    }
   },
   {
@@ -546,8 +546,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": null,
-    "tps": 198.5,
-    "ttft_s": 0.4
+    "tps": 202.38,
+    "ttft_s": 0.35
    }
   },
   {
@@ -563,8 +563,8 @@
    "intelligence": {
     "intelligence_index": 45.1,
     "coding_index": 61.8,
-    "tps": 42.24,
-    "ttft_s": 3
+    "tps": 43.71,
+    "ttft_s": 3.12
    }
   },
   {
@@ -580,8 +580,8 @@
    "intelligence": {
     "intelligence_index": 11.4,
     "coding_index": 15.3,
-    "tps": 28.06,
-    "ttft_s": 1.61
+    "tps": 29.18,
+    "ttft_s": 1.62
    }
   },
   {
@@ -667,8 +667,8 @@
    "intelligence": {
     "intelligence_index": 55,
     "coding_index": 73.6,
-    "tps": 47.4,
-    "ttft_s": 20.3
+    "tps": 52.4,
+    "ttft_s": 19.94
    }
   },
   {
@@ -684,8 +684,8 @@
    "intelligence": {
     "intelligence_index": 36.8,
     "coding_index": null,
-    "tps": 43.02,
-    "ttft_s": 1.19
+    "tps": 47.8,
+    "ttft_s": 1.07
    }
   },
   {
@@ -718,8 +718,8 @@
    "intelligence": {
     "intelligence_index": 27.9,
     "coding_index": null,
-    "tps": 206.42,
-    "ttft_s": 0.87
+    "tps": 221.14,
+    "ttft_s": 0.81
    }
   },
   {
@@ -735,8 +735,8 @@
    "intelligence": {
     "intelligence_index": 6.2,
     "coding_index": 34.7,
-    "tps": 316.99,
-    "ttft_s": 4.99
+    "tps": 356.47,
+    "ttft_s": 4.97
    }
   },
   {
@@ -752,8 +752,8 @@
    "intelligence": {
     "intelligence_index": 47.7,
     "coding_index": 68.8,
-    "tps": 135.12,
-    "ttft_s": 19.11
+    "tps": 163.14,
+    "ttft_s": 17.92
    }
   },
   {
@@ -769,7 +769,7 @@
    "intelligence": {
     "intelligence_index": 26.1,
     "coding_index": 39.3,
-    "tps": 99.84,
+    "tps": 101.31,
     "ttft_s": 0.93
    }
   },
@@ -786,8 +786,8 @@
    "intelligence": {
     "intelligence_index": 4.4,
     "coding_index": 43.4,
-    "tps": 35.69,
-    "ttft_s": 1.02
+    "tps": 35.76,
+    "ttft_s": 1.05
    }
   },
   {
@@ -803,8 +803,8 @@
    "intelligence": {
     "intelligence_index": 40.6,
     "coding_index": null,
-    "tps": 60.2,
-    "ttft_s": 2.13
+    "tps": 60.93,
+    "ttft_s": 2.05
    }
   },
   {
@@ -820,8 +820,8 @@
    "intelligence": {
     "intelligence_index": 41,
     "coding_index": 55.8,
-    "tps": 84.56,
-    "ttft_s": 1.96
+    "tps": 83.89,
+    "ttft_s": 3.06
    }
   },
   {
@@ -837,8 +837,8 @@
    "intelligence": {
     "intelligence_index": 53.1,
     "coding_index": 71.1,
-    "tps": 91.93,
-    "ttft_s": 168.82
+    "tps": 100.31,
+    "ttft_s": 163.96
    }
   },
   {
@@ -854,8 +854,8 @@
    "intelligence": {
     "intelligence_index": 40.9,
     "coding_index": 56.1,
-    "tps": 286.02,
-    "ttft_s": 106.65
+    "tps": 306.66,
+    "ttft_s": 101.26
    }
   },
   {
@@ -889,7 +889,7 @@
     "intelligence_index": 56.3,
     "coding_index": 74.9,
     "tps": 68.65,
-    "ttft_s": 49.07
+    "ttft_s": 65.38
    }
   },
   {
@@ -905,8 +905,8 @@
    "intelligence": {
     "intelligence_index": 38,
     "coding_index": null,
-    "tps": 139.81,
-    "ttft_s": 14.57
+    "tps": 158.6,
+    "ttft_s": 13.92
    }
   },
   {
@@ -922,8 +922,8 @@
    "intelligence": {
     "intelligence_index": 37.9,
     "coding_index": 42.2,
-    "tps": 109.2,
-    "ttft_s": 22.22
+    "tps": 111.4,
+    "ttft_s": 21.62
    }
   },
   {
@@ -939,8 +939,8 @@
    "intelligence": {
     "intelligence_index": 36,
     "coding_index": 46.8,
-    "tps": 50.04,
-    "ttft_s": 1.87
+    "tps": 50.21,
+    "ttft_s": 1.83
    }
   },
   {
@@ -956,8 +956,8 @@
    "intelligence": {
     "intelligence_index": 45.1,
     "coding_index": 61.8,
-    "tps": 42.24,
-    "ttft_s": 3
+    "tps": 43.71,
+    "ttft_s": 3.12
    }
   },
   {
@@ -985,8 +985,8 @@
    "intelligence": {
     "intelligence_index": 14.5,
     "coding_index": 16.3,
-    "tps": 190.91,
-    "ttft_s": 0.96
+    "tps": 191.89,
+    "ttft_s": 1.07
    }
   },
   {
@@ -1002,8 +1002,8 @@
    "intelligence": {
     "intelligence_index": 10.3,
     "coding_index": 8.2,
-    "tps": 127.67,
-    "ttft_s": 0.76
+    "tps": 132.77,
+    "ttft_s": 0.77
    }
   },
   {
@@ -1048,8 +1048,8 @@
    "intelligence": {
     "intelligence_index": 34.5,
     "coding_index": null,
-    "tps": 64.63,
-    "ttft_s": 2.09
+    "tps": 70.42,
+    "ttft_s": 2.18
    }
   },
   {
@@ -1065,8 +1065,8 @@
    "intelligence": {
     "intelligence_index": 38.9,
     "coding_index": 52.6,
-    "tps": 54.38,
-    "ttft_s": 2.28
+    "tps": 58.94,
+    "ttft_s": 2.31
    }
   },
   {
@@ -1145,8 +1145,8 @@
    "intelligence": {
     "intelligence_index": 40.5,
     "coding_index": 54.5,
-    "tps": 55.99,
-    "ttft_s": 2.02
+    "tps": 55.92,
+    "ttft_s": 1.92
    }
   },
   {
@@ -1186,8 +1186,8 @@
    "intelligence": {
     "intelligence_index": 36.8,
     "coding_index": null,
-    "tps": 43.02,
-    "ttft_s": 1.19
+    "tps": 47.8,
+    "ttft_s": 1.07
    }
   },
   {
@@ -1203,8 +1203,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": 23,
-    "tps": 83.53,
-    "ttft_s": 1.26
+    "tps": 81.1,
+    "ttft_s": 1
    }
   },
   {
@@ -1220,8 +1220,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": null,
-    "tps": 198.5,
-    "ttft_s": 0.4
+    "tps": 202.38,
+    "ttft_s": 0.35
    }
   },
   {
@@ -1237,8 +1237,8 @@
    "intelligence": {
     "intelligence_index": 11.1,
     "coding_index": null,
-    "tps": 199.87,
-    "ttft_s": 1.69
+    "tps": 203.38,
+    "ttft_s": 1.67
    }
   },
   {
@@ -1266,8 +1266,8 @@
    "intelligence": {
     "intelligence_index": 35.6,
     "coding_index": null,
-    "tps": 47.39,
-    "ttft_s": 1.39
+    "tps": 52.36,
+    "ttft_s": 1.37
    }
   },
   {
@@ -1348,8 +1348,8 @@
    "intelligence": {
     "intelligence_index": 25.9,
     "coding_index": 33.3,
-    "tps": 136.09,
-    "ttft_s": 22.02
+    "tps": 146.2,
+    "ttft_s": 19.52
    }
   },
   {
@@ -1377,8 +1377,8 @@
    "intelligence": {
     "intelligence_index": 34.5,
     "coding_index": 45.3,
-    "tps": 86.11,
-    "ttft_s": 1.58
+    "tps": 95.65,
+    "ttft_s": 1.52
    }
   },
   {
@@ -1394,8 +1394,8 @@
    "intelligence": {
     "intelligence_index": 19.6,
     "coding_index": null,
-    "tps": 183.3,
-    "ttft_s": 1.65
+    "tps": 203.57,
+    "ttft_s": 1.79
    }
   },
   {
@@ -1411,8 +1411,8 @@
    "intelligence": {
     "intelligence_index": 14.8,
     "coding_index": 20.2,
-    "tps": 112.47,
-    "ttft_s": 1.53
+    "tps": 136.91,
+    "ttft_s": 1.52
    }
   },
   {
@@ -1428,8 +1428,8 @@
    "intelligence": {
     "intelligence_index": 9.6,
     "coding_index": 11.1,
-    "tps": 282.06,
-    "ttft_s": 1.22
+    "tps": 285.34,
+    "ttft_s": 0.99
    }
   },
   {
@@ -1445,8 +1445,8 @@
    "intelligence": {
     "intelligence_index": 11.1,
     "coding_index": null,
-    "tps": 199.87,
-    "ttft_s": 1.69
+    "tps": 203.38,
+    "ttft_s": 1.67
    }
   },
   {
@@ -1462,7 +1462,7 @@
    "intelligence": {
     "intelligence_index": 6.7,
     "coding_index": 11.4,
-    "tps": 75.58,
+    "tps": 68.41,
     "ttft_s": 1.7
    }
   },
@@ -1496,8 +1496,8 @@
    "intelligence": {
     "intelligence_index": 19.7,
     "coding_index": null,
-    "tps": 46.2,
-    "ttft_s": 1.9
+    "tps": 47.49,
+    "ttft_s": 1.83
    }
   },
   {
@@ -1513,8 +1513,8 @@
    "intelligence": {
     "intelligence_index": 33.5,
     "coding_index": null,
-    "tps": 122.84,
-    "ttft_s": 1.47
+    "tps": 122.11,
+    "ttft_s": 1.45
    }
   },
   {
@@ -1530,8 +1530,8 @@
    "intelligence": {
     "intelligence_index": 34.5,
     "coding_index": null,
-    "tps": 64.63,
-    "ttft_s": 2.09
+    "tps": 70.42,
+    "ttft_s": 2.18
    }
   },
   {
@@ -1605,22 +1605,9 @@
    "intelligence": {
     "intelligence_index": 3.8,
     "coding_index": 30.4,
-    "tps": 259.42,
-    "ttft_s": 0.81
+    "tps": 261.03,
+    "ttft_s": 0.79
    }
-  },
-  {
-   "id": "qwen-3.8-27b",
-   "provider": "cerebras",
-   "name": "qwen-3.8-27b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "cerebras",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
   },
   {
    "id": "zai-glm-4.7",
@@ -1664,7 +1651,7 @@
    "intelligence": {
     "intelligence_index": 26.1,
     "coding_index": 39.3,
-    "tps": 99.84,
+    "tps": 101.31,
     "ttft_s": 0.93
    }
   },
@@ -1722,8 +1709,8 @@
    "intelligence": {
     "intelligence_index": 45.1,
     "coding_index": 61.8,
-    "tps": 42.24,
-    "ttft_s": 3
+    "tps": 43.71,
+    "ttft_s": 3.12
    }
   },
   {
@@ -1773,8 +1760,8 @@
    "intelligence": {
     "intelligence_index": 23.3,
     "coding_index": null,
-    "tps": 83.73,
-    "ttft_s": 1.59
+    "tps": 116.66,
+    "ttft_s": 1.73
    }
   },
   {
@@ -1790,7 +1777,7 @@
    "intelligence": {
     "intelligence_index": 7.5,
     "coding_index": null,
-    "tps": 69.38,
+    "tps": 71.56,
     "ttft_s": 1.7
    }
   },
@@ -1807,7 +1794,7 @@
    "intelligence": {
     "intelligence_index": 7.5,
     "coding_index": null,
-    "tps": 69.38,
+    "tps": 71.56,
     "ttft_s": 1.7
    }
   },
@@ -1824,7 +1811,7 @@
    "intelligence": {
     "intelligence_index": 7.5,
     "coding_index": null,
-    "tps": 69.38,
+    "tps": 71.56,
     "ttft_s": 1.7
    }
   },
@@ -1894,8 +1881,8 @@
    "intelligence": {
     "intelligence_index": 34.5,
     "coding_index": null,
-    "tps": 64.63,
-    "ttft_s": 2.09
+    "tps": 70.42,
+    "ttft_s": 2.18
    }
   },
   {
@@ -1923,8 +1910,8 @@
    "intelligence": {
     "intelligence_index": 32.8,
     "coding_index": 45.7,
-    "tps": 128.12,
-    "ttft_s": 2.24
+    "tps": 129.95,
+    "ttft_s": 2.26
    }
   },
   {
@@ -1940,8 +1927,8 @@
    "intelligence": {
     "intelligence_index": 34.3,
     "coding_index": 48.2,
-    "tps": 59.18,
-    "ttft_s": 2.22
+    "tps": 59.23,
+    "ttft_s": 2.12
    }
   },
   {
@@ -1957,7 +1944,7 @@
    "intelligence": {
     "intelligence_index": 32.1,
     "coding_index": 41.9,
-    "tps": 91.4,
+    "tps": 94.56,
     "ttft_s": 1.99
    }
   },
@@ -2037,8 +2024,8 @@
    "intelligence": {
     "intelligence_index": 51.8,
     "coding_index": 69.1,
-    "tps": 139.05,
-    "ttft_s": 1.14
+    "tps": 160.97,
+    "ttft_s": 1
    }
   },
   {
@@ -2054,8 +2041,8 @@
    "intelligence": {
     "intelligence_index": 23.1,
     "coding_index": 68.8,
-    "tps": 82.7,
-    "ttft_s": 1.68
+    "tps": 91.28,
+    "ttft_s": 1.78
    }
   },
   {
@@ -2071,7 +2058,7 @@
    "intelligence": {
     "intelligence_index": 26.1,
     "coding_index": 39.3,
-    "tps": 99.84,
+    "tps": 101.31,
     "ttft_s": 0.93
    }
   },
@@ -2088,8 +2075,8 @@
    "intelligence": {
     "intelligence_index": 4.4,
     "coding_index": 43.4,
-    "tps": 35.69,
-    "ttft_s": 1.02
+    "tps": 35.76,
+    "ttft_s": 1.05
    }
   },
   {
@@ -2117,8 +2104,8 @@
    "intelligence": {
     "intelligence_index": 14.5,
     "coding_index": 16.3,
-    "tps": 190.91,
-    "ttft_s": 0.96
+    "tps": 191.89,
+    "ttft_s": 1.07
    }
   },
   {
@@ -2134,8 +2121,8 @@
    "intelligence": {
     "intelligence_index": 10.3,
     "coding_index": 8.2,
-    "tps": 127.67,
-    "ttft_s": 0.76
+    "tps": 132.77,
+    "ttft_s": 0.77
    }
   },
   {
@@ -2151,8 +2138,8 @@
    "intelligence": {
     "intelligence_index": 45.1,
     "coding_index": 61.8,
-    "tps": 42.24,
-    "ttft_s": 3
+    "tps": 43.71,
+    "ttft_s": 3.12
    }
   },
   {
@@ -2168,8 +2155,8 @@
    "intelligence": {
     "intelligence_index": 25.7,
     "coding_index": 37.7,
-    "tps": 207.35,
-    "ttft_s": 0.56
+    "tps": 256.3,
+    "ttft_s": 0.51
    }
   },
   {
@@ -2202,8 +2189,8 @@
    "intelligence": {
     "intelligence_index": 3.8,
     "coding_index": 30.4,
-    "tps": 259.42,
-    "ttft_s": 0.81
+    "tps": 261.03,
+    "ttft_s": 0.79
    }
   },
   {
@@ -2219,8 +2206,8 @@
    "intelligence": {
     "intelligence_index": 15.2,
     "coding_index": 20.7,
-    "tps": 126.12,
-    "ttft_s": 0.75
+    "tps": 149.86,
+    "ttft_s": 0.74
    }
   },
   {
@@ -2236,8 +2223,8 @@
    "intelligence": {
     "intelligence_index": 41,
     "coding_index": 55.8,
-    "tps": 84.56,
-    "ttft_s": 1.96
+    "tps": 83.89,
+    "ttft_s": 3.06
    }
   },
   {
@@ -2253,8 +2240,8 @@
    "intelligence": {
     "intelligence_index": 51.8,
     "coding_index": 69.1,
-    "tps": 139.05,
-    "ttft_s": 1.14
+    "tps": 160.97,
+    "ttft_s": 1
    }
   },
   {
@@ -2270,8 +2257,8 @@
    "intelligence": {
     "intelligence_index": 23.1,
     "coding_index": 68.8,
-    "tps": 82.7,
-    "ttft_s": 1.68
+    "tps": 91.28,
+    "ttft_s": 1.78
    }
   },
   {
@@ -2311,8 +2298,8 @@
    "intelligence": {
     "intelligence_index": 40.9,
     "coding_index": 56.1,
-    "tps": 286.02,
-    "ttft_s": 106.65
+    "tps": 306.66,
+    "ttft_s": 101.26
    }
   },
   {
@@ -2328,8 +2315,8 @@
    "intelligence": {
     "intelligence_index": 23.8,
     "coding_index": 71.4,
-    "tps": 126.86,
-    "ttft_s": 107.74
+    "tps": 133.61,
+    "ttft_s": 130.47
    }
   },
   {
@@ -2374,8 +2361,8 @@
    "intelligence": {
     "intelligence_index": 3.8,
     "coding_index": 30.4,
-    "tps": 259.42,
-    "ttft_s": 0.81
+    "tps": 261.03,
+    "ttft_s": 0.79
    }
   },
   {
@@ -2391,8 +2378,8 @@
    "intelligence": {
     "intelligence_index": 51.8,
     "coding_index": 69.1,
-    "tps": 139.05,
-    "ttft_s": 1.14
+    "tps": 160.97,
+    "ttft_s": 1
    }
   },
   {
@@ -2408,8 +2395,8 @@
    "intelligence": {
     "intelligence_index": 23.1,
     "coding_index": 68.8,
-    "tps": 82.7,
-    "ttft_s": 1.68
+    "tps": 91.28,
+    "ttft_s": 1.78
    }
   },
   {
@@ -2425,8 +2412,8 @@
    "intelligence": {
     "intelligence_index": 40.6,
     "coding_index": null,
-    "tps": 60.2,
-    "ttft_s": 2.13
+    "tps": 60.93,
+    "ttft_s": 2.05
    }
   },
   {
@@ -2442,8 +2429,8 @@
    "intelligence": {
     "intelligence_index": 3.8,
     "coding_index": 30.4,
-    "tps": 259.42,
-    "ttft_s": 0.81
+    "tps": 261.03,
+    "ttft_s": 0.79
    }
   },
   {
@@ -2459,8 +2446,8 @@
    "intelligence": {
     "intelligence_index": 15.2,
     "coding_index": 20.7,
-    "tps": 126.12,
-    "ttft_s": 0.75
+    "tps": 149.86,
+    "ttft_s": 0.74
    }
   },
   {
@@ -2476,8 +2463,8 @@
    "intelligence": {
     "intelligence_index": 19.7,
     "coding_index": null,
-    "tps": 46.2,
-    "ttft_s": 1.9
+    "tps": 47.49,
+    "ttft_s": 1.83
    }
   },
   {
@@ -2493,8 +2480,8 @@
    "intelligence": {
     "intelligence_index": 19.7,
     "coding_index": null,
-    "tps": 46.2,
-    "ttft_s": 1.9
+    "tps": 47.49,
+    "ttft_s": 1.83
    }
   },
   {
@@ -2510,7 +2497,7 @@
    "intelligence": {
     "intelligence_index": 28.9,
     "coding_index": null,
-    "tps": 126.5,
+    "tps": 123.33,
     "ttft_s": 1.04
    }
   },
@@ -2527,7 +2514,7 @@
    "intelligence": {
     "intelligence_index": 28.9,
     "coding_index": null,
-    "tps": 126.5,
+    "tps": 123.33,
     "ttft_s": 1.04
    }
   },
@@ -2556,8 +2543,8 @@
    "intelligence": {
     "intelligence_index": 45.5,
     "coding_index": null,
-    "tps": 113.68,
-    "ttft_s": 64.68
+    "tps": 132.09,
+    "ttft_s": 53.83
    }
   },
   {
@@ -2573,8 +2560,8 @@
    "intelligence": {
     "intelligence_index": 53.1,
     "coding_index": 71.1,
-    "tps": 91.93,
-    "ttft_s": 168.82
+    "tps": 100.31,
+    "ttft_s": 163.96
    }
   },
   {
@@ -2590,8 +2577,8 @@
    "intelligence": {
     "intelligence_index": 40.9,
     "coding_index": 56.1,
-    "tps": 286.02,
-    "ttft_s": 106.65
+    "tps": 306.66,
+    "ttft_s": 101.26
    }
   },
   {
@@ -2608,7 +2595,7 @@
     "intelligence_index": 56.3,
     "coding_index": 74.9,
     "tps": 68.65,
-    "ttft_s": 49.07
+    "ttft_s": 65.38
    }
   },
   {
@@ -2648,8 +2635,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": null,
-    "tps": 198.5,
-    "ttft_s": 0.4
+    "tps": 202.38,
+    "ttft_s": 0.35
    }
   },
   {
@@ -2677,8 +2664,8 @@
    "intelligence": {
     "intelligence_index": 27.9,
     "coding_index": null,
-    "tps": 206.42,
-    "ttft_s": 0.87
+    "tps": 221.14,
+    "ttft_s": 0.81
    }
   },
   {
@@ -2735,8 +2722,8 @@
    "intelligence": {
     "intelligence_index": 23.3,
     "coding_index": null,
-    "tps": 83.73,
-    "ttft_s": 1.59
+    "tps": 116.66,
+    "ttft_s": 1.73
    }
   },
   {
@@ -2781,1061 +2768,9 @@
    "intelligence": {
     "intelligence_index": 23.3,
     "coding_index": null,
-    "tps": 83.73,
-    "ttft_s": 1.59
+    "tps": 116.66,
+    "ttft_s": 1.73
    }
-  },
-  {
-   "id": "models/antigravity-preview-05-2026",
-   "provider": "google",
-   "name": "models/antigravity-preview-05-2026",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/antigravity-preview-09-2026",
-   "provider": "google",
-   "name": "models/antigravity-preview-09-2026",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/antigravity-preview-latest",
-   "provider": "google",
-   "name": "models/antigravity-preview-latest",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/aqa",
-   "provider": "google",
-   "name": "models/aqa",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/deep-research-max-preview-04-2026",
-   "provider": "google",
-   "name": "models/deep-research-max-preview-04-2026",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/deep-research-preview-04-2026",
-   "provider": "google",
-   "name": "models/deep-research-preview-04-2026",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-2.5-computer-use-preview-10-2025",
-   "provider": "google",
-   "name": "models/gemini-2.5-computer-use-preview-10-2025",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-2.5-flash",
-   "provider": "google",
-   "name": "models/gemini-2.5-flash",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 14.2,
-    "coding_index": null,
-    "tps": 198.5,
-    "ttft_s": 0.4
-   }
-  },
-  {
-   "id": "models/gemini-2.5-flash-image",
-   "provider": "google",
-   "name": "models/gemini-2.5-flash-image",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-2.5-flash-lite",
-   "provider": "google",
-   "name": "models/gemini-2.5-flash-lite",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-2.5-flash-native-audio-latest",
-   "provider": "google",
-   "name": "models/gemini-2.5-flash-native-audio-latest",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-2.5-flash-native-audio-preview-09-2025",
-   "provider": "google",
-   "name": "models/gemini-2.5-flash-native-audio-preview-09-2025",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-2.5-flash-native-audio-preview-12-2025",
-   "provider": "google",
-   "name": "models/gemini-2.5-flash-native-audio-preview-12-2025",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-2.5-flash-preview-tts",
-   "provider": "google",
-   "name": "models/gemini-2.5-flash-preview-tts",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-2.5-pro",
-   "provider": "google",
-   "name": "models/gemini-2.5-pro",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 25.9,
-    "coding_index": 33.3,
-    "tps": 136.09,
-    "ttft_s": 22.02
-   }
-  },
-  {
-   "id": "models/gemini-2.5-pro-preview-tts",
-   "provider": "google",
-   "name": "models/gemini-2.5-pro-preview-tts",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-3-flash-preview",
-   "provider": "google",
-   "name": "models/gemini-3-flash-preview",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 27.9,
-    "coding_index": null,
-    "tps": 206.42,
-    "ttft_s": 0.87
-   }
-  },
-  {
-   "id": "models/gemini-3-pro-image",
-   "provider": "google",
-   "name": "models/gemini-3-pro-image",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 40.6,
-    "coding_index": null,
-    "tps": 0,
-    "ttft_s": 0
-   }
-  },
-  {
-   "id": "models/gemini-3-pro-image-preview",
-   "provider": "google",
-   "name": "models/gemini-3-pro-image-preview",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 40.6,
-    "coding_index": null,
-    "tps": 0,
-    "ttft_s": 0
-   }
-  },
-  {
-   "id": "models/gemini-3.1-flash-image",
-   "provider": "google",
-   "name": "models/gemini-3.1-flash-image",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-3.1-flash-image-preview",
-   "provider": "google",
-   "name": "models/gemini-3.1-flash-image-preview",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-3.1-flash-lite",
-   "provider": "google",
-   "name": "models/gemini-3.1-flash-lite",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-3.1-flash-lite-image",
-   "provider": "google",
-   "name": "models/gemini-3.1-flash-lite-image",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-3.1-flash-lite-preview",
-   "provider": "google",
-   "name": "models/gemini-3.1-flash-lite-preview",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 6.2,
-    "coding_index": 34.7,
-    "tps": 316.99,
-    "ttft_s": 4.99
-   }
-  },
-  {
-   "id": "models/gemini-3.1-flash-live-preview",
-   "provider": "google",
-   "name": "models/gemini-3.1-flash-live-preview",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-3.1-flash-tts-preview",
-   "provider": "google",
-   "name": "models/gemini-3.1-flash-tts-preview",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-3.1-pro-preview",
-   "provider": "google",
-   "name": "models/gemini-3.1-pro-preview",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 47.7,
-    "coding_index": 68.8,
-    "tps": 135.12,
-    "ttft_s": 19.11
-   }
-  },
-  {
-   "id": "models/gemini-3.1-pro-preview-customtools",
-   "provider": "google",
-   "name": "models/gemini-3.1-pro-preview-customtools",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-3.5-flash",
-   "provider": "google",
-   "name": "models/gemini-3.5-flash",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 52,
-    "coding_index": 70.1,
-    "tps": 198.1,
-    "ttft_s": 15.39
-   }
-  },
-  {
-   "id": "models/gemini-3.5-flash-lite",
-   "provider": "google",
-   "name": "models/gemini-3.5-flash-lite",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-3.5-live-translate-preview",
-   "provider": "google",
-   "name": "models/gemini-3.5-live-translate-preview",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-3.5-transcribe",
-   "provider": "google",
-   "name": "models/gemini-3.5-transcribe",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-3.5-transcribe-live",
-   "provider": "google",
-   "name": "models/gemini-3.5-transcribe-live",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-3.6-flash",
-   "provider": "google",
-   "name": "models/gemini-3.6-flash",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 51.6,
-    "coding_index": 69.2,
-    "tps": 191.08,
-    "ttft_s": 13.65
-   }
-  },
-  {
-   "id": "models/gemini-3.7-flash",
-   "provider": "google",
-   "name": "models/gemini-3.7-flash",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 56,
-    "coding_index": 76.1,
-    "tps": 0,
-    "ttft_s": 0
-   }
-  },
-  {
-   "id": "models/gemini-3.8-flash",
-   "provider": "google",
-   "name": "models/gemini-3.8-flash",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 30.8,
-    "coding_index": null,
-    "tps": 108.89,
-    "ttft_s": 30.99
-   }
-  },
-  {
-   "id": "models/gemini-3.8-flash-lite-tts",
-   "provider": "google",
-   "name": "models/gemini-3.8-flash-lite-tts",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-3.8-flash-tts",
-   "provider": "google",
-   "name": "models/gemini-3.8-flash-tts",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-3.8-live",
-   "provider": "google",
-   "name": "models/gemini-3.8-live",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-3.8-live-extended-thinking",
-   "provider": "google",
-   "name": "models/gemini-3.8-live-extended-thinking",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-4-argon",
-   "provider": "google",
-   "name": "models/gemini-4-argon",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 50.4,
-    "coding_index": null,
-    "tps": 102,
-    "ttft_s": 56.07
-   }
-  },
-  {
-   "id": "models/gemini-4-carbon",
-   "provider": "google",
-   "name": "models/gemini-4-carbon",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 60,
-    "coding_index": null,
-    "tps": 81.84,
-    "ttft_s": 120.33
-   }
-  },
-  {
-   "id": "models/gemini-4-hydrogen",
-   "provider": "google",
-   "name": "models/gemini-4-hydrogen",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 53.9,
-    "coding_index": null,
-    "tps": 207.7,
-    "ttft_s": 77.66
-   }
-  },
-  {
-   "id": "models/gemini-4-neon",
-   "provider": "google",
-   "name": "models/gemini-4-neon",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 61.4,
-    "coding_index": null,
-    "tps": 114.61,
-    "ttft_s": 118.79
-   }
-  },
-  {
-   "id": "models/gemini-decision-1",
-   "provider": "google",
-   "name": "models/gemini-decision-1",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-embedding-001",
-   "provider": "google",
-   "name": "models/gemini-embedding-001",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-embedding-2",
-   "provider": "google",
-   "name": "models/gemini-embedding-2",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-embedding-2-preview",
-   "provider": "google",
-   "name": "models/gemini-embedding-2-preview",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-flash-latest",
-   "provider": "google",
-   "name": "models/gemini-flash-latest",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-flash-lite-latest",
-   "provider": "google",
-   "name": "models/gemini-flash-lite-latest",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-nano-banana-2.1",
-   "provider": "google",
-   "name": "models/gemini-nano-banana-2.1",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-omni-1.1-flash",
-   "provider": "google",
-   "name": "models/gemini-omni-1.1-flash",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-omni-1.2-flash",
-   "provider": "google",
-   "name": "models/gemini-omni-1.2-flash",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-omni-flash-preview",
-   "provider": "google",
-   "name": "models/gemini-omni-flash-preview",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-pro-latest",
-   "provider": "google",
-   "name": "models/gemini-pro-latest",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-robotics-er-2-preview",
-   "provider": "google",
-   "name": "models/gemini-robotics-er-2-preview",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemini-robotics-er-2-streaming-preview",
-   "provider": "google",
-   "name": "models/gemini-robotics-er-2-streaming-preview",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/gemma-4-26b-a4b-it",
-   "provider": "google",
-   "name": "models/gemma-4-26b-a4b-it",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 26.1,
-    "coding_index": 39.3,
-    "tps": 99.84,
-    "ttft_s": 0.93
-   }
-  },
-  {
-   "id": "models/gemma-4-31b-it",
-   "provider": "google",
-   "name": "models/gemma-4-31b-it",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 4.4,
-    "coding_index": 43.4,
-    "tps": 35.69,
-    "ttft_s": 1.02
-   }
-  },
-  {
-   "id": "models/genie-4",
-   "provider": "google",
-   "name": "models/genie-4",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/lyria-3-clip-preview",
-   "provider": "google",
-   "name": "models/lyria-3-clip-preview",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/lyria-3-pro-preview",
-   "provider": "google",
-   "name": "models/lyria-3-pro-preview",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/lyria-3.5",
-   "provider": "google",
-   "name": "models/lyria-3.5",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/lyria-realtime-exp",
-   "provider": "google",
-   "name": "models/lyria-realtime-exp",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "models/nano-banana-pro-preview",
-   "provider": "google",
-   "name": "models/nano-banana-pro-preview",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "google",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "allam-2-7b",
-   "provider": "groq",
-   "name": "allam-2-7b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "groq",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "canopylabs/orpheus-arabic-saudi",
-   "provider": "groq",
-   "name": "canopylabs/orpheus-arabic-saudi",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "groq",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "canopylabs/orpheus-v1-english",
-   "provider": "groq",
-   "name": "canopylabs/orpheus-v1-english",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "groq",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "meta-llama/llama-prompt-guard-2-22m",
-   "provider": "groq",
-   "name": "meta-llama/llama-prompt-guard-2-22m",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "groq",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "meta-llama/llama-prompt-guard-2-86m",
-   "provider": "groq",
-   "name": "meta-llama/llama-prompt-guard-2-86m",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "groq",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "openai/gpt-oss-safeguard-20b",
-   "provider": "groq",
-   "name": "openai/gpt-oss-safeguard-20b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "groq",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "qwen/qwen3.8-27b",
-   "provider": "groq",
-   "name": "qwen/qwen3.8-27b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "groq",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 20.1,
-    "coding_index": 68.1,
-    "tps": 69.87,
-    "ttft_s": 3.05
-   }
-  },
-  {
-   "id": "whisper-large-v3",
-   "provider": "groq",
-   "name": "whisper-large-v3",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "groq",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "whisper-large-v3-turbo",
-   "provider": "groq",
-   "name": "whisper-large-v3-turbo",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "groq",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
   },
   {
    "id": "CohereLabs/c4ai-command-r7b-12-2024",
@@ -3862,7 +2797,7 @@
    "intelligence": {
     "intelligence_index": 7.5,
     "coding_index": null,
-    "tps": 69.38,
+    "tps": 71.56,
     "ttft_s": 1.7
    }
   },
@@ -3879,7 +2814,7 @@
    "intelligence": {
     "intelligence_index": 7.5,
     "coding_index": null,
-    "tps": 69.38,
+    "tps": 71.56,
     "ttft_s": 1.7
    }
   },
@@ -3896,7 +2831,7 @@
    "intelligence": {
     "intelligence_index": 18.9,
     "coding_index": 58.6,
-    "tps": 88.96,
+    "tps": 116.59,
     "ttft_s": 0.79
    }
   },
@@ -3913,8 +2848,8 @@
    "intelligence": {
     "intelligence_index": 32.8,
     "coding_index": 45.7,
-    "tps": 128.12,
-    "ttft_s": 2.24
+    "tps": 129.95,
+    "ttft_s": 2.26
    }
   },
   {
@@ -3930,8 +2865,8 @@
    "intelligence": {
     "intelligence_index": 34.3,
     "coding_index": 48.2,
-    "tps": 59.18,
-    "ttft_s": 2.22
+    "tps": 59.23,
+    "ttft_s": 2.12
    }
   },
   {
@@ -3947,8 +2882,8 @@
    "intelligence": {
     "intelligence_index": 37.7,
     "coding_index": 53.7,
-    "tps": 56.49,
-    "ttft_s": 3.47
+    "tps": 58.19,
+    "ttft_s": 3.54
    }
   },
   {
@@ -3964,7 +2899,7 @@
    "intelligence": {
     "intelligence_index": 32.1,
     "coding_index": 41.9,
-    "tps": 91.4,
+    "tps": 94.56,
     "ttft_s": 1.99
    }
   },
@@ -4010,8 +2945,8 @@
    "intelligence": {
     "intelligence_index": 51.8,
     "coding_index": 69.1,
-    "tps": 139.05,
-    "ttft_s": 1.14
+    "tps": 160.97,
+    "ttft_s": 1
    }
   },
   {
@@ -4027,8 +2962,8 @@
    "intelligence": {
     "intelligence_index": 23.1,
     "coding_index": 68.8,
-    "tps": 82.7,
-    "ttft_s": 1.68
+    "tps": 91.28,
+    "ttft_s": 1.78
    }
   },
   {
@@ -4044,7 +2979,7 @@
    "intelligence": {
     "intelligence_index": 26.1,
     "coding_index": 39.3,
-    "tps": 99.84,
+    "tps": 101.31,
     "ttft_s": 0.93
    }
   },
@@ -4061,8 +2996,8 @@
    "intelligence": {
     "intelligence_index": 4.4,
     "coding_index": 43.4,
-    "tps": 35.69,
-    "ttft_s": 1.02
+    "tps": 35.76,
+    "ttft_s": 1.05
    }
   },
   {
@@ -4095,8 +3030,8 @@
    "intelligence": {
     "intelligence_index": 14.5,
     "coding_index": 16.3,
-    "tps": 190.91,
-    "ttft_s": 0.96
+    "tps": 191.89,
+    "ttft_s": 1.07
    }
   },
   {
@@ -4112,8 +3047,8 @@
    "intelligence": {
     "intelligence_index": 10.3,
     "coding_index": 8.2,
-    "tps": 127.67,
-    "ttft_s": 0.76
+    "tps": 132.77,
+    "ttft_s": 0.77
    }
   },
   {
@@ -4129,8 +3064,8 @@
    "intelligence": {
     "intelligence_index": 45.1,
     "coding_index": 61.8,
-    "tps": 42.24,
-    "ttft_s": 3
+    "tps": 43.71,
+    "ttft_s": 3.12
    }
   },
   {
@@ -4146,8 +3081,8 @@
    "intelligence": {
     "intelligence_index": 19.7,
     "coding_index": null,
-    "tps": 46.2,
-    "ttft_s": 1.9
+    "tps": 47.49,
+    "ttft_s": 1.83
    }
   },
   {
@@ -4163,8 +3098,8 @@
    "intelligence": {
     "intelligence_index": 11.8,
     "coding_index": 49.3,
-    "tps": 264.89,
-    "ttft_s": 0.98
+    "tps": 284.37,
+    "ttft_s": 1.04
    }
   },
   {
@@ -4180,8 +3115,8 @@
    "intelligence": {
     "intelligence_index": 3.8,
     "coding_index": 30.4,
-    "tps": 259.42,
-    "ttft_s": 0.81
+    "tps": 261.03,
+    "ttft_s": 0.79
    }
   },
   {
@@ -4197,8 +3132,8 @@
    "intelligence": {
     "intelligence_index": 15.2,
     "coding_index": 20.7,
-    "tps": 126.12,
-    "ttft_s": 0.75
+    "tps": 149.86,
+    "ttft_s": 0.74
    }
   },
   {
@@ -4214,8 +3149,8 @@
    "intelligence": {
     "intelligence_index": 30.9,
     "coding_index": 39.6,
-    "tps": 177.87,
-    "ttft_s": 2.56
+    "tps": 181.99,
+    "ttft_s": 2.6
    }
   },
   {
@@ -4231,8 +3166,8 @@
    "intelligence": {
     "intelligence_index": 52.6,
     "coding_index": 68.8,
-    "tps": 63.21,
-    "ttft_s": 1.95
+    "tps": 67.09,
+    "ttft_s": 2.2
    }
   },
   {
@@ -4260,8 +3195,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": 23,
-    "tps": 83.53,
-    "ttft_s": 1.26
+    "tps": 81.1,
+    "ttft_s": 1
    }
   },
   {
@@ -4398,8 +3333,8 @@
    "intelligence": {
     "intelligence_index": 20.4,
     "coding_index": null,
-    "tps": 29.79,
-    "ttft_s": 1.94
+    "tps": 30.04,
+    "ttft_s": 1.21
    }
   },
   {
@@ -4415,8 +3350,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": 23,
-    "tps": 83.53,
-    "ttft_s": 1.26
+    "tps": 81.1,
+    "ttft_s": 1
    }
   },
   {
@@ -4485,8 +3420,8 @@
    "intelligence": {
     "intelligence_index": 20.4,
     "coding_index": null,
-    "tps": 29.79,
-    "ttft_s": 1.94
+    "tps": 30.04,
+    "ttft_s": 1.21
    }
   },
   {
@@ -4514,8 +3449,8 @@
    "intelligence": {
     "intelligence_index": 6.8,
     "coding_index": null,
-    "tps": 47.47,
-    "ttft_s": 3.76
+    "tps": 53.03,
+    "ttft_s": 3.68
    }
   },
   {
@@ -4615,8 +3550,8 @@
    "intelligence": {
     "intelligence_index": 6.8,
     "coding_index": null,
-    "tps": 47.47,
-    "ttft_s": 3.76
+    "tps": 53.03,
+    "ttft_s": 3.68
    }
   },
   {
@@ -4668,8 +3603,8 @@
    "intelligence": {
     "intelligence_index": 40.6,
     "coding_index": null,
-    "tps": 60.2,
-    "ttft_s": 2.13
+    "tps": 60.93,
+    "ttft_s": 2.05
    }
   },
   {
@@ -4702,8 +3637,8 @@
    "intelligence": {
     "intelligence_index": 34.5,
     "coding_index": null,
-    "tps": 64.63,
-    "ttft_s": 2.09
+    "tps": 70.42,
+    "ttft_s": 2.18
    }
   },
   {
@@ -4748,8 +3683,8 @@
    "intelligence": {
     "intelligence_index": 20.4,
     "coding_index": null,
-    "tps": 29.79,
-    "ttft_s": 1.94
+    "tps": 30.04,
+    "ttft_s": 1.21
    }
   },
   {
@@ -4816,48 +3751,9 @@
    "intelligence": {
     "intelligence_index": 34,
     "coding_index": 45.3,
-    "tps": 60.94,
+    "tps": 63.1,
     "ttft_s": 2.79
    }
-  },
-  {
-   "id": "codestral-2508",
-   "provider": "mistral",
-   "name": "codestral-2508",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "codestral-embed",
-   "provider": "mistral",
-   "name": "codestral-embed",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "codestral-embed-2505",
-   "provider": "mistral",
-   "name": "codestral-embed-2505",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
   },
   {
    "id": "codestral-latest",
@@ -4884,159 +3780,6 @@
    "intelligence": null
   },
   {
-   "id": "magistral-medium-latest",
-   "provider": "mistral",
-   "name": "magistral-medium-latest",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 12.5,
-    "coding_index": null,
-    "tps": 0,
-    "ttft_s": 0
-   }
-  },
-  {
-   "id": "magistral-small-latest",
-   "provider": "mistral",
-   "name": "magistral-small-latest",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 10.6,
-    "coding_index": null,
-    "tps": 0,
-    "ttft_s": 0
-   }
-  },
-  {
-   "id": "ministral-14b-2512",
-   "provider": "mistral",
-   "name": "ministral-14b-2512",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "ministral-3b-2512",
-   "provider": "mistral",
-   "name": "ministral-3b-2512",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "ministral-3b-latest",
-   "provider": "mistral",
-   "name": "ministral-3b-latest",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "ministral-8b-2512",
-   "provider": "mistral",
-   "name": "ministral-8b-2512",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "ministral-8b-latest",
-   "provider": "mistral",
-   "name": "ministral-8b-latest",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "mistral-code-fim-latest",
-   "provider": "mistral",
-   "name": "mistral-code-fim-latest",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "mistral-code-latest",
-   "provider": "mistral",
-   "name": "mistral-code-latest",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "mistral-embed",
-   "provider": "mistral",
-   "name": "mistral-embed",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "mistral-embed-2312",
-   "provider": "mistral",
-   "name": "mistral-embed-2312",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
    "id": "mistral-large-latest",
    "provider": "mistral",
    "name": "Mistral Large 3",
@@ -5054,60 +3797,6 @@
    }
   },
   {
-   "id": "mistral-medium",
-   "provider": "mistral",
-   "name": "mistral-medium",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 3.2,
-    "coding_index": null,
-    "tps": 0,
-    "ttft_s": 0
-   }
-  },
-  {
-   "id": "mistral-medium-2604",
-   "provider": "mistral",
-   "name": "mistral-medium-2604",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 3.2,
-    "coding_index": null,
-    "tps": 0,
-    "ttft_s": 0
-   }
-  },
-  {
-   "id": "mistral-medium-3",
-   "provider": "mistral",
-   "name": "mistral-medium-3",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 12.5,
-    "coding_index": null,
-    "tps": 46.33,
-    "ttft_s": 2.14
-   }
-  },
-  {
    "id": "mistral-medium-3-5",
    "provider": "mistral",
    "name": "Mistral Medium 3.5",
@@ -5120,136 +3809,9 @@
    "intelligence": {
     "intelligence_index": 4.6,
     "coding_index": 46.9,
-    "tps": 175.25,
-    "ttft_s": 2.38
+    "tps": 180.58,
+    "ttft_s": 2.31
    }
-  },
-  {
-   "id": "mistral-medium-3.5",
-   "provider": "mistral",
-   "name": "mistral-medium-3.5",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 4.6,
-    "coding_index": 46.9,
-    "tps": 175.25,
-    "ttft_s": 2.38
-   }
-  },
-  {
-   "id": "mistral-medium-latest",
-   "provider": "mistral",
-   "name": "mistral-medium-latest",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 3.2,
-    "coding_index": null,
-    "tps": 0,
-    "ttft_s": 0
-   }
-  },
-  {
-   "id": "mistral-moderation-2603",
-   "provider": "mistral",
-   "name": "mistral-moderation-2603",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "mistral-ocr-2512",
-   "provider": "mistral",
-   "name": "mistral-ocr-2512",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "mistral-ocr-3",
-   "provider": "mistral",
-   "name": "mistral-ocr-3",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "mistral-ocr-3-0",
-   "provider": "mistral",
-   "name": "mistral-ocr-3-0",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "mistral-ocr-4",
-   "provider": "mistral",
-   "name": "mistral-ocr-4",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "mistral-ocr-4-1",
-   "provider": "mistral",
-   "name": "mistral-ocr-4-1",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "mistral-ocr-latest",
-   "provider": "mistral",
-   "name": "mistral-ocr-latest",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
   },
   {
    "id": "mistral-small-latest",
@@ -5269,266 +3831,6 @@
    }
   },
   {
-   "id": "mistral-vibe-cli-fast",
-   "provider": "mistral",
-   "name": "mistral-vibe-cli-fast",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "mistral-vibe-cli-latest",
-   "provider": "mistral",
-   "name": "mistral-vibe-cli-latest",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "mistral-vibe-cli-with-tools",
-   "provider": "mistral",
-   "name": "mistral-vibe-cli-with-tools",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "voxtral-mini-2602",
-   "provider": "mistral",
-   "name": "voxtral-mini-2602",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "voxtral-mini-latest",
-   "provider": "mistral",
-   "name": "voxtral-mini-latest",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "voxtral-mini-realtime-2602",
-   "provider": "mistral",
-   "name": "voxtral-mini-realtime-2602",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "voxtral-mini-realtime-latest",
-   "provider": "mistral",
-   "name": "voxtral-mini-realtime-latest",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "voxtral-mini-transcribe-3",
-   "provider": "mistral",
-   "name": "voxtral-mini-transcribe-3",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "voxtral-mini-transcribe-3-0",
-   "provider": "mistral",
-   "name": "voxtral-mini-transcribe-3-0",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "voxtral-mini-transcribe-realtime-2602",
-   "provider": "mistral",
-   "name": "voxtral-mini-transcribe-realtime-2602",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "voxtral-mini-transcribe-realtime-3",
-   "provider": "mistral",
-   "name": "voxtral-mini-transcribe-realtime-3",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "voxtral-mini-transcribe-realtime-3-0",
-   "provider": "mistral",
-   "name": "voxtral-mini-transcribe-realtime-3-0",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "voxtral-mini-tts-2603",
-   "provider": "mistral",
-   "name": "voxtral-mini-tts-2603",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "voxtral-mini-tts-3",
-   "provider": "mistral",
-   "name": "voxtral-mini-tts-3",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "voxtral-mini-tts-3-0",
-   "provider": "mistral",
-   "name": "voxtral-mini-tts-3-0",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "voxtral-mini-tts-latest",
-   "provider": "mistral",
-   "name": "voxtral-mini-tts-latest",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "voxtral-small-2507",
-   "provider": "mistral",
-   "name": "voxtral-small-2507",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "voxtral-small-latest",
-   "provider": "mistral",
-   "name": "voxtral-small-latest",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "voxtral-small-transcribe-3",
-   "provider": "mistral",
-   "name": "voxtral-small-transcribe-3",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "voxtral-small-transcribe-3-0",
-   "provider": "mistral",
-   "name": "voxtral-small-transcribe-3-0",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "mistral",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
    "id": "Qwen/Qwen3.5-397B-A17B",
    "provider": "modelscope",
    "name": "Qwen3.5 397B A17B (ModelScope)",
@@ -5541,8 +3843,8 @@
    "intelligence": {
     "intelligence_index": 34.3,
     "coding_index": 48.2,
-    "tps": 59.18,
-    "ttft_s": 2.22
+    "tps": 59.23,
+    "ttft_s": 2.12
    }
   },
   {
@@ -5558,8 +3860,8 @@
    "intelligence": {
     "intelligence_index": 23.1,
     "coding_index": 68.8,
-    "tps": 82.7,
-    "ttft_s": 1.68
+    "tps": 91.28,
+    "ttft_s": 1.78
    }
   },
   {
@@ -5698,7 +4000,7 @@
    "intelligence": {
     "intelligence_index": 18.9,
     "coding_index": 58.6,
-    "tps": 88.96,
+    "tps": 116.59,
     "ttft_s": 0.79
    }
   },
@@ -5732,8 +4034,8 @@
    "intelligence": {
     "intelligence_index": 4.6,
     "coding_index": 46.9,
-    "tps": 175.25,
-    "ttft_s": 2.38
+    "tps": 180.58,
+    "ttft_s": 2.31
    }
   },
   {
@@ -5749,8 +4051,8 @@
    "intelligence": {
     "intelligence_index": 20.1,
     "coding_index": 68.1,
-    "tps": 69.87,
-    "ttft_s": 3.05
+    "tps": 70.77,
+    "ttft_s": 3.23
    }
   },
   {
@@ -5826,8 +4128,8 @@
    "intelligence": {
     "intelligence_index": 18.4,
     "coding_index": null,
-    "tps": 56.14,
-    "ttft_s": 1.26
+    "tps": 63.59,
+    "ttft_s": 1.29
    }
   },
   {
@@ -5855,8 +4157,8 @@
    "intelligence": {
     "intelligence_index": 10.3,
     "coding_index": 8.2,
-    "tps": 127.67,
-    "ttft_s": 0.76
+    "tps": 132.77,
+    "ttft_s": 0.77
    }
   },
   {
@@ -5872,8 +4174,8 @@
    "intelligence": {
     "intelligence_index": 36,
     "coding_index": 46.8,
-    "tps": 50.04,
-    "ttft_s": 1.87
+    "tps": 50.21,
+    "ttft_s": 1.83
    }
   },
   {
@@ -5889,8 +4191,8 @@
    "intelligence": {
     "intelligence_index": 3.8,
     "coding_index": 30.4,
-    "tps": 259.42,
-    "ttft_s": 0.81
+    "tps": 261.03,
+    "ttft_s": 0.79
    }
   },
   {
@@ -5906,70 +4208,8 @@
    "intelligence": {
     "intelligence_index": 15.2,
     "coding_index": 20.7,
-    "tps": 126.12,
-    "ttft_s": 0.75
-   }
-  },
-  {
-   "id": "bigcode/starcoder2-15b",
-   "provider": "nvidia",
-   "name": "bigcode/starcoder2-15b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "fastino/gliner2-pii",
-   "provider": "nvidia",
-   "name": "fastino/gliner2-pii",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "google/gemma-3-12b-it",
-   "provider": "nvidia",
-   "name": "google/gemma-3-12b-it",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 5.5,
-    "coding_index": 5.8,
-    "tps": 0,
-    "ttft_s": 0
-   }
-  },
-  {
-   "id": "google/gemma-3-4b-it",
-   "provider": "nvidia",
-   "name": "google/gemma-3-4b-it",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 1,
-    "coding_index": 2.7,
-    "tps": 0,
-    "ttft_s": 0
+    "tps": 149.86,
+    "ttft_s": 0.74
    }
   },
   {
@@ -5985,276 +4225,9 @@
    "intelligence": {
     "intelligence_index": 4.4,
     "coding_index": 43.4,
-    "tps": 35.69,
-    "ttft_s": 1.02
+    "tps": 35.76,
+    "ttft_s": 1.05
    }
-  },
-  {
-   "id": "meta/muse-glimmer-30b",
-   "provider": "nvidia",
-   "name": "meta/muse-glimmer-30b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 6.3,
-    "coding_index": 49,
-    "tps": 102.6,
-    "ttft_s": 0.83
-   }
-  },
-  {
-   "id": "minimaxai/minimax-m3.1-flash",
-   "provider": "nvidia",
-   "name": "minimaxai/minimax-m3.1-flash",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 29.1,
-    "coding_index": null,
-    "tps": 131.14,
-    "ttft_s": 1.72
-   }
-  },
-  {
-   "id": "mistralai/mistral-large-4-1t-a52b",
-   "provider": "nvidia",
-   "name": "mistralai/mistral-large-4-1t-a52b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 4.1,
-    "coding_index": null,
-    "tps": 0,
-    "ttft_s": 0
-   }
-  },
-  {
-   "id": "moonshotai/kimi-k3.1-pro",
-   "provider": "nvidia",
-   "name": "moonshotai/kimi-k3.1-pro",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 46.5,
-    "coding_index": null,
-    "tps": 28.5,
-    "ttft_s": 2.01
-   }
-  },
-  {
-   "id": "nvidia/ai-synthetic-video-detector",
-   "provider": "nvidia",
-   "name": "nvidia/ai-synthetic-video-detector",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/cosmos-reason2-8b",
-   "provider": "nvidia",
-   "name": "nvidia/cosmos-reason2-8b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/embed-qa-4",
-   "provider": "nvidia",
-   "name": "nvidia/embed-qa-4",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/ising-calibration-1.5-31b",
-   "provider": "nvidia",
-   "name": "nvidia/ising-calibration-1.5-31b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/llama-3.1-nemoguard-8b-topic-control",
-   "provider": "nvidia",
-   "name": "nvidia/llama-3.1-nemoguard-8b-topic-control",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/llama-3.1-nemotron-safety-guard-8b-v3",
-   "provider": "nvidia",
-   "name": "nvidia/llama-3.1-nemotron-safety-guard-8b-v3",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/llama-3.2-nemoretriever-1b-vlm-embed-v1",
-   "provider": "nvidia",
-   "name": "nvidia/llama-3.2-nemoretriever-1b-vlm-embed-v1",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/llama-3.2-nv-embedqa-1b-v1",
-   "provider": "nvidia",
-   "name": "nvidia/llama-3.2-nv-embedqa-1b-v1",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/nemotron-3-embed-1b",
-   "provider": "nvidia",
-   "name": "nvidia/nemotron-3-embed-1b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/nemotron-3-ultra-550b-a55b",
-   "provider": "nvidia",
-   "name": "nvidia/nemotron-3-ultra-550b-a55b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/nemotron-3.5-bolt-e4b",
-   "provider": "nvidia",
-   "name": "nvidia/nemotron-3.5-bolt-e4b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/nemotron-3.5-content-safety",
-   "provider": "nvidia",
-   "name": "nvidia/nemotron-3.5-content-safety",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/nemotron-3.5-embed-1b",
-   "provider": "nvidia",
-   "name": "nvidia/nemotron-3.5-embed-1b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/nemotron-3.5-embed-8b",
-   "provider": "nvidia",
-   "name": "nvidia/nemotron-3.5-embed-8b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "provider": "nvidia",
-   "name": "nvidia/nemotron-3.5-lightning-30b-a3b",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
   },
   {
    "id": "nvidia/nemotron-3.5-super-vl-120b-a12b",
@@ -6266,45 +4239,6 @@
    "pool_key": "nvidia",
    "tos_verdict": null,
    "source_catalog": "omniroute",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/nv-embedqa-mistral-7b-v2",
-   "provider": "nvidia",
-   "name": "nvidia/nv-embedqa-mistral-7b-v2",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/nvclip",
-   "provider": "nvidia",
-   "name": "nvidia/nvclip",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "nvidia/riva-translate-4b-instruct-v2",
-   "provider": "nvidia",
-   "name": "nvidia/riva-translate-4b-instruct-v2",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
    "intelligence": null
   },
   {
@@ -6320,70 +4254,8 @@
    "intelligence": {
     "intelligence_index": 15.2,
     "coding_index": 20.7,
-    "tps": 126.12,
-    "ttft_s": 0.75
-   }
-  },
-  {
-   "id": "poolside/laguna-xs-2.1",
-   "provider": "nvidia",
-   "name": "poolside/laguna-xs-2.1",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "snowflake/arctic-embed-l",
-   "provider": "nvidia",
-   "name": "snowflake/arctic-embed-l",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": null
-  },
-  {
-   "id": "stepfun-ai/step-5-preview",
-   "provider": "nvidia",
-   "name": "stepfun-ai/step-5-preview",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 28.5,
-    "coding_index": null,
-    "tps": 112.17,
-    "ttft_s": 4.14
-   }
-  },
-  {
-   "id": "z-ai/glm-5.3-flash",
-   "provider": "nvidia",
-   "name": "z-ai/glm-5.3-flash",
-   "free_type": "free-tier",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "nvidia",
-   "tos_verdict": null,
-   "source_catalog": "key-provider",
-   "free_status": "free-tier",
-   "intelligence": {
-    "intelligence_index": 27.8,
-    "coding_index": null,
-    "tps": 65.71,
-    "ttft_s": 1.57
+    "tps": 149.86,
+    "ttft_s": 0.74
    }
   },
   {
@@ -6423,8 +4295,8 @@
    "intelligence": {
     "intelligence_index": 51.8,
     "coding_index": 69.1,
-    "tps": 139.05,
-    "ttft_s": 1.14
+    "tps": 160.97,
+    "ttft_s": 1
    }
   },
   {
@@ -6481,8 +4353,8 @@
    "intelligence": {
     "intelligence_index": 23.3,
     "coding_index": null,
-    "tps": 83.73,
-    "ttft_s": 1.59
+    "tps": 116.66,
+    "ttft_s": 1.73
    }
   },
   {
@@ -6498,8 +4370,8 @@
    "intelligence": {
     "intelligence_index": 52.6,
     "coding_index": 68.8,
-    "tps": 63.21,
-    "ttft_s": 1.95
+    "tps": 67.09,
+    "ttft_s": 2.2
    }
   },
   {
@@ -6515,8 +4387,8 @@
    "intelligence": {
     "intelligence_index": 27.8,
     "coding_index": null,
-    "tps": 65.71,
-    "ttft_s": 1.57
+    "tps": 70.05,
+    "ttft_s": 1.55
    }
   },
   {
@@ -6532,8 +4404,8 @@
    "intelligence": {
     "intelligence_index": 15.2,
     "coding_index": 20.7,
-    "tps": 126.12,
-    "ttft_s": 0.75
+    "tps": 149.86,
+    "ttft_s": 0.74
    }
   },
   {
@@ -6573,8 +4445,8 @@
    "intelligence": {
     "intelligence_index": 6.3,
     "coding_index": 49,
-    "tps": 102.6,
-    "ttft_s": 0.83
+    "tps": 107.24,
+    "ttft_s": 0.81
    }
   },
   {
@@ -6672,7 +4544,7 @@
    "intelligence": {
     "intelligence_index": 26.1,
     "coding_index": 39.3,
-    "tps": 99.84,
+    "tps": 101.31,
     "ttft_s": 0.93
    }
   },
@@ -6704,8 +4576,8 @@
    "intelligence": {
     "intelligence_index": 4.4,
     "coding_index": 43.4,
-    "tps": 35.69,
-    "ttft_s": 1.02
+    "tps": 35.76,
+    "ttft_s": 1.05
    }
   },
   {
@@ -6850,8 +4722,8 @@
    "intelligence": {
     "intelligence_index": 5.5,
     "coding_index": 26.8,
-    "tps": 303.43,
-    "ttft_s": 0.58
+    "tps": 333.58,
+    "ttft_s": 0.57
    }
   },
   {
@@ -6883,8 +4755,8 @@
    "intelligence": {
     "intelligence_index": 13.6,
     "coding_index": null,
-    "tps": 390.55,
-    "ttft_s": 0.67
+    "tps": 445.54,
+    "ttft_s": 0.66
    }
   },
   {
@@ -7007,8 +4879,8 @@
    "intelligence": {
     "intelligence_index": 37.7,
     "coding_index": 53.7,
-    "tps": 56.49,
-    "ttft_s": 3.47
+    "tps": 58.19,
+    "ttft_s": 3.54
    }
   },
   {
@@ -7024,8 +4896,8 @@
    "intelligence": {
     "intelligence_index": 3.8,
     "coding_index": 30.4,
-    "tps": 259.42,
-    "ttft_s": 0.81
+    "tps": 261.03,
+    "ttft_s": 0.79
    }
   },
   {
@@ -7041,8 +4913,8 @@
    "intelligence": {
     "intelligence_index": 15.2,
     "coding_index": 20.7,
-    "tps": 126.12,
-    "ttft_s": 0.75
+    "tps": 149.86,
+    "ttft_s": 0.74
    }
   },
   {
@@ -7111,8 +4983,8 @@
    "intelligence": {
     "intelligence_index": 6.8,
     "coding_index": null,
-    "tps": 47.47,
-    "ttft_s": 3.76
+    "tps": 53.03,
+    "ttft_s": 3.68
    }
   },
   {
@@ -7157,8 +5029,8 @@
    "intelligence": {
     "intelligence_index": 45.1,
     "coding_index": 61.8,
-    "tps": 42.24,
-    "ttft_s": 3
+    "tps": 43.71,
+    "ttft_s": 3.12
    }
   },
   {
@@ -7174,8 +5046,8 @@
    "intelligence": {
     "intelligence_index": 34.5,
     "coding_index": null,
-    "tps": 64.63,
-    "ttft_s": 2.09
+    "tps": 70.42,
+    "ttft_s": 2.18
    }
   },
   {
@@ -7444,8 +5316,8 @@
    "intelligence": {
     "intelligence_index": 51.8,
     "coding_index": 69.1,
-    "tps": 139.05,
-    "ttft_s": 1.14
+    "tps": 160.97,
+    "ttft_s": 1
    }
   },
   {
@@ -7461,8 +5333,8 @@
    "intelligence": {
     "intelligence_index": 23.1,
     "coding_index": 68.8,
-    "tps": 82.7,
-    "ttft_s": 1.68
+    "tps": 91.28,
+    "ttft_s": 1.78
    }
   },
   {
@@ -7478,8 +5350,8 @@
    "intelligence": {
     "intelligence_index": 52.6,
     "coding_index": 68.8,
-    "tps": 63.21,
-    "ttft_s": 1.95
+    "tps": 67.09,
+    "ttft_s": 2.2
    }
   },
   {
@@ -7495,8 +5367,8 @@
    "intelligence": {
     "intelligence_index": 19.7,
     "coding_index": null,
-    "tps": 46.2,
-    "ttft_s": 1.9
+    "tps": 47.49,
+    "ttft_s": 1.83
    }
   },
   {
@@ -7512,7 +5384,7 @@
    "intelligence": {
     "intelligence_index": 59.7,
     "coding_index": 76.2,
-    "tps": 44.53,
+    "tps": 47.06,
     "ttft_s": 3.57
    }
   },
@@ -7529,7 +5401,7 @@
    "intelligence": {
     "intelligence_index": 18.9,
     "coding_index": 58.6,
-    "tps": 88.96,
+    "tps": 116.59,
     "ttft_s": 0.79
    }
   },
@@ -7546,8 +5418,8 @@
    "intelligence": {
     "intelligence_index": 46.7,
     "coding_index": 66,
-    "tps": 192.51,
-    "ttft_s": 2.17
+    "tps": 198.04,
+    "ttft_s": 2.19
    }
   },
   {
@@ -7563,8 +5435,8 @@
    "intelligence": {
     "intelligence_index": 39.4,
     "coding_index": 55.9,
-    "tps": 55.55,
-    "ttft_s": 2.31
+    "tps": 54.8,
+    "ttft_s": 2.28
    }
   },
   {
@@ -7604,8 +5476,8 @@
    "intelligence": {
     "intelligence_index": 3.7,
     "coding_index": null,
-    "tps": 90.13,
-    "ttft_s": 1.32
+    "tps": 89.56,
+    "ttft_s": 1.28
    }
   },
   {
@@ -7645,8 +5517,8 @@
    "intelligence": {
     "intelligence_index": 3.8,
     "coding_index": 30.4,
-    "tps": 259.42,
-    "ttft_s": 0.81
+    "tps": 261.03,
+    "ttft_s": 0.79
    }
   },
   {
@@ -7662,7 +5534,7 @@
    "intelligence": {
     "intelligence_index": 21.4,
     "coding_index": null,
-    "tps": 93.27,
+    "tps": 99.02,
     "ttft_s": 1.3
    }
   },
@@ -7708,8 +5580,8 @@
    "intelligence": {
     "intelligence_index": 4.4,
     "coding_index": 43.4,
-    "tps": 35.69,
-    "ttft_s": 1.02
+    "tps": 35.76,
+    "ttft_s": 1.05
    }
   },
   {
@@ -7725,8 +5597,8 @@
    "intelligence": {
     "intelligence_index": 3.8,
     "coding_index": 30.4,
-    "tps": 259.42,
-    "ttft_s": 0.81
+    "tps": 261.03,
+    "ttft_s": 0.79
    }
   },
   {
@@ -7759,8 +5631,8 @@
    "intelligence": {
     "intelligence_index": 3.8,
     "coding_index": 30.4,
-    "tps": 259.42,
-    "ttft_s": 0.81
+    "tps": 261.03,
+    "ttft_s": 0.79
    }
   },
   {
@@ -7817,8 +5689,8 @@
    "intelligence": {
     "intelligence_index": 18.4,
     "coding_index": null,
-    "tps": 56.14,
-    "ttft_s": 1.26
+    "tps": 63.59,
+    "ttft_s": 1.29
    }
   },
   {
@@ -7954,8 +5826,8 @@
    "intelligence": {
     "intelligence_index": 41.9,
     "coding_index": null,
-    "tps": 46.77,
-    "ttft_s": 11.1
+    "tps": 56.42,
+    "ttft_s": 12.26
    }
   },
   {
@@ -7971,8 +5843,8 @@
    "intelligence": {
     "intelligence_index": 36.8,
     "coding_index": null,
-    "tps": 43.02,
-    "ttft_s": 1.19
+    "tps": 47.8,
+    "ttft_s": 1.07
    }
   },
   {
@@ -7988,8 +5860,8 @@
    "intelligence": {
     "intelligence_index": 20.4,
     "coding_index": null,
-    "tps": 29.79,
-    "ttft_s": 1.94
+    "tps": 30.04,
+    "ttft_s": 1.21
    }
   },
   {
@@ -8005,8 +5877,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": 23,
-    "tps": 83.53,
-    "ttft_s": 1.26
+    "tps": 81.1,
+    "ttft_s": 1
    }
   },
   {
@@ -8039,8 +5911,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": null,
-    "tps": 198.5,
-    "ttft_s": 0.4
+    "tps": 202.38,
+    "ttft_s": 0.35
    }
   },
   {
@@ -8056,8 +5928,8 @@
    "intelligence": {
     "intelligence_index": 25.9,
     "coding_index": 33.3,
-    "tps": 136.09,
-    "ttft_s": 22.02
+    "tps": 146.2,
+    "ttft_s": 19.52
    }
   },
   {
@@ -8073,8 +5945,8 @@
    "intelligence": {
     "intelligence_index": 19.6,
     "coding_index": null,
-    "tps": 183.3,
-    "ttft_s": 1.65
+    "tps": 203.57,
+    "ttft_s": 1.79
    }
   },
   {
@@ -8090,8 +5962,8 @@
    "intelligence": {
     "intelligence_index": 11.1,
     "coding_index": null,
-    "tps": 199.87,
-    "ttft_s": 1.69
+    "tps": 203.38,
+    "ttft_s": 1.67
    }
   },
   {
@@ -8107,8 +5979,8 @@
    "intelligence": {
     "intelligence_index": 35.3,
     "coding_index": 37.8,
-    "tps": 85.96,
-    "ttft_s": 71.12
+    "tps": 107.39,
+    "ttft_s": 59.49
    }
   },
   {
@@ -8158,8 +6030,8 @@
    "intelligence": {
     "intelligence_index": 19.7,
     "coding_index": null,
-    "tps": 46.2,
-    "ttft_s": 1.9
+    "tps": 47.49,
+    "ttft_s": 1.83
    }
   },
   {
@@ -8187,8 +6059,8 @@
    "intelligence": {
     "intelligence_index": 14.5,
     "coding_index": 16.3,
-    "tps": 190.91,
-    "ttft_s": 0.96
+    "tps": 191.89,
+    "ttft_s": 1.07
    }
   },
   {
@@ -8204,8 +6076,8 @@
    "intelligence": {
     "intelligence_index": 10.3,
     "coding_index": 8.2,
-    "tps": 127.67,
-    "ttft_s": 0.76
+    "tps": 132.77,
+    "ttft_s": 0.77
    }
   },
   {
@@ -8238,8 +6110,8 @@
    "intelligence": {
     "intelligence_index": 31.1,
     "coding_index": null,
-    "tps": 139.62,
-    "ttft_s": 6.84
+    "tps": 177.21,
+    "ttft_s": 7.36
    }
   },
   {
@@ -8255,8 +6127,8 @@
    "intelligence": {
     "intelligence_index": 26.1,
     "coding_index": null,
-    "tps": 151.52,
-    "ttft_s": 14.66
+    "tps": 101.33,
+    "ttft_s": 16.23
    }
   },
   {
@@ -8272,8 +6144,8 @@
    "intelligence": {
     "intelligence_index": 18.4,
     "coding_index": null,
-    "tps": 56.14,
-    "ttft_s": 1.26
+    "tps": 63.59,
+    "ttft_s": 1.29
    }
   },
   {
@@ -8289,8 +6161,8 @@
    "intelligence": {
     "intelligence_index": 11.4,
     "coding_index": 15.3,
-    "tps": 28.06,
-    "ttft_s": 1.61
+    "tps": 29.18,
+    "ttft_s": 1.62
    }
   },
   {
@@ -8318,8 +6190,8 @@
    "intelligence": {
     "intelligence_index": 55,
     "coding_index": 73.6,
-    "tps": 47.4,
-    "ttft_s": 20.3
+    "tps": 52.4,
+    "ttft_s": 19.94
    }
   },
   {
@@ -8335,8 +6207,8 @@
    "intelligence": {
     "intelligence_index": 36.8,
     "coding_index": null,
-    "tps": 43.02,
-    "ttft_s": 1.19
+    "tps": 47.8,
+    "ttft_s": 1.07
    }
   },
   {
@@ -8352,8 +6224,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": 23,
-    "tps": 83.53,
-    "ttft_s": 1.26
+    "tps": 81.1,
+    "ttft_s": 1
    }
   },
   {
@@ -8369,8 +6241,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": 23,
-    "tps": 83.53,
-    "ttft_s": 1.26
+    "tps": 81.1,
+    "ttft_s": 1
    }
   },
   {
@@ -8386,8 +6258,8 @@
    "intelligence": {
     "intelligence_index": 14.2,
     "coding_index": null,
-    "tps": 198.5,
-    "ttft_s": 0.4
+    "tps": 202.38,
+    "ttft_s": 0.35
    }
   },
   {
@@ -8415,8 +6287,8 @@
    "intelligence": {
     "intelligence_index": 25.9,
     "coding_index": 33.3,
-    "tps": 136.09,
-    "ttft_s": 22.02
+    "tps": 146.2,
+    "ttft_s": 19.52
    }
   },
   {
@@ -8432,8 +6304,8 @@
    "intelligence": {
     "intelligence_index": 27.9,
     "coding_index": null,
-    "tps": 206.42,
-    "ttft_s": 0.87
+    "tps": 221.14,
+    "ttft_s": 0.81
    }
   },
   {
@@ -8461,8 +6333,8 @@
    "intelligence": {
     "intelligence_index": 47.7,
     "coding_index": 68.8,
-    "tps": 135.12,
-    "ttft_s": 19.11
+    "tps": 163.14,
+    "ttft_s": 17.92
    }
   },
   {
@@ -8478,8 +6350,8 @@
    "intelligence": {
     "intelligence_index": 52,
     "coding_index": 70.1,
-    "tps": 198.1,
-    "ttft_s": 15.39
+    "tps": 204.15,
+    "ttft_s": 15.9
    }
   },
   {
@@ -8507,8 +6379,8 @@
    "intelligence": {
     "intelligence_index": 51.6,
     "coding_index": 69.2,
-    "tps": 191.08,
-    "ttft_s": 13.65
+    "tps": 217.29,
+    "ttft_s": 14.81
    }
   },
   {
@@ -8541,8 +6413,8 @@
    "intelligence": {
     "intelligence_index": 13.8,
     "coding_index": null,
-    "tps": 157.85,
-    "ttft_s": 0.79
+    "tps": 151.57,
+    "ttft_s": 0.83
    }
   },
   {
@@ -8558,8 +6430,8 @@
    "intelligence": {
     "intelligence_index": 40.6,
     "coding_index": null,
-    "tps": 60.2,
-    "ttft_s": 2.13
+    "tps": 60.93,
+    "ttft_s": 2.05
    }
   },
   {
@@ -8604,8 +6476,8 @@
    "intelligence": {
     "intelligence_index": 51.8,
     "coding_index": 69.1,
-    "tps": 139.05,
-    "ttft_s": 1.14
+    "tps": 160.97,
+    "ttft_s": 1
    }
   },
   {
@@ -8621,8 +6493,8 @@
    "intelligence": {
     "intelligence_index": 23.1,
     "coding_index": 68.8,
-    "tps": 82.7,
-    "ttft_s": 1.68
+    "tps": 91.28,
+    "ttft_s": 1.78
    }
   },
   {
@@ -8720,8 +6592,8 @@
    "intelligence": {
     "intelligence_index": 4.6,
     "coding_index": 46.9,
-    "tps": 175.25,
-    "ttft_s": 2.38
+    "tps": 180.58,
+    "ttft_s": 2.31
    }
   },
   {
