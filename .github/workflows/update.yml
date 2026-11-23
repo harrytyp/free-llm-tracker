@@ -55,9 +55,10 @@ jobs:
           HAVE_AA_API_KEY: ${{ secrets.AA_API_KEY != '' }}
           HAVE_OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY != '' }}
         run: |
-          # Die OpenRouter-Messung ist oeffentlich und braucht keinen Key.
-          # Frueher wurde der ganze Schritt ohne Secrets uebersprungen, wodurch
-          # benchmarks.json nur bei manuellen Laeufen frisch wurde.
+          # Die Modellliste und die Endpunkt-Preise sind oeffentlich, die
+          # Throughput-/Latency-Statistik ist es nicht: ohne Key liefert
+          # throughput_last_30m = null (23.11.2026 mit/ohne Key geprueft).
+          # Ohne Secret bleiben die alten Messwerte stehen, der Lauf ist trotzdem gruen.
           [ -z "$ARTIFICIAL_ANALYSIS_API_KEY" ] && echo "::notice::ohne ARTIFICIAL_ANALYSIS_API_KEY: kein Intelligence-Index"
           echo "Key-Presence: AA_alt=$HAVE_ARTIFICIAL_ANALYSIS_API_KEY AA_neu=$HAVE_AA_API_KEY OpenRouter=$HAVE_OPENROUTER_API_KEY"
           python benchmark.py

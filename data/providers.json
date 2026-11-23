@@ -1,7 +1,120 @@
 {
-  "updated_at": "2026-11-22T19:49:21Z",
-  "total_providers": 70,
+  "updated_at": "2026-11-23T07:32:29Z",
+  "total_providers": 72,
   "providers": [
+    {
+      "provider": "google",
+      "count": 65,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "models/antigravity-preview-05-2026",
+          "tps": null,
+          "name": "models/antigravity-preview-05-2026"
+        },
+        {
+          "id": "models/antigravity-preview-09-2026",
+          "tps": null,
+          "name": "models/antigravity-preview-09-2026"
+        },
+        {
+          "id": "models/antigravity-preview-latest",
+          "tps": null,
+          "name": "models/antigravity-preview-latest"
+        },
+        {
+          "id": "models/aqa",
+          "tps": null,
+          "name": "models/aqa"
+        },
+        {
+          "id": "models/deep-research-max-preview-04-2026",
+          "tps": null,
+          "name": "models/deep-research-max-preview-04-2026"
+        }
+      ],
+      "free_types": {
+        "free-tier": 65
+      },
+      "avg_tps": null
+    },
+    {
+      "provider": "mistral",
+      "count": 51,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "codestral-2508",
+          "tps": null,
+          "name": "codestral-2508"
+        },
+        {
+          "id": "codestral-embed",
+          "tps": null,
+          "name": "codestral-embed"
+        },
+        {
+          "id": "codestral-embed-2505",
+          "tps": null,
+          "name": "codestral-embed-2505"
+        },
+        {
+          "id": "codestral-latest",
+          "tps": null,
+          "name": "Codestral"
+        },
+        {
+          "id": "devstral-latest",
+          "tps": null,
+          "name": "Devstral 2"
+        }
+      ],
+      "free_types": {
+        "free-tier": 46,
+        "recurring-monthly": 5
+      },
+      "avg_tps": null
+    },
+    {
+      "provider": "nvidia",
+      "count": 33,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "bigcode/starcoder2-15b",
+          "tps": null,
+          "name": "bigcode/starcoder2-15b"
+        },
+        {
+          "id": "fastino/gliner2-pii",
+          "tps": null,
+          "name": "fastino/gliner2-pii"
+        },
+        {
+          "id": "google/gemma-3-12b-it",
+          "tps": null,
+          "name": "google/gemma-3-12b-it"
+        },
+        {
+          "id": "google/gemma-3-4b-it",
+          "tps": null,
+          "name": "google/gemma-3-4b-it"
+        },
+        {
+          "id": "google/gemma-4-31b-it",
+          "tps": null,
+          "name": "Gemma 4 31B"
+        }
+      ],
+      "free_types": {
+        "free-tier": 30,
+        "recurring-uncapped": 3
+      },
+      "avg_tps": null
+    },
     {
       "provider": "bazaarlink",
       "count": 31,
@@ -262,6 +375,44 @@
       "avg_tps": null
     },
     {
+      "provider": "openrouter",
+      "count": 14,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "auto",
+          "tps": null,
+          "name": "Auto (Best Available)"
+        },
+        {
+          "id": "baidu/ernie-5.5-flash-preview:free",
+          "tps": null,
+          "name": "Baidu: ERNIE-5.5-Flash-Preview (free)"
+        },
+        {
+          "id": "dots-studio/dots-3-note-preview:free",
+          "tps": null,
+          "name": "Dots Studio: Dots3-Note Preview (free)"
+        },
+        {
+          "id": "google/gemma-4-26b-a4b-it:free",
+          "tps": null,
+          "name": "Google: Gemma 4 26B A4B  (free)"
+        },
+        {
+          "id": "google/gemma-4-31b-it:free",
+          "tps": null,
+          "name": "Google: Gemma 4 31B (free)"
+        }
+      ],
+      "free_types": {
+        "recurring-daily": 2,
+        "recurring-monthly": 12
+      },
+      "avg_tps": null
+    },
+    {
       "provider": "xkiro",
       "count": 14,
       "measured": 0,
@@ -332,44 +483,6 @@
       ],
       "free_types": {
         "recurring-uncapped": 13
-      },
-      "avg_tps": null
-    },
-    {
-      "provider": "openrouter",
-      "count": 13,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "auto",
-          "tps": null,
-          "name": "Auto (Best Available)"
-        },
-        {
-          "id": "baidu/ernie-5.5-flash-preview:free",
-          "tps": null,
-          "name": "Baidu: ERNIE-5.5-Flash-Preview (free)"
-        },
-        {
-          "id": "google/gemma-4-26b-a4b-it:free",
-          "tps": null,
-          "name": "Google: Gemma 4 26B A4B  (free)"
-        },
-        {
-          "id": "google/gemma-4-31b-it:free",
-          "tps": null,
-          "name": "Google: Gemma 4 31B (free)"
-        },
-        {
-          "id": "google/lyria-3-clip-preview",
-          "tps": null,
-          "name": "Google: Lyria 3 Clip Preview"
-        }
-      ],
-      "free_types": {
-        "recurring-daily": 2,
-        "recurring-monthly": 11
       },
       "avg_tps": null
     },
@@ -481,6 +594,43 @@
       ],
       "free_types": {
         "recurring-daily": 9
+      },
+      "avg_tps": null
+    },
+    {
+      "provider": "groq",
+      "count": 9,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "allam-2-7b",
+          "tps": null,
+          "name": "allam-2-7b"
+        },
+        {
+          "id": "canopylabs/orpheus-arabic-saudi",
+          "tps": null,
+          "name": "canopylabs/orpheus-arabic-saudi"
+        },
+        {
+          "id": "canopylabs/orpheus-v1-english",
+          "tps": null,
+          "name": "canopylabs/orpheus-v1-english"
+        },
+        {
+          "id": "meta-llama/llama-prompt-guard-2-22m",
+          "tps": null,
+          "name": "meta-llama/llama-prompt-guard-2-22m"
+        },
+        {
+          "id": "meta-llama/llama-prompt-guard-2-86m",
+          "tps": null,
+          "name": "meta-llama/llama-prompt-guard-2-86m"
+        }
+      ],
+      "free_types": {
+        "free-tier": 9
       },
       "avg_tps": null
     },
@@ -966,43 +1116,6 @@
       "avg_tps": null
     },
     {
-      "provider": "mistral",
-      "count": 5,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "codestral-latest",
-          "tps": null,
-          "name": "Codestral"
-        },
-        {
-          "id": "devstral-latest",
-          "tps": null,
-          "name": "Devstral 2"
-        },
-        {
-          "id": "mistral-large-latest",
-          "tps": null,
-          "name": "Mistral Large 3"
-        },
-        {
-          "id": "mistral-medium-3-5",
-          "tps": null,
-          "name": "Mistral Medium 3.5"
-        },
-        {
-          "id": "mistral-small-latest",
-          "tps": null,
-          "name": "Mistral Small 4"
-        }
-      ],
-      "free_types": {
-        "recurring-monthly": 5
-      },
-      "avg_tps": null
-    },
-    {
       "provider": "ovhcloud",
       "count": 5,
       "measured": 0,
@@ -1383,6 +1496,34 @@
       "avg_tps": null
     },
     {
+      "provider": "cerebras",
+      "count": 3,
+      "measured": 0,
+      "tps_values": [],
+      "top_models": [
+        {
+          "id": "gpt-oss-120b",
+          "tps": null,
+          "name": "GPT OSS 120B"
+        },
+        {
+          "id": "qwen-3.8-27b",
+          "tps": null,
+          "name": "qwen-3.8-27b"
+        },
+        {
+          "id": "zai-glm-4.7",
+          "tps": null,
+          "name": "GLM 4.7"
+        }
+      ],
+      "free_types": {
+        "one-time-initial": 2,
+        "free-tier": 1
+      },
+      "avg_tps": null
+    },
+    {
       "provider": "inference-net",
       "count": 3,
       "measured": 0,
@@ -1433,33 +1574,6 @@
       ],
       "free_types": {
         "keyless": 3
-      },
-      "avg_tps": null
-    },
-    {
-      "provider": "nvidia",
-      "count": 3,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "google/gemma-4-31b-it",
-          "tps": null,
-          "name": "Gemma 4 31B"
-        },
-        {
-          "id": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-          "tps": null,
-          "name": "Nemotron 3.5 Super VL 120B A12B"
-        },
-        {
-          "id": "openai/gpt-oss-20b",
-          "tps": null,
-          "name": "GPT OSS 20B"
-        }
-      ],
-      "free_types": {
-        "recurring-uncapped": 3
       },
       "avg_tps": null
     },
@@ -1532,28 +1646,6 @@
           "id": "jamba-mini-2",
           "tps": null,
           "name": "jamba-mini-2"
-        }
-      ],
-      "free_types": {
-        "one-time-initial": 2
-      },
-      "avg_tps": null
-    },
-    {
-      "provider": "cerebras",
-      "count": 2,
-      "measured": 0,
-      "tps_values": [],
-      "top_models": [
-        {
-          "id": "gpt-oss-120b",
-          "tps": null,
-          "name": "GPT OSS 120B"
-        },
-        {
-          "id": "zai-glm-4.7",
-          "tps": null,
-          "name": "GLM 4.7"
         }
       ],
       "free_types": {

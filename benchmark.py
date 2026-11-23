@@ -153,11 +153,15 @@ def measure_openrouter(key: str | None) -> tuple[dict, list[str]]:
                 errors.append(f"{mid}: {e}")
         print(f"  openrouter: {len(results)} measured")
         if results and not any(v.get("tps") for v in results.values()):
-            # 14.11.2026: API liefert throughput_last_30m/latency_last_30m = null.
-            # Mit Key kommen echte Werte (16.11. geprueft: 39/19/72 tps), ohne Key
-            # bleibt das Feld durchgehend null -> Ursache im Fehlertext nennen.
-            hint = "" if key else " - kein OPENROUTER_API_KEY gesetzt"
-            errors.append("openrouter: API liefert null throughput/latency (Quelle degradiert)" + hint)
+            # 23.11.2026 gemessen: die Statistik ist auth-gated. Mit Key liefert
+            # throughput_last_30m echte Werte, anonymous kommt ueberall null
+            # (auch die Website-RSC-Payload hat throughput_values=[]). Das ist
+            # keine Degradation der Quelle, sondern fehlende Auth -> Ursache
+            # eindeutig benennen, sonst wird der Bericht falsch gelb.
+            if key:
+                errors.append("openrouter: auch mit Key null throughput/latency (Quelle degradiert)")
+            else:
+                errors.append("openrouter: keine t/s, OPENROUTER_API_KEY fehlt (Statistik nur mit Auth)")
     except Exception as e:
         errors.append(f"openrouter: {e}")
     return results, errors
