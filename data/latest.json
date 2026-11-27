@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-27T08:46:22Z",
+ "updated_at": "2026-11-27T21:26:33Z",
  "counts": {
-  "free_models": 418,
+  "free_models": 417,
   "with_intelligence": 268,
   "from_omniroute": 453,
-  "from_openrouter": 14
+  "from_openrouter": 13
  },
  "source_errors": [],
  "sources": {
@@ -4592,38 +4592,6 @@
     "response_format",
     "seed",
     "temperature",
-    "top_p"
-   ],
-   "modality": "",
-   "source_catalog": "openrouter",
-   "free_status": "verified-free",
-   "intelligence": null
-  },
-  {
-   "id": "inclusionai/ling-3.2-flash:free",
-   "provider": "openrouter",
-   "name": "inclusionAI: Ling 3.2 Flash (free)",
-   "free_type": "recurring-monthly",
-   "monthly_tokens": null,
-   "credit_tokens": null,
-   "pool_key": "openrouter",
-   "tos_verdict": null,
-   "context_length": 1048576,
-   "description": "Ling 3.2 Flash is a hybrid reasoning model from inclusionAI that accepts text and image input, with a 1M-token context window and up to 200 images per request. Thinking can...",
-   "supported_parameters": [
-    "frequency_penalty",
-    "include_reasoning",
-    "max_tokens",
-    "presence_penalty",
-    "reasoning",
-    "response_format",
-    "seed",
-    "stop",
-    "structured_outputs",
-    "temperature",
-    "tool_choice",
-    "tools",
-    "top_k",
     "top_p"
    ],
    "modality": "",
