@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-27T21:27:36Z",
+ "updated_at": "2026-11-28T08:02:17Z",
  "method": "openrouter endpoints API + AA provider benchmarks (public) + own streaming",
  "results": {
   "baidu/ernie-5.5-flash-preview:free": {
@@ -132,16 +132,16 @@
      "tps_max": 50.8,
      "ttft_ms": 1030.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:25Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "claude-haiku-4.5": {
      "provider": "bedrock",
-     "tps": 69.8,
+     "tps": 69.7,
      "tps_min": 8.34,
      "tps_max": 87.5,
      "ttft_ms": 530.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:27Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "claude-sonnet-5": {
      "provider": "anthropic",
@@ -150,7 +150,7 @@
      "tps_max": 28.2,
      "ttft_ms": 1360.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:25Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "claude-sonnet-5.5": {
      "provider": "anthropic",
@@ -159,7 +159,7 @@
      "tps_max": 39.0,
      "ttft_ms": 2890.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:25Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "claude-opus-4.7": {
      "provider": "anthropic",
@@ -168,7 +168,7 @@
      "tps_max": 25.5,
      "ttft_ms": 780.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:25Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "claude-sonnet-4.6": {
      "provider": "anthropic",
@@ -177,7 +177,7 @@
      "tps_max": 24.7,
      "ttft_ms": 1280.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:25Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "claude-opus-4.5": {
      "provider": "anthropic",
@@ -186,7 +186,7 @@
      "tps_max": 25.1,
      "ttft_ms": 1110.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:25Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "claude-sonnet-4.5": {
      "provider": "anthropic",
@@ -195,7 +195,7 @@
      "tps_max": 22.8,
      "ttft_ms": 1000.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:25Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "claude-haiku-5.5": {
      "provider": "anthropic",
@@ -204,7 +204,7 @@
      "tps_max": 32.1,
      "ttft_ms": 2630.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:25Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "claude-opus-4.6": {
      "provider": "anthropic",
@@ -213,7 +213,7 @@
      "tps_max": 19.3,
      "ttft_ms": 3160.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:25Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "llama-4-maverick": {
      "provider": "bedrock",
@@ -222,7 +222,7 @@
      "tps_max": 133.0,
      "ttft_ms": 310.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:27Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "llama-4-scout": {
      "provider": "deepinfra",
@@ -231,7 +231,7 @@
      "tps_max": 52.2,
      "ttft_ms": 640.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "llama-3.1-8b-instruct": {
      "provider": "groq",
@@ -240,7 +240,7 @@
      "tps_max": 123.0,
      "ttft_ms": 390.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "llama-3.3-70b-instruct": {
      "provider": "groq",
@@ -249,7 +249,7 @@
      "tps_max": 89.4,
      "ttft_ms": 730.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "mistral-7b": {
      "provider": "bedrock",
@@ -258,7 +258,7 @@
      "tps_max": 86.8,
      "ttft_ms": 200.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:27Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "llama-3-8b": {
      "provider": "bedrock",
@@ -267,16 +267,16 @@
      "tps_max": 83.8,
      "ttft_ms": 310.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:27Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "mixtral-8x7b": {
      "provider": "bedrock",
-     "tps": 73.0,
+     "tps": 72.9,
      "tps_min": 16.2,
      "tps_max": 80.4,
      "ttft_ms": 220.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:27Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "llama-3.1-70b-instruct": {
      "provider": "bedrock",
@@ -285,7 +285,7 @@
      "tps_max": 74.0,
      "ttft_ms": 430.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:27Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "mistral-small": {
      "provider": "bedrock",
@@ -294,7 +294,7 @@
      "tps_max": 60.2,
      "ttft_ms": 220.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:27Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "nova-micro-1.0": {
      "provider": "bedrock",
@@ -303,7 +303,7 @@
      "tps_max": 73.5,
      "ttft_ms": 1600.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:27Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "nova-lite-1.0": {
      "provider": "bedrock",
@@ -312,7 +312,7 @@
      "tps_max": 57.9,
      "ttft_ms": 810.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:27Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "nova-2-lite": {
      "provider": "bedrock",
@@ -321,7 +321,7 @@
      "tps_max": 58.9,
      "ttft_ms": 880.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:27Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "nova-pro-1.0": {
      "provider": "bedrock",
@@ -330,7 +330,7 @@
      "tps_max": 56.2,
      "ttft_ms": 910.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:27Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "palmyra-x5": {
      "provider": "bedrock",
@@ -339,7 +339,7 @@
      "tps_max": 45.5,
      "ttft_ms": 720.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:27Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "pixtral-large-2502": {
      "provider": "bedrock",
@@ -348,16 +348,16 @@
      "tps_max": 43.4,
      "ttft_ms": 890.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:27Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "mistral-large": {
      "provider": "bedrock",
      "tps": 41.9,
      "tps_min": 11.4,
      "tps_max": 46.1,
-     "ttft_ms": 270.0,
+     "ttft_ms": 280.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:27Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "llama-3-70b": {
      "provider": "bedrock",
@@ -366,7 +366,7 @@
      "tps_max": 41.8,
      "ttft_ms": 290.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:27Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "qwen3-coder-30b-a3b-instruct": {
      "provider": "bedrock",
@@ -375,16 +375,16 @@
      "tps_max": 17.5,
      "ttft_ms": 1420.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:27Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "claude-opus-4.1": {
      "provider": "bedrock",
-     "tps": 8.41,
+     "tps": 8.4,
      "tps_min": 1.2,
      "tps_max": 15.9,
-     "ttft_ms": 3790.0,
+     "ttft_ms": 3800.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:27Z"
+     "measured_at": "2026-11-28T08:02:08Z"
     },
     "gpt-oss-120b": {
      "provider": "together",
@@ -393,7 +393,7 @@
      "tps_max": 75.6,
      "ttft_ms": 910.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:34Z"
+     "measured_at": "2026-11-28T08:02:14Z"
     },
     "inkling-2-mini": {
      "provider": "deepinfra",
@@ -402,7 +402,7 @@
      "tps_max": 93.4,
      "ttft_ms": 240.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "nemotron-3.5-lightning": {
      "provider": "fireworks",
@@ -411,7 +411,7 @@
      "tps_max": 20.3,
      "ttft_ms": 2970.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:30Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "qwen3-next-80b-a3b-instruct": {
      "provider": "deepinfra",
@@ -420,7 +420,7 @@
      "tps_max": 59.1,
      "ttft_ms": 540.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "llama-3-8b-lunaris": {
      "provider": "deepinfra",
@@ -429,7 +429,7 @@
      "tps_max": 58.3,
      "ttft_ms": 750.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "daisyrose-27b": {
      "provider": "deepinfra",
@@ -438,7 +438,7 @@
      "tps_max": 70.9,
      "ttft_ms": 1690.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "qwen3.5-9b": {
      "provider": "together",
@@ -447,7 +447,7 @@
      "tps_max": 7.44,
      "ttft_ms": 8250.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:34Z"
+     "measured_at": "2026-11-28T08:02:14Z"
     },
     "qwen3.6-27b": {
      "provider": "deepinfra",
@@ -456,7 +456,7 @@
      "tps_max": 52.6,
      "ttft_ms": 710.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "phi-4": {
      "provider": "deepinfra",
@@ -465,7 +465,7 @@
      "tps_max": 54.0,
      "ttft_ms": 1000.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "qwen3.5-35b-a3b": {
      "provider": "deepinfra",
@@ -474,7 +474,7 @@
      "tps_max": 91.8,
      "ttft_ms": 570.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "hy4": {
      "provider": "deepinfra",
@@ -483,7 +483,7 @@
      "tps_max": 41.2,
      "ttft_ms": 980.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "gpt-oss-20b": {
      "provider": "groq",
@@ -492,7 +492,7 @@
      "tps_max": 100.0,
      "ttft_ms": 1030.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "inkling-small": {
      "provider": "deepinfra",
@@ -501,7 +501,7 @@
      "tps_max": 75.3,
      "ttft_ms": 5010.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "glm-5.3": {
      "provider": "together",
@@ -510,7 +510,7 @@
      "tps_max": 59.1,
      "ttft_ms": 260.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:34Z"
+     "measured_at": "2026-11-28T08:02:14Z"
     },
     "nemotron-3-ultra": {
      "provider": "deepinfra",
@@ -519,7 +519,7 @@
      "tps_max": 60.1,
      "ttft_ms": 1870.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "nemotron-3.5-super-vl": {
      "provider": "together",
@@ -528,7 +528,7 @@
      "tps_max": 120.0,
      "ttft_ms": 3050.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:34Z"
+     "measured_at": "2026-11-28T08:02:14Z"
     },
     "lingsante-3.1-air-vl": {
      "provider": "deepinfra",
@@ -537,16 +537,7 @@
      "tps_max": 47.4,
      "ttft_ms": 620.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
-    },
-    "llama-3.1-euryale-70b-v2.2": {
-     "provider": "deepinfra",
-     "tps": 36.0,
-     "tps_min": 36.0,
-     "tps_max": 36.0,
-     "ttft_ms": 520.0,
-     "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "deepseek-v4-flash-0731": {
      "provider": "deepinfra",
@@ -555,7 +546,7 @@
      "tps_max": 43.3,
      "ttft_ms": 1450.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "qwen3.8-27b": {
      "provider": "deepinfra",
@@ -564,7 +555,7 @@
      "tps_max": 44.7,
      "ttft_ms": 600.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "qwen3-vl-30b-a3b-instruct": {
      "provider": "deepinfra",
@@ -573,7 +564,7 @@
      "tps_max": 32.4,
      "ttft_ms": 550.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "glm-5.2": {
      "provider": "together",
@@ -582,7 +573,7 @@
      "tps_max": 76.6,
      "ttft_ms": 860.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:34Z"
+     "measured_at": "2026-11-28T08:02:14Z"
     },
     "deepseek-v4-flash-0423": {
      "provider": "fireworks",
@@ -591,7 +582,7 @@
      "tps_max": 9.08,
      "ttft_ms": 6360.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:30Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "qwen3.5-27b": {
      "provider": "deepinfra",
@@ -600,7 +591,16 @@
      "tps_max": 30.2,
      "ttft_ms": 1290.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
+    },
+    "llama-3.1-euryale-70b-v2.2": {
+     "provider": "deepinfra",
+     "tps": 27.9,
+     "tps_min": 19.8,
+     "tps_max": 36.0,
+     "ttft_ms": 750.0,
+     "source": "llm-benchmarks-provider",
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "gemma-4-26b-a4b": {
      "provider": "deepinfra",
@@ -609,7 +609,7 @@
      "tps_max": 33.7,
      "ttft_ms": 1020.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "ling-3.0-flash": {
      "provider": "deepinfra",
@@ -618,16 +618,16 @@
      "tps_max": 51.2,
      "ttft_ms": 7790.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "deepseek-v4.1-flash-1017": {
      "provider": "together",
-     "tps": 23.9,
+     "tps": 24.2,
      "tps_min": 7.6,
      "tps_max": 97.2,
-     "ttft_ms": 3350.0,
+     "ttft_ms": 3330.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:34Z"
+     "measured_at": "2026-11-28T08:02:14Z"
     },
     "gemma-4-31b": {
      "provider": "deepinfra",
@@ -636,7 +636,7 @@
      "tps_max": 43.5,
      "ttft_ms": 1030.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "mistral-small-3": {
      "provider": "deepinfra",
@@ -645,7 +645,7 @@
      "tps_max": 28.6,
      "ttft_ms": 1070.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "qwen2.5-72b-instruct": {
      "provider": "deepinfra",
@@ -654,7 +654,16 @@
      "tps_max": 26.1,
      "ttft_ms": 1390.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
+    },
+    "deepseek-v3": {
+     "provider": "deepinfra",
+     "tps": 26.0,
+     "tps_min": 26.0,
+     "tps_max": 26.0,
+     "ttft_ms": 510.0,
+     "source": "llm-benchmarks-provider",
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "deepseek-v4-pro-0423": {
      "provider": "deepinfra",
@@ -663,7 +672,7 @@
      "tps_max": 50.6,
      "ttft_ms": 1570.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "gemma-3-27b": {
      "provider": "deepinfra",
@@ -672,7 +681,7 @@
      "tps_max": 30.3,
      "ttft_ms": 1050.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "deepseek-v4-pro-0813": {
      "provider": "deepinfra",
@@ -681,7 +690,7 @@
      "tps_max": 45.4,
      "ttft_ms": 1350.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "nemotron-3-super": {
      "provider": "deepinfra",
@@ -690,7 +699,7 @@
      "tps_max": 44.4,
      "ttft_ms": 6610.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "deepseek-v3.2": {
      "provider": "deepinfra",
@@ -699,7 +708,7 @@
      "tps_max": 33.2,
      "ttft_ms": 840.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "qwen3.6-35b-a3b": {
      "provider": "deepinfra",
@@ -708,7 +717,7 @@
      "tps_max": 60.3,
      "ttft_ms": 4760.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "gemma-3-4b": {
      "provider": "deepinfra",
@@ -717,7 +726,7 @@
      "tps_max": 23.5,
      "ttft_ms": 1030.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "mistral-small-3.2-24b": {
      "provider": "deepinfra",
@@ -726,7 +735,7 @@
      "tps_max": 29.8,
      "ttft_ms": 1270.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "granite-4.2-8b": {
      "provider": "deepinfra",
@@ -735,16 +744,7 @@
      "tps_max": 21.7,
      "ttft_ms": 2450.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
-    },
-    "glm-4.6": {
-     "provider": "deepinfra",
-     "tps": 20.6,
-     "tps_min": 5.85,
-     "tps_max": 35.5,
-     "ttft_ms": 4430.0,
-     "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "minimax-m3": {
      "provider": "together",
@@ -753,7 +753,25 @@
      "tps_max": 25.9,
      "ttft_ms": 3100.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:34Z"
+     "measured_at": "2026-11-28T08:02:14Z"
+    },
+    "qwen3-coder-480b-a35b": {
+     "provider": "deepinfra",
+     "tps": 20.6,
+     "tps_min": 20.6,
+     "tps_max": 20.6,
+     "ttft_ms": 820.0,
+     "source": "llm-benchmarks-provider",
+     "measured_at": "2026-11-28T08:02:10Z"
+    },
+    "glm-4.6": {
+     "provider": "deepinfra",
+     "tps": 20.6,
+     "tps_min": 5.85,
+     "tps_max": 35.5,
+     "ttft_ms": 4430.0,
+     "source": "llm-benchmarks-provider",
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "mistral-nemo": {
      "provider": "deepinfra",
@@ -762,16 +780,7 @@
      "tps_max": 18.4,
      "ttft_ms": 2860.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
-    },
-    "mimo-v2.6-flash": {
-     "provider": "deepinfra",
-     "tps": 18.0,
-     "tps_min": 10.0,
-     "tps_max": 25.0,
-     "ttft_ms": 2130.0,
-     "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "deepseek-v4.1-flash": {
      "provider": "together",
@@ -780,7 +789,7 @@
      "tps_max": 112.0,
      "ttft_ms": 670.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:34Z"
+     "measured_at": "2026-11-28T08:02:14Z"
     },
     "gemma-3-12b": {
      "provider": "deepinfra",
@@ -789,7 +798,16 @@
      "tps_max": 16.8,
      "ttft_ms": 760.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
+    },
+    "mimo-v2.6-flash": {
+     "provider": "deepinfra",
+     "tps": 16.3,
+     "tps_min": 10.0,
+     "tps_max": 22.6,
+     "ttft_ms": 2370.0,
+     "source": "llm-benchmarks-provider",
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "muse-glimmer-30b": {
      "provider": "together",
@@ -798,7 +816,7 @@
      "tps_max": 46.1,
      "ttft_ms": 820.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:34Z"
+     "measured_at": "2026-11-28T08:02:14Z"
     },
     "qwen3.5-397b-a17b": {
      "provider": "deepinfra",
@@ -807,7 +825,7 @@
      "tps_max": 32.7,
      "ttft_ms": 10000.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "qwen3-vl-235b-a22b-instruct": {
      "provider": "deepinfra",
@@ -816,7 +834,16 @@
      "tps_max": 18.4,
      "ttft_ms": 840.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
+    },
+    "qwen3-30b-a3b": {
+     "provider": "deepinfra",
+     "tps": 13.2,
+     "tps_min": 7.45,
+     "tps_max": 18.9,
+     "ttft_ms": 5290.0,
+     "source": "llm-benchmarks-provider",
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "qwen3-14b": {
      "provider": "deepinfra",
@@ -825,7 +852,7 @@
      "tps_max": 12.4,
      "ttft_ms": 1190.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "qwen3-235b-a22b-instruct-2507": {
      "provider": "deepinfra",
@@ -834,7 +861,7 @@
      "tps_max": 17.5,
      "ttft_ms": 1290.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "deepseek-v3.1": {
      "provider": "deepinfra",
@@ -843,7 +870,7 @@
      "tps_max": 11.1,
      "ttft_ms": 710.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "kimi-k2.6": {
      "provider": "deepinfra",
@@ -852,7 +879,7 @@
      "tps_max": 25.7,
      "ttft_ms": 10400.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "qwen3-32b": {
      "provider": "deepinfra",
@@ -861,16 +888,7 @@
      "tps_max": 12.9,
      "ttft_ms": 7990.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
-    },
-    "qwen3-30b-a3b": {
-     "provider": "deepinfra",
-     "tps": 7.45,
-     "tps_min": 7.45,
-     "tps_max": 7.45,
-     "ttft_ms": 7850.0,
-     "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "glm-4.7": {
      "provider": "deepinfra",
@@ -879,7 +897,7 @@
      "tps_max": 8.5,
      "ttft_ms": 24900.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "llama-guard-4-12b": {
      "provider": "deepinfra",
@@ -888,7 +906,7 @@
      "tps_max": 5.43,
      "ttft_ms": 720.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "r1-0528": {
      "provider": "deepinfra",
@@ -897,7 +915,7 @@
      "tps_max": 4.46,
      "ttft_ms": 13800.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "ling-3.1-flash": {
      "provider": "deepinfra",
@@ -906,7 +924,7 @@
      "tps_max": 3.49,
      "ttft_ms": 15300.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:29Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "muse-spark-open": {
      "provider": "together",
@@ -915,7 +933,7 @@
      "tps_max": 26.1,
      "ttft_ms": 2110.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:34Z"
+     "measured_at": "2026-11-28T08:02:14Z"
     },
     "qwen3.8-2.4t-a95b": {
      "provider": "fireworks",
@@ -924,7 +942,7 @@
      "tps_max": 13.1,
      "ttft_ms": 4370.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:30Z"
+     "measured_at": "2026-11-28T08:02:10Z"
     },
     "nano-banana-2-lite-(gemini-3.1-flash-lite-image)": {
      "provider": "google",
@@ -933,7 +951,7 @@
      "tps_max": 104.0,
      "ttft_ms": 840.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:11Z"
     },
     "gemini-3.5-flash-lite": {
      "provider": "google",
@@ -942,7 +960,7 @@
      "tps_max": 112.0,
      "ttft_ms": 690.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:11Z"
     },
     "gemini-3.1-flash-lite-preview": {
      "provider": "google",
@@ -951,7 +969,7 @@
      "tps_max": 82.4,
      "ttft_ms": 660.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:11Z"
     },
     "nano-banana-2-(gemini-3.1-flash-image-preview)": {
      "provider": "google",
@@ -960,7 +978,16 @@
      "tps_max": 102.0,
      "ttft_ms": 1100.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:11Z"
+    },
+    "gemini-2.5-flash-lite": {
+     "provider": "google",
+     "tps": 72.0,
+     "tps_min": 61.5,
+     "tps_max": 78.2,
+     "ttft_ms": 670.0,
+     "source": "llm-benchmarks-provider",
+     "measured_at": "2026-11-28T08:02:11Z"
     },
     "gemini-3.1-flash-lite": {
      "provider": "google",
@@ -969,16 +996,7 @@
      "tps_max": 79.6,
      "ttft_ms": 730.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
-    },
-    "gemini-2.5-flash-lite": {
-     "provider": "google",
-     "tps": 69.9,
-     "tps_min": 61.5,
-     "tps_max": 78.2,
-     "ttft_ms": 730.0,
-     "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:11Z"
     },
     "nano-banana-2-(gemini-3.1-flash-image)": {
      "provider": "google",
@@ -987,25 +1005,34 @@
      "tps_max": 71.2,
      "ttft_ms": 1120.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:11Z"
     },
     "gemini-3-flash-preview": {
      "provider": "google",
-     "tps": 52.3,
-     "tps_min": 52.3,
+     "tps": 48.8,
+     "tps_min": 45.4,
      "tps_max": 52.3,
-     "ttft_ms": 800.0,
+     "ttft_ms": 940.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:11Z"
     },
     "gemini-2.5-flash": {
      "provider": "google",
-     "tps": 50.2,
-     "tps_min": 50.2,
+     "tps": 47.7,
+     "tps_min": 45.2,
      "tps_max": 50.2,
-     "ttft_ms": 800.0,
+     "ttft_ms": 920.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:11Z"
+    },
+    "gemini-3.6-flash": {
+     "provider": "google",
+     "tps": 47.3,
+     "tps_min": 8.28,
+     "tps_max": 86.3,
+     "ttft_ms": 4910.0,
+     "source": "llm-benchmarks-provider",
+     "measured_at": "2026-11-28T08:02:11Z"
     },
     "lyria-3-clip-preview": {
      "provider": "google",
@@ -1014,7 +1041,7 @@
      "tps_max": 50.2,
      "ttft_ms": 4070.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:11Z"
     },
     "gemini-3.5-flash": {
      "provider": "google",
@@ -1023,7 +1050,16 @@
      "tps_max": 76.2,
      "ttft_ms": 2840.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:11Z"
+    },
+    "gemini-3.8-flash": {
+     "provider": "google",
+     "tps": 33.5,
+     "tps_min": 33.5,
+     "tps_max": 33.5,
+     "ttft_ms": 1700.0,
+     "source": "llm-benchmarks-provider",
+     "measured_at": "2026-11-28T08:02:11Z"
     },
     "gemini-2.5-pro-preview-06-05": {
      "provider": "google",
@@ -1032,7 +1068,7 @@
      "tps_max": 28.7,
      "ttft_ms": 2500.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:11Z"
     },
     "nano-banana-(gemini-2.5-flash-image)": {
      "provider": "google",
@@ -1041,7 +1077,7 @@
      "tps_max": 43.0,
      "ttft_ms": 950.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:11Z"
     },
     "gemini-4-hydrogen": {
      "provider": "google",
@@ -1050,7 +1086,7 @@
      "tps_max": 29.4,
      "ttft_ms": 3240.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:11Z"
     },
     "gemini-2.5-pro": {
      "provider": "google",
@@ -1059,25 +1095,25 @@
      "tps_max": 20.5,
      "ttft_ms": 2870.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:11Z"
     },
-    "gemini-3.8-flash": {
+    "gemini-3.7-flash": {
      "provider": "google",
-     "tps": 19.8,
-     "tps_min": 6.01,
-     "tps_max": 33.5,
-     "ttft_ms": 6980.0,
+     "tps": 17.1,
+     "tps_min": 5.9,
+     "tps_max": 28.3,
+     "ttft_ms": 7920.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:11Z"
     },
     "gemini-4-argon": {
      "provider": "google",
-     "tps": 14.9,
+     "tps": 14.8,
      "tps_min": 5.63,
      "tps_max": 26.2,
-     "ttft_ms": 4270.0,
+     "ttft_ms": 4320.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:11Z"
     },
     "gemini-4-carbon": {
      "provider": "google",
@@ -1086,7 +1122,7 @@
      "tps_max": 28.5,
      "ttft_ms": 6550.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:11Z"
     },
     "claude-fable-5.2": {
      "provider": "google",
@@ -1095,25 +1131,7 @@
      "tps_max": 11.0,
      "ttft_ms": 3150.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
-    },
-    "gemini-3.6-flash": {
-     "provider": "google",
-     "tps": 8.28,
-     "tps_min": 8.28,
-     "tps_max": 8.28,
-     "ttft_ms": 9460.0,
-     "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
-    },
-    "gemini-3.7-flash": {
-     "provider": "google",
-     "tps": 5.9,
-     "tps_min": 5.9,
-     "tps_max": 5.9,
-     "ttft_ms": 14100.0,
-     "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:11Z"
     },
     "gemini-3.1-pro-preview-custom-tools": {
      "provider": "google",
@@ -1122,16 +1140,16 @@
      "tps_max": 3.07,
      "ttft_ms": 5540.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:11Z"
     },
     "gemini-3.1-pro-preview": {
      "provider": "google",
-     "tps": 2.23,
-     "tps_min": 2.23,
+     "tps": 1.89,
+     "tps_min": 1.55,
      "tps_max": 2.23,
-     "ttft_ms": 5360.0,
+     "ttft_ms": 5890.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:11Z"
     },
     "gpt-oss-safeguard-20b": {
      "provider": "groq",
@@ -1140,7 +1158,7 @@
      "tps_max": 88.2,
      "ttft_ms": 650.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "minimax-m2.7": {
      "provider": "groq",
@@ -1149,7 +1167,7 @@
      "tps_max": 48.1,
      "ttft_ms": 860.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:31Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "gpt-4.1-mini": {
      "provider": "openai",
@@ -1158,7 +1176,7 @@
      "tps_max": 53.9,
      "ttft_ms": 750.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:32Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "gpt-6.1-terra-pro": {
      "provider": "openai",
@@ -1167,7 +1185,7 @@
      "tps_max": 47.0,
      "ttft_ms": 19400.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:32Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "gpt-5.4-nano": {
      "provider": "openai",
@@ -1176,7 +1194,7 @@
      "tps_max": 46.6,
      "ttft_ms": 1030.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:32Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "gpt-4.1": {
      "provider": "openai",
@@ -1185,7 +1203,7 @@
      "tps_max": 41.0,
      "ttft_ms": 1240.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:32Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "gpt-5.4-mini": {
      "provider": "openai",
@@ -1194,7 +1212,7 @@
      "tps_max": 39.0,
      "ttft_ms": 1050.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:32Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "gpt-5.1": {
      "provider": "openai",
@@ -1203,7 +1221,7 @@
      "tps_max": 38.0,
      "ttft_ms": 870.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:32Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "gpt-4o-mini": {
      "provider": "openai",
@@ -1212,7 +1230,7 @@
      "tps_max": 35.5,
      "ttft_ms": 890.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:32Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "gpt-6.2-sol-pro": {
      "provider": "openai",
@@ -1221,7 +1239,7 @@
      "tps_max": 44.1,
      "ttft_ms": 17400.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:32Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "gpt-5.4": {
      "provider": "openai",
@@ -1230,7 +1248,7 @@
      "tps_max": 24.9,
      "ttft_ms": 1090.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:32Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "gpt-6.2-sol": {
      "provider": "openai",
@@ -1239,7 +1257,7 @@
      "tps_max": 27.7,
      "ttft_ms": 910.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:32Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "gpt-5.6-terra": {
      "provider": "openai",
@@ -1248,7 +1266,7 @@
      "tps_max": 19.6,
      "ttft_ms": 3090.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:32Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "gpt-5.5": {
      "provider": "openai",
@@ -1257,7 +1275,7 @@
      "tps_max": 18.9,
      "ttft_ms": 3240.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:32Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "gpt-6.2-astra": {
      "provider": "openai",
@@ -1266,7 +1284,7 @@
      "tps_max": 15.6,
      "ttft_ms": 1470.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:32Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "gpt-6.1-sol": {
      "provider": "openai",
@@ -1275,7 +1293,7 @@
      "tps_max": 13.8,
      "ttft_ms": 3440.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:32Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "gpt-6.1-terra": {
      "provider": "openai",
@@ -1284,7 +1302,7 @@
      "tps_max": 12.1,
      "ttft_ms": 5050.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:32Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "gpt-6.2-astra-pro": {
      "provider": "openai",
@@ -1293,16 +1311,16 @@
      "tps_max": 11.9,
      "ttft_ms": 10200.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:32Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "gpt-6-astra-pro": {
      "provider": "openai",
-     "tps": 5.12,
-     "tps_min": 3.1,
-     "tps_max": 7.04,
-     "ttft_ms": 9830.0,
+     "tps": 7.69,
+     "tps_min": 3.41,
+     "tps_max": 16.0,
+     "ttft_ms": 10000.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:32Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "gpt-5.2-pro": {
      "provider": "openai",
@@ -1311,7 +1329,7 @@
      "tps_max": 1.77,
      "ttft_ms": 9870.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:32Z"
+     "measured_at": "2026-11-28T08:02:12Z"
     },
     "beam-1.0-501b-a23b": {
      "provider": "together",
@@ -1320,16 +1338,16 @@
      "tps_max": 54.7,
      "ttft_ms": 860.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:34Z"
+     "measured_at": "2026-11-28T08:02:14Z"
     },
     "glimpse": {
      "provider": "together",
-     "tps": 29.5,
+     "tps": 29.3,
      "tps_min": 12.8,
      "tps_max": 82.1,
-     "ttft_ms": 2270.0,
+     "ttft_ms": 2320.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:34Z"
+     "measured_at": "2026-11-28T08:02:14Z"
     },
     "ripple-65b-preview": {
      "provider": "together",
@@ -1338,7 +1356,7 @@
      "tps_max": 18.1,
      "ttft_ms": 11400.0,
      "source": "llm-benchmarks-provider",
-     "measured_at": "2026-11-27T21:27:34Z"
+     "measured_at": "2026-11-28T08:02:14Z"
     }
    }
   },
@@ -11433,6 +11451,6 @@
   "gpt-oss-120b: insufficient samples",
   "aa-provider-pages: 0 Modelle geparst (kein Tabellen-HTML mehr), alte Werte behalten",
   "benchmark: 19 Messwerte aus letztem Stand uebernommen (in diesem Lauf nicht gemessen)",
-  "benchmark: 771 AA-Werte aus letztem Stand behalten (kein Key), Abruf 2026-11-26T07:34:52Z, seit 1 Tagen unveraendert -> ARTIFICIAL_ANALYSIS_API_KEY setzen"
+  "benchmark: 771 AA-Werte aus letztem Stand behalten (kein Key), Abruf 2026-11-26T07:34:52Z, seit 2 Tagen unveraendert -> ARTIFICIAL_ANALYSIS_API_KEY setzen"
  ]
 }
